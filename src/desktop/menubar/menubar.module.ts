@@ -1,17 +1,10 @@
-import { NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 
-import { MenubarComponent } from './menubar.component';
-import { MenubarListComponent } from './menubarList/menubarList.component';
-import { MenubarItemComponent } from './menubarList/menubarItem/menubarItem.component';
-
-@NgModule({
-  declarations: [
-    MenubarComponent,
-    MenubarListComponent,
-    MenubarItemComponent
-  ],
-  exports: [
-    MenubarComponent,
-  ]
+@Component({
+  selector: 'menubar',
+  templateUrl: 'menubar.component.html',
+  styleUrls: ['menubar.component.css']
 })
-export class MenubarModule { }
+export class MenubarComponent {
+
+}
