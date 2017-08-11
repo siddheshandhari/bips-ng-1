@@ -1,0 +1,35 @@
+:host{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  align-self: center;
+  width: 50%;
+  height: 70px;
+  background-color: rgba(37,37,37,0.8);
+  border-radius: 10px 10px 0 0;
+  overflow-x: scroll;
+  z-index: 1000;
+}
+
+.menu-list{
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.menu-item{
+  margin: 0 20px;
+}
+
+.menu-item .app-name{
+  display: none;
+}
+
+#menu-hover{
+  position: absolute;
+  bottom: 0;
+  width: 50%;
+  height: 5px;
+  z-index: 1001;
+}

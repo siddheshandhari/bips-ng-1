@@ -1,20 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { SidebarModule } from './sidebar/sidebar.module';
 import { NgModule } from '@angular/core';
 
 import { DesktopComponent } from './desktop.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { MenuComponent } from './menu/menu.component';
+import { MenubarComponent } from './menubar/menubar.component';
+import { SnackbarComponent } from './sidebar/snackbar/snackbar.component';
 
 @NgModule({
   declarations: [
     DesktopComponent,
-    SidebarComponent,
-    MenuComponent
+    MenubarComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    SidebarModule
   ],
   providers: [],
   bootstrap: [DesktopComponent]
 })
-export class AppModule { }
+export class DesktopModule { }
