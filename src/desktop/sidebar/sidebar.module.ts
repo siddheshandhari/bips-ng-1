@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 
 import { SidebarComponent } from './sidebar.component';
-import { SidebarListComponent } from './sidebarList/sidebarList.component';
-import { SidebarItemComponent } from './sidebarList/sidebarItem/sidebarItem.component';
+import { SidebarListComponent } from './sidebar-list/sidebar-list.component';
+import { SidebarItemComponent } from './sidebar-list/sidebar-item/sidebar-item.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
 
 

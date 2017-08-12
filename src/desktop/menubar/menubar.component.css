@@ -12,20 +12,6 @@
   z-index: 1000;
 }
 
-.menu-list{
-  display: flex;
-  align-items: center;
-  height: 100%;
-}
-
-.menu-item{
-  margin: 0 20px;
-}
-
-.menu-item .app-name{
-  display: none;
-}
-
 #menu-hover{
   position: absolute;
   bottom: 0;

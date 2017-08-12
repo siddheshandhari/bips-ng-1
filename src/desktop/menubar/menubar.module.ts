@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 
 import { MenubarComponent } from './menubar.component';
-import { MenubarListComponent } from './menubarList/menubarList.component';
-import { MenubarItemComponent } from './menubarList/menubarItem/menubarItem.component';
+import { MenubarListComponent } from './menubar-list/menubar-list.component';
+import { MenubarItemComponent } from './menubar-list/menubar-item/menubar-item.component';
 
 
 @NgModule({
