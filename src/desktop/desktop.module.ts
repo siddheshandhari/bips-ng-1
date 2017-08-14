@@ -1,7 +1,8 @@
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarModule } from './sidebar/sidebar.module';
 import { MenubarModule } from './menubar/menubar.module';
-import { NgModule } from '@angular/core';
 
 import { DesktopComponent } from './desktop.component';
 import { MenubarComponent } from './menubar/menubar.component';
@@ -13,6 +14,7 @@ import { SnackbarComponent } from './sidebar/snackbar/snackbar.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     SidebarModule,
     MenubarModule,
   ],
