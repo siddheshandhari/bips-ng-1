@@ -3,13 +3,15 @@
     <
     </div>
     <ul class="snackbar-list">
-        <li class="snackbar-item">
+        <li *ngFor =" let app of apps" class="snackbar-item">
+             
+          <div class="icon app" id="company" >
+          <a href=""> <img [attr.src]="snackapp.imageurl" class="icon-img" alt="icon"></a>
+          <h5 class="app-name" style="color:white">{{snackapp.name}}</h5>
+          </div>
+     
         </li>
-        <li class="snackbar-item">
-        </li>
-        <li class="snackbar-item">
-        </li>
-
+        
     </ul>
     <div class="snackbar-nav right">
     >

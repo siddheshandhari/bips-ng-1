@@ -1,0 +1,25 @@
+.icon{
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+.icon-img{
+  display: block;
+  border-radius: 10px;
+  width: 70px;
+  height: 70px;
+}
+
+.icon-img:hover{
+  transform: scale(1.2);
+  transition: transform 0.3s;
+}
+
+.app-name{
+  color: white;
+  text-align: center;
+  font-size: 13px;
+  margin-top:-10px;
+
+}
