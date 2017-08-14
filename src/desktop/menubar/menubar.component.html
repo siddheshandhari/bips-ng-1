@@ -1,10 +1,4 @@
-<div id="menu-hover"
-    (mouseenter) = "showMenu()"
-    (mouseout) = "hideMenu()"
-
-></div>
-<div id="menu-content"
-    [@menuDisplayState]="menuDisplay"
->
+<div id="menu-hover" menuAutohide></div>
+<div id="menu-content">
   <menubar-list></menubar-list>
 </div>
