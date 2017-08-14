@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SidebarAppMemoryData } from './../sidebar/sidebar-app-memory-data.service';
+// import { SidebarAppMemoryData } from './../sidebar/sidebar-app-memory-data.service';
 
 @Component({
   selector: 'icon',
@@ -22,4 +22,3 @@ export class IconComponent {
 //   {id:3, name:'company', url:'./../../assets/imgs/company.png'},
 //   {id:4, name:'company', url:'./../../assets/imgs/company.png'}
 // ]
-

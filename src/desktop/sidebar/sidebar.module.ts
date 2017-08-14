@@ -10,7 +10,7 @@ import { SnackbarComponent } from './snackbar/snackbar.component';
 import { IconComponent } from './../icon/icon.component';
 
 // import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
- import { SidebarAppMemoryData } from './sidebar-app-memory-data.service';
+ // import { SidebarAppMemoryData } from './sidebar-app-memory-data.service';
 @NgModule({
   imports: [
     BrowserModule,

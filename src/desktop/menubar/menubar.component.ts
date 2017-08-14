@@ -16,7 +16,7 @@ export class MenubarComponent implements OnInit {
   hideMenu(){
     setTimeout(() => {
       this.menuHide = true;
-    }, 3000)
+    }, 5000)
   }
 
   showMenu(){
