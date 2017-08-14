@@ -1,4 +1,4 @@
-<div id="menu-hover" menuAutohide></div>
-<div id="menu-content">
+<div id="menu-hover" (mouseenter)="showMenu()" (mouseleave)="hideMenu()"></div>
+<div id="menu-content" [ngClass]="{'menu-hide': menuHide}">
   <menubar-list></menubar-list>
 </div>

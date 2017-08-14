@@ -19,9 +19,16 @@
 #menu-content{
   position: absolute;
   bottom: 0;
+  opacity: 1;
   height: 70px;
   width: 100%;
   background-color: rgba(37,37,37,0.8);
   border-radius: 10px 10px 0 0;
   overflow-x: scroll;
+  transition: 0.5s;
+}
+
+#menu-content.menu-hide{
+  bottom: -70px;
+  opacity: 0.25;
 }

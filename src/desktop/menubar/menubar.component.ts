@@ -7,9 +7,19 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   styleUrls: ['menubar.component.css'],
 })
 export class MenubarComponent implements OnInit {
-  constructor(){}
+  menuHide = false;
 
   ngOnInit(){
+    this.hideMenu();
+  }
 
+  hideMenu(){
+    setTimeout(() => {
+      this.menuHide = true;
+    }, 3000)
+  }
+
+  showMenu(){
+    this.menuHide = false;
   }
 }
