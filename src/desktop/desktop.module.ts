@@ -11,6 +11,7 @@ import { MenubarModule } from './menubar/menubar.module';
 
 //components
 import { DesktopComponent } from './desktop.component';
+import { windowComponent } from './window/window.component';
 import { MenubarComponent } from './menubar/menubar.component';
 import { SnackbarComponent } from './sidebar/snackbar/snackbar.component';
 
@@ -24,6 +25,7 @@ import { topWindowReducer } from '../reducers/topWindow.reducer';
 
 @NgModule({
   declarations: [
+    windowComponent,
     DesktopComponent,
     ToggleFullScreenDirective,
   ],
@@ -33,6 +35,11 @@ import { topWindowReducer } from '../reducers/topWindow.reducer';
     BrowserAnimationsModule,
     SidebarModule,
     MenubarModule,
+    StoreModule.forRoot({
+      sidebar: sidebarReducer,
+      apps: appsReducer,
+      topWindow: topWindowReducer
+    })
   ],
   providers: [],
   bootstrap: [DesktopComponent]

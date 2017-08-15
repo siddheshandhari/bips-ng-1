@@ -5,6 +5,9 @@ import { Component } from '@angular/core';
   templateUrl: 'window.component.html',
   styleUrls: ['window.component.css'],
 })
-export class WindowComponent {
+
+export class windowComponent {
+  appTitle = "sample";
+  appContent = "app-content";
 
 }
