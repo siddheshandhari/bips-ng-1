@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component  } from '@angular/core';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'sidebar',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['sidebar.component.css']
 })
 export class SidebarComponent {
-   resizeSidebar = false;
+
+  isSidebarOpen = true;
+
+  sidebarOpen(){
+    this.isSidebarOpen = true;
+  }
+
+  sidebarClose(){
+    this.isSidebarOpen= false;
+  }
+
 }

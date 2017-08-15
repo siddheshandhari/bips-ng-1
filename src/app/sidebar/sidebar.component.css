@@ -29,7 +29,7 @@
 /*for toggling the class*/
 
 .sidebar-open{
-  width: 230px;
+  width: 90px;
 }
 
 .sidebar-close{
@@ -44,3 +44,7 @@
   display: none;
 }
 
+
+.isSidebarOpen{
+  width: 230px;
+}

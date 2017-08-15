@@ -10,6 +10,7 @@ import { SnackbarComponent } from './snackbar/snackbar.component';
 import { IconComponent } from './../icon/icon.component';
 import { SnackbarItemComponent } from './snackbar/snackbar-item/snackbar-item.component';
 
+
 // import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
  // import { SidebarAppMemoryData } from './sidebar-app-memory-data.service';
 @NgModule({
@@ -23,7 +24,8 @@ import { SnackbarItemComponent } from './snackbar/snackbar-item/snackbar-item.co
     SidebarListComponent,
     SidebarItemComponent,
     IconComponent,
-    SnackbarItemComponent 
+    SnackbarItemComponent,
+
     // InMemoryWebApiModule.forRoot(SidebarAppMemoryData)
     // InMemoryWebApiModule,
     // SidebarAppMemoryData
