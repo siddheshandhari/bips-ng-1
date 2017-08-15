@@ -16,7 +16,12 @@ export class LoginComponent {
     this.loginService.login(this.model.username, this.model.password)
       .subscribe(
         data => {
-          alert('login successful');
+          if(data){
+            alert('login successful');
+          } else {
+            alert('login failed');
+          }
+
         },
         error => {
           alert('login failed, error: ' +  error);
