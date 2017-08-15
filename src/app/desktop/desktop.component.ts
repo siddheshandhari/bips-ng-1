@@ -8,9 +8,8 @@ import * as screenfull from 'screenfull';
 })
 
 export class DesktopComponent {
-  fullScreenMod = false;
   constructor(){
 
   }
-  
+
 }
