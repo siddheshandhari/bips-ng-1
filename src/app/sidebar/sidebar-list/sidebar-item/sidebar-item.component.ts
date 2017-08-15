@@ -8,10 +8,6 @@ import { Component } from '@angular/core';
 
 export class SidebarItemComponent {
  apps = APPS;
- hero = {
-  id: 1,
-  name: 'Windstorm'
-};
 }
 
 export class Apps{

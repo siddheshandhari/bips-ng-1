@@ -1,4 +1,6 @@
- <li *ngFor =" let app of apps" class="snackbar-item">
-             
-          as
+ <li *ngFor =" let snackbarapp of snackbarapps" class="snackbar-item">
+    <div class="icon app" id="company" >
+    <a href=""> <img [attr.src]="snackbarapp.imageurl" class="icon-img" alt="icon"></a>
+    <h5 class="app-name" style="color:white">{{snackbarapp.name}}</h5>
+    </div>
  </li>

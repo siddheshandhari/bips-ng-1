@@ -1,15 +1,16 @@
 import { Directive, HostListener, HostBinding} from '@angular/core';
-import * as screenfull from 'screenfull';
+
 
 @Directive({
-  selector: '[toggleFullScreen]'
+  selector: '[resizeSidebar]'
 })
 
-export class ToggleFullScreenDirective {
+export class ResizeSidebarDirective {
   constructor(
 
   ){}
-  @HostBinding('class.isFullScreen') isFullScreen = false;
+ 
+ @HostBinding('class.isFullScreen') isFullScreen = false;
   @HostListener('click') onClick(){
     if (screenfull.enabled) {
       screenfull.toggle();
@@ -17,5 +18,3 @@ export class ToggleFullScreenDirective {
     }
   }
 }
-
-
