@@ -26,22 +26,7 @@
   overflow: hidden;
 }
 
-.snackbar-item{
-  position: relative;
-  top: 5px;
-  display: inline-block;
-  white-space: nowrap;
-  padding: 0 10px;
-}
 
-.snackbar-item .app-name{
-  display: none ;
-}
-
-#snackbar .icon-img{
-  width: 40px;
-  height: 40px;
-}
 
 .snackbar-nav{
   position: absolute;
