@@ -5,10 +5,11 @@ import { RouterModule, Routes } from '@angular/router';
 //Module
 import { StoreModule } from '@ngrx/store';
 import { DesktopModule } from './desktop/desktop.module';
+import { LoginModule } from './login/login.module';
 
 //components
 import { AppComponent } from './app.component';
-import { AuthPageComponent } from './auth-page/auth-page.component';
+import { LoginComponent } from './login/login.component';
 import { DesktopComponent } from './desktop/desktop.component';
 
 //reducers
@@ -17,14 +18,13 @@ import { sidebarReducer } from '../reducers/sidebar.reducer';
 import { topWindowReducer } from '../reducers/topWindow.reducer';
 
 const appRoutes: Routes = [
-  { path: 'auth', component: AuthPageComponent },
+  { path: 'auth', component: LoginComponent },
   { path: '**', component: DesktopComponent }
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +33,7 @@ const appRoutes: Routes = [
       { enableTracing: true }
     ),
     DesktopModule,
+    LoginModule,
     StoreModule.forRoot({
       sidebar: sidebarReducer,
       apps: appsReducer,
