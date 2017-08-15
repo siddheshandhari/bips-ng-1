@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -13,6 +14,9 @@ import { DesktopComponent } from './desktop.component';
 import { MenubarComponent } from './menubar/menubar.component';
 import { SnackbarComponent } from './sidebar/snackbar/snackbar.component';
 
+//Directive
+import { ToggleFullScreenDirective } from './toggleFullScreen.directive'
+
 //reducers
 import { appsReducer } from '../reducers/apps.reducer';
 import { sidebarReducer } from '../reducers/sidebar.reducer';
@@ -21,9 +25,11 @@ import { topWindowReducer } from '../reducers/topWindow.reducer';
 @NgModule({
   declarations: [
     DesktopComponent,
+    ToggleFullScreenDirective,
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     BrowserAnimationsModule,
     SidebarModule,
     MenubarModule,
