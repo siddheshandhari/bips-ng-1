@@ -8,7 +8,7 @@ import { NgClass } from '@angular/common';
 })
 export class SidebarComponent {
 
-  isSidebarOpen = true;
+  isSidebarOpen = false;
 
   sidebarOpen(){
     this.isSidebarOpen = true;

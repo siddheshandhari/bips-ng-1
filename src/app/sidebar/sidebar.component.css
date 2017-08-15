@@ -28,23 +28,29 @@
 
 /*for toggling the class*/
 
-.sidebar-open{
+
+#sidebar{
   width: 90px;
+  transition: 0.2s;
 }
 
-.sidebar-close{
-  width: 90px;
-}
-
-.sidebar-close > #close-sidebar{
-  display: none;
-}
-
-.sidebar-open > #open-sidebar{
-  display: none;
-}
-
-
-.isSidebarOpen{
+#sidebar.isSidebarOpen{
   width: 230px;
 }
+
+#sidebar > #close-sidebar{
+  display: none;
+}
+
+#sidebar > #open-sidebar{
+  display: block;
+}
+
+#sidebar.isSidebarOpen > #open-sidebar{
+  display: none;
+}
+
+#sidebar.isSidebarOpen > #close-sidebar{
+  display: block;
+}
+
