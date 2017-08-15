@@ -7,29 +7,6 @@
   overflow: hidden;
 }
 
-.sidebar-item{
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  float: left;
-}
 
-/*for toggling the class*/
 
-.sidebar-open{
-  width: 230px;
-}
 
-.sidebar-close{
-  width: 90px;
-}
-
-.sidebar-close > #close-sidebar{
-  display: none;
-}
-
-.sidebar-open > #open-sidebar{
-  display: none;
-}
