@@ -35,11 +35,11 @@ import { topWindowReducer } from '../reducers/topWindow.reducer';
     BrowserAnimationsModule,
     SidebarModule,
     MenubarModule,
-    StoreModule.forRoot({
-      sidebar: sidebarReducer,
-      apps: appsReducer,
-      topWindow: topWindowReducer
-    })
+    // StoreModule.forRoot({
+    //   sidebar: sidebarReducer,
+    //   apps: appsReducer,
+    //   topWindow: topWindowReducer
+    // })
   ],
   providers: [],
   bootstrap: [DesktopComponent]
