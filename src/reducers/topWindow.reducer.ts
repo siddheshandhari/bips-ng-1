@@ -1,6 +1,4 @@
-
-
-export const topWindowReducer = (state = [], action) => {
+export function topWindowReducer(state = [], action){
   switch (action.type) {
     default:
       return state;
