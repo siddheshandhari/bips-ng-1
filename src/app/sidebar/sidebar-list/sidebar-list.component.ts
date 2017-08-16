@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { App } from '../../apps/app';
 
 
 @Component({
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
 })
 
 export class SidebarListComponent {
-
+  @Input() apps: Array<object>;
 }

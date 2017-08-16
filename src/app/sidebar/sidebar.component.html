@@ -1,7 +1,5 @@
-<div id="sidebar" [ngClass]="{'isSidebarOpen':this.isSidebarOpen}">
-    <sidebar-list></sidebar-list>
-    <snackbar *ngIf="isSidebarOpen" ></snackbar>
+<sidebar-list></sidebar-list>
+<snackbar *ngIf="isSidebarOpen" ></snackbar>
 
-    <span id="close-sidebar" class="sidebar-toggle" (click)= "sidebarClose()"> < </span>
-    <span id ="open-sidebar" class="sidebar-toggle" (click)="sidebarOpen()"> > </span>
-</div>
+<span id="close-sidebar" class="sidebar-toggle" (click)= "sidebarClose()"> < </span>
+<span id ="open-sidebar" class="sidebar-toggle" (click)="sidebarOpen()"> > </span>

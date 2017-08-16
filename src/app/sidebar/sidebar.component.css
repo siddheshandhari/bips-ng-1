@@ -29,28 +29,27 @@
 /*for toggling the class*/
 
 
-#sidebar{
+:host{
   width: 90px;
   transition: 0.2s;
 }
 
-#sidebar.isSidebarOpen{
+:host.isSidebarOpen{
   width: 230px;
 }
 
-#sidebar > #close-sidebar{
+:host > #close-sidebar{
   display: none;
 }
 
-#sidebar > #open-sidebar{
+:host > #open-sidebar{
   display: block;
 }
 
-#sidebar.isSidebarOpen > #open-sidebar{
+:host.isSidebarOpen > #open-sidebar{
   display: none;
 }
 
-#sidebar.isSidebarOpen > #close-sidebar{
+:host.isSidebarOpen > #close-sidebar{
   display: block;
 }
-
