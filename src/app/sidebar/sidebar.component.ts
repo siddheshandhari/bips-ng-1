@@ -29,8 +29,8 @@ export class SidebarComponent {
 
   constructor(private store: Store<InstalledAppsState>, private appsService: AppsService) {
     store.select('installedApps').subscribe(state => this.installedApps = state);
-    this.installedApps.map(AppId => {
-      this.apps.push(this.appsService.appsDict[AppId])
+    this.apps = this.appsService.appsDict.filter(app => {
+      return app.id in this.installedApps;
     })
   }
 
