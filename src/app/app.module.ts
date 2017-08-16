@@ -11,6 +11,7 @@ import { LoginModule } from './login/login.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DesktopComponent } from './desktop/desktop.component';
+// import { AuthGuard }  from './login/login-authguard.component';
 
 //reducers
 import { appsReducer } from '../reducers/apps.reducer';
@@ -19,7 +20,9 @@ import { topWindowReducer } from '../reducers/topWindow.reducer';
 
 const appRoutes: Routes = [
   { path: 'auth', component: LoginComponent },
-  { path: '**', component: DesktopComponent }
+  { path: '**', component: DesktopComponent, canActivate:[] },
+  
+
 ]
 
 @NgModule({

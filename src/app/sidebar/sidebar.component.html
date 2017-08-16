@@ -1,4 +1,5 @@
 <div id="sidebar" [ngClass]="{'isSidebarOpen':this.isSidebarOpen}">
+    <currentuserinfo *ngIf="isSidebarOpen"></currentuserinfo>
     <sidebar-list></sidebar-list>
     <snackbar *ngIf="isSidebarOpen" ></snackbar>
 

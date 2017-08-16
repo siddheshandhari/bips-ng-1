@@ -9,6 +9,7 @@ import { SidebarItemComponent } from './sidebar-list/sidebar-item/sidebar-item.c
 import { SnackbarComponent } from './snackbar/snackbar.component';
 import { IconComponent } from './../icon/icon.component';
 import { SnackbarItemComponent } from './snackbar/snackbar-item/snackbar-item.component';
+import { CurrentUserInfo } from './sidebar-list/current-user/current-user.component';
 
 
 // import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -25,6 +26,7 @@ import { SnackbarItemComponent } from './snackbar/snackbar-item/snackbar-item.co
     SidebarItemComponent,
     IconComponent,
     SnackbarItemComponent,
+    CurrentUserInfo
 
     // InMemoryWebApiModule.forRoot(SidebarAppMemoryData)
     // InMemoryWebApiModule,

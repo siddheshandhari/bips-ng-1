@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { LoginService } from './login.service';
 
+import { User } from './login-user';
+
+
+
 @Component({
   selector: 'login',
   templateUrl: 'login.component.html',
@@ -10,6 +14,11 @@ import { LoginService } from './login.service';
 export class LoginComponent {
   model: any = {};
 
+  // submitted = false;
+
+  // onSubmit() {this.submitted = true}
+ 
+
   constructor(private loginService: LoginService){}
 
   login() {
@@ -18,14 +27,17 @@ export class LoginComponent {
         data => {
           if(data){
             alert('login successful');
-          } else {
+          } 
+          else {
             alert('login failed');
           }
 
+
         },
-        error => {
-          alert('login failed, error: ' +  error);
-        }
+        // error => {
+        //   alert('login failed, error: ' +  error);
+        // }
       )
   }
+  
 }

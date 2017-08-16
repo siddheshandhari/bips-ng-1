@@ -14,4 +14,10 @@ export class LoginService {
         return user;
       })
   }
+
+  logut(){
+    alert('logout');
+  }
+
+
 }
