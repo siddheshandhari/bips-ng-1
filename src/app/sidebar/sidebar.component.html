@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 <div id="sidebar" [ngClass]="{'isSidebarOpen':this.isSidebarOpen}">
     <currentuserinfo *ngIf="isSidebarOpen"></currentuserinfo>
     <sidebar-list></sidebar-list>
     <snackbar *ngIf="isSidebarOpen" ></snackbar>
+=======
+<span id="close-sidebar" class="sidebar-toggle" (click)= "sidebarClose()"> < </span>
+<span id ="open-sidebar" class="sidebar-toggle" (click)="sidebarOpen()"> > </span>
+>>>>>>> 4cfd39065502fc9885493cbd316218c758be1def
 
-    <span id="close-sidebar" class="sidebar-toggle" (click)= "sidebarClose()"> < </span>
-    <span id ="open-sidebar" class="sidebar-toggle" (click)="sidebarOpen()"> > </span>
-</div>
+<sidebar-list [apps]="apps"></sidebar-list>
+<snackbar *ngIf="isSidebarOpen" ></snackbar>

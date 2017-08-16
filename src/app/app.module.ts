@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { DesktopModule } from './desktop/desktop.module';
 import { LoginModule } from './login/login.module';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 //components
 import { AppComponent } from './app.component';
@@ -14,8 +15,9 @@ import { DesktopComponent } from './desktop/desktop.component';
 // import { AuthGuard }  from './login/login-authguard.component';
 
 //reducers
-import { appsReducer } from '../reducers/apps.reducer';
-import { sidebarReducer } from '../reducers/sidebar.reducer';
+import { installedAppsReducer } from '../reducers/installedApps.reducer';
+import { runningAppsReducer } from '../reducers/runningApps.reducer';
+import { hideAppsReducer } from '../reducers/hideApps.reducer';
 import { topWindowReducer } from '../reducers/topWindow.reducer';
 
 const appRoutes: Routes = [
@@ -33,14 +35,18 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true }
+      { enableTracing: false }
     ),
     DesktopModule,
     LoginModule,
     StoreModule.forRoot({
-      sidebar: sidebarReducer,
-      apps: appsReducer,
+      installedApps: installedAppsReducer,
+      runningApps: runningAppsReducer,
+      hideApps: hideAppsReducer,
       topWindow: topWindowReducer
+    }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25
     })
   ],
   providers: [],

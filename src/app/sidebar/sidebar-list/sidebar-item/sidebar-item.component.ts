@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'sidebar-item',
@@ -7,19 +7,6 @@ import { Component } from '@angular/core';
 })
 
 export class SidebarItemComponent {
- apps = APPS;
+  @Input() app: object;
+  constructor(){}
 }
-
-export class Apps{
-  id: number;
-  name: string;
-  imageurl: string;
-
-}
-
-const APPS : Apps[] =[
-  {'id':0, 'name':'company', 'imageurl':'./../../assets/imgs/company.png'},
-  {'id':2, 'name':'folder', 'imageurl':'./../../assets/imgs/folder.png'},
-  {'id':3, 'name':'crm', 'imageurl':'./../../assets/imgs/crm.png'},
-  {'id':4, 'name':'contact', 'imageurl':'./../../assets/imgs/contact.png'}
-]
