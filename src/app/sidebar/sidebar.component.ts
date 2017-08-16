@@ -15,7 +15,7 @@ export class SidebarComponent {
   }
 
   sidebarClose(){
-    
+
     this.isSidebarOpen= false;
   }
 
