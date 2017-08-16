@@ -6,8 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['window.component.css'],
 })
 
-export class windowComponent {
+export class WindowComponent {
   appTitle = "sample";
   appContent = "app-content";
-
 }

@@ -23,14 +23,7 @@ import { CurrentUserInfo } from './sidebar-list/current-user/current-user.compon
     SidebarListComponent,
     SidebarItemComponent,
     SnackbarItemComponent,
-<<<<<<< HEAD
     CurrentUserInfo
-
-    // InMemoryWebApiModule.forRoot(SidebarAppMemoryData)
-    // InMemoryWebApiModule,
-    // SidebarAppMemoryData
-=======
->>>>>>> 4cfd39065502fc9885493cbd316218c758be1def
   ],
   exports: [
     SidebarComponent

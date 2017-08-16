@@ -24,12 +24,8 @@ interface InstalledAppsState {
 
 export class SidebarComponent {
 
-<<<<<<< HEAD
-  isSidebarOpen = true;
-=======
   installedApps: Array<number> = [];
   apps: Array<object> = [];
->>>>>>> 4cfd39065502fc9885493cbd316218c758be1def
 
   constructor(private store: Store<InstalledAppsState>, private appsService: AppsService) {
     store.select('installedApps').subscribe(state => this.installedApps = state);

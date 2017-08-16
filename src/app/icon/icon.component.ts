@@ -9,5 +9,6 @@ import { AppsService } from '../apps/apps.service';
 
 export class IconComponent {
   @Input() app: object;
-  constructor(private appsService: AppsService){}
+  constructor(private appsService: AppsService){
+  }
 }
