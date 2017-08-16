@@ -1,5 +1,5 @@
-<sidebar-list></sidebar-list>
-<snackbar *ngIf="isSidebarOpen" ></snackbar>
-
 <span id="close-sidebar" class="sidebar-toggle" (click)= "sidebarClose()"> < </span>
 <span id ="open-sidebar" class="sidebar-toggle" (click)="sidebarOpen()"> > </span>
+
+<sidebar-list [apps]="apps"></sidebar-list>
+<snackbar *ngIf="isSidebarOpen" ></snackbar>

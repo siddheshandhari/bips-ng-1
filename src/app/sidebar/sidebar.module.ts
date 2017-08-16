@@ -22,13 +22,9 @@ import { SnackbarItemComponent } from './snackbar/snackbar-item/snackbar-item.co
     SidebarListComponent,
     SidebarItemComponent,
     SnackbarItemComponent,
-
-    // InMemoryWebApiModule.forRoot(SidebarAppMemoryData)
-    // InMemoryWebApiModule,
-    // SidebarAppMemoryData
   ],
   exports: [
     SidebarComponent
-  ]
+  ],
 })
 export class SidebarModule { }

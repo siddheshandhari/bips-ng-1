@@ -12,10 +12,12 @@ export class AppsService {
   runningApps: Observable<Array<number>>
 
   appsDict = {
-    '1': 'crm',
-    '2': 'contact',
-    '3': 'something'
-  };
+    1: { name: 'crm', path: './crm', imgUrl: '../../assets/imgs/crm.png' },
+    2: { name: 'note', path: './crm', imgUrl: '../../assets/imgs/note.png' },
+    3: { name: 'contact', path: './crm', imgUrl: '../../assets/imgs/contact.png' },
+    4: { name: 'folder', path: './crm', imgUrl: '../../assets/imgs/folder.png' },
+    5: { name: 'company', path: './crm', imgUrl: '../../assets/imgs/company.png' },
+  }
 
   constructor(private store: Store<runningApps>){
     this.runningApps = store.select('runningApps');

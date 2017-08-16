@@ -6,6 +6,9 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { ADD_INSTALLED_APPS, REMOVE_INSTALLED_APPS } from '../../reducers/installedApps.reducer';
 
+//Service
+import { AppsService } from '../apps/apps.service';
+
 interface InstalledAppsState {
   installedApps: Array<number>;
 }
@@ -13,27 +16,34 @@ interface InstalledAppsState {
 @Component({
   selector: 'sidebar',
   templateUrl: 'sidebar.component.html',
-  styleUrls: ['sidebar.component.css']
+  styleUrls: ['sidebar.component.css'],
+  providers: [
+    AppsService
+  ]
 })
 
 export class SidebarComponent {
 
-  installedApps: Observable<Array<number>>
-  apps: Array<object>;
+  installedApps: Array<number> = [];
+  apps: Array<object> = [];
 
-  constructor(private store: Store<InstalledAppsState>) {
-    this.installedApps = store.select('installedApps');
+  constructor(private store: Store<InstalledAppsState>, private appsService: AppsService) {
+    store.select('installedApps').subscribe(state => this.installedApps = state);
+    this.installedApps.map(AppId => {
+      this.apps.push(this.appsService.appsDict[AppId])
+    })
   }
 
-  @HostBinding('class.isSidebarOpen') isSidebarOpen: boolean = false;
+  @HostBinding('class.isSidebarOpen') isSidebarOpen: boolean = true;
 
   //control the sidebar toggle
   sidebarOpen(){ this.isSidebarOpen = true; }
   sidebarClose(){ this.isSidebarOpen= false; }
 
-  installApp(){
+  installApp(appId){
     this.store.dispatch({
-      type: ADD_INSTALLED_APPS
+      type: ADD_INSTALLED_APPS,
+      appId: appId
     })
   }
 

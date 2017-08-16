@@ -39,7 +39,7 @@ const appRoutes: Routes = [
     StoreModule.forRoot({
       installedApps: installedAppsReducer,
       runningApps: runningAppsReducer,
-      hiderApps: hideAppsReducer,
+      hideApps: hideAppsReducer,
       topWindow: topWindowReducer
     }),
     StoreDevtoolsModule.instrument({
