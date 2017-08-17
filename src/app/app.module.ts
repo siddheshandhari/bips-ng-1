@@ -12,7 +12,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DesktopComponent } from './desktop/desktop.component';
-// import { AuthGuard }  from './login/login-authguard.component';
+import { LoginService } from './login/login.service';
+import { AuthGuard }  from './login/login.authguard';
 
 //reducers
 import { installedAppsReducer } from '../reducers/installedApps.reducer';
@@ -21,8 +22,10 @@ import { hideAppsReducer } from '../reducers/hideApps.reducer';
 import { topWindowReducer } from '../reducers/topWindow.reducer';
 
 const appRoutes: Routes = [
-  { path: 'auth', component: LoginComponent },
-  { path: '**', component: DesktopComponent, canActivate:[] },
+  { path: '', component: LoginComponent },
+  { path: 'desktop', component: DesktopComponent, canActivate:[AuthGuard]  },
+  //otherwise redirect to home
+  { path: '**', redirectTo: '' }
   
 
 ]
@@ -49,7 +52,7 @@ const appRoutes: Routes = [
       maxAge: 25
     })
   ],
-  providers: [],
+  providers: [LoginService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

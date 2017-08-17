@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import * as screenfull from 'screenfull';
+import { LoginService } from './../login/login.service';
 
 @Component({
   selector: 'desktop',
@@ -8,7 +9,9 @@ import * as screenfull from 'screenfull';
 })
 
 export class DesktopComponent {
-  constructor(){
+
+  
+  constructor(private login: LoginService){
 
   }
 
