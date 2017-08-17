@@ -8,6 +8,16 @@ import { Component } from '@angular/core';
 
 
 export class CurrentUserInfo{
-        name="UserName";
-        imageurl='./../../assets/imgs/user.png';
+    showavatar = false;
+    imageurl='./../../assets/imgs/user.png';
+
+    showAvatar(){
+        if(!this.showavatar){
+            this.showavatar = true;
+        }
+        else{
+            this.showavatar = false;
+        }
+        
+    }
 }
