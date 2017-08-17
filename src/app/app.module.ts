@@ -28,6 +28,7 @@ const appRoutes: Routes = [
   { path: '', component: DesktopComponent},
   // { path: '', component: LoginComponent },
   // { path: 'desktop', component: DesktopComponent, canActivate:[AuthGuard]  },
+
   //otherwise redirect to home
   { path: '**', redirectTo: '' }
 

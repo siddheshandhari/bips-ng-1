@@ -23,7 +23,7 @@ export class DraggableDirective implements OnInit {
   constructor(private el: ElementRef, private renderer: Renderer) { }
 
   ngOnInit() {
-      let element = this.handle ? this.handle : this.el.nativeElement;
+      let element = this.el.nativeElement.querySelector('.window-header');
   }
 
   private getPosition(x: number, y: number) {
