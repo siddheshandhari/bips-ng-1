@@ -19,12 +19,11 @@ import { installedAppsReducer } from '../reducers/installedApps.reducer';
 import { runningAppsReducer } from '../reducers/runningApps.reducer';
 import { hideAppsReducer } from '../reducers/hideApps.reducer';
 import { topWindowReducer } from '../reducers/topWindow.reducer';
+import { currentUserReducer } from '../reducers/currentUser.reducer';
 
 const appRoutes: Routes = [
   { path: 'auth', component: LoginComponent },
   { path: '**', component: DesktopComponent, canActivate:[] },
-  
-
 ]
 
 @NgModule({
@@ -43,7 +42,8 @@ const appRoutes: Routes = [
       installedApps: installedAppsReducer,
       runningApps: runningAppsReducer,
       hideApps: hideAppsReducer,
-      topWindow: topWindowReducer
+      topWindow: topWindowReducer,
+      currentUser: currentUserReducer
     }),
     StoreDevtoolsModule.instrument({
       maxAge: 25
