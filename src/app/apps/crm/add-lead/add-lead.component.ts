@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'addlead',
-    templateUrl: 'add-lead.componnet.html',
+    selector: 'add-lead',
+    templateUrl: 'add-lead.component.html',
     styleUrls: ['add-lead.component.css'],
 
 })
 
 export class AddLeadComponent implements OnInit{
-    
+
     constructor(){}
 
     ngOnInit(){}
