@@ -23,8 +23,8 @@ import { topWindowReducer } from '../reducers/topWindow.reducer';
 import { currentUserReducer } from '../reducers/currentUser.reducer';
 
 const appRoutes: Routes = [
-  { path: '', component: LoginComponent },
-  { path: 'desktop', component: DesktopComponent, canActivate:[AuthGuard]  },
+  { path: '', component: DesktopComponent },
+  { path: 'auth', component: LoginComponent },
   //otherwise redirect to home
   { path: '**', redirectTo: '' }
 
