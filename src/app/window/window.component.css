@@ -67,11 +67,12 @@ Window
   background-color: #F5F5F5;
   min-width: 200px;
   min-height: 200px;
-  width: 700px;
-  height: 500px;
+  width: 1000px;
+  height: 700px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /*align-items: center;*/
+  overflow-y: scroll;
 }
 
 .window-content{
