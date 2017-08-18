@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AddLeadComponent } from './add-lead/add-lead.component';
 
 @Component({
   selector: 'inventory',

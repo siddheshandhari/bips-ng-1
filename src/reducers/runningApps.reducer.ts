@@ -1,7 +1,9 @@
 export const ADD_RUNNING_APPS = 'ADDED_RUNNING_APP';
 export const REMOVE_RUNNING_APPS = 'REMOVE_RUNNING_APP';
 
-export function runningAppsReducer(state = [], action){
+const initialState = [22];
+
+export function runningAppsReducer(state = initialState, action){
   switch (action.type) {
     default:
       return state;
