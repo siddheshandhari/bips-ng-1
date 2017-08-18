@@ -24,9 +24,6 @@ export class WindowComponent {
   private oldZIndex: string = '';
   private oldPosition: string = '';
 
-  started = new EventEmitter<any>();
-  stopped = new EventEmitter<any>();
-
   @ViewChild('windowHeader') windowHeader: ElementRef;
 
   constructor(private el: ElementRef, private renderer: Renderer2){}
@@ -75,7 +72,6 @@ export class WindowComponent {
     this.renderer.setStyle(this.el.nativeElement, 'z-index', '99999');
 
     if (!this.moving) {
-      this.started.emit(this.el.nativeElement);
       this.moving = true;
     }
   }
@@ -88,7 +84,6 @@ export class WindowComponent {
     }
 
     if (this.moving) {
-      this.stopped.emit(this.el.nativeElement);
       this.moving = false;
       this.oldTrans.x += this.tempTrans.x;
       this.oldTrans.y += this.tempTrans.y;
@@ -96,12 +91,6 @@ export class WindowComponent {
   }
 
   onMouseDown(event: any) {
-    // 1. skip right click;
-    // 2. if handle is set, the element can only be moved by handle
-    if (event.button == 2 || (this.windowHeader !== undefined && event.target !== this.windowHeader)) {
-      return;
-    }
-
     this.orignal = this.getPosition(event.clientX, event.clientY);
     this.pickUp();
   }
