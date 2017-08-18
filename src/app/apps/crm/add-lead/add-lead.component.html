@@ -2,11 +2,12 @@
     <h5 class="head_title">Add New Lead</h5>
     <div  class="company_part">
         <h6 class="subhead_title">Company Information</h6>
-        <form>
+        <form (ngSubmit)="onSubmit()" >
           <div class="row">
-              <div class="col-md-3">
+              
+              <div class="from-group col-md-3" >
                  <label>Company Name</label><br>
-                 <input type="text">
+                 <input type="text" class="from-control" [(ngModel)]="data.name">
               </div>
 
               <div class="col-md-3">
@@ -27,169 +28,9 @@
                
           </div>
 
-          <div class="row">
-                <div class="col-md-3">
-                    <label>Tire</label><br>
-                    <input type="text">
-                </div>
-
-                <div class="col-md-3">
-                    <label>Rating</label><br>
-                    <input type="text">
-                </div>
-
-                <div class="col-md-3">
-                    <label>Industry</label><br>
-                    <input type="text">
-                </div>
-
-                <div class="col-md-3">
-                    <label>+</label>
-                    
-                </div>
-
-          </div>
-
-        </form>
-    </div>
-
-    <div class="contact_part">
-
-        <h6 class="subhead_title">Contact Information</h6>
-        <form>
-          <div class="row">
-              <div class="col-md-3">
-                 <label>Owner Name</label><br>
-                 <input type="text">
-              </div>
-
-              <div class="col-md-3">
-                 <label>FirstName</label><br>
-                 <input type="text">
-              </div>
-               
-
-              <div class="col-md-3">
-                 <label>Lastname</label><br>
-                 <input type="text">
-              </div>
-
-              <div class="col-md-3">
-                 <label>Title</label><br>
-                 <input type="text">
-              </div>
-               
-          </div>
-
-          <div class="row">
-                <div class="col-md-3">
-                    <label>Phone</label><br>
-                    <input type="text">
-                </div>
-
-                <div class="col-md-3">
-                    <label>Email</label><br>
-                    <input type="text">
-                </div>
-
-                <div class="col-md-3">
-                    <label>Fax</label><br>
-                    <input type="text">
-                </div>
-
-                <div class="col-md-3">
-                    <label>Report To</label><br>
-                    <input type="text">
-                    
-                </div>
-
-          </div>
-
-              <div class="row">
-                <div class="col-md-3">
-                    <label>Skype_ID</label><br>
-                    <input type="text">
-                </div>
-
-                <div class="col-md-3">
-                    <label>Customer Type</label><br>
-                    <input type="text">
-                </div>
-
-                <div class="col-md-3">
-                    <label>Industry</label><br>
-                    <input type="text">
-                </div>
-
-                <div class="col-md-3">
-                    <label>Twitter</label><br>
-                     <input type="text">
-                </div>
-
-          </div>
-
-        </form>
-    </div>
-
-
-
-<div  class="address_part">
-        <h6 class="subhead_title">Address Information</h6>
-        <form>
-          <div class="row">
-              <div class="col-md-6">
-                  <div class="row">
-                            <div class="col-md-12">
-                                <label>Street</label><br>
-                                <input type="text">
-                            </div>
-                   </div>
-
-                    <div class="row">
-                            <div class="col-md-6">
-                                <label>City</label><br>
-                                <input type="text">
-                            </div>
-                            
-
-                            <div class="col-md-3">
-                                <label>State</label><br>
-                                <input type="text">
-                            </div>
-
-                            <div class="col-md-3">
-                                <label>Zip</label><br>
-                                <input type="text">
-                            </div>
-                    </div>
-              </div>
-
-              <div class="col-md-6">
-                    <div class="col-md-3">
-                        <label>Company Name</label><br>
-                        <input type="text">
-                    </div>
-
-                    <div class="col-md-3">
-                        <label>Website</label><br>
-                        <input type="text">
-                    </div>
-                    
-
-                    <div class="col-md-3">
-                        <label>Annual Revenue</label><br>
-                        <input type="text">
-                    </div>
-
-                    <div class="col-md-3">
-                        <label>No.of Employees</label><br>
-                        <input type="text">
-                    </div>
-              </div>
-               
-          </div>
-
           
+
+          <button type= "submit" class="btn btn-primary">Submit</button>
 
         </form>
     </div>
