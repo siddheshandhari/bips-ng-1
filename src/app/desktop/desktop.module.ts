@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { SidebarModule } from '../sidebar/sidebar.module';
 import { MenubarModule } from '../menubar/menubar.module';
 import { CrmModule } from '../apps/crm/crm.module';
+import { WindowModule } from '../window/window.module';
 
 import { DesktopComponent } from './desktop.component';
 import { MenubarComponent } from '../menubar/menubar.component';
@@ -21,6 +22,7 @@ import { ToggleFullScreenDirective } from './toggleFullScreen.directive';
     SidebarModule,
     MenubarModule,
     CrmModule,
+    WindowModule,
   ],
 })
 export class DesktopModule { }
