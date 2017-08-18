@@ -22,7 +22,7 @@ export class DesktopComponent {
   apps: Array<object> = [];
 
   constructor(private store: Store<RunningAppsState>, private login: LoginService){
-    store.select('runningApps').subscribe(state => this.runningApps = state);
+    store.select('runningApps').subscribe(state => {this.runningApps = state;});
   }
 
 }

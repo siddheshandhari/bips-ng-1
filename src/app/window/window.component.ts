@@ -1,4 +1,6 @@
-import { Component, ViewChild, AfterViewInit, ElementRef, Renderer2, Input, Output, OnInit, HostListener, EventEmitter } from '@angular/core';
+import { Component, ElementRef, Renderer2 } from '@angular/core';
+
+
 
 class Position {
   constructor(public x: number, public y: number) { }
@@ -11,7 +13,7 @@ class Position {
   host: {
     '(document: mouseup)': 'onMouseUp($event)',
     '(document: mousemove)': 'onMouseMove($event)',
-    '(document: mouseleave)': 'onMouseLeave($event)'
+    '(document: mouseleave)': 'onMouseUp($event)'
   }
 })
 
@@ -24,31 +26,14 @@ export class WindowComponent {
   private oldZIndex: string = '';
   private oldPosition: string = '';
 
-  @ViewChild('windowHeader') windowHeader: ElementRef;
-
   constructor(private el: ElementRef, private renderer: Renderer2){}
-  ngAfterViewInit(){
-  }
 
   private getPosition(x: number, y: number) {
     return new Position(x, y);
   }
 
-  private moveTo(x: number, y: number) {
-    if (this.orignal) {
-      this.tempTrans.x = x - this.orignal.x;
-      this.tempTrans.y = y - this.orignal.y;
-      let value = `translate(${this.tempTrans.x + this.oldTrans.x}px, ${this.tempTrans.y + this.oldTrans.y}px)`;
-      this.renderer.setStyle(this.el.nativeElement, 'transform', value);
-      this.renderer.setStyle(this.el.nativeElement, '-webkit-transform', value);
-      this.renderer.setStyle(this.el.nativeElement, '-ms-transform', value);
-      this.renderer.setStyle(this.el.nativeElement, '-moz-transform', value);
-      this.renderer.setStyle(this.el.nativeElement, '-o-transform', value);
-    }
-  }
-
-  private pickUp() {
-    // get old z-index and position:
+  onMouseDown(event: any) {
+    this.orignal = this.getPosition(event.clientX, event.clientY);
     this.oldZIndex = this.el.nativeElement.style.zIndex ? this.el.nativeElement.style.zIndex : '';
     this.oldPosition = this.el.nativeElement.style.position ? this.el.nativeElement.style.position : '';
 
@@ -57,32 +42,12 @@ export class WindowComponent {
       this.oldPosition = window.getComputedStyle(this.el.nativeElement, null).getPropertyValue("position");
     }
 
-    // setup default position:
-    let position = 'relative';
-
-    // check if old position is draggable:
-    if (this.oldPosition && (
-        this.oldPosition === 'absolute' ||
-        this.oldPosition === 'fixed' ||
-        this.oldPosition === 'relative')) {
-      position = this.oldPosition;
-    }
-
-    this.renderer.setStyle(this.el.nativeElement, 'position', position);
-    this.renderer.setStyle(this.el.nativeElement, 'z-index', '99999');
-
     if (!this.moving) {
       this.moving = true;
     }
   }
 
-  private putBack() {
-    if (this.oldZIndex) {
-      this.renderer.setStyle(this.el.nativeElement, 'z-index', this.oldZIndex);
-    } else {
-      this.el.nativeElement.style.removeProperty('z-index');
-    }
-
+  onMouseUp() {
     if (this.moving) {
       this.moving = false;
       this.oldTrans.x += this.tempTrans.x;
@@ -90,22 +55,18 @@ export class WindowComponent {
     }
   }
 
-  onMouseDown(event: any) {
-    this.orignal = this.getPosition(event.clientX, event.clientY);
-    this.pickUp();
-  }
-
-  onMouseUp() {
-    this.putBack();
-  }
-
-  onMouseLeave() {
-    this.putBack();
-  }
-
   onMouseMove(event: any) {
     if (this.moving) {
-      this.moveTo(event.clientX, event.clientY);
+      if (this.orignal) {
+        this.tempTrans.x = event.clientX - this.orignal.x;
+        this.tempTrans.y = event.clientY - this.orignal.y;
+        let value = `translate(${this.tempTrans.x + this.oldTrans.x}px, ${this.tempTrans.y + this.oldTrans.y}px)`;
+        this.renderer.setStyle(this.el.nativeElement, 'transform', value);
+        this.renderer.setStyle(this.el.nativeElement, '-webkit-transform', value);
+        this.renderer.setStyle(this.el.nativeElement, '-ms-transform', value);
+        this.renderer.setStyle(this.el.nativeElement, '-moz-transform', value);
+        this.renderer.setStyle(this.el.nativeElement, '-o-transform', value);
+      }
     }
   }
 }
