@@ -3,7 +3,6 @@ import { NgClass } from '@angular/common';
 
 //Rxjs Store
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs/Observable';
 import { ADD_INSTALLED_APPS, REMOVE_INSTALLED_APPS } from '../../reducers/installedApps.reducer';
 
 //Service

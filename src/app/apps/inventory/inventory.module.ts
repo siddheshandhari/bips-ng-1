@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
 
-import { CrmComponent } from './crm.component';
-import { AddLeadComponent } from './add-lead/add-lead.component';
+import { InventoryComponent } from './inventory.component';
 
 
 @NgModule({
   declarations: [
-    CrmComponent,
-    AddLeadComponent,
+    InventoryComponent,
   ],
   exports: [
-    CrmComponent
+    InventoryComponent
   ]
 
 })
-export class CrmModule { }
+export class InventoryModule { }
