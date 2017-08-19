@@ -39,9 +39,9 @@ export class WindowComponent implements OnInit {
 
   constructor(private store: Store<TopWindowState>, private el: ElementRef, private renderer: Renderer2, private appsService: AppsService){
     store.select('topWindow').subscribe(state => {
-      this.topWindow = state
-      if(this.topWindow.appId == this.appId){
-        console.log('in');
+      this.topWindow = state;
+      if(this.topWindow.appId == this.appId && window.getComputedStyle(this.el.nativeElement, null).getPropertyValue("z-index") < this.topWindow.zIndex ){
+        this.liftWindow();
       }
     });
   }
@@ -76,7 +76,7 @@ export class WindowComponent implements OnInit {
     this.liftWindow();
     if (!this.moving) {
       this.moving = true;
-    }
+    };
   }
 
   onMouseUp() {
@@ -107,17 +107,19 @@ export class WindowComponent implements OnInit {
 
   //increnment the zIndex of the clicked winodow by 1
   liftWindow() {
-    this.topZindex = this.topWindow.zIndex;
-    //make the current window as topmost window
-    this.renderer.setStyle(this.el.nativeElement, 'z-index', this.topZindex + 1);
-    //update the store
-    this.store.dispatch({
-      type: SET_TOP_WINDOW,
-      window: {
-        appId: this.appId,
-        zIndex: this.topZindex + 1,
-      }
-    })
+    if(window.getComputedStyle(this.el.nativeElement, null).getPropertyValue("z-index") < this.topWindow.zIndex){
+      this.topZindex = this.topWindow.zIndex;
+      //make the current window as topmost window
+      this.renderer.setStyle(this.el.nativeElement, 'z-index', this.topZindex + 1);
+      //update the store
+      this.store.dispatch({
+        type: SET_TOP_WINDOW,
+        window: {
+          appId: this.appId,
+          zIndex: this.topZindex + 1,
+        }
+      })
+    }
   }
 
   maxWindow() {
