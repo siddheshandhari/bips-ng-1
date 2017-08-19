@@ -1,4 +1,7 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from "@angular/common/http";
+import { BrowserModule }  from "@angular/platform-browser";
 
 import { CrmComponent } from './crm.component';
 import { AddLeadComponent } from './add-lead/add-lead.component';
@@ -10,7 +13,12 @@ import { AddLeadComponent } from './add-lead/add-lead.component';
     AddLeadComponent,
   ],
   exports: [
-    CrmComponent
+    CrmComponent,
+    HttpClientModule,
+    BrowserModule
+  ],
+  imports: [
+    FormsModule
   ]
 
 })
