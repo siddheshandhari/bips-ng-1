@@ -1,6 +1,10 @@
 import { Component, ElementRef, Renderer2 } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { SET_TOP_WINDOW } from '../../reducers/topWindow.reducer';
 
-
+interface TopWindowState {
+  topWindow: object;
+}
 
 class Position {
   constructor(public x: number, public y: number) { }
@@ -18,6 +22,7 @@ class Position {
 })
 
 export class WindowComponent {
+  topWindow: object;
   appTitle = "sample";
   private moving: boolean = false;
   private orignal: Position = null;
@@ -26,7 +31,9 @@ export class WindowComponent {
   private oldZIndex: string = '';
   private oldPosition: string = '';
 
-  constructor(private el: ElementRef, private renderer: Renderer2){}
+  constructor(private store: Store<TopWindowState>, private el: ElementRef, private renderer: Renderer2){
+    store.select('topWindow').subscribe(state => this.topWindow = state);
+  }
 
   private getPosition(x: number, y: number) {
     return new Position(x, y);
@@ -35,13 +42,16 @@ export class WindowComponent {
   onMouseDown(event: any) {
     this.orignal = this.getPosition(event.clientX, event.clientY);
     this.oldZIndex = this.el.nativeElement.style.zIndex ? this.el.nativeElement.style.zIndex : '';
-    this.oldPosition = this.el.nativeElement.style.position ? this.el.nativeElement.style.position : '';
-
     if (window) {
-      this.oldZIndex = window.getComputedStyle(this.el.nativeElement, null).getPropertyValue("z-index");
-      this.oldPosition = window.getComputedStyle(this.el.nativeElement, null).getPropertyValue("position");
+      this.oldZIndex = this.topWindow['zIndex'];
+      this.renderer.setStyle(this.el.nativeElement, 'z-index', this.oldZIndex + 1);
+      this.store.dispatch({
+        type: SET_TOP_WINDOW,
+        window: {
+          zIndex: this.oldZIndex + 1,
+        }
+      })
     }
-
     if (!this.moving) {
       this.moving = true;
     }

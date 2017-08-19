@@ -1,18 +1,22 @@
 export const SET_TOP_WINDOW = 'SET_TOP_WINDOW';
 
-export class Window {
-  constructor(
-    public zIndex: number,
-    public left: number,
-    public top: number
-  ){}
+const initialState: object = {
+  zIndex: 4,
+  left: 300,
+  top: 0
 }
 
-export function topWindowReducer(state: Window = new Window(4, 300, 0), action){
+export function topWindowReducer(state = initialState, action){
   switch (action.type) {
     default:
       return state;
     case SET_TOP_WINDOW:
-      return new Window(action.window.zIndex, action.window.left, action.window.top);
+      return Object.assign(
+        {},
+        state,
+        (<any>Object).entries({zIndex: action.window.zIndex, top: action.window.top, left: action.window.left})
+          .filter(([key, value]) => value !== undefined)
+          .reduce((obj, [key, value]) => (obj[key] = value, obj), {})
+      )
   }
 };
