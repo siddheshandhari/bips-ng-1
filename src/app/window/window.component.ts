@@ -79,6 +79,20 @@ export class WindowComponent implements OnInit {
     }
   }
 
+//when the window's body is clicked, increnment the zIndex of the clicked winodow by 1
+  pickupWindow() {
+    this.topZindex = this.topWindow.zIndex;
+    //make the current window as topmost window
+    this.renderer.setStyle(this.el.nativeElement, 'z-index', this.topZindex + 1);
+    //update the store
+    this.store.dispatch({
+      type: SET_TOP_WINDOW,
+      window: {
+        zIndex: this.topZindex + 1,
+      }
+    })
+  }
+
   onMouseUp() {
     if (this.moving) {
       this.moving = false;
