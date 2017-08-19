@@ -26,10 +26,14 @@ interface TopWindowState {
 export class WindowComponent implements OnInit {
   @Input() private appId: number;
   @ViewChild('windowBody') private windowBody: ElementRef;
+  private isMax: boolean;
+  private isMin: boolean;
   private topWindow: any;
   private appTitle: string;
   private oldLeft: number;
   private oldTop: number;
+  private historyPos: any;
+  private historySize: any;
   private oldX: number;
   private oldY: number;
   private moving: boolean = false;
@@ -123,10 +127,27 @@ export class WindowComponent implements OnInit {
   }
 
   maxWindow() {
-    this.renderer.setStyle(this.el.nativeElement, 'left', '230px');
-    this.renderer.setStyle(this.el.nativeElement, 'top', '0px');
-    this.renderer.setStyle(this.windowBody.nativeElement, 'width', (window.screen.width) - 230 + 'px');
-    this.renderer.setStyle(this.windowBody.nativeElement, 'height', (window.screen.height) + 'px');
+    if(!this.isMax){
+      this.historyPos = {
+        left: this.el.nativeElement.offsetLeft,
+        top: this.el.nativeElement.offsetTop
+      };
+      this.historySize = {
+        width: window.getComputedStyle(this.el.nativeElement, null).getPropertyValue("width"),
+        height: window.getComputedStyle(this.el.nativeElement, null).getPropertyValue("height")
+      };
+      this.renderer.setStyle(this.el.nativeElement, 'left', '230px');
+      this.renderer.setStyle(this.el.nativeElement, 'top', '0px');
+      this.renderer.setStyle(this.windowBody.nativeElement, 'width', (window.screen.width) - 230 + 'px');
+      this.renderer.setStyle(this.windowBody.nativeElement, 'height', (window.screen.height) + 'px');
+      this.isMax = true;
+    } else {
+      this.renderer.setStyle(this.el.nativeElement, 'left', this.historyPos.left + 'px');
+      this.renderer.setStyle(this.el.nativeElement, 'top', this.historyPos.top + 'px');
+      this.renderer.setStyle(this.windowBody.nativeElement, 'width', this.historySize.width);
+      this.renderer.setStyle(this.windowBody.nativeElement, 'height', this.historySize.height);
+      this.isMax = false;
+    }
   }
 
   closeWindow() {
