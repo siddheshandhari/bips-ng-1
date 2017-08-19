@@ -9,7 +9,7 @@ import { RouterModule, Routes} from "@angular/router";
 
 import { CrmComponent } from './crm.component';
 import { AddLeadComponent } from './add-lead/add-lead.component';
-import { CrmNavbarComponent } from './crm-navbar/crm-navbar.component';
+import { CrmNavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
@@ -20,9 +20,6 @@ import { CrmNavbarComponent } from './crm-navbar/crm-navbar.component';
   ],
   imports: [
     FormsModule,
-    RouterModule.forRoot([
-      {path: 'crm-navbar', component:CrmNavbarComponent}
-    ])
   ],
   exports: [
     CrmComponent,

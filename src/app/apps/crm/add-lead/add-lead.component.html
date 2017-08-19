@@ -1,5 +1,3 @@
-<app-crm-navbar></app-crm-navbar>
-
 <h5 class="head_title">Add New Lead</h5>
 <div  class="company_part">
     <h6 class="subhead_title">Company Information</h6>
@@ -12,7 +10,7 @@
         <h6 class="subhead_title">Company Information</h6>
         <form #addleadForm="ngForm" (ngSubmit)="onSubmit(addleadForm.value)" >
           <div class="row">
-              
+
               <div class="from-group col-md-3" >
                  <label>Company Name</label><br>
                  <input type="text" class="from-control" name="company_name" ngModel>
@@ -22,7 +20,7 @@
                  <label>Website</label><br>
                  <input type="text" class="form-control" name="website" ngModel >
               </div>
-               
+
 
               <div class="form-group col-md-3">
                  <label>Annual Revenue</label><br>
@@ -33,7 +31,7 @@
                  <label>No.of Employees</label><br>
                  <input type="text" class="form-control" name="employees" ngModel>
               </div>
-               
+
           </div>
 
 
@@ -107,7 +105,7 @@
               <div class="col-md-6">
                   <h6>Shipping Address</h6>
                   <div class="row">
-                      
+
                       <div class="col-md-6">
                           <label>First Name</label>
                           <input class="form-control" type="text" name="firstnameS" ngModel>
@@ -148,7 +146,7 @@
               <div class="col-md-6">
                   <h6>Billing Address</h6>
                   <div class="row">
-                      
+
                       <div class="col-md-6">
                           <label>First Name</label>
                           <input class="form-control" type="text" name="firstnameB" ngModel>
@@ -184,7 +182,7 @@
 
 
               </div>
-              
+
           </div>
 
           <!--contacts info-->
@@ -204,10 +202,10 @@
                       </div>
                   </div>
               </div>
-              
+
           </div>
 
-          
+
 
 
       <button type= "submit" class="btn btn-primary">Submit</button>
