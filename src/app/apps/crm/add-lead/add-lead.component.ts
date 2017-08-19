@@ -54,7 +54,6 @@ export class AddLeadComponent implements OnInit{
 
     onSubmit(myForm){
         console.log('onSubmit called')
-    }
 
     // onSubmit(addleadForm){
     //    event.preventDefault();

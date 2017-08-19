@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs/Observable';
 import { ADD_RUNNING_APPS, REMOVE_RUNNING_APPS } from '../../reducers/runningApps.reducer';
+import { SET_TOP_WINDOW } from '../../reducers/topWindow.reducer';
 
 interface runningApps {
   runningApps: Array<number>;
@@ -9,7 +9,7 @@ interface runningApps {
 
 @Injectable()
 export class AppsService {
-  runningApps: Observable<Array<number>>
+  runningApps: Array<number>
 
   appsDict = [
     { id: 1, name: 'accounts', path: './accounts', iconUrl: '../../assets/imgs/app-icons/accounts.png' },
@@ -40,14 +40,23 @@ export class AppsService {
   ]
 
   constructor(private store: Store<runningApps>){
-    this.runningApps = store.select('runningApps');
+    store.select('runningApps').subscribe(state => this.runningApps = state);
   }
 
   launchApp(appId) {
-    this.store.dispatch({
-      type: ADD_RUNNING_APPS,
-      id: appId
-    });
+    if(this.runningApps.includes(appId)){
+      this.store.dispatch({
+        type: SET_TOP_WINDOW,
+        window: {
+          appId: appId
+        }
+      })
+    } else {
+      this.store.dispatch({
+        type: ADD_RUNNING_APPS,
+        id: appId
+      });
+    }
   }
 
   closeApp(appId) {

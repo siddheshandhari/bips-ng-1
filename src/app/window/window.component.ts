@@ -1,4 +1,4 @@
-import { Component, ElementRef, Renderer2, OnInit, Input } from '@angular/core';
+import { Component, ElementRef, Renderer2, OnInit, Input, ViewChild, OnChanges } from '@angular/core';
 
 //reducer
 import { Store } from '@ngrx/store';
@@ -25,10 +25,15 @@ interface TopWindowState {
 
 export class WindowComponent implements OnInit {
   @Input() private appId: number;
-  topWindow;
-  appTitle = "sample";
+  @ViewChild('windowBody') private windowBody: ElementRef;
+  private isMax: boolean;
+  private isMin: boolean;
+  private topWindow: any;
+  private appTitle: string;
   private oldLeft: number;
   private oldTop: number;
+  private historyPos: any;
+  private historySize: any;
   private oldX: number;
   private oldY: number;
   private moving: boolean = false;
@@ -37,10 +42,17 @@ export class WindowComponent implements OnInit {
   private topZindex: number;
 
   constructor(private store: Store<TopWindowState>, private el: ElementRef, private renderer: Renderer2, private appsService: AppsService){
-    store.select('topWindow').subscribe(state => this.topWindow = state);
+    store.select('topWindow').subscribe(state => {
+      this.topWindow = state;
+      if(this.topWindow.appId == this.appId && window.getComputedStyle(this.el.nativeElement, null).getPropertyValue("z-index") < this.topWindow.zIndex ){
+        this.liftWindow();
+      }
+    });
   }
 
   ngOnInit(){
+    //Set the window title
+    this.appTitle = this.appsService.appsDict.find(app => app.id == this.appId).name;
     //get the zindex of the topWindow zIndex
     this.topZindex = this.topWindow.zIndex;
     this.topLeft = this.topWindow.left;
@@ -51,6 +63,7 @@ export class WindowComponent implements OnInit {
     this.store.dispatch({
       type: SET_TOP_WINDOW,
       window: {
+        appId: this.appId,
         zIndex: this.topZindex + 1,
         left: this.topLeft + 20,
         top: this.topTop + 20
@@ -64,33 +77,10 @@ export class WindowComponent implements OnInit {
     this.oldTop = this.el.nativeElement.offsetTop;
     this.oldX = event.clientX;
     this.oldY = event.clientY;
-    this.topZindex = this.topWindow.zIndex;
-    //make the current window as topmost window
-    this.renderer.setStyle(this.el.nativeElement, 'z-index', this.topZindex + 1);
-    //update the store
-    this.store.dispatch({
-      type: SET_TOP_WINDOW,
-      window: {
-        zIndex: this.topZindex + 1,
-      }
-    })
+    this.liftWindow();
     if (!this.moving) {
       this.moving = true;
-    }
-  }
-
-//when the window's body is clicked, increnment the zIndex of the clicked winodow by 1
-  pickupWindow() {
-    this.topZindex = this.topWindow.zIndex;
-    //make the current window as topmost window
-    this.renderer.setStyle(this.el.nativeElement, 'z-index', this.topZindex + 1);
-    //update the store
-    this.store.dispatch({
-      type: SET_TOP_WINDOW,
-      window: {
-        zIndex: this.topZindex + 1,
-      }
-    })
+    };
   }
 
   onMouseUp() {
@@ -111,10 +101,52 @@ export class WindowComponent implements OnInit {
       this.store.dispatch({
         type: SET_TOP_WINDOW,
         window: {
+          appId: this.appId,
           left: this.oldLeft + l,
           top: this.oldTop + t
         }
       })
+    }
+  }
+
+  //increnment the zIndex of the clicked winodow by 1
+  liftWindow() {
+    if(window.getComputedStyle(this.el.nativeElement, null).getPropertyValue("z-index") < this.topWindow.zIndex){
+      this.topZindex = this.topWindow.zIndex;
+      //make the current window as topmost window
+      this.renderer.setStyle(this.el.nativeElement, 'z-index', this.topZindex + 1);
+      //update the store
+      this.store.dispatch({
+        type: SET_TOP_WINDOW,
+        window: {
+          appId: this.appId,
+          zIndex: this.topZindex + 1,
+        }
+      })
+    }
+  }
+
+  maxWindow() {
+    if(!this.isMax){
+      this.historyPos = {
+        left: this.el.nativeElement.offsetLeft,
+        top: this.el.nativeElement.offsetTop
+      };
+      this.historySize = {
+        width: window.getComputedStyle(this.el.nativeElement, null).getPropertyValue("width"),
+        height: window.getComputedStyle(this.el.nativeElement, null).getPropertyValue("height")
+      };
+      this.renderer.setStyle(this.el.nativeElement, 'left', '230px');
+      this.renderer.setStyle(this.el.nativeElement, 'top', '0px');
+      this.renderer.setStyle(this.windowBody.nativeElement, 'width', (window.screen.width) - 230 + 'px');
+      this.renderer.setStyle(this.windowBody.nativeElement, 'height', (window.screen.height) + 'px');
+      this.isMax = true;
+    } else {
+      this.renderer.setStyle(this.el.nativeElement, 'left', this.historyPos.left + 'px');
+      this.renderer.setStyle(this.el.nativeElement, 'top', this.historyPos.top + 'px');
+      this.renderer.setStyle(this.windowBody.nativeElement, 'width', this.historySize.width);
+      this.renderer.setStyle(this.windowBody.nativeElement, 'height', this.historySize.height);
+      this.isMax = false;
     }
   }
 

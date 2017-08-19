@@ -3,22 +3,26 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserModule }  from "@angular/platform-browser";
+import { RouterModule, Routes} from "@angular/router";
 
 
 
 import { CrmComponent } from './crm.component';
 import { AddLeadComponent } from './add-lead/add-lead.component';
+import { CrmNavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
   declarations: [
     CrmComponent,
     AddLeadComponent,
+    CrmNavbarComponent
   ],
   imports: [
     FormsModule,
     ReactiveFormsModule ,
     BrowserModule
+
   ],
   exports: [
     CrmComponent,
