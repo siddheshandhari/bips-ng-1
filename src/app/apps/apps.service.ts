@@ -50,7 +50,7 @@ export class AppsService {
     });
   }
 
-  closeApps(appId) {
+  closeApp(appId) {
     this.store.dispatch({
       type: REMOVE_RUNNING_APPS,
       id: appId

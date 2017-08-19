@@ -1,19 +1,21 @@
-import { Component, ElementRef, Renderer2 } from '@angular/core';
+import { Component, ElementRef, Renderer2, OnInit, Input } from '@angular/core';
+
+//reducer
 import { Store } from '@ngrx/store';
 import { SET_TOP_WINDOW } from '../../reducers/topWindow.reducer';
 
+//Service
+import { AppsService } from '../apps/apps.service';
+
 interface TopWindowState {
   topWindow: object;
-}
-
-class Position {
-  constructor(public x: number, public y: number) { }
 }
 
 @Component({
   selector: 'window',
   templateUrl: 'window.component.html',
   styleUrls: ['window.component.css'],
+  providers: [AppsService],
   host: {
     '(document: mouseup)': 'onMouseUp($event)',
     '(document: mousemove)': 'onMouseMove($event)',
@@ -21,37 +23,57 @@ class Position {
   }
 })
 
-export class WindowComponent {
-  topWindow: object;
+export class WindowComponent implements OnInit {
+  @Input() private appId: number;
+  topWindow;
   appTitle = "sample";
+  private oldLeft: number;
+  private oldTop: number;
+  private oldX: number;
+  private oldY: number;
   private moving: boolean = false;
-  private orignal: Position = null;
-  private oldTrans: Position = new Position(0, 0);
-  private tempTrans: Position = new Position(0, 0);
-  private oldZIndex: string = '';
-  private oldPosition: string = '';
+  private topLeft: number;
+  private topTop: number;
+  private topZindex: number;
 
-  constructor(private store: Store<TopWindowState>, private el: ElementRef, private renderer: Renderer2){
+  constructor(private store: Store<TopWindowState>, private el: ElementRef, private renderer: Renderer2, private appsService: AppsService){
     store.select('topWindow').subscribe(state => this.topWindow = state);
   }
 
-  private getPosition(x: number, y: number) {
-    return new Position(x, y);
+  ngOnInit(){
+    //get the zindex of the topWindow zIndex
+    this.topZindex = this.topWindow.zIndex;
+    this.topLeft = this.topWindow.left;
+    this.topTop = this.topWindow.top;
+    this.renderer.setStyle(this.el.nativeElement, 'z-index', this.topZindex + 1);
+    this.renderer.setStyle(this.el.nativeElement, 'left', this.topLeft + 20 + 'px');
+    this.renderer.setStyle(this.el.nativeElement, 'top', this.topTop + 20 + 'px');
+    this.store.dispatch({
+      type: SET_TOP_WINDOW,
+      window: {
+        zIndex: this.topZindex + 1,
+        left: this.topLeft + 20,
+        top: this.topTop + 20
+      }
+    })
   }
 
   onMouseDown(event: any) {
-    this.orignal = this.getPosition(event.clientX, event.clientY);
-    this.oldZIndex = this.el.nativeElement.style.zIndex ? this.el.nativeElement.style.zIndex : '';
-    if (window) {
-      this.oldZIndex = this.topWindow['zIndex'];
-      this.renderer.setStyle(this.el.nativeElement, 'z-index', this.oldZIndex + 1);
-      this.store.dispatch({
-        type: SET_TOP_WINDOW,
-        window: {
-          zIndex: this.oldZIndex + 1,
-        }
-      })
-    }
+    //record the mouse position
+    this.oldLeft = this.el.nativeElement.offsetLeft;
+    this.oldTop = this.el.nativeElement.offsetTop;
+    this.oldX = event.clientX;
+    this.oldY = event.clientY;
+    this.topZindex = this.topWindow.zIndex;
+    //make the current window as topmost window
+    this.renderer.setStyle(this.el.nativeElement, 'z-index', this.topZindex + 1);
+    //update the store
+    this.store.dispatch({
+      type: SET_TOP_WINDOW,
+      window: {
+        zIndex: this.topZindex + 1,
+      }
+    })
     if (!this.moving) {
       this.moving = true;
     }
@@ -60,23 +82,30 @@ export class WindowComponent {
   onMouseUp() {
     if (this.moving) {
       this.moving = false;
-      this.oldTrans.x += this.tempTrans.x;
-      this.oldTrans.y += this.tempTrans.y;
     }
   }
 
   onMouseMove(event: any) {
     if (this.moving) {
-      if (this.orignal) {
-        this.tempTrans.x = event.clientX - this.orignal.x;
-        this.tempTrans.y = event.clientY - this.orignal.y;
-        let value = `translate(${this.tempTrans.x + this.oldTrans.x}px, ${this.tempTrans.y + this.oldTrans.y}px)`;
-        this.renderer.setStyle(this.el.nativeElement, 'transform', value);
-        this.renderer.setStyle(this.el.nativeElement, '-webkit-transform', value);
-        this.renderer.setStyle(this.el.nativeElement, '-ms-transform', value);
-        this.renderer.setStyle(this.el.nativeElement, '-moz-transform', value);
-        this.renderer.setStyle(this.el.nativeElement, '-o-transform', value);
+      let l = event.clientX - this.oldX
+      let t = event.clientY - this.oldY
+      if(event.clientY < 0) {
+        t = 0;
       }
+      this.renderer.setStyle(this.el.nativeElement, 'left', this.oldLeft + l + 'px');
+      this.renderer.setStyle(this.el.nativeElement, 'top', this.oldTop + t + 'px');
+      this.store.dispatch({
+        type: SET_TOP_WINDOW,
+        window: {
+          left: this.oldLeft + l,
+          top: this.oldTop + t
+        }
+      })
     }
   }
+
+  closeWindow() {
+    this.appsService.closeApp(this.appId)
+  }
+
 }
