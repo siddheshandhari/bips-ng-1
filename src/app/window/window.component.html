@@ -8,6 +8,6 @@
       <button class="btn btn-danger btn-sm close-window-btn" (click)="closeWindow()"><i class="fa fa-times"></i></button>
     </span>
 </header>
-<div class='window-body' (click)="pickupWindow()">
+<div class='window-body' #windowBody (click)="liftWindow()">
   <ng-content></ng-content>
 </div>
