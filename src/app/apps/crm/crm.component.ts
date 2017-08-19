@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AddLeadComponent } from './add-lead/add-lead.component';
+import { CrmNavbarComponent} from './crm-navbar/crm-navbar.component';
 
 @Component({
   selector: 'crm',

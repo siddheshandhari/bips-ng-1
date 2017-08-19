@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms'
 import { HttpClient } from "@angular/common/http";
+import { CrmNavbarComponent} from "../crm-navbar/crm-navbar.component";
 
 @Component({
     selector: 'add-lead',
