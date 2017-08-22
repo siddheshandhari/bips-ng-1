@@ -16,10 +16,10 @@ import { EventComponent } from './event/event.component';
 
 import { LeadService } from './lead/lead.service';
 import { AccountService } from './account/account.service';
+
 import { PotentialService } from './potential/potential.service';
 import { TaskService } from './task/task.service';
 import { EventService } from './event/event.service';
-
 
 
 @NgModule({
@@ -29,9 +29,11 @@ import { EventService } from './event/event.service';
     PotentialComponent,
     AddLeadComponent,
     CrmNavbarComponent,
+
     LeadComponent,
     TaskComponent,
     EventComponent
+
   ],
   imports: [
     FormsModule,
@@ -45,11 +47,13 @@ import { EventService } from './event/event.service';
   providers: [
     AccountService,
     PotentialService,
+
     LeadService,
     TaskService,
     EventService,
 
   ]
+
 
 })
 export class CrmModule { }

@@ -1,16 +1,13 @@
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <ul class="navbar-nav mr-auto">
     <li class="nav-item">
-      <a class="nav-link" (click)="changeRouter('lead')">Lead</a>
+      <a class="nav-link" (click)="changeRouter('lead')"><img src="../../../assests/imgs/app-icons/lead.png"/>Lead</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" (click)="changeRouter('add-lead')">Add-Lead</a>
+    <li class="nav-item active">
+      <a class="nav-link" (click)="changeRouter('potential')">Potential</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" (click)="changeRouter('account')">Account</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" (click)="changeRouter('potential')">Potential</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" (click)="changeRouter('task')">Task</a>
@@ -18,6 +15,7 @@
     <li class="nav-item">
       <a class="nav-link" (click)="changeRouter('task')">Event</a>
     </li>
+
   </ul>
   <form class="form-inline my-2 my-lg-0">
     <input class="form-control mr-sm-2" type="text" placeholder="Search">
