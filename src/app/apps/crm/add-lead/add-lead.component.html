@@ -1,37 +1,103 @@
 
-<h3>Add Lead</h3>
+<h3 class="add_lead_title">Add Lead</h3>
 <form [formGroup]= "myForm" (ngSubmit)= "onSubmit(myForm)" >
     
     <div formGroupName= "t_company">
-        <div class="form-group">
-        <label>Company Name</label>
-        <input type="text" class="form-control" formControlName="company_name" name="company_name" >
+        <h5 class="subhead_title">Company Information</h5>
+        <div class="row">
+                <div class="form-group col-md-6">
+                    <label>Company Name</label>
+                    <input type="text" class="form-control" formControlName="company_name" name="company_name" >
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label>Tier</label>
+                    <input type="text" class="form-control" formControlName="tier" >
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label>Rating</label>
+                    <input type="text" class="form-control" formControlName="rating" >
+                </div>
+
+                
         </div>
 
-        <div class="form-group">
-        <label>Website</label>
-        <input type="text" class="form-control" formControlName="website" name="website" >
+        <div class="row">
+
+                <div class="form-group col-md-6">
+                        <label>Website</label>
+                        <input type="text" class="form-control" formControlName="website" name="website" >
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label>Annual Revenue</label>
+                    <input type="text" class="form-control" formControlName="annual_revenue" name="annual_revenue" >
+                </div> 
+        </div>
+
+        <div class="row">
+                <div class="form-group col-md-6">
+                    <label>No. of Employees</label>
+                    <input type="text" class="form-control" formControlName="employees" name="employees" >
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label>Industry</label>
+                    <input type="text" class="form-control" formControlName="industry" >
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label>Sub-Industry</label>
+                    <input type="text" class="form-control" formControlName="sub_industry" >
+                </div>
         </div>
     </div>
 
     <div formGroupName= "t_lead">
-        <label>Lead Status</label>
-        <input type="text" formControlName="lead_status">
+        <div class="row">
+            <div class="form-group col-md-3">
+                <label>Customer Type</label>
+                <input type="text" class="form-control" formControlName="customer_type">
+            </div>
+
+            <div class="form-group col-md-3">
+                <label>Lead Status</label>
+                <input type="text" class="form-control" formControlName="lead_status">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label>Lead Source</label>
+                <input type="text" class="form-control" formControlName="lead_source">
+            </div>
+
+        </div>
 
     </div>
 
+    <hr>
 
-    <div formGroupName= "shipping_address">
-        <label>Street</label>
-        <input type="text" formControlName="street">
-
-    </div>
+    <h5 class="subhead_title">Addresses</h5><br>
 
 
-    <div formGroupName= "billing_address">
-        <label>Street</label>
-        <input type="text" formControlName="street">
+    <div class="row">
+        <h6>Shipping Address</h6>
+        <div class="col-md-6">
+            <div formGroupName= "shipping_address">
+                <label>Street</label>
+                <input type="text" class="form-control" formControlName="street">
 
+            </div>
+        </div>
+
+        <div class="col-md-6">
+        <h6>Billing Address</h6>
+            <div formGroupName= "billing_address">
+                <label>Street</label>
+                <input type="text" class="form-control" formControlName="street">
+
+            </div>
+        </div>
     </div>
 
     <div formArrayName="contacts">
