@@ -13,6 +13,8 @@ import { AddLeadComponent } from './add-lead/add-lead.component';
 import { LeadListComponent } from './lead-list/lead-list.component';
 import { CrmNavbarComponent } from './navbar/navbar.component';
 
+import { AccountService } from './account/account.service';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { CrmNavbarComponent } from './navbar/navbar.component';
   exports: [
     CrmComponent,
     HttpClientModule,
-
+  ],
+  providers: [
+    AccountService
   ]
 
 })
