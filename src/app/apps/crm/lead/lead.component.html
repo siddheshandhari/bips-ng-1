@@ -22,17 +22,17 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-            <th scope="row">1</th>
+            <tr *ngFor="let result of results">
+            <th scope="row">{{lead.lead_id}}</th>
             <td>Mark</td>
             <td>Otto</td>
             <td>@mdo</td>
             <td>@mdo</td>
             <td>@mdo</td>
             <td>@mdo</td>
-            <td><button type="button" class="btn btn-primary btn-sm">More Info</button></td>
-            <td><button type="button" class="btn btn-success btn-sm">Edit</button></td>
-            <td><button type="button" class="btn btn-danger btn-sm">Delete</button></td>
+            <td><button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-caret-down"></i></button></td>
+            <td><button type="button" class="btn btn-outline-success btn-sm"><i class="fa fa-pencil"></i></button></td>
+            <td><button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash-o"></i></button></td>
             </tr>
         
         
