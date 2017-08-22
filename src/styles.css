@@ -92,6 +92,14 @@ ul{
   list-style: none;
 }
 
+a {
+  cursor: pointer !important;
+}
+
+button {
+  cursor: pointer !important;
+}
+
 /* ==========================================================================
    Browser Upgrade Prompt
    ========================================================================== */
