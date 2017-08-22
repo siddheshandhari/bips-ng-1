@@ -1,5 +1,5 @@
 <div class="container">
-  <navbar [(getRouterStatus)] = "crmRouter"></navbar>
+  <navbar [(getRouterStatus)] = "crmRouter" class="navbar navbar-toggleable-xl navbar-light bg-faded"></navbar>
   <div class="crm-content">
     <lead-list *ngIf="crmRouter == 'lead-list'"></lead-list>
     <add-lead *ngIf="crmRouter == 'add-lead'"></add-lead>
