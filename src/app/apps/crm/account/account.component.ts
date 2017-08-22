@@ -13,6 +13,9 @@ export class AccountComponent{
   }
 
   getAccountList(){
-    this.accountService.getAccountList();
+    this.accountService.getAccountList()
+      .subscribe(
+        res => console.log(res)
+      )
   }
 }

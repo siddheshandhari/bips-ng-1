@@ -233,6 +233,10 @@ ul{
         text-shadow: none !important;
     }
 
+    a {
+      cursor: pointer !important;
+    }
+
     a,
     a:visited {
         text-decoration: underline;
