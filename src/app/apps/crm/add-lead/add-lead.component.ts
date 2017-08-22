@@ -27,16 +27,34 @@ export class AddLeadComponent implements OnInit{
 
             t_company :this._formBuilder.group({
                     company_name: [''],
+                    tier:[''],
                     website: [''],
+                    rating:[''],
+                    annual_revenue:[''],
+                    employees:[''],
+                    industry:[''],
+                    sub_industry:['']
+            
+
             }),
             t_lead :this._formBuilder.group({
-                    lead_status: new FormControl(''),
+                    lead_status: [''],
+                    lead_source:[''],
+                    customer_type:['']
             }),
             shipping_address :this._formBuilder.group({
-                    street: new FormControl(''),
+                    street:[''],
+                    city:[''],
+                    state:[''],
+                    zip_code:[''],
+                    country:['']
             }),
             billing_address :this._formBuilder.group({
                     street:[''],
+                      city:[''],
+                    state:[''],
+                    zip_code:[''],
+                    country:['']
             }),
             contacts: this._formBuilder.array([
                 this.initContact(),
@@ -51,7 +69,10 @@ export class AddLeadComponent implements OnInit{
      public initContact(){
          return this._formBuilder.group({
                 firstname:[''],
-                lastname:['']
+                lastname:[''],
+                contact_owner:[''],
+                email:[''],
+                telephone:['']
             })
 
      }
