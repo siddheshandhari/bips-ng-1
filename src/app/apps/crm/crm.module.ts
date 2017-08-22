@@ -9,8 +9,8 @@ import { RouterModule, Routes} from "@angular/router";
 
 import { CrmComponent } from './crm.component';
 import { AccountComponent } from './account/account.component';
-import { AddLeadComponent } from './lead-list/add-lead/add-lead.component';
-import { LeadListComponent } from './lead-list/lead-list.component';
+import { AddLeadComponent } from './lead/add-lead/add-lead.component';
+import { LeadComponent } from './lead/lead.component';
 import { CrmNavbarComponent } from './navbar/navbar.component';
 
 import { AccountService } from './account/account.service';
@@ -22,7 +22,7 @@ import { AccountService } from './account/account.service';
     AccountComponent,
     AddLeadComponent,
     CrmNavbarComponent,
-    LeadListComponent
+    LeadComponent
   ],
   imports: [
     FormsModule,
