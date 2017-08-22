@@ -26,12 +26,9 @@ import { PotentialService} from './potential/potential.service';
     PotentialComponent,
     AddLeadComponent,
     CrmNavbarComponent,
-<<<<<<< HEAD
-    LeadListComponent,
-    
-=======
+    // LeadListComponent,
     LeadComponent
->>>>>>> d794b3b8f80bd241a904f4c013dc0db99ed367b4
+
   ],
   imports: [
     FormsModule,
@@ -44,12 +41,10 @@ import { PotentialService} from './potential/potential.service';
   ],
   providers: [
     AccountService,
-<<<<<<< HEAD
     PotentialService,
-=======
     LeadService
->>>>>>> d794b3b8f80bd241a904f4c013dc0db99ed367b4
   ]
+
 
 })
 export class CrmModule { }
