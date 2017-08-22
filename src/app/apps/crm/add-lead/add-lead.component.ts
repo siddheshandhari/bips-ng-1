@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
+import {FormGroup, FormControl, FormBuilder, Validators,FormArray } from '@angular/forms'
 import { HttpClient } from "@angular/common/http";
 
-import { LeadModel } from './lead.interface';
+import { LeadInfo } from './add-lead.interface';
+
+
 
 @Component({
     selector: 'add-lead',
@@ -45,31 +47,44 @@ export class AddLeadComponent implements OnInit{
 
      }
 
-     initContact(){
+
+     public initContact(){
          return this._formBuilder.group({
                 firstname:[''],
+                lastname:['']
             })
 
      }
 
-    onSubmit(myForm){
-        console.log('onSubmit called')
+     addContact(){
+         const control = <FormArray>this.myForm.controls['contacts'];
+         control.push(this.initContact());
+     }
 
-    // onSubmit(addleadForm){
-    //    event.preventDefault();
-    //    const req = this.http.post('http://jsonplaceholder.typicode.com/posts',{
-    //         addleadForm
-    //     })
-    //     .subscribe(
-    //                 res =>{
-    //                     console.log(JSON.stringify(res));
-    //                     },
-    //                 err =>{
-    //                     console.log("error occored");
-    //                 }
-    //              )
+     removeContact(i: number){
+         const control = <FormArray>this.myForm.controls['contacts'];
+         control.removeAt(i);
+     }
 
-    //      console.log(JSON.stringify(addleadForm));     
+    // onSubmit(model: LeadInfo){
+    //     console.log(model)
     // }
+     onSubmit({value}:{value:LeadInfo}){
+       event.preventDefault();
+       console.log(JSON.stringify(value));
+       const req = this.http.post('http://jsonplaceholder.typicode.com/posts',{
+            value
+        })
+        .subscribe(
+                    res =>{
+                        console.log(JSON.stringify(res));
+                        },
+                    err =>{
+                        console.log("error occored");
+                    }
+                 )
+
+        
+          }
 
 }
