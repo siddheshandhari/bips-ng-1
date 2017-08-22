@@ -16,15 +16,15 @@ import { LeadInfo } from './add-lead.interface';
 export class AddLeadComponent implements OnInit{
 
    public myForm: FormGroup;
- 
+
     constructor(private http: HttpClient, private _formBuilder: FormBuilder ){
 
     }
-    
+
 
     ngOnInit(){
         this.myForm = this._formBuilder.group({
-            
+
             t_company :this._formBuilder.group({
                     company_name: [''],
                     website: [''],
@@ -55,6 +55,7 @@ export class AddLeadComponent implements OnInit{
             })
 
      }
+
 
      addContact(){
          const control = <FormArray>this.myForm.controls['contacts'];
@@ -88,3 +89,5 @@ export class AddLeadComponent implements OnInit{
           }
 
 }
+
+
