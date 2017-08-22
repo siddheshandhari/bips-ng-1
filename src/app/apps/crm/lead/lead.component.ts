@@ -13,6 +13,8 @@ export class LeadComponent {
         this.getLeadList();
     }
     public add_lead_value = false;
+    public lead_list_value = true;
+
     add_lead(){
         this.add_lead_value = true;
     }
