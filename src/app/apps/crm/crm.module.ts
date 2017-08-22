@@ -8,6 +8,7 @@ import { RouterModule, Routes} from "@angular/router";
 
 
 import { CrmComponent } from './crm.component';
+import { AccountComponent } from './account/account.component';
 import { AddLeadComponent } from './add-lead/add-lead.component';
 import { LeadListComponent } from './lead-list/lead-list.component';
 import { CrmNavbarComponent } from './navbar/navbar.component';
@@ -16,6 +17,7 @@ import { CrmNavbarComponent } from './navbar/navbar.component';
 @NgModule({
   declarations: [
     CrmComponent,
+    AccountComponent,
     AddLeadComponent,
     CrmNavbarComponent,
     LeadListComponent
