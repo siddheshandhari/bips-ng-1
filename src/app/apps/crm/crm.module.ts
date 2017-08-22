@@ -9,6 +9,7 @@ import { RouterModule, Routes} from "@angular/router";
 
 import { CrmComponent } from './crm.component';
 import { AddLeadComponent } from './add-lead/add-lead.component';
+import { LeadListComponent } from './lead-list/lead-list.component';
 import { CrmNavbarComponent } from './navbar/navbar.component';
 
 
@@ -16,7 +17,8 @@ import { CrmNavbarComponent } from './navbar/navbar.component';
   declarations: [
     CrmComponent,
     AddLeadComponent,
-    CrmNavbarComponent
+    CrmNavbarComponent,
+    LeadListComponent
   ],
   imports: [
     FormsModule,
@@ -27,7 +29,7 @@ import { CrmNavbarComponent } from './navbar/navbar.component';
   exports: [
     CrmComponent,
     HttpClientModule,
-    
+
   ]
 
 })

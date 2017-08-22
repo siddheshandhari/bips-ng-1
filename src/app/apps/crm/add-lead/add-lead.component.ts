@@ -14,15 +14,15 @@ import { LeadModel } from './lead.interface';
 export class AddLeadComponent implements OnInit{
 
    public myForm: FormGroup;
- 
+
     constructor(private http: HttpClient, private _formBuilder: FormBuilder ){
 
     }
-    
+
 
     ngOnInit(){
         this.myForm = this._formBuilder.group({
-            
+
             t_company :this._formBuilder.group({
                     company_name: [''],
                     website: [''],
@@ -69,7 +69,8 @@ export class AddLeadComponent implements OnInit{
     //                 }
     //              )
 
-    //      console.log(JSON.stringify(addleadForm));     
+    //      console.log(JSON.stringify(addleadForm));
     // }
 
+}
 }
