@@ -1,5 +1,9 @@
 form{
     margin:10px 20px;
+    width:900px;
+}
+.add_lead_title{
+    text-align: center;
 }
 .head_title{
     margin:4px;
