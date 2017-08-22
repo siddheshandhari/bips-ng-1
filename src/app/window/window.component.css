@@ -67,9 +67,8 @@ Window
 .window-body{
   position: relative;
   background-color: #F5F5F5;
-  min-width: 200px;
-  min-height: 200px;
-  height: 700px;
+  min-width: 400px;
+  min-height: 400px;
 
   display: flex;
   /*justify-content: center;*/
