@@ -5,18 +5,21 @@ import { HttpClientModule } from "@angular/common/http";
 import { BrowserModule }  from "@angular/platform-browser";
 import { RouterModule, Routes} from "@angular/router";
 
-
-
 import { CrmComponent } from './crm.component';
 import { AccountComponent } from './account/account.component';
 import { AddLeadComponent } from './lead/add-lead/add-lead.component';
 import { LeadComponent } from './lead/lead.component';
 import { CrmNavbarComponent } from './navbar/navbar.component';
 import { PotentialComponent } from './potential/potential.component';
+import { TaskComponent } from './task/task.component';
+import { EventComponent } from './event/event.component'; 
 
 import { LeadService } from './lead/lead.service';
 import { AccountService } from './account/account.service';
-import { PotentialService} from './potential/potential.service'; 
+import { PotentialService } from './potential/potential.service';
+import { TaskService } from './task/task.service';
+import { EventService } from './event/event.service';
+
 
 
 @NgModule({
@@ -26,12 +29,9 @@ import { PotentialService} from './potential/potential.service';
     PotentialComponent,
     AddLeadComponent,
     CrmNavbarComponent,
-<<<<<<< HEAD
-    LeadListComponent,
-    
-=======
-    LeadComponent
->>>>>>> d794b3b8f80bd241a904f4c013dc0db99ed367b4
+    LeadComponent,
+    TaskComponent,
+    EventComponent
   ],
   imports: [
     FormsModule,
@@ -44,11 +44,11 @@ import { PotentialService} from './potential/potential.service';
   ],
   providers: [
     AccountService,
-<<<<<<< HEAD
     PotentialService,
-=======
-    LeadService
->>>>>>> d794b3b8f80bd241a904f4c013dc0db99ed367b4
+    LeadService,
+    TaskService,
+    EventService,
+
   ]
 
 })
