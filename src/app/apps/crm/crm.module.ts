@@ -16,7 +16,7 @@ import { PotentialComponent } from './potential/potential.component';
 
 import { LeadService } from './lead/lead.service';
 import { AccountService } from './account/account.service';
-import { PotentialService} from './potential/potential.service'; 
+import { PotentialService} from './potential/potential.service';
 
 
 @NgModule({
@@ -26,9 +26,7 @@ import { PotentialService} from './potential/potential.service';
     PotentialComponent,
     AddLeadComponent,
     CrmNavbarComponent,
-    // LeadListComponent,
     LeadComponent
-
   ],
   imports: [
     FormsModule,
