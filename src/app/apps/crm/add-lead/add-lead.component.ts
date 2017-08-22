@@ -47,15 +47,20 @@ export class AddLeadComponent implements OnInit{
                     city:[''],
                     state:[''],
                     zip_code:[''],
-                    country:['']
+                    country:[''],
+                    isshipping:['1']
             }),
             billing_address :this._formBuilder.group({
                     street:[''],
-                      city:[''],
+                    city:[''],
                     state:[''],
                     zip_code:[''],
-                    country:['']
+                    country:[''],
+                    isshipping:['0']
             }),
+            // addresses: this._formBuilder.array([
+            //     this.initAddress(),
+            // ]),
             contacts: this._formBuilder.array([
                 this.initContact(),
             ])
@@ -64,7 +69,16 @@ export class AddLeadComponent implements OnInit{
         });
 
      }
-
+    //  public initAddress(){
+    //       return this._formBuilder.group({
+    //         street:[''],
+    //         city:[''],
+    //         state:[''],
+    //         zip_code:[''],
+    //         country:[''],
+    //         isshipping:['']
+    //       })
+    //  }
 
      public initContact(){
          return this._formBuilder.group({
@@ -76,7 +90,10 @@ export class AddLeadComponent implements OnInit{
             })
 
      }
-
+    // addAddress(){
+    //      const control = <FormArray>this.myForm.controls['contacts'];
+    //      control.push(this.initAddress());
+    //  }
 
      addContact(){
          const control = <FormArray>this.myForm.controls['contacts'];

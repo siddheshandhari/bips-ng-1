@@ -33,16 +33,19 @@ export interface LeadInfo{
         zip_code:number;
         country: string;
     },
+   
     contacts: Contact[];
 
 
 
+
 }
+
 
 export interface Contact{
     firstname: string;
     lastname: string;
     contact_owner:string;
     eamil:string;
-    tepephone:string;
+    telephone:string;
 }
