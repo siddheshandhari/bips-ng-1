@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AccountService } from './account.service';
 
 @Component({
   selector: 'account',
@@ -7,5 +8,11 @@ import { Component } from '@angular/core';
 })
 
 export class AccountComponent{
-  constructor(){}
+  constructor(public accountService: AccountService){
+    this.getAccountList();
+  }
+
+  getAccountList(){
+    this.accountService.getAccountList();
+  }
 }
