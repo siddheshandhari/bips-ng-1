@@ -1,8 +1,32 @@
-<div class = "topnav">
+<!-- <div class = "topnav">
 
   <div (click)="changeRouter('lead-list')"> Lead </div>
   <div (click)="changeRouter('add-lead')"> Add-Lead </div>
   <div (click)="changeRouter('lead-list')"> Account </div>
   <div (click)="changeRouter('lead-list')"> Potential </div>
 
-</div>
+</div> -->
+
+<nav class="navbar navbar-light bg-faded">
+  
+  <a class="navbar-brand" href="#">Navbar</a>
+
+  
+    <ul class="navbar">
+      <li class="navbar-item ">
+        <a class="navbar-link active" href="#" (click)="changeRouter('lead-list')">Lead <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="navbar-item ">
+        <a class="navbar-link " href="#" >Account</a>
+      </li>
+      <li class="navbar-item ">
+        <a class="navbar-link disabled" href="#" >Potential</a>
+      </li>
+    </ul>
+  
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  
+</nav>
