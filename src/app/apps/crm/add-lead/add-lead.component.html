@@ -1,214 +1,50 @@
-<h5 class="head_title">Add New Lead</h5>
-<div  class="company_part">
-    <h6 class="subhead_title">Company Information</h6>
-    <form (ngSubmit)="onSubmit()" >
-      <div class="row">
+
+<h3>Add Lead</h3>
+<form [formGroup]= "myForm" (ngSubmit)= "onSubmit(myFrom)" >
+    
+    <div formGroupName= "t_company">
+        <div class="form-group">
+        <label>Company Name</label>
+        <input type="text" class="form-control" formControlName="company_name" name="company_name" >
+        </div>
+
+        <div class="form-group">
+        <label>Website</label>
+        <input type="text" class="form-control" formControlName="website" name="website" >
+        </div>
+    </div>
+
+    <div formGroupName= "t_lead">
+        <label>Lead Status</label>
+        <input type="text" formControlName="lead_status">
+
+    </div>
 
 
-    <h5 class="head_title">Add New Lead</h5>
-    <div class="">
-        <h6 class="subhead_title">Company Information</h6>
-        <form #addleadForm="ngForm" (ngSubmit)="onSubmit(addleadForm.value)" >
-          <div class="row">
+    <div formGroupName= "shipping_address">
+        <label>Street</label>
+        <input type="text" formControlName="street">
 
-              <div class="from-group col-md-3" >
-                 <label>Company Name</label><br>
-                 <input type="text" class="from-control" name="company_name" ngModel>
-              </div>
-
-              <div class="form-group col-md-3">
-                 <label>Website</label><br>
-                 <input type="text" class="form-control" name="website" ngModel >
-              </div>
+    </div>
 
 
-              <div class="form-group col-md-3">
-                 <label>Annual Revenue</label><br>
-                 <input type="text" class="form-control" name="annual_revenue" ngModel>
-              </div>
+    <div formGroupName= "billing_address">
+        <label>Street</label>
+        <input type="text" formControlName="street">
 
-              <div class="form-group col-md-3">
-                 <label>No.of Employees</label><br>
-                 <input type="text" class="form-control" name="employees" ngModel>
-              </div>
+    </div>
 
-          </div>
+    <div formGroupName= "contacts">
+        <label>FirstName</label>
+        <input type="text" formControlName="firstname">
 
-
-          <div class="row">
-              <div class="form-group col-md-3">
-                  <label>Tire</label><br>
-                  <select class="form-control" name="tire"  ngModel>
-                        <option >none</option>
-                        <option >1(100-500 cases)</option>
-                        <option >1(500-2500 cases)</option>
-                  </select>
-              </div>
-
-               <div class="form-group col-md-3">
-                  <label>Rating</label><br>
-                  <select class="form-control" name="rating"  ngModel>
-                        <option >Acquired</option>
-                        <option >Active</option>
-                        <option >Mold Required</option>
-                  </select>
-              </div>
-
-              <div class="form-group col-md-3">
-                  <label>Industry</label><br>
-                  <select class="form-control" name="industry"  ngModel>
-                        <option >None</option>
-                        <option >Cosmetic</option>
-                        <option >Wine</option>
-                  </select>
-              </div>
-
-              <div class="form-group col-md-3">
-                  <label>Customer Type</label><br>
-                  <select class="form-control" name="industry"  ngModel>
-                        <option >End User</option>
-                        <option >Custom Crush</option>
-                        <option >Co-Packer</option>
-                        <option >Distributor</option>
-                  </select>
-              </div>
-          </div>
-
-          <div class="row">
-                <div class="col-md-6">
-                    <label>Lead Status</label>
-                    <select class="form-control" name="lead_status"  ngModel>
-                        <option >None</option>
-                        <option >Atrtempted to Contact</option>
-                        <option >Contact in Future</option>
-                        <option >Contacted</option>
-                  </select>
-                </div>
-
-                <div class="col-md-6">
-                    <label>Lead Source</label>
-                    <select class="form-control" name="lead_source"  ngModel>
-                        <option >None</option>
-                        <option >Cold Call</option>
-                        <option >Response to Email Blast</option>
-                        <option >Google Search</option>
-                  </select>
-                </div>
-
-          </div>
-
-<!--address info-->
-          <h6 class="subhead_title">Address Information</h6>
-
-          <div class="row">
-<!--shipping address-->
-              <div class="col-md-6">
-                  <h6>Shipping Address</h6>
-                  <div class="row">
-
-                      <div class="col-md-6">
-                          <label>First Name</label>
-                          <input class="form-control" type="text" name="firstnameS" ngModel>
-                      </div>
-                      <div class="col-md-6">
-                          <label>Last Name</label>
-                          <input class="form-control" type="text" name="lastnameS" ngModel>
-                      </div>
-                  </div>
-
-                  <div class="row">
-                      <div class="col-md-6">
-                           <label>City</label>
-                          <input class="form-control" type="text" name="cityS" ngModel>
-                      </div>
-
-
-                      <div class="col-md-3">
-                           <label>State</label>
-                           <select class="form-control" name="stateS"  ngModel>
-                                <option >NY</option>
-                                <option >NJ</option>
-                                <option >WV</option>
-                                <option >LA</option>
-                            </select>
-                      </div>
-
-                      <div class="col-md-3">
-                           <label>Zip Code</label>
-                          <input class="form-control" type="text" name="zip_codeS" ngModel>
-                      </div>
-                  </div>
-
-
-              </div>
-
-<!--billing address-->
-              <div class="col-md-6">
-                  <h6>Billing Address</h6>
-                  <div class="row">
-
-                      <div class="col-md-6">
-                          <label>First Name</label>
-                          <input class="form-control" type="text" name="firstnameB" ngModel>
-                      </div>
-                      <div class="col-md-6">
-                          <label>Last Name</label>
-                          <input class="form-control" type="text" name="lastnameB" ngModel>
-                      </div>
-                  </div>
-
-                  <div class="row">
-                      <div class="col-md-6">
-                           <label>City</label>
-                          <input class="form-control" type="text" name="cityB" ngModel>
-                      </div>
-
-
-                      <div class="col-md-3">
-                           <label>State</label>
-                           <select class="form-control" name="stateB"  ngModel>
-                                <option >NY</option>
-                                <option >NJ</option>
-                                <option >WV</option>
-                                <option >LA</option>
-                            </select>
-                      </div>
-
-                      <div class="col-md-3">
-                           <label>Zip Code</label>
-                          <input class="form-control" type="text" name="zip_codeB" ngModel>
-                      </div>
-                  </div>
-
-
-              </div>
-
-          </div>
-
-          <!--contacts info-->
-
-          <h6 class="subhead_title">Address Information</h6>
-          <div class="row">
-              <div class="contact col-md-6">
-                  <div class="row">
-                      <div class="col-md-6">
-                          <label>First Name</label>
-                          <input type="text" class="form-control" name="firstname" ngModel>
-                      </div>
-
-                      <div class="col-md-6">
-                          <label>Last Name</label>
-                          <input type="text" class="form-control" name="lastname" ngModel>
-                      </div>
-                  </div>
-              </div>
-
-          </div>
+    </div>
 
 
 
 
-      <button type= "submit" class="btn btn-primary">Submit</button>
 
-    </form>
-</div>
+    <button type="submit">Submit</button>
+</form>
+<pre>{{myForm.value | json }}</pre>
+
