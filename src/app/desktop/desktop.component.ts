@@ -6,8 +6,9 @@ import { LoginService } from './../login/login.service';
 
 import { Store } from '@ngrx/store';
 
-interface RunningAppsState {
+interface StoreState {
   runningApps: Array<number>;
+  hideApps: Array<number>;
 }
 
 @Component({
@@ -19,10 +20,16 @@ interface RunningAppsState {
 export class DesktopComponent {
 
   runningApps: Array<number> = [];
+  hideApps: Array<number> = [];
   apps: Array<object> = [];
 
-  constructor(private store: Store<RunningAppsState>, private login: LoginService){
+  constructor(private store: Store<StoreState>, private login: LoginService){
     store.select('runningApps').subscribe(state => {this.runningApps = state;});
+    store.select('hideApps').subscribe(state => {this.hideApps = state;});
+  }
+
+  showWindow(appId){
+    return this.runningApps.includes(appId) && !this.hideApps.includes(appId) ? true : false;
   }
 
 }

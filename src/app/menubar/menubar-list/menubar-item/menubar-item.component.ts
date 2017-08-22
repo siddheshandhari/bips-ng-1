@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'menubar-item',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 
 export class MenubarItemComponent {
-
+  @Input() app: object;
 }

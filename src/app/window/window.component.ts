@@ -3,6 +3,7 @@ import { Component, ElementRef, Renderer2, OnInit, Input, ViewChild, OnChanges }
 //reducer
 import { Store } from '@ngrx/store';
 import { SET_TOP_WINDOW } from '../../reducers/topWindow.reducer';
+import { ADD_HIDE_APPS } from '../../reducers/hideApps.reducer';
 
 //Service
 import { AppsService } from '../apps/apps.service';
@@ -124,6 +125,13 @@ export class WindowComponent implements OnInit {
         }
       })
     }
+  }
+
+  minWindow() {
+    this.store.dispatch({
+      type: ADD_HIDE_APPS,
+      appId: this.appId
+    })
   }
 
   maxWindow() {
