@@ -7,6 +7,7 @@ import { RouterModule, Routes} from "@angular/router";
 
 import { CrmComponent } from './crm.component';
 import { AccountComponent } from './account/account.component';
+
 import { AddLeadComponent } from './lead/add-lead/add-lead.component';
 import { LeadComponent } from './lead/lead.component';
 import { CrmNavbarComponent } from './navbar/navbar.component';
@@ -32,7 +33,7 @@ import { EventService } from './event/event.service';
 
     LeadComponent,
     TaskComponent,
-    EventComponent
+    EventComponent,
 
   ],
   imports: [
