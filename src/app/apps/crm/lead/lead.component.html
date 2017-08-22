@@ -1,7 +1,9 @@
 <span *ngIf="add_lead_value== false" class="btn btn-primary add_lead_button" (click)='add_lead()'>+</span>
 <span *ngIf="add_lead_value== true" class="btn btn-primary add_lead_button" (click)='save_lead()'>Save</span>
+<span *ngIf="add_lead_value== true" class="btn btn-primary add_lead_button" (click)='cancel_lead()'>Cancel</span>
 <add-lead *ngIf="add_lead_value== true"></add-lead>
-<div *ngIf="lead_list_value==true">
+
+<div *ngIf="add_lead_value==false">
         <h3>Lead</h3>
 
         <table class="table">

@@ -18,6 +18,13 @@ export class LeadComponent {
     add_lead(){
         this.add_lead_value = true;
     }
+   save_lead(){
+       this.add_lead_value = false;
+   }
+   cancel_lead(){
+       this.add_lead_value = false;
+
+   }
 
     getLeadList(){
         this.leadService.getLeadList()
