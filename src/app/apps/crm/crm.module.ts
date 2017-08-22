@@ -12,30 +12,34 @@ import { AccountComponent } from './account/account.component';
 import { AddLeadComponent } from './lead-list/add-lead/add-lead.component';
 import { LeadListComponent } from './lead-list/lead-list.component';
 import { CrmNavbarComponent } from './navbar/navbar.component';
+import { PotentialComponent } from './potential/potential.component';
 
 import { AccountService } from './account/account.service';
+import { PotentialService} from './potential/potential.service'; 
 
 
 @NgModule({
   declarations: [
     CrmComponent,
     AccountComponent,
+    PotentialComponent,
     AddLeadComponent,
     CrmNavbarComponent,
-    LeadListComponent
+    LeadListComponent,
+    
   ],
   imports: [
     FormsModule,
     ReactiveFormsModule ,
-    BrowserModule
-
+    BrowserModule,
   ],
   exports: [
     CrmComponent,
     HttpClientModule,
   ],
   providers: [
-    AccountService
+    AccountService,
+    PotentialService,
   ]
 
 })
