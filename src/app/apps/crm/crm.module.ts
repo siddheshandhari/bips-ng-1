@@ -9,11 +9,12 @@ import { RouterModule, Routes} from "@angular/router";
 
 import { CrmComponent } from './crm.component';
 import { AccountComponent } from './account/account.component';
-import { AddLeadComponent } from './lead-list/add-lead/add-lead.component';
-import { LeadListComponent } from './lead-list/lead-list.component';
+import { AddLeadComponent } from './lead/add-lead/add-lead.component';
+import { LeadComponent } from './lead/lead.component';
 import { CrmNavbarComponent } from './navbar/navbar.component';
 import { PotentialComponent } from './potential/potential.component';
 
+import { LeadService } from './lead/lead.service';
 import { AccountService } from './account/account.service';
 import { PotentialService} from './potential/potential.service'; 
 
@@ -25,8 +26,12 @@ import { PotentialService} from './potential/potential.service';
     PotentialComponent,
     AddLeadComponent,
     CrmNavbarComponent,
+<<<<<<< HEAD
     LeadListComponent,
     
+=======
+    LeadComponent
+>>>>>>> d794b3b8f80bd241a904f4c013dc0db99ed367b4
   ],
   imports: [
     FormsModule,
@@ -39,7 +44,11 @@ import { PotentialService} from './potential/potential.service';
   ],
   providers: [
     AccountService,
+<<<<<<< HEAD
     PotentialService,
+=======
+    LeadService
+>>>>>>> d794b3b8f80bd241a904f4c013dc0db99ed367b4
   ]
 
 })

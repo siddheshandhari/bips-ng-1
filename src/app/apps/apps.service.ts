@@ -53,11 +53,22 @@ export class AppsService {
         type: ADD_RUNNING_APPS,
         appId: appId
       });
+      this.store.dispatch({
+        type: SET_TOP_WINDOW,
+        window: {
+          appId: appId
+        }
+      });
     } else if(this.hideApps.includes(appId)){
-      console.log('hi');
       this.store.dispatch({
         type: REMOVE_HIDE_APPS,
         appId: appId
+      });
+      this.store.dispatch({
+        type: SET_TOP_WINDOW,
+        window: {
+          appId: appId
+        }
       });
     } else {
       this.store.dispatch({

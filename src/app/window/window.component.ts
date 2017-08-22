@@ -45,9 +45,7 @@ export class WindowComponent implements OnInit {
   constructor(private store: Store<TopWindowState>, private el: ElementRef, private renderer: Renderer2, private appsService: AppsService){
     store.select('topWindow').subscribe(state => {
       this.topWindow = state;
-      if(this.topWindow.appId == this.appId && window.getComputedStyle(this.el.nativeElement, null).getPropertyValue("z-index") < this.topWindow.zIndex ){
-        this.liftWindow();
-      }
+
     });
   }
 

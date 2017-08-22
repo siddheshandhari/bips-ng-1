@@ -2,7 +2,7 @@ export const SET_TOP_WINDOW = 'SET_TOP_WINDOW';
 
 const initialState: object = {
   appId: 0,
-  zIndex: 4,
+  zIndex: 6,
   left: 300,
   top: 0
 }
