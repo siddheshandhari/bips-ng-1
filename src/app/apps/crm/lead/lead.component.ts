@@ -12,6 +12,10 @@ export class LeadComponent {
     constructor(public leadService:LeadService){
         this.getLeadList();
     }
+    public add_lead_value = false;
+    add_lead(){
+        this.add_lead_value = true;
+    }
 
     getLeadList(){
         this.leadService.getLeadList()
