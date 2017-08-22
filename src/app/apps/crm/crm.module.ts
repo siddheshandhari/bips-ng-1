@@ -13,6 +13,7 @@ import { AddLeadComponent } from './lead/add-lead/add-lead.component';
 import { LeadComponent } from './lead/lead.component';
 import { CrmNavbarComponent } from './navbar/navbar.component';
 
+import { LeadService } from './lead/lead.service';
 import { AccountService } from './account/account.service';
 
 
@@ -35,7 +36,8 @@ import { AccountService } from './account/account.service';
     HttpClientModule,
   ],
   providers: [
-    AccountService
+    AccountService,
+    LeadService
   ]
 
 })

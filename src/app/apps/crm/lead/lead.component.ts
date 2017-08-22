@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LeadService } from './lead.service';
 
 @Component({
     selector: 'lead',
@@ -8,6 +9,15 @@ import { Component } from '@angular/core';
 })
 
 export class LeadComponent {
-    constructor(){}
+    constructor(public leadService:LeadService){
+        this.getLeadList();
+    }
+
+    getLeadList(){
+        this.leadService.getLeadList()
+        .subscribe(
+            res => console.log(res)
+        )
+    }
 
 }
