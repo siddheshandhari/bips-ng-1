@@ -9,5 +9,5 @@ import { CrmNavbarComponent} from './navbar/navbar.component';
 })
 
 export class CrmComponent{
-  private CrmRouter: string = "lead-list";
+  private crmRouter: string = "add-lead";
 }

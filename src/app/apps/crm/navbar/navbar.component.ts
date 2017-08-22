@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -6,11 +6,13 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class CrmNavbarComponent implements OnInit {
-
+export class CrmNavbarComponent {
+  @Input() getRouterStatus: string;
+  @Output() getRouterStatusChange = new EventEmitter<string>();
   constructor() { }
 
-  ngOnInit() {
+  changeRouter(newRouter){
+    this.getRouterStatusChange.emit(newRouter)
   }
 
 }
