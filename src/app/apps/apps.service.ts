@@ -2,14 +2,17 @@ import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ADD_RUNNING_APPS, REMOVE_RUNNING_APPS } from '../../reducers/runningApps.reducer';
 import { SET_TOP_WINDOW } from '../../reducers/topWindow.reducer';
+import { REMOVE_HIDE_APPS } from '../../reducers/hideApps.reducer';
 
-interface runningApps {
+interface storeState {
+  hideApps: Array<number>;
   runningApps: Array<number>;
 }
 
 @Injectable()
 export class AppsService {
-  runningApps: Array<number>
+  runningApps: Array<number>;
+  hideApps: Array<number>;
 
   appsDict = [
     { id: 1, name: 'accounts', path: './accounts', iconUrl: '../../assets/imgs/app-icons/accounts.png' },
@@ -39,22 +42,29 @@ export class AppsService {
     { id: 25, name: 'trucking', path: './trucking', iconUrl: '../../assets/imgs/app-icons/trucking.png' },
   ]
 
-  constructor(private store: Store<runningApps>){
+  constructor(private store: Store<storeState>){
     store.select('runningApps').subscribe(state => this.runningApps = state);
+    store.select('hideApps').subscribe(state => this.hideApps = state);
   }
 
   launchApp(appId) {
-    if(this.runningApps.includes(appId)){
+    if(!this.runningApps.includes(appId)){
+      this.store.dispatch({
+        type: ADD_RUNNING_APPS,
+        appId: appId
+      });
+    } else if(this.hideApps.includes(appId)){
+      console.log('hi');
+      this.store.dispatch({
+        type: REMOVE_HIDE_APPS,
+        appId: appId
+      });
+    } else {
       this.store.dispatch({
         type: SET_TOP_WINDOW,
         window: {
           appId: appId
         }
-      })
-    } else {
-      this.store.dispatch({
-        type: ADD_RUNNING_APPS,
-        id: appId
       });
     }
   }
@@ -62,7 +72,7 @@ export class AppsService {
   closeApp(appId) {
     this.store.dispatch({
       type: REMOVE_RUNNING_APPS,
-      id: appId
+      appId: appId
     })
   }
 

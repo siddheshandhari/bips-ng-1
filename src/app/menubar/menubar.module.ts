@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+//Module
+import { IconModule } from '../icon/icon.module';
+
 import { MenubarComponent } from './menubar.component';
 import { MenubarListComponent } from './menubar-list/menubar-list.component';
 import { MenubarItemComponent } from './menubar-list/menubar-item/menubar-item.component';
@@ -13,6 +16,7 @@ import { MenubarItemComponent } from './menubar-list/menubar-item/menubar-item.c
   ],
   imports: [
     CommonModule,
+    IconModule
   ],
   exports: [
     MenubarComponent
