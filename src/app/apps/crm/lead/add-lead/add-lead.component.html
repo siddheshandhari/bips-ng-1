@@ -167,8 +167,17 @@
 
 
 
-    <hr>
+<hr>
+<div formArrayName="t_address" >
+    
+                    <div class="form-group col-md-3">
+                            <label>Street</label>
+                            <input type="text" class="form-control form-control-sm" formControlName="street">
+                    </div>
+</div>
 
+
+<hr>
     
 
 
@@ -237,5 +246,5 @@
 
     <button type="submit" class="btn btn-primary" >Submit</button>
 </form>
-
+<pre>{{myForm.value | json}}</pre>
 

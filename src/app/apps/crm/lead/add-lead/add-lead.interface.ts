@@ -33,6 +33,24 @@ export interface LeadInfo{
         zip_code:number;
         country: string;
     },
+    t_address?:[
+        {
+            street: string;
+            city: string;
+            state: string;
+            zip_code:number;
+            country: string;
+            isshipping:number;
+        },
+        {
+            street: string;
+            city: string;
+            state: string;
+            zip_code:number;
+            country: string;
+            isshipping:number;
+        }
+        ]
    
     contacts: Contact[];
 
