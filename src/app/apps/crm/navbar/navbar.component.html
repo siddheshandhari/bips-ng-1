@@ -1,26 +1,27 @@
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <ul class="navbar-nav mr-auto">
 
-    <li class="nav-item">
-      <a class="nav-link" (click)="changeRouter('lead')">Lead</a>
+
+    <li class="nav-item" [ngClass]="{'active' : getRouterStatus == 'lead'}"> 
+      <a class="nav-link" (click)="changeRouter('lead')"><img src="../../../assests/imgs/app-icons/lead.png"/>Lead</a>
+
     </li>
-  
-    <li class="nav-item active">
+    <li class="nav-item" [ngClass]="{'active' : getRouterStatus == 'potential'}">
       <a class="nav-link" (click)="changeRouter('potential')">Potential</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" [ngClass]="{'active' : getRouterStatus == 'account'}">
       <a class="nav-link" (click)="changeRouter('account')">Account</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" [ngClass]="{'active' : getRouterStatus == 'task'}">
       <a class="nav-link" (click)="changeRouter('task')">Task</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" [ngClass]="{'active' : getRouterStatus == 'event'}">
       <a class="nav-link" (click)="changeRouter('event')">Event</a>
     </li>
 
   </ul>
   <form class="form-inline my-2 my-lg-0">
     <input class="form-control mr-sm-2" type="text" placeholder="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search" ></i></button>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </form>
 </div>

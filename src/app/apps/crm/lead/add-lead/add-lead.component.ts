@@ -42,41 +42,27 @@ export class AddLeadComponent implements OnInit{
                     lead_source:[''],
                     customer_type:['']
             }),
-            shipping_address :this._formBuilder.group({
-                    street:[''],
-                    city:[''],
-                    state:[''],
-                    zip_code:[''],
-                    country:[''],
-                    isshipping:['1']
-            }),
-            billing_address :this._formBuilder.group({
-                    street:[''],
-                    city:[''],
-                    state:[''],
-                    zip_code:[''],
-                    country:[''],
-                    isshipping:['0']
-            }),
-            // t_address: this._formBuilder.array([
-            //    this._formBuilder.group ({ 
+            // shipping_address :this._formBuilder.group({
             //         street:[''],
             //         city:[''],
             //         state:[''],
             //         zip_code:[''],
             //         country:[''],
             //         isshipping:['1']
-            //     }),
-            //     this._formBuilder.group({
+            // }),
+            // billing_address :this._formBuilder.group({
             //         street:[''],
             //         city:[''],
             //         state:[''],
             //         zip_code:[''],
             //         country:[''],
             //         isshipping:['0']
-            //     })
+            // }),
 
-            // ]),
+            t_address: this._formBuilder.array([
+                this.initAddress(),
+                this.initAddress1(),
+            ]),
             contacts: this._formBuilder.array([
                 this.initContact(),
             ])
@@ -98,18 +84,46 @@ export class AddLeadComponent implements OnInit{
 
      public initContact(){
          return this._formBuilder.group({
-                firstname:[''],
-                lastname:[''],
+                first_name:[''],
+                last_name:[''],
                 contact_owner:[''],
                 email:[''],
-                telephone:['']
+                phone:['']
             })
 
      }
-    // addAddress(){
-    //      const control = <FormArray>this.myForm.controls['contacts'];
-    //      control.push(this.initAddress());
-    //  }
+
+      public initAddress(){
+         return this._formBuilder.group({
+                    street:[''],
+                    city:[''],
+                    state:[''],
+                    zip_code:[''],
+                    country:[''],
+                    is_shipping:['1']
+            },
+            )
+
+     }
+     public initAddress1(){
+         return this._formBuilder.group({
+                    street:[''],
+                    city:[''],
+                    state:[''],
+                    zip_code:[''],
+                    country:[''],
+                    is_shipping:['0']
+            },
+            )
+
+     }
+
+
+    
+    addAddress(){
+         const control = <FormArray>this.myForm.controls['t_address'];
+         control.push(this.initAddress());
+     }
 
      addContact(){
          const control = <FormArray>this.myForm.controls['contacts'];
@@ -127,9 +141,7 @@ export class AddLeadComponent implements OnInit{
      onSubmit({value}:{value:LeadInfo}){
        event.preventDefault();
        console.log(JSON.stringify(value));
-       const req = this.http.post('http://jsonplaceholder.typicode.com/posts',{
-            value
-        })
+       const req = this.http.post('http://192.168.50.25/orcasmart/bips/api/lead/',{value})
         .subscribe(
                     res =>{
                         console.log(JSON.stringify(res));

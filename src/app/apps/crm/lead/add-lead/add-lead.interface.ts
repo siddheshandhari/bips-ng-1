@@ -9,61 +9,65 @@ export interface LeadInfo{
         industry: string;
         sub_industry:string;
 
-         
-
-
     },
     t_lead?:{
         lead_status: string;
         lead_source:string;
         customer_type:string;
     },
-    shipping_address?:{
-        street: string;
-        city: string;
-        state: string;
-        zip_code:number;
-        country: string;
+    // shipping_address?:{
+    //     street: string;
+    //     city: string;
+    //     state: string;
+    //     zip_code:number;
+    //     country: string;
 
-    },
-    billing_address?:{
-        street: string;
-        city: string;
-        state: string;
-        zip_code:number;
-        country: string;
-    },
-    t_address?:[
-        {
-            street: string;
-            city: string;
-            state: string;
-            zip_code:number;
-            country: string;
-            isshipping:number;
-        },
-        {
-            street: string;
-            city: string;
-            state: string;
-            zip_code:number;
-            country: string;
-            isshipping:number;
-        }
-        ]
+    // },
+    // billing_address?:{
+    //     street: string;
+    //     city: string;
+    //     state: string;
+    //     zip_code:number;
+    //     country: string;
+    // },
+    // t_address?:[
+    //     {
+    //         street: 'string';
+    //         city: string;
+    //         state: string;
+    //         zip_code:number;
+    //         country: string;
+    //         isshipping:1;
+    //     },
+    //     {
+    //         street: 'string';
+    //         city: string;
+    //         state: string;
+    //         zip_code:number;
+    //         country: string;
+    //         isshipping:0;
+    //     }
+    //     ]
+    addresses: Address[];
    
     contacts: Contact[];
 
-
-
-
 }
-
 
 export interface Contact{
-    firstname: string;
-    lastname: string;
+    first_name: string;
+    last_name: string;
     contact_owner:string;
     eamil:string;
-    telephone:string;
+    phone:string;
 }
+export interface Address{
+      
+    street: string;
+    city: string;
+    state: string;
+    zip_code:number;
+    country: string;
+    is_shipping:number;
+ 
+        }
