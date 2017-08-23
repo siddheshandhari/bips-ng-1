@@ -1,5 +1,6 @@
-<h3 class="display-4">Account</h3>
-<table class="table">
+<page-header [title]="'Account'"></page-header>
+
+<table class="table table-bordered">
   <thead>
     <tr>
       <th><input type="checkbox"></th>
@@ -9,21 +10,18 @@
       <th>Type</th>
       <th>Ownership</th>
       <th>Company</th>
-      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
+    <tr table-row *ngFor="let account of accountList">
     <tr *ngFor="let account of accountList">
       <td scope="row"><input type="checkbox"></td>
       <td><a><i class="fa fa-pencil"></i></a></td>
       <td>{{account.account_number}}</td>
       <td>{{account.sic_code}}</td>
       <td>{{account.type}}</td>
-      <td><a>{{account.ownership.firstname + ' ' + account.ownership.lastname}}</a></td>
+      <td><a>{{account.ownership.username}}</a></td>
       <td><a>{{account.company.name}}</a></td>
-      <td>
-        <i class="fa fa-ellipsis-h"></i>
-      </td>
     </tr>
   </tbody>
 </table>
