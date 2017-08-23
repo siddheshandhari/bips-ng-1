@@ -43,6 +43,25 @@ export class LeadComponent {
 
     }
    
+   delete_lead(e){
+       console.log(e);
+   }
+
+   selectLead = [];
+
+   pushlead(value){
+        if ((<HTMLInputElement>document.getElementById(value)).checked) {
+            this.selectLead.push(value);
+            console.log(this.selectLead);
+        } else {
+            let indexx = this.selectLead.indexOf(value);
+            this.selectLead.splice(indexx, 1);
+            console.log(this.selectLead);
+        }
+
+        
+   }
+  
    
 
     // getLeadList(){
