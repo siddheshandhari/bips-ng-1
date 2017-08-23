@@ -6,8 +6,8 @@ import { Observable } from 'rxjs/Observable';
 export class LeadService {
   constructor(private http: Http) {}
 
-  getLeadList(): Observable<string[]>{
-    return this.http.get('http://192.168.50.25/orcasmart/bips/api/lead/')
+  getLeadLists(): Observable<string[]>{
+    return this.http.get('http://jsonplaceholder.typicode.com/posts/1/comments')
       .map((res:Response) => res.json())
     }
   }

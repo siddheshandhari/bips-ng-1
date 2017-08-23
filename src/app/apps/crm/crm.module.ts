@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
+import { HttpModule } from '@angular/http';
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserModule }  from "@angular/platform-browser";
 import { RouterModule, Routes} from "@angular/router";
 
 import { CrmComponent } from './crm.component';
 import { AccountComponent } from './account/account.component';
+
 
 import { AddLeadComponent } from './lead/add-lead/add-lead.component';
 import { LeadComponent } from './lead/lead.component';
@@ -40,6 +42,7 @@ import { EventService } from './event/event.service';
     FormsModule,
     ReactiveFormsModule ,
     BrowserModule,
+    HttpModule
   ],
   exports: [
     CrmComponent,
