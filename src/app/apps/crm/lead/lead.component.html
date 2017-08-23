@@ -12,7 +12,7 @@
             <th>#</th> 
             <th>Company Name</th>
             <th>Contact</th>
-            <th>Cell Phoen</th>
+            <th>Phone</th>
             <th>Email</th>
             <th>Quotes</th>
             <th>Projects</th>
@@ -22,14 +22,14 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let result of results">
-            <th scope="row">{{lead.lead_id}}</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
+            <tr *ngFor="let leadlist of leadlists let i = index">
+            <th scope="row">{{i}}</th>
+            <td>{{leadlist.company_name}}</td>
+            <td>{{leadlist.contact}}</td>
+            <td>{{leadlist.phone}}</td>
+            <td>{{leadlist.email}}</td>
+            <td>{{leadlist.quotes}}</td>
+            <td>{{leadlist.project}}</td>
             <td><button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-caret-down"></i></button></td>
             <td><button type="button" class="btn btn-outline-success btn-sm"><i class="fa fa-pencil"></i></button></td>
             <td><button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash-o"></i></button></td>
