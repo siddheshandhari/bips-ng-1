@@ -1,13 +1,11 @@
+import { User, Company, Contact } from '../../../../models/index';
+
 export class Account {
-  account_id: number;
-  account_user_id: number;
-  account_company_id: number;
-  company_name: string;
-  website: string;
-  employees: number;
-  rating: number;
-  industry: string;
-  tier: number;
-  annualrevenue: string;
+  id: number;
+  number: number;
+  sic_code: number;
+  type: string;
   is_active: number;
+  ownership: User;
+  company: Company;
 }
