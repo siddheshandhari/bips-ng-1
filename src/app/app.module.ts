@@ -22,6 +22,7 @@ import { runningAppsReducer } from '../reducers/runningApps.reducer';
 import { hideAppsReducer } from '../reducers/hideApps.reducer';
 import { topWindowReducer } from '../reducers/topWindow.reducer';
 import { currentUserReducer } from '../reducers/currentUser.reducer';
+import 'rxjs/Rx';
 
 const appRoutes: Routes = [
 

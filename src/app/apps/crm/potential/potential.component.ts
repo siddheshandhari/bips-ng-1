@@ -9,13 +9,11 @@ import { PotentialService } from './potential.service';
 
 export class PotentialComponent{
   constructor(public potentialService: PotentialService){
-    this.getPotentialList();
   }
 
   getPotentialList(){
     this.potentialService.getPotentialList()
       .subscribe(
-        res => console.log(res)
       )
   }
 }
