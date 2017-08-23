@@ -1,5 +1,4 @@
-{
-  "account_list": [
+[
     {
       "id": 5,
       "account_number": 12312,
@@ -28,7 +27,7 @@
         "security_question3": "security_question3_test1",
         "security_answer3": "security_answer2_test1",
         "group_id": 5,
-        "is_active": 1,
+        "is_active": 1
       },
       "company": {
         "id": 3,
@@ -65,7 +64,7 @@
             "customer_type": "qweqwer",
             "secondary_email": "asdasd",
             "twitter": "qweqwe",
-            "is_active": 1,
+            "is_active": 1
           },
           {
             "id": 2,
@@ -91,8 +90,8 @@
             "customer_type": "qweqwer",
             "secondary_email": "asdasd",
             "twitter": "qweqwe",
-            "is_active": 1,
-          },
+            "is_active": 1
+          }
         ],
         "address": [
           {
@@ -112,10 +111,9 @@
             "zip_code": 123123,
             "is_shipping": 1,
             "is_active": 1
-          },
-        ],
-      },
-
+          }
+        ]
+      }
     },
     {
       "id": 5,
@@ -145,7 +143,7 @@
         "security_question3": "security_question3_test1",
         "security_answer3": "security_answer2_test1",
         "group_id": 5,
-        "is_active": 1,
+        "is_active": 1
       },
       "company": {
         "id": 3,
@@ -182,7 +180,7 @@
             "customer_type": "qweqwer",
             "secondary_email": "asdasd",
             "twitter": "qweqwe",
-            "is_active": 1,
+            "is_active": 1
           },
           {
             "id": 2,
@@ -208,8 +206,8 @@
             "customer_type": "qweqwer",
             "secondary_email": "asdasd",
             "twitter": "qweqwe",
-            "is_active": 1,
-          },
+            "is_active": 1
+          }
         ],
         "address": [
           {
@@ -229,10 +227,124 @@
             "zip_code": 123123,
             "is_shipping": 1,
             "is_active": 1
-          },
-        ],
-      },
-
+          }
+        ]
+      }
     },
-  ]
-}
+    {
+      "id": 5,
+      "account_number": 12312,
+      "sic_code": 3333,
+      "type": "new",
+      "is_active": 1,
+      "ownership": {
+        "id": 2,
+        "username": "username_test1",
+        "password": "password_test1",
+        "firstname": "firstname_test1",
+        "lastname": "lastname_test1",
+        "user_img": "user_img_test1",
+        "nickname": "nickname_test1",
+        "gender": "gender_test1",
+        "ssn": 12312312,
+        "country": "country_test1",
+        "time_zone": "time_zone_test1",
+        "email": "email_test1",
+        "phone_number": 8482196271,
+        "level": 10,
+        "security_question1": "security_question1_test1",
+        "security_answer1": "security_answer1_test1",
+        "security_question2": "security_question2_test1",
+        "security_answer2": "security_answer2_test1",
+        "security_question3": "security_question3_test1",
+        "security_answer3": "security_answer2_test1",
+        "group_id": 5,
+        "is_active": 1
+      },
+      "company": {
+        "id": 3,
+        "name": "orcasmart",
+        "website": "www.test.com",
+        "employees": 20,
+        "rating": 9,
+        "industry": "it",
+        "tier": 43,
+        "annualrevenue": "50M",
+        "is_active": 1,
+        "contact": [
+          {
+            "id": 2,
+            "company_id": 5,
+            "address_id": 5,
+            "owner_id": 2,
+            "belongs_to": "snow",
+            "first_name": "sadasd",
+            "last_name": "ggg",
+            "vendor_name": "qwe",
+            "email": "asd@asd.com",
+            "title": "tttwqe",
+            "phone": 123124,
+            "departname": "depart_name",
+            "other_phone": 12312,
+            "home_phone": 123123,
+            "fax": 213455,
+            "mobile": 34543,
+            "birthday": "February 4, 2016",
+            "asst_phone": 123123,
+            "reports_to": "sadsa",
+            "skype_id": 234235,
+            "customer_type": "qweqwer",
+            "secondary_email": "asdasd",
+            "twitter": "qweqwe",
+            "is_active": 1
+          },
+          {
+            "id": 2,
+            "company_id": 5,
+            "address_id": 5,
+            "owner_id": 2,
+            "belongs_to": "snow",
+            "first_name": "sadasd",
+            "last_name": "ggg",
+            "vendor_name": "qwe",
+            "email": "asd@asd.com",
+            "title": "tttwqe",
+            "phone": 123124,
+            "departname": "depart_name",
+            "other_phone": 12312,
+            "home_phone": 123123,
+            "fax": 213455,
+            "mobile": 34543,
+            "birthday": "February 4, 2016",
+            "asst_phone": 123123,
+            "reports_to": "sadsa",
+            "skype_id": 234235,
+            "customer_type": "qweqwer",
+            "secondary_email": "asdasd",
+            "twitter": "qweqwe",
+            "is_active": 1
+          }
+        ],
+        "address": [
+          {
+            "country": "united states",
+            "state": "new jersey",
+            "city": "hicksville",
+            "street": "35 engel st",
+            "zip_code": 123123,
+            "is_shipping": 1,
+            "is_active": 1
+          },
+          {
+            "country": "united states",
+            "state": "new jersey",
+            "city": "hicksville",
+            "street": "35 engel st",
+            "zip_code": 123123,
+            "is_shipping": 1,
+            "is_active": 1
+          }
+        ]
+      }
+    }
+]

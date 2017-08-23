@@ -5,10 +5,10 @@ import { Account } from './model/account';
 
 @Injectable()
 export class AccountService {
-  public accountURL = "app/apps/crm/account/account.mock.json";
+  public accountURL = "mock/account.mock.json";
   constructor(private http: Http) {}
 
-  getAccountList(): Observable<Account[]>{
+  getAll(): Observable<Account[]>{
     return this.http.get(this.accountURL)
       .map((res:Response) => res.json())
     }

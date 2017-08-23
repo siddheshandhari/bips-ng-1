@@ -4,25 +4,23 @@
     <tr>
       <th><input type="checkbox"></th>
       <th>Edit</th>
+      <th>Account Number</th>
+      <th>Sic Code</th>
+      <th>Type</th>
+      <th>Ownership</th>
       <th>Company</th>
-      <th>Employees</th>
-      <th>Rating</th>
-      <th>Industry</th>
-      <th>Tire</th>
-      <th>Annual Revenue</th>
-      <th></th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row"><input type="checkbox"></th>
-      <th><i class="fa fa-pencil"></i></th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
+    <tr *ngFor="let account of accountList">
+      <td scope="row"><input type="checkbox"></td>
+      <td><a><i class="fa fa-pencil"></i></a></td>
+      <td>{{account.account_number}}</td>
+      <td>{{account.sic_code}}</td>
+      <td>{{account.type}}</td>
+      <td><a>{{account.ownership.firstname + ' ' + account.ownership.lastname}}</a></td>
+      <td><a>{{account.company.name}}</a></td>
       <td>
         <i class="fa fa-ellipsis-h"></i>
       </td>
