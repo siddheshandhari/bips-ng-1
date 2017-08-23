@@ -1,19 +1,19 @@
 <page-header [title]="'Account'"></page-header>
 
-<table class="table table-bordered">
+<table class="table">
   <thead>
     <tr>
-      <th><input type="checkbox"></th>
-      <th>Edit</th>
+      <th class="check-box"><input type="checkbox"></th>
+      <th class="edit-btn">Edit</th>
       <th>Account Number</th>
       <th>Sic Code</th>
       <th>Type</th>
       <th>Ownership</th>
       <th>Company</th>
+
     </tr>
   </thead>
   <tbody>
-    <tr table-row *ngFor="let account of accountList">
     <tr *ngFor="let account of accountList">
       <td scope="row"><input type="checkbox"></td>
       <td><a><i class="fa fa-pencil"></i></a></td>
