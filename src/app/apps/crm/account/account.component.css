@@ -1,3 +1,38 @@
-table th,td{
+:host{
+  display: inline-block;
+  width: 100%;
+}
+
+table th,td {
     text-align: center;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-bottom: 1px solid #E0E0E0 !important;
+}
+
+th {
+  white-space: nowrap;
+  overflow: hidden;
+  border-bottom: 1px solid #E0E0E0 !important;
+  border-top: 1px solid #E0E0E0 !important;
+  border-left: 1px solid #E0E0E0;
+  border-right: 1px solid #E0E0E0;
+}
+
+td {
+  white-space: nowrap;
+  overflow: hidden;
+  border-left: 1px solid #E0E0E0;
+  border-right: 1px solid #E0E0E0;
+}
+
+.check-box{
+  width: 50px;
+}
+
+.edit-btn{
+  width: 60px;
 }

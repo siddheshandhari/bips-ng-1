@@ -1,5 +1,9 @@
+:host{
+  margin-bottom: 10px;
+}
+
 .page-title{
-  float: left;
+  display: inline;
 }
 
 .control-panel{

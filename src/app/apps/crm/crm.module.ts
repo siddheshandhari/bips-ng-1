@@ -5,7 +5,6 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserModule }  from "@angular/platform-browser";
 import { RouterModule, Routes} from "@angular/router";
-import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 //component
 import { AddLeadComponent } from './lead/add-lead/add-lead.component';
@@ -43,7 +42,6 @@ import { EventService } from './event/event.service';
     ReactiveFormsModule ,
     BrowserModule,
     HttpModule,
-    NgxDatatableModule
   ],
   exports: [
     CrmComponent,
