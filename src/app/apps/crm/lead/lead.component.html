@@ -23,7 +23,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let leadlist of leadlists let i = index">
-            <th scope="row">{{i}}</th>
+            <td scope="row"><input type="checkbox" value="{{leadlist.lead_id}}" (change)="pushlead(leadlist.lead_id)" id="{{leadlist.lead_id}}">{{i}}</td>
             <td>{{leadlist.company_name}}</td>
             <td>{{leadlist.contact}}</td>
             <td>{{leadlist.lead_status}}</td>
@@ -32,10 +32,8 @@
             <td>{{leadlist.project}}</td>
             <td><button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-caret-down"></i></button></td>
             <td><button type="button" class="btn btn-outline-success btn-sm"><i class="fa fa-pencil"></i></button></td>
-            <td><button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash-o"></i></button></td>
+            <td><button  type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash-o"></i></button></td>
             </tr>
-        
-        
         </tbody>
         </table>
 </div>
