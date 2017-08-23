@@ -58,9 +58,25 @@ export class AddLeadComponent implements OnInit{
                     country:[''],
                     isshipping:['0']
             }),
-            // addresses: this._formBuilder.array([
-            //     this.initAddress(),
-            // ]),
+            t_address: this._formBuilder.array([
+               this._formBuilder.group ({ 
+                    street:[''],
+                    city:[''],
+                    state:[''],
+                    zip_code:[''],
+                    country:[''],
+                    isshipping:['1']
+                }),
+                this._formBuilder.group({
+                    street:[''],
+                    city:[''],
+                    state:[''],
+                    zip_code:[''],
+                    country:[''],
+                    isshipping:['0']
+                })
+
+            ]),
             contacts: this._formBuilder.array([
                 this.initContact(),
             ])

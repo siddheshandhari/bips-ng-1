@@ -7,7 +7,7 @@ export class LeadService {
   constructor(private http: Http) {}
 
   getLeadLists(): Observable<string[]>{
-    return this.http.get('http://jsonplaceholder.typicode.com/posts/1/comments')
+    return this.http.get('http://192.168.50.25/orcasmart/bips/api/lead/')
       .map((res:Response) => res.json())
     }
   }
