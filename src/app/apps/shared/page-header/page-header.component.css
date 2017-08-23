@@ -1,0 +1,12 @@
+.page-title{
+  float: left;
+}
+
+.control-panel{
+  margin-top: 20px;
+  float: right;
+}
+
+.control-panel button{
+  margin: 0 5px;
+}

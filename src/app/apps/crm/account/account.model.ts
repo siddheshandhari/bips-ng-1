@@ -1,4 +1,4 @@
-import { User, Company, Contact } from '../../../../models/index';
+import { Company, Contact } from '../../../models/index';
 
 export class Account {
   id: number;
@@ -6,6 +6,9 @@ export class Account {
   sic_code: number;
   type: string;
   is_active: number;
-  ownership: User;
+  ownership: {
+    id: number;
+    username: string;
+  };
   company: Company;
 }
