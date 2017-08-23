@@ -5,10 +5,11 @@ import { Account } from './model/account';
 
 @Injectable()
 export class AccountService {
+  public accountURL = "mock/account.mock.json";
   constructor(private http: Http) {}
 
-  getAccountList(): Observable<string[]>{
-    return this.http.get('http://192.168.50.25/orcasmart/bips/api/account/')
+  getAll(): Observable<Account[]>{
+    return this.http.get(this.accountURL)
       .map((res:Response) => res.json())
     }
   }
