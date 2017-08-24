@@ -13,27 +13,25 @@ export class LeadComponent {
 
     leadlists: any =[];
     constructor(public leadService:LeadService){
-    
+
     }
 
     ngOnInit():void{
           this.leadService.getLeadLists()
           .subscribe(resLeadList =>{
               this.leadlists = resLeadList;
-              
-          console.log(this.leadlists);
           })
-          
-       
+
+
     }
-    
+
     public add_lead_value = false;
     public lead_list_value = true;
 
     add_lead(){
         this.add_lead_value = true;
     }
-    
+
     save_lead(){
         this.add_lead_value = false;
     }
@@ -42,7 +40,7 @@ export class LeadComponent {
         this.add_lead_value = false;
 
     }
-   
+
    delete_lead(e){
        console.log(e);
    }
@@ -59,10 +57,10 @@ export class LeadComponent {
             console.log(this.selectLead);
         }
 
-        
+
    }
-  
-   
+
+
 
     // getLeadList(){
     //     this.leadService.getLeadList()
@@ -72,6 +70,6 @@ export class LeadComponent {
     //         })
     // }
 
-  
+
 
 }
