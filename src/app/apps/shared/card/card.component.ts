@@ -1,4 +1,4 @@
-import { Component, ElementRef } from '@angular/core';
+import { Component, ElementRef, Input } from '@angular/core';
 
 @Component({
   selector: 'card',
@@ -10,12 +10,13 @@ import { Component, ElementRef } from '@angular/core';
 })
 
 export class CardComponent{
+  @Input() headerColor: string;
   private cardHeaderIsOpen: boolean = false;
   private cardBodyIsOpen: boolean = false;
   private actionPanelIsOpen: boolean = false;
 
   constructor(private el: ElementRef){
-
+    console.log(this.headerColor);
   }
 
   openHeader(){
