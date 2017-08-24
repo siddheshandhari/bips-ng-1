@@ -1,6 +1,7 @@
 :host{
-  display: inline-block;
+  /*display: inline-block;*/
   width: 100%;
+  position:relative;
 }
 
 table th,td {
@@ -41,3 +42,31 @@ td {
     float:right;
     margin:10px;
 }
+
+.masonry{
+
+  display: flex; 
+  flex-flow: column wrap;
+  width: 100%;
+  height: 2000px;
+
+
+}
+
+.item{
+  break-inside: avoid;
+  box-sizing:border-box;
+  padding:10px;
+}
+/*card{
+  
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    
+}*/
+
+
