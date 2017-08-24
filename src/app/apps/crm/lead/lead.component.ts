@@ -20,16 +20,19 @@ export class LeadComponent {
           this.leadService.getLeadLists()
           .subscribe(resLeadList =>{
               this.leadlists = resLeadList;
+              console.log(this.leadlists)
           })
 
 
     }
 
     public add_lead_value = false;
+
     public lead_list_value = true;
 
     add_lead(){
         this.add_lead_value = true;
+        console.log('oh');
     }
 
     save_lead(){
