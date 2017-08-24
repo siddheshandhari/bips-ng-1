@@ -6,6 +6,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { BrowserModule }  from "@angular/platform-browser";
 import { RouterModule, Routes} from "@angular/router";
 
+//
+import { CardModule } from '../shared/card/card.module';
+
 //component
 import { AddLeadComponent } from './lead/add-lead/add-lead.component';
 import { CrmComponent } from './crm.component';
@@ -16,7 +19,6 @@ import { PotentialComponent } from './potential/potential.component';
 import { TaskComponent } from './task/task.component';
 import { EventComponent } from './event/event.component';
 import { PageHeader } from '../shared/page-header/page-header.component';
-import { Card } from '../shared/card/card.component';
 
 //service
 import { LeadService } from './lead/lead.service';
@@ -37,13 +39,13 @@ import { EventService } from './event/event.service';
     TaskComponent,
     EventComponent,
     PageHeader,
-    Card,
   ],
   imports: [
     FormsModule,
     ReactiveFormsModule ,
     BrowserModule,
     HttpModule,
+    CardModule,
   ],
   exports: [
     CrmComponent,

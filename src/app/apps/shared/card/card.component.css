@@ -1,4 +1,5 @@
 :host{
+  display: block;
   width: 260px;
   height: 215px;
   background-color: black;
