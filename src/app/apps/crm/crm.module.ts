@@ -16,6 +16,7 @@ import { PotentialComponent } from './potential/potential.component';
 import { TaskComponent } from './task/task.component';
 import { EventComponent } from './event/event.component';
 import { PageHeader } from '../shared/page-header/page-header.component';
+import { Card } from '../shared/card/card.component';
 
 //service
 import { LeadService } from './lead/lead.service';
@@ -36,6 +37,7 @@ import { EventService } from './event/event.service';
     TaskComponent,
     EventComponent,
     PageHeader,
+    Card,
   ],
   imports: [
     FormsModule,
