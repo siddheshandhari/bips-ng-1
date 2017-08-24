@@ -1,5 +1,5 @@
 :host{
-  display: inline-block;
+  /*display: inline-block;*/
   width: 100%;
 }
 
@@ -41,3 +41,5 @@ td {
     float:right;
     margin:10px;
 }
+
+
