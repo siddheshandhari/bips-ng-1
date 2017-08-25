@@ -2,11 +2,12 @@
 <span *ngIf="add_lead_value== false" class="btn btn-primary" (click)='add_lead()'>+</span>
 <span *ngIf="add_lead_value== true" class="btn btn-primary" (click)='save_lead()'>Save</span>
 <span *ngIf="add_lead_value== true"  class="btn btn-primary"  (click)='cancel_lead()'>Cancel</span>
+<button *ngIf="box_selected == true;" type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash-o"></i></button>
 <add-lead *ngIf="add_lead_value== true"></add-lead> 
 
 
 
-<!--<div *ngIf="add_lead_value==false">
+<div *ngIf="add_lead_value==false">
         <h3>Lead</h3>
 
         <table class="table">
@@ -39,7 +40,7 @@
             </tr>
         </tbody>
         </table>
-</div> -->
+</div> 
 
 <div class="masonry" *ngIf="add_lead_value==false">
 
