@@ -42,8 +42,13 @@ td {
 
 .masonry{
 
+<<<<<<< HEAD
   display: flex; 
   flex-flow: row wrap;
+=======
+  display: flex;
+  flex-flow: column wrap;
+>>>>>>> 3eed8e414771c03fb6b4963de7949a457ea932fb
   width: 100%;
   height: 800px;
 
@@ -55,3 +60,16 @@ td {
   box-sizing:border-box;
   padding:10px;
 }
+<<<<<<< HEAD
+=======
+/*card{
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}*/
+>>>>>>> 3eed8e414771c03fb6b4963de7949a457ea932fb
