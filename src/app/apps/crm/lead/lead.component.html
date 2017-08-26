@@ -1,206 +1,80 @@
 
 <span *ngIf="add_lead_value== false" class="btn btn-primary" (click)='add_lead()'>+</span>
-<span *ngIf="add_lead_value== true" class="btn btn-primary" (click)='save_lead()'>Save</span>
+<span *ngIf="add_lead_value== true" class="btn btn-primary" (click)='save_lead()' >Save</span>
 <span *ngIf="add_lead_value== true"  class="btn btn-primary"  (click)='cancel_lead()'>Cancel</span>
 <button *ngIf="box_selected == true;" type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash-o"></i></button>
 <add-lead *ngIf="add_lead_value== true"></add-lead> 
-
-<<<<<<< HEAD
+<button *ngIf="add_lead_value== false" (click)="toggleMasonry()">style</button>
 
 
 <div *ngIf="add_lead_value==false">
-=======
-<div class="masonry">
-  <div class="item">
-    <card headerColor="#ef5350"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#009688"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#3F51B5"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#ef5350"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#AD1457"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#ef5350"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#37474F"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#00695C"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#ef5350"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#37474F"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#FFB300"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#ef5350"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#37474F"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#3949AB"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#FFB300"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#ef5350"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#ef5350"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#FF6F00"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#ef5350"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#ef5350"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#ef5350"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#ef5350"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#ef5350"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#ef5350"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#ef5350"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#ef5350"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#ef5350"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#ef5350"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#ef5350"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#ef5350"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#ef5350"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#ef5350"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#ef5350"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#ef5350"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#FF9800"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#ef5350"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#039BE5"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#ef5350"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#ef5350"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#FFEB3B"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#ef5350"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#ef5350"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#ef5350"></card>
-  </div>
-  <div class="item">
-    <card headerColor="#ef5350"></card>
-  </div>
+
+    <div class="masonry" *ngIf = "masonry == true">
+    <div class="item">
+      <card headerColor="#ef5350"></card>
+    </div>
+    <div class="item">
+      <card headerColor="#009688"></card>
+    </div>
+    <div class="item">
+      <card headerColor="#3F51B5"></card>
+    </div>
+
 </div>
 
 
-<!--<div *ngIf="add_lead_value==false">
->>>>>>> 3eed8e414771c03fb6b4963de7949a457ea932fb
-        <h3>Lead</h3>
+<div *ngIf = "masonry == false">
+    <div *ngIf="add_lead_value==false" >
 
-        <table class="table">
-        <thead>
-            <tr>
-            <th>#</th>
-            <th>Company Name</th>
-            <th>Contact</th>
-            <th>Lead Status</th>
-            <th>Lead Source</th>
-            <th>Quotes</th>
-            <th>Projects</th>
-            <th>More Info</th>
-            <th>Edit</th>
-            <th>Delete</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let leadlist of leadlists let i = index">
-            <td scope="row"><input type="checkbox" value="{{leadlist.id}}" (change)="pushlead(leadlist.id)" id="{{leadlist.id}}"></td>
-            <td>{{leadlist.company_name}}</td>
-            <td>{{leadlist.contact}}</td>
-            <td>{{leadlist.lead_status}}</td>
-            <td>{{leadlist.lead_source}}</td>
-            <td>{{leadlist.quotes}}</td>
-            <td>{{leadlist.project}}</td>
-            <td><button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-caret-down"></i></button></td>
-            <td><button type="button" class="btn btn-outline-success btn-sm"><i class="fa fa-pencil"></i></button></td>
-            <td><button  type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash-o"></i></button></td>
-            </tr>
-        </tbody>
-        </table>
-<<<<<<< HEAD
-</div> 
+            <h3>Lead</h3>
 
-<div class="masonry" *ngIf="add_lead_value==false">
+            <table class="table">
+            <thead>
+                <tr>
+                <th>#</th>
+                <th>Company Name</th>
+                <th>Website</th>
+                <th>employees</th>
+                <th>ratin</th>
+                <th>Quotes</th>
+                <th>Projects</th>
+                <th>More Info</th>
+                <th>Edit</th>
+                <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let leadlist of leadlists let i = index">
+                <td scope="row">{{i}}</td>
+                <td>{{leadlist.name}}</td>
+                <td>{{leadlistwebsite}}</td>
+                <td>{{leadlistemployees}}</td>
+                <td>{{leadlist.industry}}</td>
+                <td>{{leadlist.tier}}</td>
+                <td>{{leadlist.source}}</td>
+                
 
-        <div class="item">
-        <card></card>
-        </div>
+                <!--<td>{{leadlist.company.name}}</td>
+                <td>{{leadlist.company.website}}</td>
+                <td>{{leadlist.company.employees}}</td>
+                <td>{{leadlist.user.industry}}</td>
+                <td>{{leadlist.user.tier}}</td>
+                <td>{{leadlist.source}}</td>-->
+                <td><button type="button" class="btn btn-outline-primary btn-sm" ><i class="fa fa-caret-down"></i></button></td>
+                <td><button type="button" class="btn btn-outline-success btn-sm"  (click)="editLead(leadlist)"><i class="fa fa-pencil"></i></button></td>
+                <td><button  type="button" class="btn btn-outline-danger btn-sm" (click)="deleteLead(i)"><i class="fa fa-trash-o"></i></button></td>
+                </tr>
+            </tbody>
+            </table>
 
-        <div class="item">
-        <card></card>
-        </div>
-
-        <div class="item">
-        <card></card>
-        </div>
-
-    
+    </div> 
 </div>
 
-=======
-</div>
--->
->>>>>>> 3eed8e414771c03fb6b4963de7949a457ea932fb
+
+<div *ngIf="selectedLead">{{selectedLead.name}}</div>
+
+
+
+
+
+<add-lead *ngIf="selectedLead"></add-lead>

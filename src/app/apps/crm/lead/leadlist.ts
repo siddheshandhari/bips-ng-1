@@ -1,4 +1,4 @@
-export interface LeadInfo{
+export interface Leadlist{
     t_company?:{
         company_name: string;
         website: string;
@@ -15,6 +15,7 @@ export interface LeadInfo{
         lead_source:string;
         customer_type:string;
     },
+
     addresses: Address[];
    
     contacts: Contact[];
