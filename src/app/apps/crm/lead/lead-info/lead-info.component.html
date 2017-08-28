@@ -7,7 +7,7 @@
         <div class="row">
                 <div class="form-group col-md-6">
                     <label >Company Name</label>
-                    <input type="text" class="form-control form-control-sm" formControlName="company_name">
+                    <input type="text" class="form-control form-control-sm" [(ngModel)]="company_name">
                 </div>
 
                 <div class="form-group col-md-3">
@@ -271,10 +271,4 @@
     </div>
 
 
-
-
-
-    <button type="submit" class="btn btn-primary" >Submit</button>
-</form>
-<pre>{{myForm.value | json}}</pre>
 

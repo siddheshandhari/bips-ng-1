@@ -9,6 +9,10 @@ import { RouterModule, Routes} from "@angular/router";
 //
 import { CardModule } from '../shared/card/card.module';
 
+//
+// import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+// import { InMemoryDataService } from './lead/in-memory-data.service';
+
 //component
 import { AddLeadComponent } from './lead/add-lead/add-lead.component';
 import { CrmComponent } from './crm.component';
@@ -46,6 +50,7 @@ import { EventService } from './event/event.service';
     BrowserModule,
     HttpModule,
     CardModule,
+    // InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
   exports: [
     CrmComponent,

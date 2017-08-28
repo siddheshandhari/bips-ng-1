@@ -1,0 +1,32 @@
+[{
+        "company": {
+            "id": 29,
+            "name": "Brakus-Weissnat",
+            "website": "hegmann.org",
+            "employees": 1050,
+            "rating": 5,
+            "industry": "Multi-channelled asynchronous artificialintelligence",
+            "annual_revenue": 231,
+            "tier": 2,
+            "active": 0,
+            "created_at": null,
+            "updated_at": null
+        },
+        "user": {
+            "id": 29,
+            "name": "Brakus-Weissnat",
+            "website": "hegmann.org",
+            "employees": 1050,
+            "rating": 5,
+            "industry": "Multi-channelled asynchronous artificialintelligence",
+            "annual_revenue": 231,
+            "tier": 2,
+            "active": 0,
+            "created_at": null,
+            "updated_at": null
+        },
+        "status": "dolor",
+        "source": "Doloremque quis laudantium tenetur ullam sed.",
+        "active": true
+    }
+    ]
