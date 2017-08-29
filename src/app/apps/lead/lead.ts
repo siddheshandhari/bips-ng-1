@@ -1,4 +1,4 @@
-import { Company } from '../../../models/company';
+import { Company } from '../../models/company';
 
 export class Lead {
     company: Company;

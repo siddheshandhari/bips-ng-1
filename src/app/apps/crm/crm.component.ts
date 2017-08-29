@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 
 export class CrmComponent{
-  private crmRouter: string = "lead";
+  private crmRouter: string = "account";
 }

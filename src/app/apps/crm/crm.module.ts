@@ -14,11 +14,11 @@ import { CardModule } from '../shared/card/card.module';
 // import { InMemoryDataService } from './lead/in-memory-data.service';
 
 //component
-import { AddLeadComponent } from './lead/add-lead/add-lead.component';
+
 import { CrmComponent } from './crm.component';
 import { AccountComponent } from './account/account.component';
-import { LeadComponent } from './lead/lead.component';
-import { EditLeadComponent } from './lead/edit-lead/edit-lead.component';
+
+
 import { CrmNavbarComponent } from './navbar/navbar.component';
 import { PotentialComponent } from './potential/potential.component';
 import { TaskComponent } from './task/task.component';
@@ -27,7 +27,7 @@ import { PageHeader } from '../shared/page-header/page-header.component';
 
 
 //service
-import { LeadService } from './lead/lead.service';
+
 import { AccountService } from './account/account.service';
 import { PotentialService } from './potential/potential.service';
 import { TaskService } from './task/task.service';
@@ -39,13 +39,13 @@ import { EventService } from './event/event.service';
     CrmComponent,
     AccountComponent,
     PotentialComponent,
-    AddLeadComponent,
+
     CrmNavbarComponent,
-    LeadComponent,
+ 
     TaskComponent,
     EventComponent,
     PageHeader,
-    EditLeadComponent
+
   ],
   imports: [
     FormsModule,
@@ -63,7 +63,7 @@ import { EventService } from './event/event.service';
     AccountService,
     PotentialService,
 
-    LeadService,
+
     TaskService,
     EventService,
 

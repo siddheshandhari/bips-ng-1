@@ -46,7 +46,7 @@ export class LeadComponent implements OnInit {
     editLead(lead:Lead): void{
 
             this.selectedLead = lead;
-            console.log(this.selectedLead.company);
+            console.log(this.selectedLead.company.id);
     }
 
    

@@ -26,7 +26,7 @@ export class AppsService {
     { id: 9, name: 'financial', path: './financial', iconUrl: '../../assets/imgs/app-icons/financial.png' },
     { id: 10, name: 'hr', path: './hr', iconUrl: '../../assets/imgs/app-icons/hr.png' },
     { id: 11, name: 'inventory', path: './inventory', iconUrl: '../../assets/imgs/app-icons/inventory.png' },
-    { id: 12, name: 'leads', path: './leads', iconUrl: '../../assets/imgs/app-icons/leads.png' },
+    { id: 12, name: 'lead', path: './lead', iconUrl: '../../assets/imgs/app-icons/lead.png' },
     { id: 13, name: 'logistics', path: './logistics', iconUrl: '../../assets/imgs/app-icons/logistics.png' },
     { id: 14, name: 'notes', path: './notes', iconUrl: '../../assets/imgs/app-icons/notes.png' },
     { id: 15, name: 'potential', path: './potential', iconUrl: '../../assets/imgs/app-icons/potential.png' },

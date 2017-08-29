@@ -1,8 +1,7 @@
 <div class="container">
   <navbar [(getRouterStatus)] = "crmRouter" class="navbar navbar-expand-lg navbar-light bg-light"></navbar>
   <div class="crm-content">
-    <lead *ngIf="crmRouter == 'lead'"></lead>
-
+    
     <account *ngIf="crmRouter == 'account'"></account>
     <potential *ngIf="crmRouter == 'potential'"></potential>
     <task *ngIf="crmRouter == 'task'"></task>
