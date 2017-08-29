@@ -1,6 +1,8 @@
 import { Company } from '../../models/company';
 
 export class Lead {
+    id :number;
+    
     company: Company;
 
     lead:{

@@ -15,6 +15,8 @@ import { LoginComponent } from './login/login.component';
 import { DesktopComponent } from './desktop/desktop.component';
 import { LoginService } from './login/login.service';
 import { AuthGuard }  from './login/login.authguard';
+import { WindowComponent } from './window/window.component';
+
 
 //reducers
 import { installedAppsReducer } from '../reducers/installedApps.reducer';
@@ -25,9 +27,12 @@ import { currentUserReducer } from '../reducers/currentUser.reducer';
 import 'rxjs/Rx';
 
 const appRoutes: Routes = [
-
+  { path: '', redirectTo:'/desktop', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
-  { path: '', component: DesktopComponent},
+  { path: 'desktop', component: DesktopComponent},
+
+
+
   // { path: '', component: LoginComponent },
   // { path: 'desktop', component: DesktopComponent, canActivate:[AuthGuard]  },
 

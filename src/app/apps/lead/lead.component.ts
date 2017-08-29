@@ -25,7 +25,7 @@ export class LeadComponent implements OnInit {
 
     constructor(public leadService:LeadService){}
 
-
+// get lead infomation
     getLeadlist():void{
           this.leadService.getLeadlist()
           .subscribe(leadlist => this.leadlist = leadlist
@@ -33,20 +33,30 @@ export class LeadComponent implements OnInit {
 
 
     }
+// delete lead
+    deleteLead(lead:Lead): void{
+
+        this.leadService.deleteLead(lead.id)
+         .subscribe(()=>{
+             this.leadlist = this.leadlist.filter (l => l !== lead);
+             if(this.selectedLead === lead){this.selectedLead = null}
+         })
+       
+   }
 
     ngOnInit():void{
         this.getLeadlist();
-        console.log();
     }
 
     public masonry = false;
     public add_lead_value = false;
     public lead_list_value = true;
+    public isediting = false;
 
     editLead(lead:Lead): void{
-
+            this.isediting = true;
             this.selectedLead = lead;
-            console.log(this.selectedLead.company.id);
+            console.log(this.selectedLead);
     }
 
 
@@ -63,13 +73,7 @@ export class LeadComponent implements OnInit {
         this.add_lead_value = false;
     }
 
-//delete one row
-    deleteLead(value){
-       console.log(value)
-       this.leadlist.splice(value, 1)
-
-   }
-
+   
 
 
 }

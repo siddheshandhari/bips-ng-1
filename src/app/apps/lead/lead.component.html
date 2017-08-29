@@ -4,28 +4,14 @@
 <span *ngIf="add_lead_value== true"  class="btn btn-primary"  (click)='cancel_lead()'>Cancel</span>
 <button *ngIf="box_selected == true;" type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash-o"></i></button>
 <add-lead *ngIf="add_lead_value== true"></add-lead> 
-<button *ngIf="add_lead_value== false" (click)="toggleMasonry()">style</button>
 
-
-<div *ngIf="add_lead_value==false">
-
-    <div class="masonry" *ngIf = "masonry == true">
-    <div class="item">
-      <card headerColor="#ef5350"></card>
-    </div>
-    <div class="item">
-      <card headerColor="#009688"></card>
-    </div>
-    <div class="item">
-      <card headerColor="#3F51B5"></card>
-    </div>
-
-</div>
+<div *ngIf="seletededLead">{{seletededLead.id}}</div>
 
 
 
+<edit-lead></edit-lead>
 
-<div *ngIf = "masonry == false">
+
     <div *ngIf="add_lead_value==false" >
 
             <h3>Lead</h3>
@@ -47,8 +33,8 @@
             </thead>
             <tbody>
                 <tr *ngFor="let lead of leadlist let i = index">
-                <!--<td scope="row">{{i}}</td>
-                <td>{{lead.name}}</td>
+               <td scope="row">{{i}}</td>
+                <!--<td>{{lead.name}}</td>
                 <td>{{lead.website}}</td>
                 <td>{{lead.employees}}</td>
                 <td>{{lead.industry}}</td>
@@ -59,22 +45,22 @@
                 <td>{{lead.company.name}}</td>
                 <td>{{lead.company.website}}</td>
                 <td>{{lead.company.employees}}</td>
+             
                 <td>{{lead.user.industry}}</td>
                 <td>{{lead.user.tier}}</td>
                 <td>{{lead.source}}</td>
                 <td><button type="button" class="btn btn-outline-primary btn-sm" ><i class="fa fa-caret-down"></i></button></td>
                 <td><button type="button" class="btn btn-outline-success btn-sm"  (click)="editLead(lead)"><i class="fa fa-pencil"></i></button></td>
-                <td><button  type="button" class="btn btn-outline-danger btn-sm" (click)="deleteLead(i)"><i class="fa fa-trash-o"></i></button></td>
+                <td><button  type="button" class="btn btn-outline-danger btn-sm" (click)="deleteLead(lead)"><i class="fa fa-trash-o"></i></button></td>
                 </tr>
             </tbody>
             </table>
 
     </div> 
-</div>
 
 
 
-<edit-lead></edit-lead>
+
 
 
 

@@ -1,4 +1,10 @@
-import { Component } from  '@angular/core';
+import { Component, OnInit } from  '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Location }  from '@angular/common';
+import 'rxjs/add/operator/switchMap';
+
+import { Lead } from './../lead';
+import { LeadService } from './../lead.service';
 
 @Component({
     selector: 'edit-lead',
@@ -7,6 +13,27 @@ import { Component } from  '@angular/core';
 
 })
 
-export class EditLeadComponent{
+export class EditLeadComponent implements OnInit{
+    lead: Lead;
+
+    constructor(
+        private leadService: LeadService,
+        private route: ActivatedRoute,
+        private location: Location
+        ){}
+
+    ngOnInit(): void{
+        this.route.paramMap
+        .switchMap((params: ParamMap) => this.leadService.getLead(+ params.get('id')))
+        .subscribe(lead =>this.lead = lead);
+    }
+
+    save(): void{
+        
+    }
+
+    goBack(): void{
+        this.location.back();
+    }
     
 }
