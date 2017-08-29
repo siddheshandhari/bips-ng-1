@@ -1,20 +1,13 @@
-export interface Leadlist{
-    t_company?:{
-        company_name: string;
-        website: string;
-        tier: string;
-        rating: string;
-        annual_revenue:string;
-        employees: string;
-        industry: string;
-        sub_industry:string;
+import { Company } from '../../../models/company';
 
-    },
-    t_lead?:{
+export class Lead {
+    company: Company;
+
+    lead:{
         lead_status: string;
         lead_source:string;
         customer_type:string;
-    },
+    };
 
     addresses: Address[];
    
@@ -22,14 +15,18 @@ export interface Leadlist{
 
 }
 
-export interface Contact{
+
+
+
+
+export class Contact{
     first_name: string;
     last_name: string;
     contact_owner:string;
     eamil:string;
     phone:string;
 }
-export interface Address{
+export class Address{
       
     street: string;
     city: string;

@@ -2,7 +2,7 @@
 <h3 class="add_lead_title">Add Lead</h3>
 <form [formGroup]= "myForm" (ngSubmit)= "onSubmit(myForm)" >
     
-    <div formGroupName= "t_company">
+    <div formGroupName= "company">
         <h5 class="subhead_title">Company Information</h5>
         <div class="row">
                 <div class="form-group col-md-6">
@@ -54,7 +54,7 @@
         </div>
     </div>
 
-    <div formGroupName= "t_lead">
+    <div formGroupName= "lead">
         <div class="row">
             <div class="form-group col-md-3">
                 <label>Customer Type</label>
@@ -164,8 +164,8 @@
 
 
 
-<div formArrayName="t_address"  class="row">
-            <div *ngFor = 'let address of myForm.controls.t_address.controls; let i =index' class="col-md-6">
+<div formArrayName="address"  class="row">
+            <div *ngFor = 'let address of myForm.controls.address.controls; let i =index' class="col-md-6">
                 <div [formGroupName]="i">
                         <div class="row">
                     <div class="form-group col-md-12">

@@ -23,6 +23,8 @@
 </div>
 
 
+
+
 <div *ngIf = "masonry == false">
     <div *ngIf="add_lead_value==false" >
 
@@ -44,24 +46,24 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let leadlist of leadlists let i = index">
-                <td scope="row">{{i}}</td>
-                <td>{{leadlist.name}}</td>
-                <td>{{leadlistwebsite}}</td>
-                <td>{{leadlistemployees}}</td>
-                <td>{{leadlist.industry}}</td>
-                <td>{{leadlist.tier}}</td>
-                <td>{{leadlist.source}}</td>
+                <tr *ngFor="let lead of leadlist let i = index">
+                <!--<td scope="row">{{i}}</td>
+                <td>{{lead.name}}</td>
+                <td>{{lead.website}}</td>
+                <td>{{lead.employees}}</td>
+                <td>{{lead.industry}}</td>
+                <td>{{lead.tier}}</td>
+                <td>{{lead.source}}</td>-->
                 
 
-                <!--<td>{{leadlist.company.name}}</td>
-                <td>{{leadlist.company.website}}</td>
-                <td>{{leadlist.company.employees}}</td>
-                <td>{{leadlist.user.industry}}</td>
-                <td>{{leadlist.user.tier}}</td>
-                <td>{{leadlist.source}}</td>-->
+                <td>{{lead.company.name}}</td>
+                <td>{{lead.company.website}}</td>
+                <td>{{lead.company.employees}}</td>
+                <td>{{lead.user.industry}}</td>
+                <td>{{lead.user.tier}}</td>
+                <td>{{lead.source}}</td>
                 <td><button type="button" class="btn btn-outline-primary btn-sm" ><i class="fa fa-caret-down"></i></button></td>
-                <td><button type="button" class="btn btn-outline-success btn-sm"  (click)="editLead(leadlist)"><i class="fa fa-pencil"></i></button></td>
+                <td><button type="button" class="btn btn-outline-success btn-sm"  (click)="editLead(lead)"><i class="fa fa-pencil"></i></button></td>
                 <td><button  type="button" class="btn btn-outline-danger btn-sm" (click)="deleteLead(i)"><i class="fa fa-trash-o"></i></button></td>
                 </tr>
             </tbody>
@@ -71,10 +73,8 @@
 </div>
 
 
-<div *ngIf="selectedLead">{{selectedLead.name}}</div>
+
+<edit-lead></edit-lead>
 
 
 
-
-
-<add-lead *ngIf="selectedLead"></add-lead>

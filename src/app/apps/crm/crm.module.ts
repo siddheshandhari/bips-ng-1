@@ -18,11 +18,13 @@ import { AddLeadComponent } from './lead/add-lead/add-lead.component';
 import { CrmComponent } from './crm.component';
 import { AccountComponent } from './account/account.component';
 import { LeadComponent } from './lead/lead.component';
+import { EditLeadComponent } from './lead/edit-lead/edit-lead.component';
 import { CrmNavbarComponent } from './navbar/navbar.component';
 import { PotentialComponent } from './potential/potential.component';
 import { TaskComponent } from './task/task.component';
 import { EventComponent } from './event/event.component';
 import { PageHeader } from '../shared/page-header/page-header.component';
+
 
 //service
 import { LeadService } from './lead/lead.service';
@@ -43,6 +45,7 @@ import { EventService } from './event/event.service';
     TaskComponent,
     EventComponent,
     PageHeader,
+    EditLeadComponent
   ],
   imports: [
     FormsModule,

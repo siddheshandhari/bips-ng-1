@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
-import { LeadService } from './lead.service';
+import { Component, OnInit  } from '@angular/core';
+// import { Router } from './angualr/router';
 
- export class Leadlist{
-        name:string;
-        id: number 
-    }
- const LWADLISTS : Leadlist[]=[
-     
- ]
+import { LeadService } from './lead.service';
+import { Lead } from './lead';
+
+
+//  export class Leadlist{
+//         name:string;
+//         id: number 
+//     }
+
 
 @Component({
     selector: 'lead',
@@ -16,41 +18,35 @@ import { LeadService } from './lead.service';
 
 })
 
-export class LeadComponent {
+export class LeadComponent implements OnInit {
 
-    leadlists: any =[];
+    leadlist : Lead[] = [];
+    selectedLead : Lead;
 
-    constructor(public leadService:LeadService){
+    constructor(public leadService:LeadService){}
+
+
+    getLeadlist():void{
+          this.leadService.getLeadlist()
+          .subscribe(leadlist => this.leadlist = leadlist
+          )
+
 
     }
-// init data from database
+
     ngOnInit():void{
-          this.leadService.getLeadLists()
-          .subscribe(resLeadList =>{
-              this.leadlists = resLeadList;
-              console.log(this.leadlists)
-          })
-
-
+        this.getLeadlist();
+        console.log();
     }
 
     public masonry = false;
     public add_lead_value = false;
     public lead_list_value = true;
-//toggle to change style
-    toggleMasonry(){
-            if (this.masonry == false){
-                this.masonry = true;
-            }else{
-                this.masonry = false;
-            }
-    }
-    selectedLead = Leadlist;
 
-    editLead(leadlist){
-            console.log(leadlist);
-            this.selectedLead = leadlist;
-            console.log(this.selectedLead.name);
+    editLead(lead:Lead): void{
+
+            this.selectedLead = lead;
+            console.log(this.selectedLead.company);
     }
 
    
@@ -70,7 +66,7 @@ export class LeadComponent {
 //delete one row
     deleteLead(value){
        console.log(value)
-       this.leadlists.splice(value, 1)
+       this.leadlist.splice(value, 1)
 
    }
 

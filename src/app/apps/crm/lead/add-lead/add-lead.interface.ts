@@ -1,5 +1,5 @@
 export interface LeadInfo{
-    t_company?:{
+    company?:{
         company_name: string;
         website: string;
         tier: string;
@@ -10,7 +10,7 @@ export interface LeadInfo{
         sub_industry:string;
 
     },
-    t_lead?:{
+    lead?:{
         lead_status: string;
         lead_source:string;
         customer_type:string;

@@ -25,7 +25,7 @@ export class AddLeadComponent implements OnInit{
     ngOnInit(){
         this.myForm = this._formBuilder.group({
 
-            t_company :this._formBuilder.group({
+            company :this._formBuilder.group({
                     company_name: [''],
                     tier:[''],
                     website: [''],
@@ -37,12 +37,12 @@ export class AddLeadComponent implements OnInit{
             
 
             }),
-            t_lead :this._formBuilder.group({
+            lead :this._formBuilder.group({
                     lead_status: [''],
                     lead_source:[''],
                     customer_type:['']
             }),
-            t_address: this._formBuilder.array([
+            address: this._formBuilder.array([
                 this.initAddress(),
                 this.initAddress1(),
             ]),
@@ -94,7 +94,7 @@ export class AddLeadComponent implements OnInit{
 
     
     addAddress(){
-         const control = <FormArray>this.myForm.controls['t_address'];
+         const control = <FormArray>this.myForm.controls['address'];
          control.push(this.initAddress());
      }
 
