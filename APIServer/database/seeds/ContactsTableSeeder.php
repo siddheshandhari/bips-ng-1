@@ -14,15 +14,15 @@ class ContactsTableSeeder extends Seeder
         $faker = Faker\Factory::create();
         foreach(range(1, 60) as $index)
         {
-          DB::table('contact')->insert([
+          DB::table('contacts')->insert([
             'company_id' => $faker->numberBetween($min=1, $max=30),
-            'address_id' => $faker->numberBetween(),
+            'address_id' => $faker->numberBetween($min=1, $max=30),
             'first_name' => $faker->firstName,
             'last_name' => $faker->lastName,
             'email' => $faker->email,
             'title' => $faker->word,
             'phone' => $faker->phoneNumber,
-            'department' => $faker->departmentName,
+            'department' => $faker->jobTitle,
             'home_phone' => $faker->phoneNumber,
             'other_phone' => $faker->phoneNumber,
             'fax' => $faker->phoneNumber,
@@ -34,7 +34,7 @@ class ContactsTableSeeder extends Seeder
             'customer_type' => $faker->word,
             'twitter' => $faker->userName,
             'active' => $faker->boolean
-          ])
+          ]);
         }
     }
 }

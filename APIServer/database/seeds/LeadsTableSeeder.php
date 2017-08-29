@@ -1,7 +1,5 @@
 <?php
 use Illuminate\Database\Seeder;
-use App\User;
-use App\Company;
 
 class LeadsTableSeeder extends Seeder
 {
