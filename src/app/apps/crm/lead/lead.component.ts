@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { LeadService } from './lead.service';
 
  export class Leadlist{
@@ -17,6 +17,7 @@ import { LeadService } from './lead.service';
 })
 
 export class LeadComponent {
+    @Input() company: object;
 
     leadlists: any =[];
 

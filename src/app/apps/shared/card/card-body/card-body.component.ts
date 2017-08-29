@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
 })
 
 export class CardBodyComponent{
-
+  name: string = "Jack"
+  position: string = "CTO"
 };

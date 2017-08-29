@@ -1,16 +1,16 @@
 <div class="card-logo">
-  <img src="assets/imgs/card-logo/orcasmart.png"/>
+  <img [src]="company.logoUrl"/>
 </div>
 <div class="header-info">
-  <h5 class="header-title">Orcasmart</h5>
+  <h5 class="header-title">{{company.name}}</h5>
   <div class="header-body">
     <div class="header-address">
       <i class="fa fa-map-marker"></i>
-      <span>Hicksville, NY</span>
+      <span>{{company.address}}}</span>
     </div>
     <div class="header-industry">
       <i class="fa fa-briefcase"></i>
-      <span>Technology</span>
+      <span>{{company.industry}}}</span>
     </div>
   </div>
 </div>
