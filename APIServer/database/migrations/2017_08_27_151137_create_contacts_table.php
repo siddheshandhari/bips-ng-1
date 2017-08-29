@@ -15,10 +15,10 @@ class CreateContactsTable extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('company_id')->unsiged()->nullable();
-            // $table->foreign('company_id')->references('id')->on('companies');
-            $table->integer('address_id')->unsigned()->nullable();
-            // $table->foreign('address_id')->references('id')->on('addresses');
+            $table->integer('company_id')->length(10)->unsigned()->nullable();
+            $table->foreign('company_id')->references('id')->on('companies');
+            $table->integer('address_id')->length(10)->unsigned()->nullable();
+            $table->foreign('address_id')->references('id')->on('addresses');
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email')->nullable();
