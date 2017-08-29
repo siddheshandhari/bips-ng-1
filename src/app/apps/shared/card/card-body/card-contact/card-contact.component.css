@@ -14,6 +14,7 @@
     font-weight: bold;
     font-size: 20px;
     color: #000000;
+    margin-bottom: 0;
 }
 
 .position {
@@ -28,13 +29,13 @@
 } */
 
 .fa-phone-square {
-    color: #12C112;
+    color: #2ab633;
 }
 
 .fa-envelope {
-    color: #E4E413;
+    color: #f6bf00;
 }
 
 .fa-skype{
-    color: #09ABEE;
+    color: #3682dd;
 }
