@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserModule }  from "@angular/platform-browser";
 import { RouterModule, Routes} from "@angular/router";
+import { LeadService } from './lead.service';
 
 
 //
@@ -28,7 +29,7 @@ import { EditLeadComponent } from './edit-lead/edit-lead.component';
     BrowserModule,
     HttpModule,
     CardModule,
-    
+
 
   ],
   exports: [
@@ -36,7 +37,7 @@ import { EditLeadComponent } from './edit-lead/edit-lead.component';
     HttpClientModule,
   ],
   providers: [
-    
+    LeadService
   ]
 
 
