@@ -15,39 +15,6 @@ export interface LeadInfo{
         lead_source:string;
         customer_type:string;
     },
-    // shipping_address?:{
-    //     street: string;
-    //     city: string;
-    //     state: string;
-    //     zip_code:number;
-    //     country: string;
-
-    // },
-    // billing_address?:{
-    //     street: string;
-    //     city: string;
-    //     state: string;
-    //     zip_code:number;
-    //     country: string;
-    // },
-    // t_address?:[
-    //     {
-    //         street: 'string';
-    //         city: string;
-    //         state: string;
-    //         zip_code:number;
-    //         country: string;
-    //         isshipping:1;
-    //     },
-    //     {
-    //         street: 'string';
-    //         city: string;
-    //         state: string;
-    //         zip_code:number;
-    //         country: string;
-    //         isshipping:0;
-    //     }
-    //     ]
     addresses: Address[];
    
     contacts: Contact[];
