@@ -21,7 +21,7 @@ class CreateAddressesTable extends Migration
             $table->string('state')->nullable();
             $table->string('city')->nullable();
             $table->string('street')->nullable();
-            $table->integer('zipcode')->nullable();
+            $table->string('zipcode')->nullable();
             $table->boolean('shipping')->nullable();
             $table->boolean('active');
             $table->timestamps();
