@@ -12,6 +12,7 @@ import { CardModule } from '../shared/card/card.module';
 import { LeadComponent } from './lead.component';
 import { AddLeadComponent } from './add-lead/add-lead.component';
 import { EditLeadComponent } from './edit-lead/edit-lead.component';
+import { LeadService } from './lead.service';
 
 
 @NgModule({
@@ -36,7 +37,7 @@ import { EditLeadComponent } from './edit-lead/edit-lead.component';
     HttpClientModule,
   ],
   providers: [
-    
+    LeadService 
   ]
 
 
