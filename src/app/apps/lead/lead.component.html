@@ -5,11 +5,7 @@
 <button *ngIf="box_selected == true;" type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash-o"></i></button>
 <add-lead *ngIf="add_lead_value== true"></add-lead> 
 
-<div *ngIf="seletededLead">{{seletededLead.id}}</div>
-
-
-
-<edit-lead></edit-lead>
+<edit-lead [lead] = "selectedLead"></edit-lead>
 
 
     <div *ngIf="add_lead_value==false" >

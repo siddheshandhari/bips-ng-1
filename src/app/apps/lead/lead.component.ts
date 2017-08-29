@@ -54,7 +54,7 @@ export class LeadComponent implements OnInit {
     public isediting = false;
 
     editLead(lead:Lead): void{
-            this.isediting = true;
+   
             this.selectedLead = lead;
             console.log(this.selectedLead);
     }
