@@ -24,6 +24,18 @@ class CreateContactsTable extends Migration
             $table->string('title');
             $table->string('phone');
             $table->string('department');
+            $table->string('home_phone');
+            $table->string('other_phone');
+            $table->string('fax');
+            $table->string('mobile');
+            $table->string('birthday');
+            $table->string('assistant');
+            $table->string('asst_phone');
+            $table->string('reports_to');
+            $table->string('skype');
+            $table->string('customer_type');
+            $table->string('twitter');
+            $table->boolean('active');
             $table->timestamps();
         });
     }

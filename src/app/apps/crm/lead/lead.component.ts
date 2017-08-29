@@ -7,7 +7,7 @@ import { Lead } from './lead';
 
 //  export class Leadlist{
 //         name:string;
-//         id: number 
+//         id: number
 //     }
 
 
@@ -46,10 +46,10 @@ export class LeadComponent implements OnInit {
     editLead(lead:Lead): void{
 
             this.selectedLead = lead;
-            console.log(this.selectedLead.company);
+            console.log(this.selectedLead.company.id);
     }
 
-   
+
 // jump to add lead page
     add_lead(){
         this.add_lead_value = true;
