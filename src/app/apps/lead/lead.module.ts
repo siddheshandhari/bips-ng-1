@@ -7,6 +7,7 @@ import { BrowserModule }  from "@angular/platform-browser";
 import { RouterModule, Routes} from "@angular/router";
 
 
+
 //
 import { CardModule } from '../shared/card/card.module';
 import { LeadComponent } from './lead.component';
@@ -29,7 +30,7 @@ import { LeadService } from './lead.service';
     BrowserModule,
     HttpModule,
     CardModule,
-    
+
 
   ],
   exports: [
@@ -37,7 +38,9 @@ import { LeadService } from './lead.service';
     HttpClientModule,
   ],
   providers: [
+
     LeadService 
+
   ]
 
 

@@ -26,29 +26,33 @@ export class AddLeadComponent implements OnInit{
         this.myForm = this._formBuilder.group({
 
             company :this._formBuilder.group({
-                    company_name: [''],
+                    name: [''],
                     tier:[''],
                     website: [''],
                     rating:[''],
                     annual_revenue:[''],
                     employees:[''],
                     industry:[''],
-                    sub_industry:['']
             
 
             }),
-            lead :this._formBuilder.group({
-                    lead_status: [''],
-                    lead_source:[''],
-                    customer_type:['']
-            }),
-            address: this._formBuilder.array([
-                this.initAddress(),
-                this.initAddress1(),
-            ]),
-            contacts: this._formBuilder.array([
-                this.initContact(),
-            ])
+
+            user : this._formBuilder.group({
+                    id:['']
+            })
+            // lead :this._formBuilder.group({
+            //         lead_status: [''],
+            //         lead_source:[''],
+            //         customer_type:['']
+            // }),
+            // address: this._formBuilder.array([
+            //     this.initAddress(),
+            //     this.initAddress1(),
+            // ]),
+            // contacts: this._formBuilder.array([
+            //     this.initContact(),
+            // ])
+
 
 
         });
@@ -111,7 +115,7 @@ export class AddLeadComponent implements OnInit{
      onSubmit({value}:{value:LeadInfo}){
        event.preventDefault();
        console.log(JSON.stringify(value));
-       const req = this.http.post('http://192.168.50.25/orcasmart/bips/api/lead',{value})
+       const req = this.http.post('http://192.168.50.25/api/v1/lead',{value})
         .subscribe(
                     res =>{
                         console.log(JSON.stringify(res));

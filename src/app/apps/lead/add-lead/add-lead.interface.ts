@@ -10,6 +10,9 @@ export interface LeadInfo{
         sub_industry:string;
 
     },
+    user?:{
+        id:number;
+    }
     lead?:{
         lead_status: string;
         lead_source:string;
