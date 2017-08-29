@@ -7,7 +7,7 @@ import { Lead } from './lead';
 
 //  export class Leadlist{
 //         name:string;
-//         id: number 
+//         id: number
 //     }
 
 
@@ -49,7 +49,7 @@ export class LeadComponent implements OnInit {
             console.log(this.selectedLead.company.id);
     }
 
-   
+
 // jump to add lead page
     add_lead(){
         this.add_lead_value = true;
