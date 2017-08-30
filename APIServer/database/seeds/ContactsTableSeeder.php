@@ -16,7 +16,6 @@ class ContactsTableSeeder extends Seeder
         {
           DB::table('contacts')->insert([
             'company_id' => $faker->numberBetween($min=1, $max=30),
-            'address_id' => $faker->numberBetween($min=1, $max=30),
             'first_name' => $faker->firstName,
             'last_name' => $faker->lastName,
             'email' => $faker->email,
