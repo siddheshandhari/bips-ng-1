@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { LeadService } from './lead.service';
+// import { Company } from './lead.company';
 
  export class Leadlist{
         name:string;
@@ -19,6 +20,24 @@ import { LeadService } from './lead.service';
 export class LeadComponent {
 
     leadlists: any =[];
+    companys: Array<object> = [
+    //     new Company('assets/imgs/card-logo/orcasmart.png', 'Glopak', '35 Engel St', 'technology'),
+    //     new Company('assets/imgs/card-logo/orcasmart.png', 'orca', 'Hicksville', 'technology')
+    // ];
+        {   
+            logo:"assets/imgs/card-logo/orcasmart.png",
+            name: "Glopak",
+            address: "35 Engel St",
+            industry: "technology"
+        },
+        {   
+            logo:"assets/imgs/card-logo/orcasmart.png",
+            name: "orca",
+            address: "35 Engel St",
+            industry: "technology"
+        }    
+    ];    
+    
 
     constructor(public leadService:LeadService){
 
@@ -37,20 +56,7 @@ export class LeadComponent {
     public masonry = false;
     public add_lead_value = false;
     public lead_list_value = true;
-    company: Array<object> = [
-        {   
-            logo:"assets/imgs/card-logo/orcasmart.png",
-            name: "Glopak",
-            address: "35 Engel St",
-            industry: "technology"
-        },
-        {   
-            logo:"assets/imgs/card-logo/orcasmart.png",
-            name: "orca",
-            address: "35 Engel St",
-            industry: "technology"
-        }        
-    ];
+    
 //toggle to change style
     toggleMasonry(){
             if (this.masonry == false){

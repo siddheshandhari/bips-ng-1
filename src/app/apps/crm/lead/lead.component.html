@@ -11,13 +11,7 @@
 
     <div class="masonry" *ngIf = "masonry == true">
     <div class="item">
-      <card headerColor="#ef5350" [company]="company"></card>
-    </div>
-    <div class="item">
-      <card headerColor="#009688" [company]="company"></card>
-    </div>
-    <div class="item">
-      <card headerColor="#3F51B5" [company]="company"></card>
+      <card headerColor="#ef5350" *ngFor="let company of companys" [company]="company"></card>
     </div>
 
 </div>
