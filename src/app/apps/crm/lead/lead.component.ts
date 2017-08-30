@@ -17,7 +17,6 @@ import { LeadService } from './lead.service';
 })
 
 export class LeadComponent {
-    @Input() company: object;
 
     leadlists: any =[];
 
@@ -25,7 +24,7 @@ export class LeadComponent {
 
     }
 // init data from database
-    ngOnInit():void{
+    ngOnInit(): void{
           this.leadService.getLeadLists()
           .subscribe(resLeadList =>{
               this.leadlists = resLeadList;
@@ -38,6 +37,20 @@ export class LeadComponent {
     public masonry = false;
     public add_lead_value = false;
     public lead_list_value = true;
+    company: Array<object> = [
+        {   
+            logo:"assets/imgs/card-logo/orcasmart.png",
+            name: "Glopak",
+            address: "35 Engel St",
+            industry: "technology"
+        },
+        {   
+            logo:"assets/imgs/card-logo/orcasmart.png",
+            name: "orca",
+            address: "35 Engel St",
+            industry: "technology"
+        }        
+    ];
 //toggle to change style
     toggleMasonry(){
             if (this.masonry == false){

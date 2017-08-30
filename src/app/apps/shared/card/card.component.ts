@@ -11,22 +11,18 @@ import { Component, ElementRef, Input } from '@angular/core';
 
 export class CardComponent{
   @Input() headerColor: string;
-  
-  company = {
-    logoUrl:"assets/imgs/card-logo/orcasmart.png",
-    name: "Glopak",
-    address: "35 Engel St",
-    industry: "technology"
-  };
+  @Input() company: object;
+  @Input() logo: string;
+  @Input() name: string;
+  @Input() industry: string;
+  @Input() address: string;
   
   private cardHeaderIsOpen: boolean = false;
   private cardBodyIsOpen: boolean = false;
   private actionPanelIsOpen: boolean = false;
-  public arrayOfKeys;
 
   constructor(private el: ElementRef){
     console.log(this.headerColor);
-    this.arrayOfKeys = Object.keys(this.company);
   }
 
   openHeader(){
