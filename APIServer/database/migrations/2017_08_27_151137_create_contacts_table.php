@@ -34,7 +34,7 @@ class CreateContactsTable extends Migration
             $table->string('skype')->nullable();
             $table->string('customer_type')->nullable();
             $table->string('twitter')->nullable();
-            $table->boolean('active');
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

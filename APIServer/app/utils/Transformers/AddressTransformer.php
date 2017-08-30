@@ -11,7 +11,6 @@ class AddressTransformer extends Transformer {
       'city' => $address['city'],
       'street' => $address['street'],
       'zipcode' => $address['zipcode'],
-      'shipping' => $address['shipping'],
     ];
 
   }

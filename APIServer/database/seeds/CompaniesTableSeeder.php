@@ -16,6 +16,8 @@ class CompaniesTableSeeder extends Seeder
         DB::table('companies')->insert([
           'name' => $faker->company,
           'website' => $faker->domainName,
+          'billing_address_id' => $faker->numberBetween($min = 1, $max = 60),
+          'shipping_address_id' => $faker->numberBetween($min = 1, $max = 60),
           'employees' => $faker->numberBetween($min=10, $max=5000),
           'rating' => $faker->randomDigit,
           'industry' => $faker->catchPhrase,
