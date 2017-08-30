@@ -28,6 +28,12 @@ export class LeadService {
   
   }
 
+  save(lead: Lead): Observable<Lead>{
+      return this.http.put('http://192.168.50.25/api/v1/lead/'+lead.id, lead)
+      .map((res:Response) =>res.json())
+  
+  }
+
   
   
 

@@ -4,8 +4,8 @@ export interface LeadInfo{
         website: string;
         tier: string;
         rating: string;
-        annual_revenue:string;
-        employees: string;
+        annual_revenue:number;
+        employees: number;
         industry: string;
         sub_industry:string;
 

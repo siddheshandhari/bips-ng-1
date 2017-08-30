@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from  '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { HttpClient } from "@angular/common/http";
 import { Location }  from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 
@@ -18,6 +19,7 @@ export class EditLeadComponent implements OnInit{
     
 
     constructor(
+        private http: HttpClient,
         private leadService: LeadService,
         private route: ActivatedRoute,
         private location: Location
@@ -29,12 +31,22 @@ export class EditLeadComponent implements OnInit{
         // .subscribe(lead =>this.lead = lead);
     }
 
-    save(): void{
-        
+    save(lead:Lead): void{
+    //    event.preventDefault();
+       console.log(JSON.stringify(this.lead));
+       this.leadService.save(this.lead)
+       .subscribe(
+                    res =>{
+                        console.log(JSON.stringify(res));
+                        },
+                    err =>{
+                        console.log("error occored");
+                    }
+                 )
+       
+    
     }
 
-    goBack(): void{
-        this.location.back();
-    }
+
     
 }

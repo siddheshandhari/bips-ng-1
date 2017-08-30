@@ -38,7 +38,7 @@ export class AddLeadComponent implements OnInit{
             }),
 
             user : this._formBuilder.group({
-                    id:['']
+                    id:[''],
             })
             // lead :this._formBuilder.group({
             //         lead_status: [''],
@@ -112,10 +112,10 @@ export class AddLeadComponent implements OnInit{
          control.removeAt(i);
      }
 
-     onSubmit({value}:{value:LeadInfo}){
+     onSubmit({value}:{value:LeadInfo},model: LeadInfo){
        event.preventDefault();
        console.log(JSON.stringify(value));
-       const req = this.http.post('http://192.168.50.25/api/v1/lead',{value})
+       const req = this.http.post('http://192.168.50.25/api/v1/lead',value)
         .subscribe(
                     res =>{
                         console.log(JSON.stringify(res));
@@ -125,7 +125,7 @@ export class AddLeadComponent implements OnInit{
                     }
                  )
          this.myForm.reset();
-        
+    
           }
           
 
