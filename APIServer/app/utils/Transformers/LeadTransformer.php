@@ -2,29 +2,32 @@
 
 use App\Company;
 use App\utils\Transformers\CompanyTransformer;
+use App\utils\Transformers\UserTransformer;
 
 class LeadTransformer extends Transformer {
 
   protected $companyTransformer;
+  protected $userTransformer;
 
-  function __construct(CompanyTransformer $companyTransformer)
+  function __construct(CompanyTransformer $companyTransformer, UserTransformer $userTransformer)
   {
     $this->companyTransformer = $companyTransformer;
+    $this->userTransformer = $userTransformer;
   }
 
   public function transform($lead)
   {
-    $company = Company::find($lead['company_id']);
+    $company = $lead->company;
     $company = $this->companyTransformer->transform($company);
-    $user = Company::find($lead['user_id']);
+    $user = $lead->user;
+    $user = $this->userTransformer->transform($user);
 
     return [
       'id' => $lead['id'],
       'company' => $company,
       'user' => $user,
       'status' => $lead['status'],
-      'source' => $lead['source'],
-      'active' => (boolean) $lead['active']
+      'source' => $lead['source']
     ];
 
   }

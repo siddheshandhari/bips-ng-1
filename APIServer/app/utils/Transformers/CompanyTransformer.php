@@ -13,8 +13,7 @@ class CompanyTransformer extends Transformer {
       'rating' => $company['rating'],
       'industry' => $company['industry'],
       'annual_revenue' => $company['annual_revenue'],
-      'tier' => $company['tier'],
-      'active' => (boolean) $company['active']
+      'tier' => $company['tier']
     ];
 
   }

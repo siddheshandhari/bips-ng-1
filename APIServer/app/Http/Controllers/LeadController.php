@@ -25,7 +25,11 @@ class LeadController extends ApiController
      */
     public function browse()
     {
-      $leads = Lead::all()->toArray();
+      $allLeads = Lead::all();
+      $leads = $allLeads->filter(function($lead) {
+        return $lead->active == 1;
+      })->values();
+
       return $this->respond(
         $this->leadTransformer->transformCollection($leads)
       );
