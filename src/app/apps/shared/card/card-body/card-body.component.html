@@ -10,4 +10,4 @@
     </ul>
   </div>
 </div>
-<card-contact [name]="name" [position]="position"></card-contact>
+<card-contact *ngFor="let contact of contacts" [contact]="contact" ></card-contact>
