@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'card-header',
@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
 })
 
 export class CardHeaderComponent{
-
+  @Input() logo: string;
+  @Input() name: string;
+  @Input() industry: string;
+  @Input() address: string;
 };
