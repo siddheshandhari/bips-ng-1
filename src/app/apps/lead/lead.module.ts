@@ -9,7 +9,8 @@ import { RouterModule, Routes} from "@angular/router";
 
 
 //
-import { CardModule } from '../shared/card/card.module';
+// import { CardModule } from '../shared/card/card.module';
+import { CardModule } from './card/card.module';
 import { LeadComponent } from './lead.component';
 import { AddLeadComponent } from './add-lead/add-lead.component';
 import { EditLeadComponent } from './edit-lead/edit-lead.component';

@@ -1,4 +1,8 @@
 export interface LeadInfo{
+
+    lead_status: string;
+    lead_source:string;
+   
     company?:{
         company_name: string;
         website: string;
@@ -13,11 +17,9 @@ export interface LeadInfo{
     user?:{
         id:number;
     }
-    lead?:{
-        lead_status: string;
-        lead_source:string;
-        customer_type:string;
-    },
+    
+
+   
     addresses: Address[];
    
     contacts: Contact[];

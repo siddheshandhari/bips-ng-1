@@ -42,7 +42,7 @@
                     <input type="text" class="form-control form-control-sm" formControlName="employees" name="employees" >
                 </div>
 
-                <div class="form-group col-md-3">
+                <div class="form-group col-md-6">
                     <label>Industry</label>
                     <input type="text" class="form-control form-control-sm" formControlName="industry" >
                 </div>
@@ -52,14 +52,11 @@
 
 
 
-    <!--<div formGroupName= "lead">
+   
         <div class="row">
-            <div class="form-group col-md-3">
-                <label>Customer Type</label>
-                <input type="text" class="form-control form-control-sm" formControlName="customer_type">
-            </div>
+           
 
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-6">
                 <label>Lead Status</label>
                 <input type="text" class="form-control form-control-sm" formControlName="lead_status">
             </div>
@@ -71,97 +68,27 @@
 
         </div>
 
-    </div>
+    
 
-    <hr>-->
-
-    <!--<h5 class="subhead_title">Addresses</h5><br>-->
-    <!--<div class="row">
-        
-        <div class="col-md-6">
-            <h6>Shipping Address</h6>
-                <div formGroupName= "shipping_address">
-                    <div class="row">
-                        <div class="form-group col-md-12">
-                            <label>Street</label>
-                            <input type="text" class="form-control form-control-sm" formControlName="street">
-                        </div>
-
-                    </div>
-
-                    <div class="row">
-                        <div class="form-group col-md-6">
-                            <label>City</label>
-                            <input type="text" class="form-control form-control-sm" formControlName="city">
-                        </div>
-
-                         <div class="form-group col-md-3">
-                            <label>State</label>
-                            <input type="text" class="form-control form-control-sm" formControlName="state">
-                        </div>
-
-                         <div class="form-group col-md-3">
-                            <label>Zip Code</label>
-                            <input type="text" class="form-control form-control-sm" formControlName="zip_code">
-                        </div>
+    <hr>
 
 
-                    </div>
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <label>Country</label>
-                            <input type="text" class="form-control form-control-sm" formControlName="country">
-                        </div>
-                    </div>
-                 </div>
-        </div>
-
-        <div class="col-md-6">
-        <h6>Billing Address</h6>
-            <div formGroupName= "billing_address">
-                <div class="row">
-                    <div class="form-group col-md-12">
-                        <label>Street</label>
-                        <input type="text" class="form-control form-control-sm" formControlName="street">
-                    </div>
-                </div>
-
-                <div class="row">
-                        <div class="form-group col-md-6">
-                            <label>City</label>
-                            <input type="text" class="form-control form-control-sm" formControlName="city">
-                        </div>
-
-                         <div class="form-group col-md-3">
-                            <label>State</label>
-                            <input type="text" class="form-control form-control-sm" formControlName="state">
-                        </div>
-
-                         <div class="form-group col-md-3">
-                            <label>Zip Code</label>
-                            <input type="text" class="form-control form-control-sm" formControlName="zip_code">
-                        </div>
-
-
-                </div>
-
-                
-                <div class="row">
-                        <div class="col-md-12">
-                            <label>Country</label>
-                            <input type="text" class="form-control form-control-sm" formControlName="country">
-                        </div>
-                </div>
-
-
-                
+    <h5 class="subhead_title">Addresses</h5><br>
+        <div class="row">
+            <div class="col-md-6">
+                <h6>Shipping Address</h6>
             </div>
+            <div class="col-md-6">
+                <h6>Billing Address</h6>
+            </div>
+
         </div>
-    </div>-->
+   
 
 
-<!--
+
+
 <div formArrayName="address"  class="row">
             <div *ngFor = 'let address of myForm.controls.address.controls; let i =index' class="col-md-6">
                 <div [formGroupName]="i">
@@ -202,7 +129,7 @@
                 </div>
             </div>
 </div>
--->
+
 
 
 <hr>
@@ -213,7 +140,7 @@
 
 
 
-    <!--<h5 class="subhead_title">Contact</h5><br>
+    <h5 class="subhead_title">Contact</h5><br>
 
             <div formArrayName="contacts" class="row">
                 <div *ngFor = 'let contact of myForm.controls.contacts.controls;  let i = index ' class="col-md-6 card card-default" >
@@ -267,7 +194,7 @@
     <div class="">
         <a (click)="addContact()" >Add Anthor Contact</a>
     </div>
--->
+
 
 
 

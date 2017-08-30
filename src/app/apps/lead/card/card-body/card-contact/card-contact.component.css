@@ -1,0 +1,41 @@
+.card-contact {
+    position: relative;
+    float: left;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    box-sizing: content-box;
+}
+
+.name {
+    font-family: Helvetica;
+    font-weight: bold;
+    font-size: 20px;
+    color: #000000;
+    margin-bottom: 0;
+}
+
+.position {
+    font-family: Helvetica;
+    font-weight: bold;
+    font-size: 15px;
+    color: #939393;
+}
+
+/* .contact-image {
+    display: inline;
+} */
+
+.fa-phone-square {
+    color: #2ab633;
+}
+
+.fa-envelope {
+    color: #f6bf00;
+}
+
+.fa-skype{
+    color: #3682dd;
+}

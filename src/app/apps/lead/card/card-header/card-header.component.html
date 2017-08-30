@@ -1,0 +1,20 @@
+<div class="card-logo">
+  <img [src]="logo"/>
+</div>
+<div class="header-info">
+  <h5 class="header-title">{{lead.company.website}}</h5>
+  <div class="header-body">
+    <div class="header-address">
+      <i class="fa fa-map-marker"></i>
+      <span>{{address}}}</span>
+    </div>
+    <div class="header-industry">
+      <i class="fa fa-briefcase"></i>
+      <span>{{industry}}}</span>
+    </div>
+  </div>
+</div>
+<div class="expand-handler">
+  <i class="fa fa-angle-up" (click)="closeHeader()"></i>
+  <i class="fa fa-angle-down" (click)="openHeader()"></i>
+</div>

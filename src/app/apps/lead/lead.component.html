@@ -7,8 +7,10 @@
 
 <edit-lead [lead] = "selectedLead"></edit-lead>
 
-
-    <div *ngIf="add_lead_value==false" >
+<card *ngFor="let lead of leadlist"></card>
+  
+  
+    <!--<div *ngIf="add_lead_value==false" >
 
             <h3>Lead</h3>
 
@@ -30,15 +32,10 @@
             <tbody>
                 <tr *ngFor="let lead of leadlist let i = index">
                <td scope="row">{{i}}</td>
-                <!--<td>{{lead.name}}</td>
-                <td>{{lead.website}}</td>
-                <td>{{lead.employees}}</td>
-                <td>{{lead.industry}}</td>
-                <td>{{lead.tier}}</td>
-                <td>{{lead.source}}</td>-->
+                
                 
 
-                <td>{{lead.company.name}}</td>
+                <td contenteditable='true'>{{lead.company.name}}</td>
                 <td>{{lead.company.website}}</td>
                 <td>{{lead.company.employees}}</td>
              
@@ -52,8 +49,7 @@
             </tbody>
             </table>
 
-    </div> 
-
+    </div>-->
 
 
 
