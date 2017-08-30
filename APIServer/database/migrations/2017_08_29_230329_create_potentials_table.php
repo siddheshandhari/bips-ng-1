@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePotentialTable extends Migration
+class CreatePotentialsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -35,7 +35,7 @@ class CreatePotentialTable extends Migration
             $table->string('annually_useage')->nullable();
             $table->string('potential_name')->nullable();
             $table->string('description')->nullable();
-            $table->boolean('active');
+            $table->boolean('active')->default(1);
             $table->timestamps();
         });
     }
@@ -47,6 +47,6 @@ class CreatePotentialTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('potential');
+        Schema::dropIfExists('potentials');
     }
 }
