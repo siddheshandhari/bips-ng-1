@@ -18,8 +18,10 @@ class CompanyTransformer extends Transformer {
   {
     $contacts = $company->contacts;
     $contacts = $this->contactTransformer->transformCollection($contacts);
-    $addresses = $company->addresses;
-    $addresses = $this->addressTransformer->transformCollection($addresses);
+    $billingAddress = $company->billingAddress;
+    $shippingAddress = $company->shippingAddress;
+    $billingAddress = $this->addressTransformer->transform($billingAddress);
+    $shippingAddress = $this->addressTransformer->transform($shippingAddress);
 
     return [
       'id' => $company['id'],
@@ -31,7 +33,8 @@ class CompanyTransformer extends Transformer {
       'annual_revenue' => $company['annual_revenue'],
       'tier' => $company['tier'],
       'contacts' => $contacts,
-      'addresses' => $addresses,
+      'shipping_address' => $shippingAddress,
+      'billing_address' => $billingAddress
     ];
 
   }

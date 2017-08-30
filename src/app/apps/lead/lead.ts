@@ -5,20 +5,14 @@ export class Lead {
 
     company: Company;
 
-    lead:{
-        lead_status: string;
-        lead_source:string;
-        customer_type:string;
-    };
-
+  
+    lead_status: string;
+    lead_source:string;
+    
     addresses: Address[];
-   
     contacts: Contact[];
 
 }
-
-
-
 
 
 export class Contact{

@@ -14,16 +14,9 @@ export interface LeadInfo{
         sub_industry:string;
 
     },
-    user?:{
-        id:number;
-    }
-    
-
    
     addresses: Address[];
-   
     contacts: Contact[];
-
 }
 
 export interface Contact{
@@ -41,5 +34,5 @@ export interface Address{
     zip_code:number;
     country: string;
     is_shipping:number;
- 
+
         }

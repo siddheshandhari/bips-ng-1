@@ -13,11 +13,6 @@ import { Component, ElementRef, Input } from '@angular/core';
 export class CardComponent{
   @Input() headerColor: string;
   @Input() company: object;
-  // @Input() logo: string;
-  // @Input() name: string;
-  // @Input() industry: string;
-  // @Input() address: string;
-  @Input() companys: Array<object>;
   
   private cardHeaderIsOpen: boolean = false;
   private cardBodyIsOpen: boolean = false;

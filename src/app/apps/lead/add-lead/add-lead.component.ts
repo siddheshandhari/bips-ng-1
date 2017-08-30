@@ -41,11 +41,6 @@ export class AddLeadComponent implements OnInit{
             
 
             }),
-
-            user : this._formBuilder.group({
-                    id:[''],
-            }),
-   
                    
             address: this._formBuilder.array([
                 this.initAddress(),
