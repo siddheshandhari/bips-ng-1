@@ -4,6 +4,8 @@ class CompanyTransformer extends Transformer {
 
   public function transform($company)
   {
+    $contacts = $company->contacts;
+    $addresses = $company->addresses;
 
     return [
       'id' => $company['id'],
@@ -13,7 +15,9 @@ class CompanyTransformer extends Transformer {
       'rating' => $company['rating'],
       'industry' => $company['industry'],
       'annual_revenue' => $company['annual_revenue'],
-      'tier' => $company['tier']
+      'tier' => $company['tier'],
+      'contacts' => $contacts,
+      'addresses' => $addresses,
     ];
 
   }
