@@ -4,7 +4,9 @@ abstract class Transformer {
 
   public function transformCollection($items)
   {
-    return $items->map([$this, 'transform']);
+    return $items->filter(function($item){
+      return $item->active == 1;
+    })->values()->map([$this, 'transform']);
   }
 
 }
