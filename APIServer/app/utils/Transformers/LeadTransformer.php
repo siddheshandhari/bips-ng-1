@@ -1,6 +1,5 @@
 <?php namespace App\utils\Transformers;
 
-use App\Company;
 use App\utils\Transformers\CompanyTransformer;
 use App\utils\Transformers\UserTransformer;
 
