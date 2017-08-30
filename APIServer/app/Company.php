@@ -13,8 +13,13 @@ class Company extends Model
       return $this->hasMany('App\Contact');
     }
 
-    public function addresses()
+    public function billingAddress()
     {
-      return $this->hasMany('App\Address');
+      return $this->belongsTo('App\Address', 'billing_address_id');
+    }
+
+    public function shippingAddress()
+    {
+      return $this->belongsTo('App\Address', 'shipping_address_id');
     }
 }
