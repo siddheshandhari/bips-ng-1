@@ -1,5 +1,5 @@
-export interface Leadlist{
-    t_company?:{
+export interface LeadInfo{
+    company?:{
         company_name: string;
         website: string;
         tier: string;
@@ -10,12 +10,14 @@ export interface Leadlist{
         sub_industry:string;
 
     },
-    t_lead?:{
+    user?:{
+        id:number;
+    }
+    lead?:{
         lead_status: string;
         lead_source:string;
         customer_type:string;
     },
-
     addresses: Address[];
    
     contacts: Contact[];

@@ -15,9 +15,9 @@ class CreateLeadsTable extends Migration
     {
         Schema::create('leads', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->integer('company_id')->unsigned()->unique();
+            $table->integer('company_id')->unsigned()->unique()->nullable();
             $table->foreign('company_id')->references('id')->on('companies');
             $table->string('status')->nullable();
             $table->string('source')->nullable();

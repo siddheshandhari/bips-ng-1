@@ -10,6 +10,6 @@ export class Company {
   tier: number;
   annualrevenue: string;
   is_active: number;
-  contact: Contact[];
-  address: Address[];
+  contacts: Contact[];
+  addresses: Address[];
 }

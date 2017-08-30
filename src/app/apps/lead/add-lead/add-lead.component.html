@@ -2,12 +2,12 @@
 <h3 class="add_lead_title">Add Lead</h3>
 <form [formGroup]= "myForm" (ngSubmit)= "onSubmit(myForm)" >
     
-    <div formGroupName= "t_company">
+    <div formGroupName= "company">
         <h5 class="subhead_title">Company Information</h5>
         <div class="row">
                 <div class="form-group col-md-6">
                     <label >Company Name</label>
-                    <input type="text" class="form-control form-control-sm" formControlName="company_name">
+                    <input type="text" class="form-control form-control-sm" formControlName="name">
                 </div>
 
                 <div class="form-group col-md-3">
@@ -47,14 +47,21 @@
                     <input type="text" class="form-control form-control-sm" formControlName="industry" >
                 </div>
 
-                <div class="form-group col-md-3">
-                    <label>Sub-Industry</label>
-                    <input type="text" class="form-control form-control-sm" formControlName="sub_industry" >
-                </div>
         </div>
     </div>
 
-    <div formGroupName= "t_lead">
+      <div formGroupName= "user">
+        <div class="row">
+            <div class="form-group col-md-3">
+                <label>Owner</label>
+                <input type="text" class="form-control form-control-sm" formControlName="id">
+            </div>
+
+        </div>
+      </div>
+
+
+    <!--<div formGroupName= "lead">
         <div class="row">
             <div class="form-group col-md-3">
                 <label>Customer Type</label>
@@ -75,9 +82,9 @@
 
     </div>
 
-    <hr>
+    <hr>-->
 
-    <h5 class="subhead_title">Addresses</h5><br>
+    <!--<h5 class="subhead_title">Addresses</h5><br>-->
     <!--<div class="row">
         
         <div class="col-md-6">
@@ -163,9 +170,9 @@
     </div>-->
 
 
-
-<div formArrayName="t_address"  class="row">
-            <div *ngFor = 'let address of myForm.controls.t_address.controls; let i =index' class="col-md-6">
+<!--
+<div formArrayName="address"  class="row">
+            <div *ngFor = 'let address of myForm.controls.address.controls; let i =index' class="col-md-6">
                 <div [formGroupName]="i">
                         <div class="row">
                     <div class="form-group col-md-12">
@@ -204,7 +211,7 @@
                 </div>
             </div>
 </div>
-
+-->
 
 
 <hr>
@@ -215,7 +222,7 @@
 
 
 
-    <h5 class="subhead_title">Contact</h5><br>
+    <!--<h5 class="subhead_title">Contact</h5><br>
 
             <div formArrayName="contacts" class="row">
                 <div *ngFor = 'let contact of myForm.controls.contacts.controls;  let i = index ' class="col-md-6 card card-default" >
@@ -269,7 +276,7 @@
     <div class="">
         <a (click)="addContact()" >Add Anthor Contact</a>
     </div>
-
+-->
 
 
 
