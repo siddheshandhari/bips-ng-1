@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { CardModule } from '../shared/card/card.module';
 
@@ -10,7 +11,8 @@ import { FinancialComponent } from './financial.component';
     FinancialComponent,
   ],
   imports: [
-    CardModule
+    CardModule,
+    CommonModule
   ],
   exports: [
     FinancialComponent
