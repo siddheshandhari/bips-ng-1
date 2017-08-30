@@ -41,7 +41,7 @@ export class LeadComponent implements OnInit {
              this.leadlist = this.leadlist.filter (l => l !== lead);
              if(this.selectedLead === lead){this.selectedLead = null}
          })
-       
+
    }
 
     ngOnInit():void{
@@ -73,7 +73,7 @@ export class LeadComponent implements OnInit {
         this.add_lead_value = false;
     }
 
-   
+
 
 
 }

@@ -1,6 +1,6 @@
 :host{
   position: relative;
-  display: inline-block;
+  display: block;
   width: 100%;
   background-color: #FFFFFF;
   transition: height 0.5s;
