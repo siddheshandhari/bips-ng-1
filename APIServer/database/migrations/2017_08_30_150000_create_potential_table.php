@@ -19,8 +19,6 @@ class CreatePotentialTable extends Migration
             $table->foreign('company_id')->references('id')->on('companies');
             $table->integer('user_id')->length(10)->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->integer('account_id')->length(10)->unsigned()->nullable();
-            $table->foreign('account_id')->references('id')->on('accounts');
             $table->string('potential_owner')->nullable();
             $table->string('account_type')->nullable();
             $table->string('amount')->nullable();
