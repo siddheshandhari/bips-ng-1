@@ -1,4 +1,3 @@
-
 <span *ngIf="add_lead_value== false" class="btn btn-primary" (click)='add_lead()'>+</span>
 <span *ngIf="add_lead_value== true" class="btn btn-primary" (click)='save_lead()' >Save</span>
 <span *ngIf="add_lead_value== true"  class="btn btn-primary"  (click)='cancel_lead()'>Cancel</span>
@@ -6,6 +5,7 @@
 <add-lead *ngIf="add_lead_value== true"></add-lead>
 
 <edit-lead [lead] = "selectedLead"></edit-lead>
+<<<<<<< HEAD
 
 <card *ngFor = "let lead of leadlist">
   <card-header [logoUrl]="'assets/imgs/logos/orcasmart.png'" [title]="lead.company.name" [address]="lead.company.billing_address" [industry]="'Packaging'" [facebook]="" [twitter]="" [phone]="">
@@ -19,6 +19,10 @@
 
 
     <!--<div *ngIf="add_lead_value==false" >
+=======
+
+    <div *ngIf="add_lead_value==false" >
+>>>>>>> 258a1d2a2bd3da95286db9d50a1a877566a6c4b3
 
             <h3>Lead</h3>
 
