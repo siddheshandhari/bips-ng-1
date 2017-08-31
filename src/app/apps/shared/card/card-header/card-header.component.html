@@ -4,8 +4,14 @@
 <div class="header-info">
   <h5 class="header-title">{{title}}</h5>
   <div class="header-body">
-    <industry-tag>asd</industry-tag>
-    <address-tag>pppp</address-tag>
+    <subheader>
+      <i class="fa fa-map-marker"></i>
+      <span>{{address.city + ", " +address.state}}</span>
+    </subheader>
+    <subheader>
+      <i class="fa fa-briefcase"></i>
+      <span>{{industry}}</span>
+    </subheader>
     <ng-content></ng-content>
   </div>
 </div>
