@@ -14,6 +14,8 @@
 Route::group(['prefix' => 'api/v1'], function()
 {
 
+  Route::get('search', 'SearchController@search');
+
   //Lead Collections Routes
   Route::get('lead', 'LeadController@browse');
   Route::post('lead', 'LeadController@add');
