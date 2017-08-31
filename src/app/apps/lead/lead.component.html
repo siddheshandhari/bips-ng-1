@@ -1,4 +1,3 @@
-
 <span *ngIf="add_lead_value== false" class="btn btn-primary" (click)='add_lead()'>+</span>
 <span *ngIf="add_lead_value== true" class="btn btn-primary" (click)='save_lead()' >Save</span>
 <span *ngIf="add_lead_value== true"  class="btn btn-primary"  (click)='cancel_lead()'>Cancel</span>
@@ -6,15 +5,7 @@
 <add-lead *ngIf="add_lead_value== true"></add-lead>
 
 <edit-lead [lead] = "selectedLead"></edit-lead>
-<<<<<<< HEAD
-  
-=======
 
-<!--
-<card *ngFor="let company of companies" [company]="company"></card>-->
-
-
->>>>>>> 70a4d60e92a02ef72c4b02b06871f5df1ffbaa0a
     <div *ngIf="add_lead_value==false" >
 
             <h3>Lead</h3>
