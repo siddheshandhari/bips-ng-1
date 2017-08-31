@@ -18,29 +18,13 @@ export class CardComponent{
   // @Input() industry: string;
   // @Input() address: string;
   @Input() companys: Array<object>;
-  
+
   private cardHeaderIsOpen: boolean = false;
   private cardBodyIsOpen: boolean = false;
   private actionPanelIsOpen: boolean = false;
 
   constructor(private el: ElementRef){
-    console.log(this.headerColor);
-  }
 
-  openHeader(){
-    this.cardHeaderIsOpen = true;
-  }
-
-  closeHeader(){
-    this.cardHeaderIsOpen = false;
-  }
-
-  openBody(){
-    this.cardBodyIsOpen = true;
-  }
-
-  closeBody(){
-    this.cardBodyIsOpen = false;
   }
 
   openActionPanel(){

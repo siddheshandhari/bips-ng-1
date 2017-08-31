@@ -7,6 +7,10 @@
   transition: height 0.5s;
 }
 
+:host.card-body-open{
+  height: 400px;
+}
+
 .control-panel{
   position: absolute;
   left: 0;
@@ -17,7 +21,6 @@
 }
 
 .fa-angle-up{
-  display: none;
   cursor: pointer;
 }
 

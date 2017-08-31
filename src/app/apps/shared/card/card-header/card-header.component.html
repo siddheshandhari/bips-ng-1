@@ -15,6 +15,6 @@
   </div>
 </div>
 <div class="expand-handler">
-  <i class="fa fa-angle-up" (click)="closeHeader()"></i>
-  <i class="fa fa-angle-down" (click)="openHeader()"></i>
+  <i class="fa fa-angle-up" *ngIf="isOpen"  (click)="closeHeader()"></i>
+  <i class="fa fa-angle-down" *ngIf="!isOpen" (click)="openHeader()"></i>
 </div>
