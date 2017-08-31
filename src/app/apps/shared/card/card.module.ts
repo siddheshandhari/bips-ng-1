@@ -4,6 +4,7 @@ import { CardComponent } from './card.component';
 import { CardHeaderComponent } from './card-header/card-header.component';
 import { CardBodyComponent } from './card-body/card-body.component';
 import { CardContactComponent } from './card-body/card-contact/card-contact.component';
+import { CardOwnerComponent } from './card-body/card-owner/card-owner.component';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { CardContactComponent } from './card-body/card-contact/card-contact.comp
     CardHeaderComponent,
     CardBodyComponent,
     CardContactComponent,
+    CardOwnerComponent
   ],
   exports: [
     CardComponent,

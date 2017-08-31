@@ -7,16 +7,5 @@
   overflow: hidden;
   border: 1px solid #E0E0E0;
   z-index: 1;
-}
-
-/* Open */
-.card-body.card-body-open{
-  height: 400px;
-}
-
-.card-body-open > .control-panel > .fa-angle-down{
-  display: none;
-}
-.card-body-open > .control-panel > .fa-angle-up{
-  display: block;
+  margin: 10px;
 }

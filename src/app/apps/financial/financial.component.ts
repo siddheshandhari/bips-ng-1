@@ -17,10 +17,11 @@ export class FinancialComponent{
           phone: "",
           email: "",
           skype: "",
-          contactName: "Jack",
+          name: "Jack",
           position: "CTO"
         }
-      ]
+      ], 
+      owner: "Kenneth"
     },
     {
       name: "OrcaSmart",
@@ -38,10 +39,11 @@ export class FinancialComponent{
           phone: "",
           email: "",
           skype: "",
-          name: "wang",
+          name: "Wang",
           position: "Employee"
         }
-      ]
+      ],
+      owner: "Wang"
 
     }
 

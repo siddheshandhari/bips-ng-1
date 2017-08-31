@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostBinding, Input } from '@angular/core';
 
 @Component({
   selector: 'card-body',
@@ -7,7 +7,17 @@ import { Component, Input } from '@angular/core';
 })
 
 export class CardBodyComponent{
-
-  @Input() contacts: Array<object>;
   
+  @Input() contacts: Array<object>;
+  @Input() owner: string;
+  
+  @HostBinding('class.card-body-open') isOpen: boolean = false;
+
+  openBody(){
+    this.isOpen = true;
+  }
+
+  closeBody(){
+    this.isOpen = false;
+  }
 };

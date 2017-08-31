@@ -12,30 +12,13 @@ import { Component, ElementRef, Input } from '@angular/core';
 
 export class CardComponent{
   @Input() headerColor: string;
-  @Input() company: object;
-  
+  @Input() company: object
   private cardHeaderIsOpen: boolean = false;
   private cardBodyIsOpen: boolean = false;
   private actionPanelIsOpen: boolean = false;
 
   constructor(private el: ElementRef){
-    console.log(this.headerColor);
-  }
 
-  openHeader(){
-    this.cardHeaderIsOpen = true;
-  }
-
-  closeHeader(){
-    this.cardHeaderIsOpen = false;
-  }
-
-  openBody(){
-    this.cardBodyIsOpen = true;
-  }
-
-  closeBody(){
-    this.cardBodyIsOpen = false;
   }
 
   openActionPanel(){

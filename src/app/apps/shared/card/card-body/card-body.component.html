@@ -1,6 +1,6 @@
 <div class="control-panel">
-  <i class="fa fa-angle-up" (click)="closeBody()"></i>
-  <i class="fa fa-angle-down" (click)="openBody()"></i>
+  <i class="fa fa-angle-up" *ngIf="isOpen" (click)="closeBody()"></i>
+  <i class="fa fa-angle-down" *ngIf="!isOpen" (click)="openBody()"></i>
   <i class="fa fa-ellipsis-h" (click)="openActionPanel()"></i>
   <div class="action-dropdown" *ngIf="actionPanelIsOpen">
     <ul>
@@ -11,3 +11,4 @@
   </div>
 </div>
 <card-contact *ngFor="let contact of contacts" [contact]="contact" ></card-contact>
+<card-owner [owner]="owner" ></card-owner>

@@ -2,8 +2,14 @@
   position: relative;
   display: block;
   width: 100%;
+  height: 120px;
   background-color: #FFFFFF;
   transition: height 0.5s;
+  padding: 15px;
+}
+
+:host.card-body-open{
+  height: 400px;
 }
 
 .control-panel{
@@ -16,7 +22,6 @@
 }
 
 .fa-angle-up{
-  display: none;
   cursor: pointer;
 }
 

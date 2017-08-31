@@ -9,6 +9,10 @@
   transition: height 0.5s;
 }
 
+:host.card-header-open{
+  height: 150px;
+}
+
 .card-logo{
   position: relative;
   float: left;
@@ -79,11 +83,6 @@
   text-align: center;
 }
 
-.fa-angle-down{
-  cursor: pointer;
-}
-
-.fa-angle-up{
-  display: none;
+.fa-angle-down,.fa-angle-up{
   cursor: pointer;
 }

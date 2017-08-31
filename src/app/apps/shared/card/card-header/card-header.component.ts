@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'card-header',
@@ -11,4 +11,13 @@ export class CardHeaderComponent{
   @Input() name: string;
   @Input() industry: string;
   @Input() address: string;
+  @HostBinding('class.card-header-open') isOpen: boolean = false;
+
+  openHeader(){
+    this.isOpen = true;
+  }
+
+  closeHeader(){
+    this.isOpen = false;
+  }
 };
