@@ -1,34 +1,43 @@
 import { Company } from '../../models/company';
+import { User } from '../../models/user';
 
 export class Lead {
-    id :number;
+    id : number;
+    company : Company;
+    user: User;
+    status: string;
+    source : string;
+}
 
-    company: Company;
+// export class Lead {
+//     id :number;
+
+//     company: Company;
 
   
-    lead_status: string;
-    lead_source:string;
+//     lead_status: string;
+//     lead_source:string;
     
-    addresses: Address[];
-    contacts: Contact[];
+//     addresses: Address[];
+//     contacts: Contact[];
 
-}
+// }
 
 
-export class Contact{
-    first_name: string;
-    last_name: string;
-    contact_owner:string;
-    eamil:string;
-    phone:string;
-}
-export class Address{
+// export class Contact{
+//     first_name: string;
+//     last_name: string;
+//     contact_owner:string;
+//     eamil:string;
+//     phone:string;
+// }
+// export class Address{
       
-    street: string;
-    city: string;
-    state: string;
-    zip_code:number;
-    country: string;
-    is_shipping:number;
+//     street: string;
+//     city: string;
+//     state: string;
+//     zip_code:number;
+//     country: string;
+//     is_shipping:number;
  
-        }
+//         }

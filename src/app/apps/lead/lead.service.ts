@@ -36,7 +36,7 @@ export class LeadService {
   }
 
   createLead(value): Observable<Lead>{
-    return this.http.post('http://192.168.50.25/api/v1/lead/',value)
+    return this.http.post('http://192.168.50.25/api/v1/lead',value)
     .map((res:Response) => res.json())
   }
 
