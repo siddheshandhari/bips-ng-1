@@ -1,0 +1,12 @@
+:host {
+    position: relative;
+    display: block;
+    float: right;
+    
+
+}
+
+.fa-plus-circle {
+    font-size: 48px;
+    color: #3772B7;
+}
