@@ -7,7 +7,18 @@
 
 <edit-lead [lead] = "selectedLead"></edit-lead>
 
-    <div *ngIf="add_lead_value==false" >
+<card *ngFor = "let lead of leadlist">
+  <card-header [logoUrl]="'assets/imgs/logos/orcasmart.png'" [title]="lead.company.name" [address]="lead.company.billing_address" [industry]="'Packaging'" [facebook]="" [twitter]="" [phone]="">
+  </card-header>
+  <card-body>
+    <card-contact [name]="'Kenneth Wang'" [position]="'Founder\CEO'" [phone]="" [email]="" skype=""></card-contact>
+    <card-contact [name]="'Jack'" [position]="'Founder\CEO'" [phone]="" [email]="" skype=""></card-contact>
+  </card-body>
+</card>
+
+
+
+    <!--<div *ngIf="add_lead_value==false" >
 
             <h3>Lead</h3>
 
@@ -46,4 +57,4 @@
             </tbody>
             </table>
 
-    </div>
+    </div>-->
