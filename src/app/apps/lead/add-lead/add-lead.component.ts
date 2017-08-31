@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormControl, FormBuilder, Validators,FormArray } from '@angular/forms'
 import { HttpClient } from "@angular/common/http";
 
-import { LeadInfo } from './add-lead.interface';
+import { Lead } from '../lead';
 import { LeadService } from '../lead.service';
 
 
@@ -38,25 +38,26 @@ export class AddLeadComponent implements OnInit{
                     annual_revenue:[''],
                     employees:[''],
                     industry:[''],
-            
+                    shipping_address:  this.initAddress(),
+                    billing_address:  this.initAddress(),
 
-            }),
+                    contacts: this._formBuilder.array([
+                                this.initContact(),
+                            ])
+                            
+
+                 }),
                    
-            address: this._formBuilder.array([
-                this.initAddress(),
-                this.initAddress1(),
-            ]),
-            contacts: this._formBuilder.array([
-                this.initContact(),
-            ])
-
+            // contacts: this._formBuilder.array([
+            //     this.initContact(),
+            // ])
 
 
         });
 
      }
 
-     public initContact(){
+    public initContact(){
          return this._formBuilder.group({
                 first_name:[''],
                 last_name:[''],
@@ -67,49 +68,29 @@ export class AddLeadComponent implements OnInit{
 
      }
 
-      public initAddress(){
+    public initAddress(){
          return this._formBuilder.group({
                     street:[''],
                     city:[''],
                     state:[''],
                     zip_code:[''],
                     country:[''],
-                    is_shipping:['1']
             },
             )
 
-     }
-     public initAddress1(){
-         return this._formBuilder.group({
-                    street:[''],
-                    city:[''],
-                    state:[''],
-                    zip_code:[''],
-                    country:[''],
-                    is_shipping:['0']
-            },
-            )
-
-     }
-
-
-    
-    addAddress(){
-         const control = <FormArray>this.myForm.controls['address'];
-         control.push(this.initAddress());
      }
 
     addContact(){
-         const control = <FormArray>this.myForm.controls['contacts'];
+         const control = <FormArray>this.myForm.controls.controls['contacts'];
          control.push(this.initContact());
      }
 
     removeContact(i: number){
-         const control = <FormArray>this.myForm.controls['contacts'];
+         const control = <FormArray>this.myForm.controls.controls['contacts'];
          control.removeAt(i);
      }
 
-     onSubmit({value}:{value:LeadInfo},model: LeadInfo){
+    onSubmit({value}:{value:Lead},model: Lead){
        event.preventDefault();
        console.log(JSON.stringify(value));
        this.leadService.createLead(value);

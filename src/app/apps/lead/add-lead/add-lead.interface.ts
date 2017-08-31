@@ -1,38 +1,38 @@
-export interface LeadInfo{
+// export interface LeadInfo{
 
-    lead_status: string;
-    lead_source:string;
+//     lead_status: string;
+//     lead_source:string;
    
-    company?:{
-        company_name: string;
-        website: string;
-        tier: string;
-        rating: string;
-        annual_revenue:number;
-        employees: number;
-        industry: string;
-        sub_industry:string;
+//     company?:{
+//         company_name: string;
+//         website: string;
+//         tier: string;
+//         rating: string;
+//         annual_revenue:number;
+//         employees: number;
+//         industry: string;
+//         sub_industry:string;
 
-    },
+//     },
    
-    addresses: Address[];
-    contacts: Contact[];
-}
+//     addresses: Address[];
+//     contacts: Contact[];
+// }
 
-export interface Contact{
-    first_name: string;
-    last_name: string;
-    contact_owner:string;
-    eamil:string;
-    phone:string;
-}
-export interface Address{
+// export interface Contact{
+//     first_name: string;
+//     last_name: string;
+//     contact_owner:string;
+//     eamil:string;
+//     phone:string;
+// }
+// export interface Address{
       
-    street: string;
-    city: string;
-    state: string;
-    zip_code:number;
-    country: string;
-    is_shipping:number;
+//     street: string;
+//     city: string;
+//     state: string;
+//     zip_code:number;
+//     country: string;
+//     is_shipping:number;
 
-        }
+//         }
