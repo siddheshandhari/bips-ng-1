@@ -8,8 +8,9 @@ export class Company {
   rating: number;
   industry: string;
   tier: number;
-  annualrevenue: string;
+  annual_revenue: string;
   is_active: number;
   contacts: Contact[];
-  addresses: Address[];
+  shipping_address: Address;
+  billing_address: Address;
 }

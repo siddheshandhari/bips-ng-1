@@ -1,9 +1,8 @@
 export class Address {
-  country: string;
-  state: string;
-  city: string;
-  street: string;
-  zip_code: number;
-  is_shipping: number;
-  is_active: number;
+    id : number; 
+    street: string; 
+    city: string; 
+    state: string; 
+    zipcode: string;
+    country: string;
 }

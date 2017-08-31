@@ -16,65 +16,27 @@ export class LeadComponent implements OnInit {
     leadlist : Lead[] = [];
     selectedLead : Lead;
    
-    // companies: Array<object> = this.leadlist.map(function(lead){
-    //     return {
+    companies: Array<object> = this.leadlist.map(function(lead){
+        return {
              
-    //   name: lead.company.name,
-    //   address: lead.company.billing_address.street,
-    //   industry: lead.company.industry,
+      name: lead.company.name,
+      address: lead.company.billing_address.street,
+      industry: lead.company.industry,
 
-    //   contacts:  [
-    //     {
-    //       phone: lead.company.contacts.phone,
-    //       email: lead.company.contacts.email,
-    //       skype: lead.company.contacts.skype,
-    //       contactName: lead.company.contacts.first_name,
-    //       position: lead.company.contacts
-    //     }
-    //   ]
+      contacts:  [
+        {
+        //   phone: lead.company.contacts.phone,
+        //   email: lead.company.contacts.email,
+        //   skype: lead.company.contacts.skype,
+        //   contactName: lead.company.contacts.first_name,
+        //   position: lead.company.contacts
+        }
+      ]
     
-    // }
-    // })
-
-      companies: Array<object> = [
-    {
-      name: "Glopak",
-      address: "Hicksville",
-      industry: "technology",
-      contacts:  [
-        {
-          phone: "",
-          email: "",
-          skype: "",
-          contactName: "Jack",
-          position: "CTO"
-        }
-      ]
-    },
-    {
-      name: "OrcaSmart",
-      address: "35 Engel St",
-      industry: "technology",
-      contacts:  [
-        {
-          phone: "",
-          email: "",
-          skype: "",
-          name: "Keni",
-          position: "CEO"
-        },
-        {
-          phone: "",
-          email: "",
-          skype: "",
-          name: "wang",
-          position: "Employee"
-        }
-      ]
-
     }
+    })
 
-  ]
+
 
 
 constructor(public leadService:LeadService){}
