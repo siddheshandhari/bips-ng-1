@@ -15,18 +15,14 @@ export class LeadComponent implements OnInit {
 
     leadlist : Lead[] = [];
     selectedLead : Lead;
-
-    companies: Array<object> = this.leadlist.map(function(lead){
-        return {
-
-      name: lead.company.name,
-      industry: lead.company.industry,
-
-
-
-    }
-    })
-
+   
+    // companies: Array<object> = this.leadlist.map(function(lead){
+    //     return {     
+    //         name: lead.company.name,
+    //         address: lead.company.billing_address.street,
+    //         industry: lead.company.industry,
+    //         }
+    // })
 
 
 
@@ -64,7 +60,6 @@ constructor(public leadService:LeadService){}
             console.log(this.selectedLead);
     }
 
-
 // jump to add lead page
     add_lead(){
         this.add_lead_value = true;
@@ -77,8 +72,5 @@ constructor(public leadService:LeadService){}
     save_lead(){
         this.add_lead_value = false;
     }
-
-
-
 
 }
