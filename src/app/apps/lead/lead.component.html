@@ -3,14 +3,14 @@
 <span *ngIf="add_lead_value== true" class="btn btn-primary" (click)='save_lead()' >Save</span>
 <span *ngIf="add_lead_value== true"  class="btn btn-primary"  (click)='cancel_lead()'>Cancel</span>
 <button *ngIf="box_selected == true;" type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash-o"></i></button>
-<add-lead *ngIf="add_lead_value== true"></add-lead> 
+<add-lead *ngIf="add_lead_value== true"></add-lead>
 
 <edit-lead [lead] = "selectedLead"></edit-lead>
 
 
 <!--<card *ngFor="let company of companies" [company]="company"></card>-->
-  
-  
+
+
     <div *ngIf="add_lead_value==false" >
 
             <h3>Lead</h3>
@@ -33,13 +33,13 @@
             <tbody>
                 <tr *ngFor="let lead of leadlist let i = index">
                <td scope="row">{{i}}</td>
-                
-                
+
+
 
                 <td contenteditable='true'>{{lead.company.name}}</td>
                 <td>{{lead.company.website}}</td>
                 <td>{{lead.company.employees}}</td>
-             
+
                 <td>{{lead.user.industry}}</td>
                 <td>{{lead.user.tier}}</td>
                 <td>{{lead.source}}</td>
@@ -51,9 +51,3 @@
             </table>
 
     </div>
-
-
-
-
-
-

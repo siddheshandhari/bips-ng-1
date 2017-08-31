@@ -7,46 +7,38 @@ import { Component } from '@angular/core';
 })
 
 export class FinancialComponent{
-  companies: Array<object> = [
+
+  things: Array<object> = [
     {
-      name: "Glopak",
-      address: "Hicksville",
-      industry: "technology",
-      contacts:  [
-        {
-          phone: "",
-          email: "",
-          skype: "",
-          name: "Jack",
-          position: "CTO"
-        }
-      ], 
-      owner: "Kenneth"
+      logoUrl: "assets/imgs/logos/orcasmart.png",
+      title: "Orcasmart",
+      address: {
+        country: "United States",
+        state: "NY",
+        city: "Hicksville",
+        street: "35 Engel Street",
+        zipcode: 11801
+      },
+      industry: "Packaging",
+      facebook: "",
+      twitter: "",
+      phone: ""
     },
     {
-      name: "OrcaSmart",
-      address: "35 Engel St",
-      industry: "technology",
-      contacts:  [
-        {
-          phone: "",
-          email: "",
-          skype: "",
-          name: "Keni",
-          position: "CEO"
-        },
-        {
-          phone: "",
-          email: "",
-          skype: "",
-          name: "Wang",
-          position: "Employee"
-        }
-      ],
-      owner: "Wang"
-
+      logoUrl: "assets/imgs/logos/orcasmart.png",
+      title: "Orcasmart",
+      address: {
+        country: "United States",
+        state: "NY",
+        city: "Hicksville",
+        street: "35 Engel Street",
+        zipcode: 11801
+      },
+      industry: "Packaging",
+      facebook: "",
+      twitter: "",
+      phone: ""
     }
-
-  ]
+  ];
 
 }
