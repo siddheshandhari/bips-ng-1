@@ -26,6 +26,7 @@ import { topWindowReducer } from '../reducers/topWindow.reducer';
 import { currentUserReducer } from '../reducers/currentUser.reducer';
 import 'rxjs/Rx';
 
+
 const appRoutes: Routes = [
   { path: '', redirectTo:'/desktop', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
@@ -45,6 +46,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+   
   ],
   imports: [
     BrowserModule,
