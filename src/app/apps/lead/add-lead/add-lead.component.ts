@@ -3,6 +3,7 @@ import {FormGroup, FormControl, FormBuilder, Validators,FormArray } from '@angul
 import { HttpClient } from "@angular/common/http";
 
 import { LeadInfo } from './add-lead.interface';
+import { LeadService } from '../lead.service';
 
 
 
@@ -17,13 +18,17 @@ export class AddLeadComponent implements OnInit{
 
    public myForm: FormGroup;
 
-    constructor(private http: HttpClient, private _formBuilder: FormBuilder ){
-
-    }
+    constructor(
+        private http: HttpClient,
+        private _formBuilder: FormBuilder,
+        private leadService: LeadService,
+      ){}
 
 
     ngOnInit(){
         this.myForm = this._formBuilder.group({
+            lead_status: [''],
+            lead_source:[''],
 
             company :this._formBuilder.group({
                     name: [''],
@@ -36,22 +41,14 @@ export class AddLeadComponent implements OnInit{
             
 
             }),
-
-            user : this._formBuilder.group({
-                    id:['']
-            })
-            // lead :this._formBuilder.group({
-            //         lead_status: [''],
-            //         lead_source:[''],
-            //         customer_type:['']
-            // }),
-            // address: this._formBuilder.array([
-            //     this.initAddress(),
-            //     this.initAddress1(),
-            // ]),
-            // contacts: this._formBuilder.array([
-            //     this.initContact(),
-            // ])
+                   
+            address: this._formBuilder.array([
+                this.initAddress(),
+                this.initAddress1(),
+            ]),
+            contacts: this._formBuilder.array([
+                this.initContact(),
+            ])
 
 
 
@@ -112,20 +109,21 @@ export class AddLeadComponent implements OnInit{
          control.removeAt(i);
      }
 
-     onSubmit({value}:{value:LeadInfo}){
+     onSubmit({value}:{value:LeadInfo},model: LeadInfo){
        event.preventDefault();
        console.log(JSON.stringify(value));
-       const req = this.http.post('http://192.168.50.25/api/v1/lead',{value})
-        .subscribe(
-                    res =>{
-                        console.log(JSON.stringify(res));
-                        },
-                    err =>{
-                        console.log("error occored");
-                    }
-                 )
+       this.leadService.createLead(value);
+    //    const req = this.http.post('http://192.168.50.25/api/v1/lead',value)
+    //     .subscribe(
+    //                 res =>{
+    //                     console.log(JSON.stringify(res));
+    //                     },
+    //                 err =>{
+    //                     console.log("error occored");
+    //                 }
+    //              )
          this.myForm.reset();
-        
+    
           }
           
 

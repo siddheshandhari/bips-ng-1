@@ -1,27 +1,22 @@
 export interface LeadInfo{
+
+    lead_status: string;
+    lead_source:string;
+   
     company?:{
         company_name: string;
         website: string;
         tier: string;
         rating: string;
-        annual_revenue:string;
-        employees: string;
+        annual_revenue:number;
+        employees: number;
         industry: string;
         sub_industry:string;
 
     },
-    user?:{
-        id:number;
-    }
-    lead?:{
-        lead_status: string;
-        lead_source:string;
-        customer_type:string;
-    },
-    addresses: Address[];
    
+    addresses: Address[];
     contacts: Contact[];
-
 }
 
 export interface Contact{
@@ -39,5 +34,5 @@ export interface Address{
     zip_code:number;
     country: string;
     is_shipping:number;
- 
+
         }

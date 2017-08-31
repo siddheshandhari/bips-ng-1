@@ -17,7 +17,7 @@ export class FinancialComponent{
           phone: "",
           email: "",
           skype: "",
-          name: "Jack",
+          contactName: "Jack",
           position: "CTO"
         }
       ]

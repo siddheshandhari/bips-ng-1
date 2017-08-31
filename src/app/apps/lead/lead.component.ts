@@ -1,14 +1,7 @@
 import { Component, OnInit  } from '@angular/core';
-// import { Router } from './angualr/router';
 
 import { LeadService } from './lead.service';
 import { Lead } from './lead';
-
-
-//  export class Leadlist{
-//         name:string;
-//         id: number
-//     }
 
 
 @Component({
@@ -19,20 +12,79 @@ import { Lead } from './lead';
 })
 
 export class LeadComponent implements OnInit {
-
+   
     leadlist : Lead[] = [];
     selectedLead : Lead;
+   
+    // companies: Array<object> = this.leadlist.map(function(lead){
+    //     return {
+             
+    //   name: lead.company.name,
+    //   address: lead.company.billing_address.street,
+    //   industry: lead.company.industry,
 
-    constructor(public leadService:LeadService){}
+    //   contacts:  [
+    //     {
+    //       phone: lead.company.contacts.phone,
+    //       email: lead.company.contacts.email,
+    //       skype: lead.company.contacts.skype,
+    //       contactName: lead.company.contacts.first_name,
+    //       position: lead.company.contacts
+    //     }
+    //   ]
+    
+    // }
+    // })
+
+      companies: Array<object> = [
+    {
+      name: "Glopak",
+      address: "Hicksville",
+      industry: "technology",
+      contacts:  [
+        {
+          phone: "",
+          email: "",
+          skype: "",
+          contactName: "Jack",
+          position: "CTO"
+        }
+      ]
+    },
+    {
+      name: "OrcaSmart",
+      address: "35 Engel St",
+      industry: "technology",
+      contacts:  [
+        {
+          phone: "",
+          email: "",
+          skype: "",
+          name: "Keni",
+          position: "CEO"
+        },
+        {
+          phone: "",
+          email: "",
+          skype: "",
+          name: "wang",
+          position: "Employee"
+        }
+      ]
+
+    }
+
+  ]
+
+
+constructor(public leadService:LeadService){}
 
 // get lead infomation
     getLeadlist():void{
           this.leadService.getLeadlist()
-          .subscribe(leadlist => this.leadlist = leadlist
-          )
-
-
+          .subscribe(leadlist => this.leadlist = leadlist)
     }
+
 // delete lead
     deleteLead(lead:Lead): void{
 
@@ -54,7 +106,7 @@ export class LeadComponent implements OnInit {
     public isediting = false;
 
     editLead(lead:Lead): void{
-            this.isediting = true;
+   
             this.selectedLead = lead;
             console.log(this.selectedLead);
     }
@@ -77,3 +129,5 @@ export class LeadComponent implements OnInit {
 
 
 }
+
+ 

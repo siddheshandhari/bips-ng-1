@@ -5,13 +5,12 @@
 <button *ngIf="box_selected == true;" type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash-o"></i></button>
 <add-lead *ngIf="add_lead_value== true"></add-lead> 
 
-<div *ngIf="seletededLead">{{seletededLead.id}}</div>
+<edit-lead [lead] = "selectedLead"></edit-lead>
 
 
-
-<edit-lead></edit-lead>
-
-
+<!--<card *ngFor="let company of companies" [company]="company"></card>-->
+  
+  
     <div *ngIf="add_lead_value==false" >
 
             <h3>Lead</h3>
@@ -34,15 +33,10 @@
             <tbody>
                 <tr *ngFor="let lead of leadlist let i = index">
                <td scope="row">{{i}}</td>
-                <!--<td>{{lead.name}}</td>
-                <td>{{lead.website}}</td>
-                <td>{{lead.employees}}</td>
-                <td>{{lead.industry}}</td>
-                <td>{{lead.tier}}</td>
-                <td>{{lead.source}}</td>-->
+                
                 
 
-                <td>{{lead.company.name}}</td>
+                <td contenteditable='true'>{{lead.company.name}}</td>
                 <td>{{lead.company.website}}</td>
                 <td>{{lead.company.employees}}</td>
              
@@ -56,8 +50,7 @@
             </tbody>
             </table>
 
-    </div> 
-
+    </div>
 
 
 

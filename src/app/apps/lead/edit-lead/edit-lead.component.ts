@@ -1,5 +1,6 @@
-import { Component, OnInit } from  '@angular/core';
+import { Component, OnInit, Input } from  '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { HttpClient } from "@angular/common/http";
 import { Location }  from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 
@@ -14,26 +15,38 @@ import { LeadService } from './../lead.service';
 })
 
 export class EditLeadComponent implements OnInit{
-    lead: Lead;
+     @Input() lead:Lead;
+    
 
     constructor(
+        private http: HttpClient,
         private leadService: LeadService,
         private route: ActivatedRoute,
         private location: Location
         ){}
 
     ngOnInit(): void{
-        this.route.paramMap
-        .switchMap((params: ParamMap) => this.leadService.getLead(+ params.get('id')))
-        .subscribe(lead =>this.lead = lead);
+        // this.route.paramMap
+        // .switchMap((params: ParamMap) => this.leadService.getLead(+ params.get('id')))
+        // .subscribe(lead =>this.lead = lead);
     }
 
-    save(): void{
-        
+    save(lead:Lead): void{
+    //    event.preventDefault();
+       console.log(JSON.stringify(this.lead));
+       this.leadService.save(this.lead)
+       .subscribe(
+                    res =>{
+                        console.log(JSON.stringify(res));
+                        },
+                    err =>{
+                        console.log("error occored");
+                    }
+                 )
+       
+    
     }
 
-    goBack(): void{
-        this.location.back();
-    }
+
     
 }

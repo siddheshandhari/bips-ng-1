@@ -2,23 +2,17 @@ import { Company } from '../../models/company';
 
 export class Lead {
     id :number;
-    
+
     company: Company;
 
-    lead:{
-        lead_status: string;
-        lead_source:string;
-        customer_type:string;
-    };
-
+  
+    lead_status: string;
+    lead_source:string;
+    
     addresses: Address[];
-   
     contacts: Contact[];
 
 }
-
-
-
 
 
 export class Contact{
