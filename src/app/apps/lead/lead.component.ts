@@ -23,16 +23,8 @@ export class LeadComponent implements OnInit {
       address: lead.company.billing_address.street,
       industry: lead.company.industry,
 
-      contacts:  [
-        {
-        //   phone: lead.company.contacts.phone,
-        //   email: lead.company.contacts.email,
-        //   skype: lead.company.contacts.skype,
-        //   contactName: lead.company.contacts.first_name,
-        //   position: lead.company.contacts
-        }
-      ]
-    
+     
+
     }
     })
 
