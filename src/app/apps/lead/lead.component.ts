@@ -12,7 +12,7 @@ import { Lead } from './lead';
 })
 
 export class LeadComponent implements OnInit {
-   
+
     leadlist : Lead[] = [];
     selectedLead : Lead;
    
@@ -23,7 +23,6 @@ export class LeadComponent implements OnInit {
     //         industry: lead.company.industry,
     //         }
     // })
-
 
 
 
@@ -43,7 +42,7 @@ constructor(public leadService:LeadService){}
              this.leadlist = this.leadlist.filter (l => l !== lead);
              if(this.selectedLead === lead){this.selectedLead = null}
          })
-       
+
    }
 
     ngOnInit():void{
@@ -56,7 +55,7 @@ constructor(public leadService:LeadService){}
     public isediting = false;
 
     editLead(lead:Lead): void{
-   
+
             this.selectedLead = lead;
             console.log(this.selectedLead);
     }
@@ -75,5 +74,3 @@ constructor(public leadService:LeadService){}
     }
 
 }
-
- 
