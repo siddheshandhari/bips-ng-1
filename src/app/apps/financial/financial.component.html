@@ -1,2 +1,14 @@
-<card *ngFor="let company of companies" [company]="company"></card>
+
+<!-- <card *ngFor="let company of companies" [company]="company"></card> -->
+
+<card>
+  <card-header [logoUrl]="" [title]="'Glopak'" [address]="{state: 'NY', street: 'asdas', country: 'country'}" [industry]="" [facebook]="" [twitter]="" [phone]="">
+    <!-- <website-tag>www.glopak.com</website-tag> -->
+  </card-header>
+  <card-body>
+    <card-contact [name]="'Kenneth Wang'" [position]="'Founder\CEO'" [phone]="" [email]="" skype=""></card-contact>
+    <card-owner [portraitUrl]="" [name]=""></card-owner>
+  </card-body>
+</card>
 <add-button ></add-button>
+

@@ -1,17 +1,12 @@
 <div class="card-logo">
-  <img [src]="logo"/>
+  <img [src]="logoUrl"/>
 </div>
 <div class="header-info">
-  <h5 class="header-title">{{name}}</h5>
+  <h5 class="header-title">{{title}}</h5>
   <div class="header-body">
-    <div class="header-address">
-      <i class="fa fa-map-marker"></i>
-      <span>{{address}}</span>
-    </div>
-    <div class="header-industry">
-      <i class="fa fa-briefcase"></i>
-      <span>{{industry}}</span>
-    </div>
+    <industry-tag>asd</industry-tag>
+    <address-tag>pppp</address-tag>
+    <ng-content></ng-content>
   </div>
 </div>
 <div class="expand-handler">
