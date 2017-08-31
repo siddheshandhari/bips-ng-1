@@ -7,9 +7,10 @@ import { Component, HostBinding, Input } from '@angular/core';
 })
 
 export class CardBodyComponent{
-  name: string = "Jack"
-  position: string = "CTO"
+  
   @Input() contacts: Array<object>;
+  @Input() owner: string;
+  
   @HostBinding('class.card-body-open') isOpen: boolean = false;
 
   openBody(){
