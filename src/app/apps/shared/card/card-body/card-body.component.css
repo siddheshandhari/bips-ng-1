@@ -2,8 +2,10 @@
   position: relative;
   display: block;
   width: 100%;
+  height: 120px;
   background-color: #FFFFFF;
   transition: height 0.5s;
+  padding: 15px;
 }
 
 :host.card-body-open{

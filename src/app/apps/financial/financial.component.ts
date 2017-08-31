@@ -33,13 +33,6 @@ export class FinancialComponent{
           skype: "",
           name: "Keni",
           position: "CEO"
-        },
-        {
-          phone: "",
-          email: "",
-          skype: "",
-          name: "wang",
-          position: "Employee"
         }
       ]
 
