@@ -1,0 +1,13 @@
+.button-position {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    float: right;
+    display: block;
+}
+
+.fa-plus-circle {
+    font-size: 48px;
+    color: #3772B7;
+    
+}

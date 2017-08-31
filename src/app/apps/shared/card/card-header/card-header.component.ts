@@ -7,10 +7,20 @@ import { Component, Input, HostBinding } from '@angular/core';
 })
 
 export class CardHeaderComponent{
-  @Input() logo: string;
-  @Input() name: string;
+  @Input() logoUrl: string;
+  @Input() title: string;
+  @Input() address: {
+    country: string,
+    state: string,
+    city: string,
+    zipcode: number,
+    street: string
+  };
   @Input() industry: string;
-  @Input() address: string;
+  @Input() facebook: string;
+  @Input() twitter: string;
+  @Input() phone: string;
+
   @HostBinding('class.card-header-open') isOpen: boolean = false;
 
   openHeader(){
