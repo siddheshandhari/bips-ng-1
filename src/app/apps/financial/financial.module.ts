@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CardModule } from '../shared/card/card.module';
+import { AddButtonModule } from '../shared/add-button/add-button.module';
 
 import { FinancialComponent } from './financial.component';
 
@@ -12,7 +13,8 @@ import { FinancialComponent } from './financial.component';
   ],
   imports: [
     CardModule,
-    CommonModule
+    CommonModule,
+    AddButtonModule,
   ],
   exports: [
     FinancialComponent
