@@ -28,6 +28,8 @@ import { DialogContentComponent } from './dialog/dialog-content/dialog-content.c
     ],
     exports: [
         AddButtonComponent,
+        DialogComponent,
+        DialogContentComponent,
     ],
     entryComponents: [
         DialogContentComponent,
