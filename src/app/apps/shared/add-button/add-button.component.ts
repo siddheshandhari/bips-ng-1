@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import {MdDialog, MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
+
 
 @Component({
   selector: 'add-button',
@@ -6,10 +8,44 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['add-button.component.css']
 })
 export class AddButtonComponent implements OnInit {
+  constructor () {}
 
-  constructor() { }
+  // animal: string;
+  // name: string;
+
+  // constructor(public dialog: MdDialog) {}
+
+  // openDialog(): void {
+  //   let dialogRef = this.dialog.open(AddButtonDialog, {
+  //     width: '250px',
+  //     data: { name: this.name, animal: this.animal }
+  //   });
+
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log('The dialog was closed');
+  //     this.animal = result;
+  //   });
+  // }
 
   ngOnInit() {
   }
 
 }
+
+// @Component({
+//   selector: 'add-button-dialog',
+//   templateUrl: 'add-button-dialog-component.html',
+// })
+// export class AddButtonDialog {
+
+//   constructor(
+//     public dialogRef: MdDialogRef<AddButtonDialog>,
+//     @Inject(MD_DIALOG_DATA) public data: any) { }
+
+//   onNoClick(): void {
+//     this.dialogRef.close();
+//   }
+
+// }
+
+

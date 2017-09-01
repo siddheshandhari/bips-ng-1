@@ -8,6 +8,7 @@ import { AddButtonComponent } from './add-button.component';
     ],
     declarations: [
         AddButtonComponent,
+        
     ],
     exports: [
         AddButtonComponent,
