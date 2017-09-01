@@ -1,11 +1,16 @@
         <div>
                 <span  *ngIf="add_lead_value== false" class=" btn btn-primary" (click)='add_lead()'>+</span>
 
+<<<<<<< HEAD
                 <!--<span *ngIf="add_lead_value== true" class="  btn btn-primary" (click)='save_lead()' >Save</span>-->
                 <span *ngIf="add_lead_value== true"  class=" add_lead_btn  btn btn-primary"  (click)='cancel_lead()'>Cancel</span>
                 <button *ngIf="box_selected == true;" type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash-o"></i></button>
         </div>
         <add-lead *ngIf="add_lead_value== true"></add-lead>
+=======
+<edit-lead [lead] = "selectedLead"></edit-lead>
+
+>>>>>>> 76b695cacc99709d345e3ab69c4da69d9541d1cd
 
         <edit-lead  [lead] = "selectedLead" ></edit-lead>
         
@@ -22,6 +27,11 @@
 
 
 
+<<<<<<< HEAD
+=======
+    <!--<div *ngIf="add_lead_value==false" >
+
+>>>>>>> 76b695cacc99709d345e3ab69c4da69d9541d1cd
 
     <div *ngIf="add_lead_value==false" >
 
