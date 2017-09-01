@@ -8,10 +8,11 @@ import { DialogService } from './dialog/dialog.service';
   styleUrls: ['add-button.component.css']
 })
 export class AddButtonComponent implements OnInit {
-
-  // 
+  
+  
+  
   public result: any;
-
+  
   constructor (private dialogService: DialogService) {}
 
   public openDialog() {
