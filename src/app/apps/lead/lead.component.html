@@ -1,17 +1,28 @@
-
 <span *ngIf="add_lead_value== false" class="btn btn-primary" (click)='add_lead()'>+</span>
 <span *ngIf="add_lead_value== true" class="btn btn-primary" (click)='save_lead()' >Save</span>
 <span *ngIf="add_lead_value== true"  class="btn btn-primary"  (click)='cancel_lead()'>Cancel</span>
 <button *ngIf="box_selected == true;" type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash-o"></i></button>
-<add-lead *ngIf="add_lead_value== true"></add-lead> 
+<add-lead *ngIf="add_lead_value== true"></add-lead>
 
 <edit-lead [lead] = "selectedLead"></edit-lead>
+<<<<<<< HEAD
 
-<!--
-<card *ngFor="let company of companies" [company]="company"></card>-->
-  
-  
+<card *ngFor = "let lead of leadlist">
+  <card-header [logoUrl]="'assets/imgs/logos/orcasmart.png'" [title]="lead.company.name" [address]="lead.company.billing_address" [industry]="'Packaging'" [facebook]="" [twitter]="" [phone]="">
+  </card-header>
+  <card-body>
+    <card-contact [name]="'Kenneth Wang'" [position]="'Founder\CEO'" [phone]="" [email]="" skype=""></card-contact>
+    <card-contact [name]="'Jack'" [position]="'Founder\CEO'" [phone]="" [email]="" skype=""></card-contact>
+  </card-body>
+</card>
+
+
+
+    <!--<div *ngIf="add_lead_value==false" >
+=======
+
     <div *ngIf="add_lead_value==false" >
+>>>>>>> 258a1d2a2bd3da95286db9d50a1a877566a6c4b3
 
             <h3>Lead</h3>
 
@@ -33,13 +44,13 @@
             <tbody>
                 <tr *ngFor="let lead of leadlist let i = index">
                <td scope="row">{{i}}</td>
-                
-                
+
+
 
                 <td contenteditable='true'>{{lead.company.name}}</td>
                 <td>{{lead.company.website}}</td>
                 <td>{{lead.company.employees}}</td>
-             
+
                 <td>{{lead.user.industry}}</td>
                 <td>{{lead.user.tier}}</td>
                 <td>{{lead.source}}</td>
@@ -50,10 +61,4 @@
             </tbody>
             </table>
 
-    </div>
-
-
-
-
-
-
+    </div>-->

@@ -12,22 +12,17 @@ import { Lead } from './lead';
 })
 
 export class LeadComponent implements OnInit {
-   
+
     leadlist : Lead[] = [];
     selectedLead : Lead;
    
-    companies: Array<object> = this.leadlist.map(function(lead){
-        return {
-             
-      name: lead.company.name,
-      address: lead.company.billing_address.street,
-      industry: lead.company.industry,
-
-     
-
-    }
-    })
-
+    // companies: Array<object> = this.leadlist.map(function(lead){
+    //     return {     
+    //         name: lead.company.name,
+    //         address: lead.company.billing_address.street,
+    //         industry: lead.company.industry,
+    //         }
+    // })
 
 
 
@@ -47,7 +42,7 @@ constructor(public leadService:LeadService){}
              this.leadlist = this.leadlist.filter (l => l !== lead);
              if(this.selectedLead === lead){this.selectedLead = null}
          })
-       
+
    }
 
     ngOnInit():void{
@@ -60,11 +55,10 @@ constructor(public leadService:LeadService){}
     public isediting = false;
 
     editLead(lead:Lead): void{
-   
+
             this.selectedLead = lead;
             console.log(this.selectedLead);
     }
-
 
 // jump to add lead page
     add_lead(){
@@ -79,9 +73,4 @@ constructor(public leadService:LeadService){}
         this.add_lead_value = false;
     }
 
-   
-
-
 }
-
- 
