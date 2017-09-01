@@ -58,6 +58,7 @@ constructor(public leadService:LeadService){}
 
             this.selectedLead = lead;
             console.log(this.selectedLead);
+            this.isediting = true;
     }
 
 // jump to add lead page
@@ -67,10 +68,12 @@ constructor(public leadService:LeadService){}
 // go back to lead page
     cancel_lead(){
         this.add_lead_value = false;
+        this.getLeadlist()
     }
 // submit form
     save_lead(){
         this.add_lead_value = false;
+         this.getLeadlist()
     }
 
 }

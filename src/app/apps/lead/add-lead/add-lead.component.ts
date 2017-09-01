@@ -16,7 +16,9 @@ import { LeadService } from '../lead.service';
 
 export class AddLeadComponent implements OnInit{
 
-   public myForm: FormGroup;
+    public myForm: FormGroup;
+    leadlist : Lead[] = [];
+    selectedLead : Lead;
 
     constructor(
         private http: HttpClient,
@@ -26,6 +28,7 @@ export class AddLeadComponent implements OnInit{
 
 
     ngOnInit(){
+        this.getLeadlist();
         this.myForm = this._formBuilder.group({
             lead_status: [''],
             lead_source:[''],
@@ -80,6 +83,11 @@ export class AddLeadComponent implements OnInit{
 
      }
 
+    getLeadlist():void{
+          this.leadService.getLeadlist()
+          .subscribe(leadlist => this.leadlist = leadlist)
+    }
+
     addContact(){
          const control = <FormArray>this.myForm.controls.controls['contacts'];
          control.push(this.initContact());
@@ -92,17 +100,24 @@ export class AddLeadComponent implements OnInit{
 
     onSubmit({value}:{value:Lead},model: Lead){
        event.preventDefault();
+       if(!value){ return };
+    
        console.log(JSON.stringify(value));
-       this.leadService.createLead(value);
-    //    const req = this.http.post('http://192.168.50.25/api/v1/lead',value)
-    //     .subscribe(
-    //                 res =>{
-    //                     console.log(JSON.stringify(res));
-    //                     },
-    //                 err =>{
-    //                     console.log("error occored");
-    //                 }
-    //              )
+       this.leadService.createLead(value)
+        // const req = this.http.post('http://192.168.50.25/api/v1/lead',value)
+        .subscribe(
+                       
+         
+
+                    res =>{
+                        this.leadlist.push(res);
+                        console.log(JSON.stringify(res));
+                        
+                        },
+                    err =>{
+                        console.log("error occored");
+                    }
+                 )
          this.myForm.reset();
     
           }

@@ -16,6 +16,7 @@ import { LeadService } from './../lead.service';
 
 export class EditLeadComponent implements OnInit{
      @Input() lead:Lead;
+    public isediting = false;
     
 
     constructor(
@@ -34,6 +35,7 @@ export class EditLeadComponent implements OnInit{
     save(lead:Lead): void{
     //    event.preventDefault();
        console.log(JSON.stringify(this.lead));
+
        this.leadService.save(this.lead)
        .subscribe(
                     res =>{
