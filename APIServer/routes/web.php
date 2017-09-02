@@ -18,6 +18,7 @@ Route::group(['prefix' => 'api/v1'], function()
 
   //Account Collections Routes
   Route::get('account', 'AccountController@browse');
+  Route::delete('account/{id}', 'AccountController@destroy');
 
   //Lead Collections Routes
   Route::get('lead', 'LeadController@browse');

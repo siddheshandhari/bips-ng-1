@@ -22,4 +22,16 @@ class AccountController extends ApiController
     );
   }
 
+  public function destroy($id)
+  {
+    if(!$id){
+      return $this->setStatusCode(400)->respondWithError("Please provide the Account id to delete");
+    }
+    $lead = Account::find($id);
+    $lead->active = false;
+    if($lead->save()){
+      return $this->respondDeleted('Account successfully deleted!');
+    }
+  }
+
 }
