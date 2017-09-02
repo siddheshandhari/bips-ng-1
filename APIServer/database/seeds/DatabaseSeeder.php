@@ -8,6 +8,21 @@ class DatabaseSeeder extends Seeder
     private $tables = [
       'leads',
       'companies',
+      'users',
+      'accounts',
+      'addresses',
+      'accounts',
+      'calls',
+      'contacts',
+      'crms',
+      'events',
+      'invoices',
+      'leads',
+      'potentials',
+      'quotes',
+      'salesorders',
+      'tasks',
+      'userloggedinhistories',
       'users'
     ];
 
@@ -22,8 +37,18 @@ class DatabaseSeeder extends Seeder
       $this->call(AddressesTableSeeder::class);
       $this->call(CompaniesTableSeeder::class);
       $this->call(UsersTableSeeder::class);
-      $this->call(LeadsTableSeeder::class);
       $this->call(ContactsTableSeeder::class);
+      $this->call(accountsTableSeeder::class);
+      $this->call(LeadsTableSeeder::class);
+      $this->call(CallsTableSeeder::class);
+      $this->call(CrmsTableSeeder::class);
+      $this->call(EventsTableSeeder::class);
+      $this->call(InvoicesTableSeeder::class);
+      $this->call(PotentialsTableSeeder::class);
+      $this->call(QuotesTableSeeder::class);
+      $this->call(SalesordersTableSeeder::class);
+      $this->call(TasksTableSeeder::class);
+      $this->call(UserloggedinhistoriesTableSeeder::class);
     }
 
     private function cleanDatabase()

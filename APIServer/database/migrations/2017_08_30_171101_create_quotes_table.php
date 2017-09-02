@@ -13,7 +13,7 @@ class CreateQuotesTable extends Migration
      */
     public function up()
     {
-        Schema::create('qoutes', function (Blueprint $table) {
+        Schema::create('quotes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('address_id')->length(10)->unsigned()->nullable();
             $table->foreign('address_id')->references('id')->on('addresses');
