@@ -15,7 +15,7 @@ export class AppsService {
   hideApps: Array<number>;
 
   appsDict = [
-    { id: 1, name: 'accounts', path: './accounts', iconUrl: '../../assets/imgs/app-icons/accounts.png' },
+    { id: 1, name: 'account', path: './account', iconUrl: '../../assets/imgs/app-icons/account.png' },
     { id: 2, name: 'business', path: './business', iconUrl: '../../assets/imgs/app-icons/business.png' },
     { id: 3, name: 'contacts', path: './contacts', iconUrl: '../../assets/imgs/app-icons/contacts.png' },
     { id: 4, name: 'customer', path: './customer', iconUrl: '../../assets/imgs/app-icons/customer.png' },
