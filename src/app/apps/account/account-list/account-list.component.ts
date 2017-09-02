@@ -20,10 +20,7 @@ export class AccountListComponent implements OnInit {
     this.accountService.getAccountList().subscribe(
       res => {
         this.accountList = res;
-        this.itemsPerCol = Math.floor(this.accountList.length / 3);
-        this.accountListCol1 = this.accountList.slice(0, this.itemsPerCol);
-        this.accountListCol2 = this.accountList.slice(this.itemsPerCol, this.itemsPerCol * 2);
-        this.accountListCol3 = this.accountList.slice(this.itemsPerCol * 2);
+        this.organizeCols();
       },
       error => {
         console.log(error)
@@ -31,8 +28,19 @@ export class AccountListComponent implements OnInit {
     );
   }
 
-  deleteCard(id){
+  deleteCard(id: number){
+    this.accountService.deleteAccount(id);
+    this.accountList = this.accountList.filter(account => {
+      return account.id !== id;
+    })
+    this.organizeCols();
+  }
 
+  organizeCols(){
+    this.itemsPerCol = Math.floor(this.accountList.length / 3);
+    this.accountListCol1 = this.accountList.slice(0, this.itemsPerCol);
+    this.accountListCol2 = this.accountList.slice(this.itemsPerCol, this.itemsPerCol * 2);
+    this.accountListCol3 = this.accountList.slice(this.itemsPerCol * 2);
   }
 
 
