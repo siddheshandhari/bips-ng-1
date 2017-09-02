@@ -115,7 +115,7 @@ export class AddLeadComponent implements OnInit{
                         
                         },
                     err =>{
-                        console.log("error occored");
+                        console.log("error occured");
                     }
                  )
          this.myForm.reset();
