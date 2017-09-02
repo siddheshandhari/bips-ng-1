@@ -31,6 +31,10 @@ export class AccountListComponent implements OnInit {
     );
   }
 
+  deleteCard(id){
+
+  }
+
 
 
 
