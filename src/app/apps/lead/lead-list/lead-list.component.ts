@@ -1,17 +1,14 @@
-import { Component, OnInit  } from '@angular/core';
-
-import { LeadService } from './lead.service';
-import { Lead } from './lead';
-
+import { Component, OnInit } from '@angular/core';
+import { LeadService } from '../lead.service';
+import { Lead } from '../lead';
 
 @Component({
-    selector: 'lead',
-    templateUrl: 'lead.component.html',
-    styleUrls: ['lead.component.css'],
-
+    selector: 'lead-list',
+    templateUrl:'./lead-list.component.html',
+    styleUrls: ['./lead-list.component.css'],
 })
 
-export class LeadComponent implements OnInit {
+export class LeadListComponent implements OnInit{
 
     leadlist : Lead[] = [];
     selectedLead : Lead;
@@ -35,22 +32,15 @@ constructor(public leadService:LeadService){}
 
    }
 
-    deleteCard(id: number){
-    this.leadService.deleteLead(id);
-    this.leadlist = this.leadlist.filter(lead => {
-      return lead.id !== id;
-    })
-  }
-
+//get information from database
     ngOnInit():void{
         this.getLeadlist();
     }
 
-    public masonry = false;
-    public add_lead_value = false;
-    public lead_list_value = true;
+
     public isediting = false;
 
+// edit the lead
     editLead(lead:Lead): void{
 
             this.selectedLead = lead;
@@ -58,18 +48,14 @@ constructor(public leadService:LeadService){}
             this.isediting = true;
     }
 
-// jump to add lead page
-    add_lead(){
-        this.add_lead_value = true;
-    }
-// go back to lead page
+
     cancel_lead(){
-        this.add_lead_value = false;
+      
         this.getLeadlist()
     }
-// submit form
+    
     save_lead(){
-        this.add_lead_value = false;
+       
          this.getLeadlist()
     }
 
