@@ -15,16 +15,13 @@ export class CardBodyComponent{
 
   constructor(private el: ElementRef){}
 
+  private editMode: boolean = false;
   private actionPanelIsOpen: boolean = false;
   @Input() contacts: Array<object>;
   @Input() owner: string;
   @Output() deleteEvent = new EventEmitter();
-  @Output() editEvent = new EventEmitter();
 
   @HostBinding('class.card-body-open') isOpen: boolean = false;
-
-
-
 
   openBody(){
     this.isOpen = true;
@@ -48,7 +45,7 @@ export class CardBodyComponent{
     this.deleteEvent.emit(e);
   }
 
-  onEdit(e){
-    this.editEvent.emit(e);
+  onEdit(){
+    this.editMode = true;
   }
 };

@@ -30,7 +30,7 @@ class CreateInvoiceTable extends Migration
             $table->string('product_details')->nullable();
             $table->string('terms_and_conditions')->nullable();
             $table->string('description')->nullable();
-            $table->boolean('active');
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }
