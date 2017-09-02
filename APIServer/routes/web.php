@@ -16,6 +16,9 @@ Route::group(['prefix' => 'api/v1'], function()
 
   Route::get('search', 'SearchController@search');
 
+  //Account Collections Routes
+  Route::get('account', 'AccountController@browse');
+
   //Lead Collections Routes
   Route::get('lead', 'LeadController@browse');
   Route::post('lead', 'LeadController@add');

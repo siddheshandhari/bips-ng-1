@@ -27,7 +27,6 @@ class UsersTableSeeder extends Seeder
           'phone' => $faker->phoneNumber,
           'level' => $faker->randomDigit,
           'group_id' => $faker->randomDigit,
-          'active' => $faker->boolean
         ]);
       }
     }

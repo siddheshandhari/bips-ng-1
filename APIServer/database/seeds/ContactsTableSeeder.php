@@ -32,7 +32,6 @@ class ContactsTableSeeder extends Seeder
             'skype' => $faker->userName,
             'customer_type' => $faker->word,
             'twitter' => $faker->userName,
-            'active' => $faker->boolean
           ]);
         }
     }

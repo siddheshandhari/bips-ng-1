@@ -20,7 +20,6 @@ class AddressesTableSeeder extends Seeder
           'city' => $faker->city,
           'street' => $faker->streetAddress,
           'zipcode' => $faker->postcode,
-          'active' => $faker->boolean
         ]);
       }
     }
