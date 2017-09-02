@@ -16,6 +16,7 @@ class CreateCompaniesTable extends Migration
         Schema::create('companies', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('logoUrl')->nullable();
             $table->integer('billing_address_id')->length(10)->unsigned()->nullable();
             $table->foreign('billing_address_id')->references('id')->on('addresses');
             $table->integer('shipping_address_id')->length(10)->unsigned()->nullable();

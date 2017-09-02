@@ -11,13 +11,13 @@ export class LeadService {
 
 
   getLeadlist(): Observable<Lead[]>{
-    return this.http.get('http://localhost:4200/api/v1/lead')
+    return this.http.get('http://192.168.50.25/api/v1/lead')
     // return this.http.get('https://jsonplaceholder.typicode.com/comments?postId=1')
       .map((res:Response) => res.json())
     }
 
   getLead(id: number): Observable<Lead>{
-      return this.http.get('http://localhost:4200/api/v1/lead/'+id)
+      return this.http.get('http://192.168.50.25/api/v1/lead/'+id)
       .map((res:Response) =>res.json())
 
   }
