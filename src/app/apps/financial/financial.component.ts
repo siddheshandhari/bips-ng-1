@@ -41,4 +41,8 @@ export class FinancialComponent{
     }
   ];
 
+  deleteCard(e){
+    console.log('deleted');
+  }
+
 }
