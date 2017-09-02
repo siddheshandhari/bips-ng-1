@@ -45,6 +45,20 @@ constructor(public leadService:LeadService){}
 
    }
 
+
+    deleteCard(id: number){
+    console.log(id);
+    this.leadService.deleteLead(id);
+    this.leadlist = this.leadlist.filter(lead => {
+      return lead.id !== id;
+    })
+  }
+
+
+   
+ 
+
+
     ngOnInit():void{
         this.getLeadlist();
     }
