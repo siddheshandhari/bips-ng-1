@@ -1,5 +1,9 @@
 :host{
     text-align: center;
+      margin-bottom:60px;
+}
+form {
+    margin-bottom:40px;
 }
 .add_lead_title{
     text-align: center;
