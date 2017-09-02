@@ -1,5 +1,6 @@
 import { Component, HostBinding, Input, ElementRef, Output, EventEmitter } from '@angular/core';
 
+
 @Component({
   selector: 'card-body',
   templateUrl: 'card-body.component.html',
@@ -11,15 +12,18 @@ import { Component, HostBinding, Input, ElementRef, Output, EventEmitter } from 
 
 export class CardBodyComponent{
 
-  constructor(private el: ElementRef){
 
-  }
+  constructor(private el: ElementRef){}
+
   private actionPanelIsOpen: boolean = false;
   @Input() contacts: Array<object>;
   @Input() owner: string;
   @Output() deleteCard = new EventEmitter();
 
   @HostBinding('class.card-body-open') isOpen: boolean = false;
+
+
+ 
 
   openBody(){
     this.isOpen = true;
