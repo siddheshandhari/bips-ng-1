@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { AccountComponent } from './account.component';
 import { AccountListComponent } from './account-list/account-list.component';
 import { AccountService } from './account.service';
@@ -12,7 +13,8 @@ import { AddButtonModule } from '../shared/add-button/add-button.module';
   ],
   imports: [
     CardModule,
-    AddButtonModule
+    AddButtonModule,
+    CommonModule
   ],
   exports: [
     AccountComponent,

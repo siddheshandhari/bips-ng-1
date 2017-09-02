@@ -16,6 +16,7 @@ export class AccountListComponent implements OnInit {
     this.accountService.getAccountList().subscribe(
       res => {
         this.accountList = res;
+        console.log(this.accountList);
       },
       error => {
         console.log(error)
