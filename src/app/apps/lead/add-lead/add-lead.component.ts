@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormControl, FormBuilder, Validators,FormArray } from '@angular/forms'
 import { HttpClient } from "@angular/common/http";
 
-import { LeadInfo } from './add-lead.interface';
+import { Lead } from '../lead';
+import { LeadService } from '../lead.service';
 
 
 
@@ -15,15 +16,22 @@ import { LeadInfo } from './add-lead.interface';
 
 export class AddLeadComponent implements OnInit{
 
-   public myForm: FormGroup;
+    public myForm: FormGroup;
+    leadlist : Lead[] = [];
+    selectedLead : Lead;
 
-    constructor(private http: HttpClient, private _formBuilder: FormBuilder ){
-
-    }
+    constructor(
+        private http: HttpClient,
+        private _formBuilder: FormBuilder,
+        private leadService: LeadService,
+      ){}
 
 
     ngOnInit(){
+        this.getLeadlist();
         this.myForm = this._formBuilder.group({
+            lead_status: [''],
+            lead_source:[''],
 
             company :this._formBuilder.group({
                     name: [''],
@@ -33,33 +41,26 @@ export class AddLeadComponent implements OnInit{
                     annual_revenue:[''],
                     employees:[''],
                     industry:[''],
-            
+                    shipping_address:  this.initAddress(),
+                    billing_address:  this.initAddress(),
 
-            }),
+                    contacts: this._formBuilder.array([
+                                this.initContact(),
+                            ])
+                            
 
-            user : this._formBuilder.group({
-                    id:['']
-            })
-            // lead :this._formBuilder.group({
-            //         lead_status: [''],
-            //         lead_source:[''],
-            //         customer_type:['']
-            // }),
-            // address: this._formBuilder.array([
-            //     this.initAddress(),
-            //     this.initAddress1(),
-            // ]),
+                 }),
+                   
             // contacts: this._formBuilder.array([
             //     this.initContact(),
             // ])
-
 
 
         });
 
      }
 
-     public initContact(){
+    public initContact(){
          return this._formBuilder.group({
                 first_name:[''],
                 last_name:[''],
@@ -70,62 +71,55 @@ export class AddLeadComponent implements OnInit{
 
      }
 
-      public initAddress(){
+    public initAddress(){
          return this._formBuilder.group({
                     street:[''],
                     city:[''],
                     state:[''],
                     zip_code:[''],
                     country:[''],
-                    is_shipping:['1']
-            },
-            )
-
-     }
-     public initAddress1(){
-         return this._formBuilder.group({
-                    street:[''],
-                    city:[''],
-                    state:[''],
-                    zip_code:[''],
-                    country:[''],
-                    is_shipping:['0']
             },
             )
 
      }
 
-
-    
-    addAddress(){
-         const control = <FormArray>this.myForm.controls['address'];
-         control.push(this.initAddress());
-     }
+    getLeadlist():void{
+          this.leadService.getLeadlist()
+          .subscribe(leadlist => this.leadlist = leadlist)
+    }
 
     addContact(){
-         const control = <FormArray>this.myForm.controls['contacts'];
+         const control = <FormArray>this.myForm.controls.controls['contacts'];
          control.push(this.initContact());
      }
 
     removeContact(i: number){
-         const control = <FormArray>this.myForm.controls['contacts'];
+         const control = <FormArray>this.myForm.controls.controls['contacts'];
          control.removeAt(i);
      }
 
-     onSubmit({value}:{value:LeadInfo}){
+    onSubmit({value}:{value:Lead},model: Lead){
        event.preventDefault();
+       if(!value){ return };
+    
        console.log(JSON.stringify(value));
-       const req = this.http.post('http://192.168.50.25/api/v1/lead',{value})
+       this.leadService.createLead(value)
+        // const req = this.http.post('http://192.168.50.25/api/v1/lead',value)
         .subscribe(
+                       
+         
+
                     res =>{
+                        this.leadlist.push(res);
                         console.log(JSON.stringify(res));
+                        
                         },
                     err =>{
                         console.log("error occored");
                     }
                  )
          this.myForm.reset();
-        
+    
           }
           
 

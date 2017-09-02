@@ -14,6 +14,12 @@
 Route::group(['prefix' => 'api/v1'], function()
 {
 
+  Route::get('search', 'SearchController@search');
+
+  //Account Collections Routes
+  Route::get('account', 'AccountController@browse');
+  Route::delete('account/{id}', 'AccountController@destroy');
+
   //Lead Collections Routes
   Route::get('lead', 'LeadController@browse');
   Route::post('lead', 'LeadController@add');
@@ -26,10 +32,15 @@ Route::group(['prefix' => 'api/v1'], function()
   //Company Collections Routes
   Route::get('company', 'CompanyController@browse');
   Route::post('company', 'CompanyController@add');
+  
   //Specific Company
   Route::get('company/{id}', 'CompanyController@read');
   Route::delete('company/{id}', 'CompanyController@destroy');
   Route::put('company/{id}', 'CompanyController@edit');
+
+  //Call Collections Routes
+  Route::get('call', 'CallController@browse');
+  Route::post('call', 'CallController@add');
 
 });
 

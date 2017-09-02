@@ -1,13 +1,13 @@
+<ng-content></ng-content>
 <div class="control-panel">
-  <i class="fa fa-angle-up" (click)="closeBody()"></i>
-  <i class="fa fa-angle-down" (click)="openBody()"></i>
+  <i class="fa fa-angle-up" *ngIf="isOpen" (click)="closeBody()"></i>
+  <i class="fa fa-angle-down" *ngIf="!isOpen" (click)="openBody()"></i>
   <i class="fa fa-ellipsis-h" (click)="openActionPanel()"></i>
   <div class="action-dropdown" *ngIf="actionPanelIsOpen">
     <ul>
       <li><a style="color: #3F51B5">Detail</a></li>
-      <li style="border-top: 1px solid #ECECEC; border-bottom: 1px solid #ECECEC"><a style="color: #009688">Edit</a></li>
-      <li><a style="color: #ef5350">Delete</a></li>
+      <li (click)="onEdit($event)" style="border-top: 1px solid #ECECEC; border-bottom: 1px solid #ECECEC"><a style="color: #009688">Edit</a></li>
+      <li (click)="onDelete($event)"><a style="color: #ef5350">Delete</a></li>
     </ul>
   </div>
 </div>
-<card-contact [name]="name" [position]="position"></card-contact>

@@ -5,10 +5,12 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserModule }  from "@angular/platform-browser";
 import { RouterModule, Routes} from "@angular/router";
+import { CommonModule } from '@angular/common';
 
 
 
 //
+// import { CardModule } from '../shared/card/card.module';
 import { CardModule } from '../shared/card/card.module';
 import { LeadComponent } from './lead.component';
 import { AddLeadComponent } from './add-lead/add-lead.component';
@@ -30,6 +32,7 @@ import { LeadService } from './lead.service';
     BrowserModule,
     HttpModule,
     CardModule,
+    CommonModule
 
 
   ],

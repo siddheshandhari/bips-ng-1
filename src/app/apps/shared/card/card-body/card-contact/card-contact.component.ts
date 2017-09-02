@@ -1,19 +1,17 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'card-contact',
   templateUrl: 'card-contact.component.html',
   styleUrls: ['card-contact.component.css'],
-  inputs: ['./card-body'],
 
 })
-export class CardContactComponent implements OnInit {
+export class CardContactComponent{
+
   @Input() name: string;
   @Input() position: string;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
+  @Input() phone: string;
+  @Input() email: string;
+  @Input() skype: string;
 
 }

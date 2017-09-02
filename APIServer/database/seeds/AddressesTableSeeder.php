@@ -16,11 +16,10 @@ class AddressesTableSeeder extends Seeder
       {
         DB::table('addresses')->insert([
           'country' => $faker->country,
-          'state' => $faker->state,
+          'state' => $faker->stateAbbr,
           'city' => $faker->city,
           'street' => $faker->streetAddress,
           'zipcode' => $faker->postcode,
-          'active' => $faker->boolean
         ]);
       }
     }

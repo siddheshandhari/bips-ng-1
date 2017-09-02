@@ -1,5 +1,6 @@
 :host{
   width: 1140px;
   height: auto;
-  background: black;
+  padding: 15px;
+  background-color: #F5F5F5;
 }

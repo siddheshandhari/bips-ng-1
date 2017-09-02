@@ -16,9 +16,10 @@ export class Contact {
   fax: number;
   mobile: number;
   birthday: Date;
+  assistant: string;
   asst_phone: number;
   reports_to: string;
-  skype_id: number;
+  skype: string;
   customer_type: string;
   secondary_email: string;
   twitter: string;

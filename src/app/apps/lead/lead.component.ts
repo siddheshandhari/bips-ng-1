@@ -1,14 +1,7 @@
 import { Component, OnInit  } from '@angular/core';
-// import { Router } from './angualr/router';
 
 import { LeadService } from './lead.service';
 import { Lead } from './lead';
-
-
-//  export class Leadlist{
-//         name:string;
-//         id: number
-//     }
 
 
 @Component({
@@ -22,17 +15,25 @@ export class LeadComponent implements OnInit {
 
     leadlist : Lead[] = [];
     selectedLead : Lead;
+   
+    // companies: Array<object> = this.leadlist.map(function(lead){
+    //     return {     
+    //         name: lead.company.name,
+    //         address: lead.company.billing_address.street,
+    //         industry: lead.company.industry,
+    //         }
+    // })
 
-    constructor(public leadService:LeadService){}
+
+
+constructor(public leadService:LeadService){}
 
 // get lead infomation
     getLeadlist():void{
           this.leadService.getLeadlist()
-          .subscribe(leadlist => this.leadlist = leadlist
-          )
-
-
+          .subscribe(leadlist => this.leadlist = leadlist)
     }
+
 // delete lead
     deleteLead(lead:Lead): void{
 
@@ -41,7 +42,7 @@ export class LeadComponent implements OnInit {
              this.leadlist = this.leadlist.filter (l => l !== lead);
              if(this.selectedLead === lead){this.selectedLead = null}
          })
-       
+
    }
 
     ngOnInit():void{
@@ -54,11 +55,11 @@ export class LeadComponent implements OnInit {
     public isediting = false;
 
     editLead(lead:Lead): void{
-            this.isediting = true;
+
             this.selectedLead = lead;
             console.log(this.selectedLead);
+            this.isediting = true;
     }
-
 
 // jump to add lead page
     add_lead(){
@@ -67,13 +68,12 @@ export class LeadComponent implements OnInit {
 // go back to lead page
     cancel_lead(){
         this.add_lead_value = false;
+        this.getLeadlist()
     }
 // submit form
     save_lead(){
         this.add_lead_value = false;
+         this.getLeadlist()
     }
-
-   
-
 
 }
