@@ -1,29 +1,18 @@
-import { Component, OnInit, Inject } from '@angular/core';
-
-import { DialogService } from './dialog/dialog.service';
+import { Component, Inject } from '@angular/core';
+import { MdDialog, MD_DIALOG_DATA } from '@angular/material';
+import { DialogComponent } from './dialog/dialog.component';
 
 @Component({
   selector: 'add-button',
   templateUrl: 'add-button.component.html',
   styleUrls: ['add-button.component.css']
 })
-export class AddButtonComponent implements OnInit {
-  
-  // fake data
-  
-  public result: any;
-  
-  constructor (private dialogService: DialogService) {}
+export class AddButtonComponent{
+
+  constructor (private dialog: MdDialog) {}
 
   public openDialog() {
-    this.dialogService
-      .confirm('Confirm Dialog', 'Are you sure you want to do this?')
-      .subscribe(res => this.result = res);
-  }
-
-  ngOnInit() {
+    this.dialog.open(DialogComponent, { width: '250px' });
   }
 
 }
-
-
