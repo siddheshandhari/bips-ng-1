@@ -35,7 +35,7 @@ class CreatePotentialsTable extends Migration
             $table->string('annually_useage')->nullable();
             $table->string('potential_name')->nullable();
             $table->string('description')->nullable();
-            $table->boolean('active')->default(1);
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

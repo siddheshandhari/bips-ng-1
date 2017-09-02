@@ -31,7 +31,7 @@ class CreateQuotesTable extends Migration
             $table->string('products_details')->nullable();
             $table->string('terms_conditions')->nullable();
             $table->string('description')->nullable();
-            $table->boolean('active');
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

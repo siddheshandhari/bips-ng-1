@@ -19,7 +19,7 @@ class CreateUserloggedinhistoriesTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('ip')->nullable();
             $table->string('status')->nullable();
-            $table->boolean('active');
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

@@ -33,7 +33,7 @@ class CreateSalesordersTable extends Migration
             $table->string('product_detail')->nullable();
             $table->string('terms_conditions')->nullable();
             $table->string('description')->nullable();
-            $table->boolean('active');
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }
