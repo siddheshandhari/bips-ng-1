@@ -1,5 +1,6 @@
 <div class="card-logo">
-  <img [src]="logoUrl"/>
+  <img *ngIf="logoUrl" [src]="logoUrl"/>
+  <span *ngIf="!logoUrl" class="default-logo">{{title[0]}}</span>
 </div>
 <div class="header-info">
   <h5 class="header-title">{{title}}</h5>

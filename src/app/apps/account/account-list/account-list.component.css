@@ -1,0 +1,15 @@
+:host{
+  display: block;
+  padding: 80px;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.waterfall{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.waterfall-col{
+  flex: 1;
+}
