@@ -15,14 +15,6 @@ export class LeadComponent implements OnInit {
 
     leadlist : Lead[] = [];
     selectedLead : Lead;
-   
-    // companies: Array<object> = this.leadlist.map(function(lead){
-    //     return {     
-    //         name: lead.company.name,
-    //         address: lead.company.billing_address.street,
-    //         industry: lead.company.industry,
-    //         }
-    // })
 
 
 
