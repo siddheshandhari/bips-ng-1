@@ -16,16 +16,6 @@ export class LeadComponent implements OnInit {
     leadlist : Lead[] = [];
     selectedLead : Lead;
    
-    // companies: Array<object> = this.leadlist.map(function(lead){
-    //     return {     
-    //         name: lead.company.name,
-    //         address: lead.company.billing_address.street,
-    //         industry: lead.company.industry,
-    //         }
-    // })
-
-
-
 constructor(public leadService:LeadService){}
 
 // get lead infomation
@@ -44,6 +34,13 @@ constructor(public leadService:LeadService){}
          })
 
    }
+
+    deleteCard(id: number){
+    this.leadService.deleteLead(id);
+    this.leadlist = this.leadlist.filter(lead => {
+      return lead.id !== id;
+    })
+  }
 
     ngOnInit():void{
         this.getLeadlist();

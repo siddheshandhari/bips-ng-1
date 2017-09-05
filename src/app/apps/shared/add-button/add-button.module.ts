@@ -1,39 +1,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AddButtonComponent } from './add-button.component';
+import { MdDialogModule, MdButtonModule, } from '@angular/material';
 import { DialogComponent } from './dialog/dialog.component';
-import { DialogService } from './dialog/dialog.service';
-import { MdDialog, MdDialogRef, MD_DIALOG_DATA, OVERLAY_PROVIDERS, ScrollStrategyOptions, ScrollDispatcher, Platform } from '@angular/material';
-import { DialogModule } from './dialog/dialog.module';
-import { DialogContentComponent } from './dialog/dialog-content/dialog-content.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule ({
     imports: [
-        CommonModule,
-        
+      CommonModule,
+      MdDialogModule,
+      MdButtonModule,
+      BrowserAnimationsModule
     ],
     declarations: [
-        AddButtonComponent,
-        DialogComponent,
-        DialogContentComponent,
+      AddButtonComponent,
+      DialogComponent
     ],
     providers: [
-        DialogService,
-        MdDialog,
-        OVERLAY_PROVIDERS,
-        ScrollStrategyOptions, 
-        ScrollDispatcher,
-        Platform,
-        
+
     ],
     exports: [
-        AddButtonComponent,
-        DialogComponent,
-        DialogContentComponent,
+      AddButtonComponent,
     ],
     entryComponents: [
-        DialogContentComponent,
-    ],
-    
+      DialogComponent
+    ]
 })
-export class AddButtonModule {} 
+export class AddButtonModule {}

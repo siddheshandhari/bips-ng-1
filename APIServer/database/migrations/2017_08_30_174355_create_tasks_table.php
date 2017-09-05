@@ -26,7 +26,7 @@ class CreateTasksTable extends Migration
             $table->string('remainder')->nullable();
             $table->string('repeat')->nullable();
             $table->string('description')->nullable();
-            $table->boolean('active');
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

@@ -1,0 +1,27 @@
+
+ <h2 class="lead_header">Lead</h2>
+
+                <table class="table">
+                <thead>
+                    <tr>
+                    <th>#</th>
+                    <th>Company Name</th>
+                    <th>Website</th>
+                    <th>employees</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    </tr>
+                </thead>
+
+
+                <tbody>
+                    <tr *ngFor="let lead of leadlist let i = index">
+                <td scope="row">{{i}}</td>
+                    <td>{{lead.company.name}}</td>
+                    <td>{{lead.company.website}}</td>
+                    <td>{{lead.company.employees}}</td>
+                    <td><button type="button" class="btn btn-outline-success btn-sm"  (click)="editLead(lead)"><i class="fa fa-pencil"></i></button></td>
+                    <td><button  type="button" class="btn btn-outline-danger btn-sm" (click)="deleteLead(lead)"><i class="fa fa-trash-o"></i></button></td>
+                    </tr>
+                </tbody>
+                </table>
