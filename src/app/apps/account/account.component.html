@@ -1,4 +1,5 @@
 <account-list></account-list>
-<add-button (click)="openModal()"></add-button>
-<modal (click)="closeModal()" *ngIf="modalOpen" ></modal>
-<add-account *ngIf="modalOpen" (requestCloseModal)="closeModal()"></add-account>
+<add-button (click)="openModal()" [modalOpen]="modalOpen"></add-button>
+<modal (requestCloseModal)="closeModal()" *ngIf="modalOpen" >
+  <add-account (requestCloseModal)="closeModal()"></add-account>
+</modal>

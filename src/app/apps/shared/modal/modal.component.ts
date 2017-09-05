@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'modal',
@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
 })
 
 export class ModalComponent{
-  
+  @Output() requestCloseModal = new EventEmitter();
+
+  closeModal(){
+    this.requestCloseModal.emit();
+  }
+
 }
