@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Lead;
+use App\Company;
 use Illuminate\Http\Request;
 
 class SearchController extends ApiController
@@ -14,13 +14,18 @@ class SearchController extends ApiController
       $context = $request->input('context');
       $value = $request->input('value');
     } else {
-      return $this->setStatusCode(500)->respondWithError("Query keys not completed");
+      return $this->setStatusCode(400)->respondWithError("Query keys haven't completed");
     }
 
-    if($category == "lead"){
-      
+    if($category == "company"){
+      if($context == "name"){
+        $companies = Company::where('name', 'like', '%'.$value.'%')->get();
+        return $this->respond($companies);
+      } else {
+        return $this->setStatusCode(400)->respondWithError("Context doesn't support");
+      }
     } else {
-      return $this->setStatusCode(500)->respondWithError("Doesn't support this category!");
+      return $this->setStatusCode(400)->respondWithError("Category doesn't support");
     }
   }
 }
