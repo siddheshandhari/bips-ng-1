@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LeadService }  from '../lead.service';
+import { Lead } from '../lead';
 
 @Component({
     selector:'lead-info',
@@ -8,8 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class LeadInfoComponent implements OnInit {
-     constructor(){}
+    leadlist : Lead[] = [];
+    public totallead: number;
+    constructor(private leadService: LeadService){}
 
-     ngOnInit(){}
+     ngOnInit(){ 
+         this.leadService.getLeadlist()
+          .subscribe((leadlist)=>{
+              this.leadlist = leadlist;
+              this.totallead = this.leadlist.length;
+              console.log(this.leadlist)
+          })
+
+    }
+
+
+
+  
 }
+
 

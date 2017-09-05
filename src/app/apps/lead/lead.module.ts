@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 
 import { LeadRoutingModule } from './lead-routing.module';
 // import { CardModule } from '../shared/card/card.module';
-import { CardModule } from '../shared/card/card.module';
+import { CardModule } from '../shared/leadcard/card.module';
 import { LeadComponent } from './lead.component';
 import { AddLeadComponent } from './add-lead/add-lead.component';
 import { EditLeadComponent } from './edit-lead/edit-lead.component';

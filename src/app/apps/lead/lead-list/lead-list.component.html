@@ -1,5 +1,4 @@
 
-
                 <table class="table">
                 <thead>
                     <tr>
@@ -13,14 +12,26 @@
                 </thead>
 
 
-                <tbody>
+                <tbody *ngIf = "editlead== false">
                     <tr *ngFor="let lead of leadlist let i = index">
                     <td scope="row">{{i}}</td>
-                    <td>{{lead.id}}</td>
-                    <td>{{lead.id}}</td>
-                    <td>{{lead.id}}</td>
+                    <td>{{lead.company.name}}</td>
+                    <td>{{lead.company.website}}</td>
+                    <td>{{lead.company.employees}}</td>
                     <td><button type="button" class="btn btn-outline-success btn-sm"  (click)="editLead(lead)"><i class="fa fa-pencil"></i></button></td>
                     <td><button  type="button" class="btn btn-outline-danger btn-sm" (click)="deleteLead(lead)"><i class="fa fa-trash-o"></i></button></td>
                     </tr>
                 </tbody>
+
+                <tbody  *ngIf = "editlead== true">
+                    <tr *ngFor="let lead of leadlist let i = index">
+                    <td scope="row">{{i}}</td>
+                    <td>{{lead.company.name}}</td>
+                    <td>{{lead.company.website}}</td>
+                    <td>{{lead.company.employees}}</td>
+                    <td><button type="button" class="btn btn-outline-success btn-sm"  (click)="saveLead(lead)">Save</button><button type="button" class="btn btn-outline-danger btn-sm"  (click)="cancelLead(lead)">ancel</button></td>
+                    <td><button  type="button" class="btn btn-outline-danger btn-sm" (click)="deleteLead(lead)"><i class="fa fa-trash-o"></i></button></td>
+                    </tr>
+                </tbody>
+                
                 </table>

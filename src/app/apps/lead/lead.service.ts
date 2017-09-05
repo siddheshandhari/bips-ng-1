@@ -13,8 +13,8 @@ export class LeadService {
 
 
   getLeadlist(): Observable<Lead[]>{
-    // return this.http.get('http://192.168.50.25/api/v1/lead')
-    return this.http.get('https://jsonplaceholder.typicode.com/comments?postId=1')
+    return this.http.get('http://192.168.50.25/api/v1/lead')
+    // return this.http.get('https://jsonplaceholder.typicode.com/comments?postId=1')
       .map((res:Response) => res.json())
     }
 

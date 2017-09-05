@@ -12,6 +12,7 @@ export class LeadListComponent implements OnInit{
 
     leadlist : Lead[] = [];
     selectedLead : Lead;
+    editlead= false;
    
 constructor(public leadService:LeadService){}
 
@@ -32,6 +33,8 @@ constructor(public leadService:LeadService){}
 
    }
 
+   totallead = this.leadlist.length;
+
 //get information from database
     ngOnInit():void{
         this.getLeadlist();
@@ -45,18 +48,16 @@ constructor(public leadService:LeadService){}
 
             this.selectedLead = lead;
             console.log(this.selectedLead);
-            this.isediting = true;
+            this.editlead= true;
     }
 
-
-    cancel_lead(){
-      
-        this.getLeadlist()
-    }
-    
-    save_lead(){
-       
-         this.getLeadlist()
+    saveLead(lead:Lead): void{
+            console.log(this.selectedLead);
+            this.editlead= false;
     }
 
+    cancelLead(lead:Lead): void {
+        console.log(this.selectedLead);
+            this.editlead= false;
+    }
 }
