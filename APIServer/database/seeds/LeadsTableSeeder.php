@@ -16,14 +16,13 @@ class LeadsTableSeeder extends Seeder
       shuffle($list);
       $users = $list;
       $companies = $list;
-      foreach(range(1, $count) as $index)
+      foreach(range(1, 30) as $index)
       {
         DB::table('leads')->insert([
           'user_id' => array_shift($users),
           'company_id' => array_shift($companies),
           'status' => $faker->word,
           'source' => $faker->sentence($nbWords = 6, $variableNbWords = true),
-          'active' => $faker->boolean
         ]);
       }
     }

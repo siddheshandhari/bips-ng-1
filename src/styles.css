@@ -5,6 +5,8 @@
 Main
 
 ==============================*/
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 html {
     color: #222;
     font-size: 1em;

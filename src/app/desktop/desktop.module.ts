@@ -6,6 +6,7 @@ import { SidebarModule } from '../sidebar/sidebar.module';
 import { MenubarModule } from '../menubar/menubar.module';
 import { CrmModule } from '../apps/crm/crm.module';
 import { LeadModule } from '../apps/lead/lead.module';
+import { AccountModule } from '../apps/account/account.module';
 import { FinancialModule } from '../apps/financial/financial.module';
 import { InventoryModule } from '../apps/inventory/inventory.module';
 import { WindowModule } from '../window/window.module';
@@ -28,6 +29,7 @@ import { ToggleFullScreenDirective } from './toggleFullScreen.directive';
     MenubarModule,
     CrmModule,
     LeadModule,
+    AccountModule,
     FinancialModule,
     InventoryModule,
     WindowModule,

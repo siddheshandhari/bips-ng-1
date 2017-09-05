@@ -23,7 +23,6 @@ class CompaniesTableSeeder extends Seeder
           'industry' => $faker->catchPhrase,
           'annual_revenue' => $faker->randomNumber,
           'tier' => $faker->randomDigit,
-          'active' => $faker->boolean
         ]);
       }
     }

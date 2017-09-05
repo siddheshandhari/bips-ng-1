@@ -19,7 +19,7 @@ class CreateCrmsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('company_id')->length(10)->unsigned()->nullable();
             $table->foreign('company_id')->references('id')->on('companies');
-            $table->boolean('active');
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

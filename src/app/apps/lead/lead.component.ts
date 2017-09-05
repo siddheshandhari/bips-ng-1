@@ -15,10 +15,9 @@ export class LeadComponent implements OnInit {
 
     leadlist : Lead[] = [];
     selectedLead : Lead;
+    add_lead_value = false;
 
-
-
-constructor(public leadService:LeadService){}
+    constructor(public leadService:LeadService){}
 
 // get lead infomation
     getLeadlist():void{
@@ -37,14 +36,18 @@ constructor(public leadService:LeadService){}
 
    }
 
+    deleteCard(id: number){
+    this.leadService.deleteLead(id);
+    this.leadlist = this.leadlist.filter(lead => {
+      return lead.id !== id;
+    })
+  }
+
     ngOnInit():void{
         this.getLeadlist();
     }
 
-    public masonry = false;
-    public add_lead_value = false;
-    public lead_list_value = true;
-    public isediting = false;
+    
 
     editLead(lead:Lead): void{
 
@@ -53,16 +56,16 @@ constructor(public leadService:LeadService){}
     }
 
 // jump to add lead page
-    add_lead(){
-        this.add_lead_value = true;
-    }
+   
 // go back to lead page
     cancel_lead(){
-        this.add_lead_value = false;
+       
+        this.getLeadlist()
     }
 // submit form
     save_lead(){
-        this.add_lead_value = false;
+        // this.add_lead_value = false;
+         this.getLeadlist()
     }
 
 }
