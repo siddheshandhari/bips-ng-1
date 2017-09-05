@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 
 export class AccountComponent {
+  modalOpen: boolean = false;
+
+  openModal(){
+    this.modalOpen = true;
+  }
+
+  closeModal(){
+    this.modalOpen = false;
+  }
 }

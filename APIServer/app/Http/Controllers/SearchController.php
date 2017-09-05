@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Company;
+use App\utils\Builder\CompanyBuilder;
 use Illuminate\Http\Request;
 
 class SearchController extends ApiController
