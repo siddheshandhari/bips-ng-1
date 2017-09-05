@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //Module
 import { StoreModule } from '@ngrx/store';
@@ -27,7 +26,6 @@ import { topWindowReducer } from '../reducers/topWindow.reducer';
 import { currentUserReducer } from '../reducers/currentUser.reducer';
 import 'rxjs/Rx';
 
-
 const appRoutes: Routes = [
   { path: '', redirectTo:'/desktop', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
@@ -51,7 +49,6 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     CommonModule,
-    BrowserAnimationsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: false }
