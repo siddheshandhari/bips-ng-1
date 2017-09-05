@@ -1,21 +1,27 @@
+<div class = "loginPage">
+  <h1>OrcaSmart</h1>
+  <br>
+  <form  #logginForm (submit)= "loginUser(logginForm.value)"> 
+    <div class="input col-14">
+      <!-- <label>Username</label> -->
+      <input type="text" class="form-control form-control-lg" name="Username" placeholder="Username" ngModel  required>
+    </div>
 
+    <div class="input col-14">
+      <!-- <label>Password</label> -->
+      <input type="password" class="form-control form-control-lg" name="password" placeholder="Password" ngModel required >
+    </div>
+    <br>
 
+    <div class="input col-14">
+      <input type="submit" class="form-control btn btn-primary" value="login">
+    </div>
+    <br>
+    <div class="agreement">
+      <p> By clicking login, you agree</p>
+    </div>
 
-<form  #logginForm (submit)= "loginUser(logginForm.value)"> 
-  <div class="input">
-    <label>Username</label>
-    <input type="text" class="form-control" name="Username" ngModel  required>
-  </div>
-
-  <div class="input">
-    <label>Password</label>
-    <input type="password" class="form-control" name="password" ngModel required >
-  </div>
-
-  <div class="input">
-    <input type="submit" value="login">
-  </div>
-
-</form>
+  </form>
+</div>
 
 
