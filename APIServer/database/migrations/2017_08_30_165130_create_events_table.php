@@ -24,7 +24,7 @@ class CreateEventsTable extends Migration
             $table->string('participants')->nullable();
             $table->string('related_to')->nullable();
             $table->string('repeat')->nullable();
-            $table->boolean('active');
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

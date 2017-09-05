@@ -27,7 +27,7 @@ class CreateCallsTable extends Migration
             $table->string('description')->nullable();            
             $table->string('billable')->nullable();            
             $table->string('call_result')->nullable();    
-            $table->boolean('active');
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

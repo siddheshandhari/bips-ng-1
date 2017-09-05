@@ -1,7 +1,7 @@
 import { Company } from '../../models/company';
 import { User } from '../../models/user';
 
-export class Lead {
+export class Potential {
     id : number;
     company : Company;
     user: User;

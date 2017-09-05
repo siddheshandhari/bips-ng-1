@@ -13,13 +13,13 @@ class CreateUserloggedinhistoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('userloggedinhistoriess', function (Blueprint $table) {
+        Schema::create('userloggedinhistories', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->length(10)->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('ip')->nullable();
             $table->string('status')->nullable();
-            $table->boolean('active');
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }
