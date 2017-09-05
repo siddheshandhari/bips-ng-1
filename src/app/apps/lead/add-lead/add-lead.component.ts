@@ -9,8 +9,8 @@ import { LeadService } from '../lead.service';
 
 @Component({
     selector: 'add-lead',
-    templateUrl: 'add-lead.component.html',
-    styleUrls: ['add-lead.component.css'],
+    templateUrl: './add-lead.component.html',
+    styleUrls: ['./add-lead.component.css'],
 
 })
 

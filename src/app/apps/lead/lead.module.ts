@@ -7,9 +7,9 @@ import { BrowserModule }  from "@angular/platform-browser";
 import { RouterModule, Routes} from "@angular/router";
 import { CommonModule } from '@angular/common';
 
-
-
 //
+
+import { LeadRoutingModule } from './lead-routing.module';
 // import { CardModule } from '../shared/card/card.module';
 import { CardModule } from '../shared/card/card.module';
 import { LeadComponent } from './lead.component';
@@ -40,7 +40,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     BrowserModule,
     HttpModule,
     CardModule,
-    CommonModule
+    CommonModule,
+     LeadRoutingModule
 
 
   ],

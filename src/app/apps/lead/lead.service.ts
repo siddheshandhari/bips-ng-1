@@ -3,6 +3,7 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/toPromise';
 import { Lead } from './lead';
+// import { LEADLIST } from './mock-leads';
 
 @Injectable()
 export class LeadService {
@@ -10,9 +11,10 @@ export class LeadService {
   constructor(private http: Http) {}
 
 
+
   getLeadlist(): Observable<Lead[]>{
-    return this.http.get('http://192.168.50.25/api/v1/lead')
-    // return this.http.get('https://jsonplaceholder.typicode.com/comments?postId=1')
+    // return this.http.get('http://192.168.50.25/api/v1/lead')
+    return this.http.get('https://jsonplaceholder.typicode.com/comments?postId=1')
       .map((res:Response) => res.json())
     }
 
