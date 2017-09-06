@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from './login.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'login',
@@ -10,7 +11,9 @@ import { Router } from '@angular/router';
 
 export class LoginComponent implements OnInit {
   model: any = {};
-  constructor(private router: Router,private login:LoginService){ }
+  constructor(private route: ActivatedRoute,
+              private router: Router,
+              private login:LoginService){ }
 
   ngOnInit(){
 
@@ -19,11 +22,11 @@ export class LoginComponent implements OnInit {
   loginUser(e){
     e.preventDefault();
     console.log(e);
-    var username = e.target.elements[0].value;
+    var email = e.target.elements[0].value;
     var password = e.target.elements[1].value;
-    console.log(username,password);
+    console.log(email,password);
 
-    if (username == 'admin' && password =='admin'){
+    if (email == 'admin' && password =='admin'){
       this.login.setUserLoggedIn();
       this.router.navigate(['desktop'])
     }
