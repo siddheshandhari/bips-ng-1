@@ -6,6 +6,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { BrowserModule }  from "@angular/platform-browser";
 import { RouterModule, Routes} from "@angular/router";
 import { CommonModule } from '@angular/common';
+import { ModalModule } from '../shared/modal/modal.module';
 
 //
 
@@ -21,6 +22,7 @@ import { LeadSearchComponent } from './lead-search/lead-search.component';
 import { LeadInfoComponent } from './lead-info/lead-info.component';
 import { LeadListComponent } from './lead-list/lead-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AddButtonModule } from '../shared/add-button/add-button.module';
 
 
 @NgModule({
@@ -32,8 +34,7 @@ import { NavbarComponent } from './navbar/navbar.component';
    LeadInfoComponent,
    LeadListComponent,
    NavbarComponent,
-  //ModalComponent
-  
+
   ],
   imports: [
     FormsModule,
@@ -43,7 +44,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     CardModule,
     CommonModule,
     LeadRoutingModule,
-
+    AddButtonModule,
+    ModalModule
   ],
   exports: [
     LeadComponent,

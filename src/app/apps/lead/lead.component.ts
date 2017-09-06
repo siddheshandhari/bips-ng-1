@@ -16,6 +16,7 @@ export class LeadComponent implements OnInit {
     leadlist : Lead[] = [];
     selectedLead : Lead;
     add_lead_value = false;
+    modalOpen: boolean = true;
 
     constructor(public leadService:LeadService){}
 
@@ -54,7 +55,7 @@ export class LeadComponent implements OnInit {
         this.add_lead_value = false;
     }
 
-    
+
 
     editLead(lead:Lead): void{
 
@@ -63,16 +64,24 @@ export class LeadComponent implements OnInit {
     }
 
 // jump to add lead page
-   
+
 // go back to lead page
     cancel_lead(){
-       
+
         this.getLeadlist()
     }
 // submit form
     save_lead(){
         // this.add_lead_value = false;
          this.getLeadlist()
+    }
+
+    openModal(){
+      this.modalOpen = true;
+    }
+
+    closeModal(){
+      this.modalOpen = false;
     }
 
 }

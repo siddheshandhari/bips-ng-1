@@ -20,11 +20,11 @@
 <add-lead *ngIf="add_lead_value==true"></add-lead>
 
 <div *ngIf="add_lead_value==false">
-    
+
         <lead-info></lead-info>
 
         <!--<lead-list></lead-list>-->
-                
+
         <card  *ngFor="let lead of leadlist">
             <card-header [logoUrl]="'assets/imgs/photo.png'" [title]="lead.company.name" [address]="lead.company.billing_address" [industry]="lead.company.industry" [facebook]="" [twitter]="" [phone]="">
             </card-header>
@@ -32,7 +32,9 @@
                 <card-contact *ngFor="let contact of lead.company.contacts" [name]="contact.first_name" [position]="'Founder\CEO'" [phone]="contact.phone" [email]="contact.email" skype="contact.skype"></card-contact>
             </card-body>-->
         </card>
-
-
 </div>
 
+<add-button (click)="openModal()" [modalOpen]="modalOpen"></add-button>
+<modal (requestCloseModal)="closeModal()" *ngIf="modalOpen" >
+  <add-lead (requestCloseModal)="closeModal()"></add-lead>
+</modal>

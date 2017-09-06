@@ -1,19 +1,23 @@
-<div class = "loginPage">
+<div class = "container">
   <h1>OrcaSmart</h1>
   <br>
+  <!-- <div class="form-group">
+    <a [routerLink]="['/login']" class="btn btn-link">Login</a>
+    <a [routerLink]="['/signup']" class="btn btn-link">Sign Up</a>
+  </div> -->
   <form  #logginForm (submit)= "loginUser(logginForm.value)"> 
-    <div class="input col-14">
+    <div class="input">
       <!-- <label>Username</label> -->
-      <input type="text" class="form-control form-control-lg" name="Username" placeholder="Username" ngModel  required>
+      <input type="text" class="form-control form-control-lg" name="Email" placeholder="Email" ngModel  required>
     </div>
 
-    <div class="input col-14">
+    <div class="input">
       <!-- <label>Password</label> -->
       <input type="password" class="form-control form-control-lg" name="password" placeholder="Password" ngModel required >
     </div>
     <br>
 
-    <div class="input col-14">
+    <div class="input">
       <input type="submit" class="form-control btn btn-primary" value="login">
     </div>
     <br>
@@ -23,5 +27,8 @@
 
   </form>
 </div>
+
+<!-- col-md-4 col-md-offset-4 -->
+<!-- col-14 -->
 
 

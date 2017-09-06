@@ -8,6 +8,7 @@ import { StoreModule } from '@ngrx/store';
 import { DesktopModule } from './desktop/desktop.module';
 import { LoginModule } from './login/login.module';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { SignupModule } from './signup/signup.module';
 
 //components
 import { AppComponent } from './app.component';
@@ -16,8 +17,8 @@ import { DesktopComponent } from './desktop/desktop.component';
 import { LoginService } from './login/login.service';
 import { AuthGuard }  from './login/login.authguard';
 import { WindowComponent } from './window/window.component';
-
-
+import { SignupComponent } from './signup/signup.component';
+import { SignupService } from './signup/signup.service';
 //reducers
 import { installedAppsReducer } from '../reducers/installedApps.reducer';
 import { runningAppsReducer } from '../reducers/runningApps.reducer';
@@ -26,10 +27,12 @@ import { topWindowReducer } from '../reducers/topWindow.reducer';
 import { currentUserReducer } from '../reducers/currentUser.reducer';
 import 'rxjs/Rx';
 
+
 const appRoutes: Routes = [
-  { path: '', redirectTo:'/desktop', pathMatch: 'full'},
+  { path: '', redirectTo:'/signup', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
   { path: 'desktop', component: DesktopComponent},
+  { path: 'signup', component: SignupComponent},
 
 
 
@@ -45,6 +48,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,6 +59,7 @@ const appRoutes: Routes = [
     ),
     DesktopModule,
     LoginModule,
+    
     StoreModule.forRoot({
       installedApps: installedAppsReducer,
       runningApps: runningAppsReducer,
@@ -66,7 +71,7 @@ const appRoutes: Routes = [
       maxAge: 25
     })
   ],
-  providers: [LoginService,AuthGuard],
+  providers: [LoginService,AuthGuard,SignupService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

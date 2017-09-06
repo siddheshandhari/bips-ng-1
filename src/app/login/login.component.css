@@ -1,8 +1,14 @@
 :host {
   margin: 0 auto;
-  position: absolute;
-  left: 800px;
-  top:300px;
+  position: absolute; 
+  left: 50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  
+} 
+
+* {
+  border-radius: 0 !important;
 }
 
 .ng-valid[required], .ng-valid.required  {
