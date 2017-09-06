@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 
 import { LeadRoutingModule } from './lead-routing.module';
 // import { CardModule } from '../shared/card/card.module';
+// import { ModalComponent } from '../shared/modal/modal.component';
 import { CardModule } from '../shared/leadcard/card.module';
 import { LeadComponent } from './lead.component';
 import { AddLeadComponent } from './add-lead/add-lead.component';
@@ -30,7 +31,8 @@ import { NavbarComponent } from './navbar/navbar.component';
    LeadSearchComponent,
    LeadInfoComponent,
    LeadListComponent,
-   NavbarComponent
+   NavbarComponent,
+  //  ModalComponent
 
 
   ],
@@ -41,7 +43,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     HttpModule,
     CardModule,
     CommonModule,
-     LeadRoutingModule
+    LeadRoutingModule,
+
 
 
   ],
