@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardModule } from '../shared/card/card.module';
-import { AddButtonModule } from '../shared/add-button/add-button.module';
 import { FormsModule }   from '@angular/forms';
+
 
 import { ModalComponent } from '../shared/modal/modal.component';
 import { AccountComponent } from './account.component';
 import { AccountListComponent } from './account-list/account-list.component';
 import { AddAccountComponent } from './add-account/add-account.component';
+import { AddButtonComponent } from '../shared/add-button/add-button.component';
+import { AddCompanyFormModule } from '../shared/forms/add-company-form/add-company-form.module';
 
 import { AccountService } from './account.service';
 
@@ -17,13 +19,14 @@ import { AccountService } from './account.service';
     AccountComponent,
     AccountListComponent,
     AddAccountComponent,
-    ModalComponent
+    ModalComponent,
+    AddButtonComponent,
   ],
   imports: [
     CardModule,
-    AddButtonModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    AddCompanyFormModule,
   ],
   exports: [
     AccountComponent,

@@ -18,7 +18,7 @@ import { EditLeadComponent } from './edit-lead/edit-lead.component';
 import { LeadService } from './lead.service';
 import { LeadSearchComponent } from './lead-search/lead-search.component';
 import { LeadInfoComponent } from './lead-info/lead-info.component';
-import { LeadListComponent } from './lead-list/lead-list.component'; 
+import { LeadListComponent } from './lead-list/lead-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 
@@ -41,7 +41,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     HttpModule,
     CardModule,
     CommonModule,
-     LeadRoutingModule
+    LeadRoutingModule
 
 
   ],
@@ -51,7 +51,7 @@ import { NavbarComponent } from './navbar/navbar.component';
   ],
   providers: [
 
-    LeadService 
+    LeadService
 
   ]
 
