@@ -46,6 +46,13 @@ export class LeadComponent implements OnInit {
     ngOnInit():void{
         this.getLeadlist();
     }
+    addLead(){
+        this.add_lead_value = true;
+        console.log("add");
+    }
+    goLeadlist(){
+        this.add_lead_value = false;
+    }
 
     
 
