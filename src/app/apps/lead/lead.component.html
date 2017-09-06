@@ -1,68 +1,12 @@
 
-<!--<span *ngIf="add_lead_value== false" class="btn btn-primary" (click)='add_lead()'>+</span>
-<span *ngIf="add_lead_value== true" class="btn btn-primary" (click)='save_lead()' >Save</span>
-<span *ngIf="add_lead_value== true"  class="btn btn-primary"  (click)='cancel_lead()'>Cancel</span>
-<button *ngIf="box_selected == true;" type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash-o"></i></button>
-<add-lead *ngIf="add_lead_value== true"></add-lead>-->
-
-<!--<edit-lead [lead] = "selectedLead"></edit-lead>-->
-
-<!--<card *ngFor = "let lead of leadlist">
-  <card-header [logoUrl]="'assets/imgs/logos/orcasmart.png'" [title]="lead.company.name" [address]="lead.company.billing_address" [industry]="'Packaging'" [facebook]="" [twitter]="" [phone]="">
-  </card-header>
-  <card-body>
-    <card-contact [name]="'Kenneth Wang'" [position]="'Founder\CEO'" [phone]="" [email]="" skype=""></card-contact>
-    <card-contact [name]="'Jack'" [position]="'Founder\CEO'" [phone]="" [email]="" skype=""></card-contact>
-  </card-body>
-</card>-->
 
 
-<!--
-    <div *ngIf="add_lead_value==false" >
-
-
-            <h3>Lead</h3>
-
-            <table class="table">
-            <thead>
-                <tr>
-                <th>#</th>
-                <th>Company Name</th>
-                <th>Website</th>
-                <th>employees</th>
-                <th>ratin</th>
-                <th>Quotes</th>
-                <th>Projects</th>
-                <th>More Info</th>
-                <th>Edit</th>
-                <th>Delete</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let lead of leadlist let i = index">
-               <td scope="row">{{i}}</td>
-
-
-
-                <td contenteditable='true'>{{lead.company.name}}</td>
-                <td>{{lead.company.website}}</td>
-                <td>{{lead.company.employees}}</td>
-
-                <td>{{lead.user.industry}}</td>
-                <td>{{lead.user.tier}}</td>
-                <td>{{lead.source}}</td>
-                <td><button type="button" class="btn btn-outline-primary btn-sm" ><i class="fa fa-caret-down"></i></button></td>
-                <td><button type="button" class="btn btn-outline-success btn-sm"  (click)="editLead(lead)"><i class="fa fa-pencil"></i></button></td>
-                <td><button  type="button" class="btn btn-outline-danger btn-sm" (click)="deleteLead(lead)"><i class="fa fa-trash-o"></i></button></td>
-                </tr>
-            </tbody>
-            </table>
-
-    </div>-->
-
-
-
-<navbar><lead-search></lead-search></navbar>
+<navbar>
+    <div class="lead-search-box">
+        <input type="text" placeholder="Search a lead" aria-label="Search" class="lead-input">
+        <input type="button" value="search" class="btn btn-sm btn-primary search-btn">
+    </div>
+</navbar>
 <!--<router-outlet></router-outlet>-->
 <add-lead *ngIf="add_lead_value==true"></add-lead>
 

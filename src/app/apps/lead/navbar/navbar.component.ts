@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { LeadSearchComponent } from '../lead-search/lead-search.component';
 
 @Component({
@@ -8,6 +8,7 @@ import { LeadSearchComponent } from '../lead-search/lead-search.component';
 })
 
 export class NavbarComponent implements OnInit {
+    @Input() modalOpen: boolean;
     constructor (){}
 
     ngOnInit(){}

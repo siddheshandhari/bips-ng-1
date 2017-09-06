@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 
 import { LeadRoutingModule } from './lead-routing.module';
 // import { CardModule } from '../shared/card/card.module';
+import { ModalComponent } from '../shared/modal/modal.component';
 import { CardModule } from '../shared/leadcard/card.module';
 import { LeadComponent } from './lead.component';
 import { AddLeadComponent } from './add-lead/add-lead.component';
@@ -18,7 +19,7 @@ import { EditLeadComponent } from './edit-lead/edit-lead.component';
 import { LeadService } from './lead.service';
 import { LeadSearchComponent } from './lead-search/lead-search.component';
 import { LeadInfoComponent } from './lead-info/lead-info.component';
-import { LeadListComponent } from './lead-list/lead-list.component'; 
+import { LeadListComponent } from './lead-list/lead-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 
@@ -30,9 +31,9 @@ import { NavbarComponent } from './navbar/navbar.component';
    LeadSearchComponent,
    LeadInfoComponent,
    LeadListComponent,
-   NavbarComponent
-
-
+   NavbarComponent,
+  //ModalComponent
+  
   ],
   imports: [
     FormsModule,
@@ -41,8 +42,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     HttpModule,
     CardModule,
     CommonModule,
-     LeadRoutingModule
-
+    LeadRoutingModule,
 
   ],
   exports: [
@@ -51,7 +51,7 @@ import { NavbarComponent } from './navbar/navbar.component';
   ],
   providers: [
 
-    LeadService 
+    LeadService
 
   ]
 

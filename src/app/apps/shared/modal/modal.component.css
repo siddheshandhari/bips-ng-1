@@ -21,12 +21,14 @@
   border-radius: 10px;
   padding: 40px;
   z-index: 10;
+  overflow-y: scroll;
 }
 
 .close-handler{
   position: absolute;
-  top: 5px;
-  right: -40px;
-  color: #FFFFFF;
+  top: 10px;
+  right: 10px;
+  color: #E0E0E0;
   cursor: pointer;
+  z-index: 10;
 }
