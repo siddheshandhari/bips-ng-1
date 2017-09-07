@@ -17,6 +17,12 @@
   width: 60px;
 }
 
+.lead-content{
+  display: block;
+  height: 100%;
+  overflow-y: scroll;
+}
+
 card{
     float: left;
     margin: 3px 22px;
