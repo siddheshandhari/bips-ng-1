@@ -3,3 +3,27 @@
   height: 100%;
   overflow-y: scroll;
 }
+.edit-lead-btn i{
+  padding:2px 5px;
+  border:1px solid #28A745;
+  border-radius: 2px;
+  color:#28A745;
+}
+
+.edit-lead-btn i:hover{
+  color:white;
+  background-color:#28A745;
+}
+
+.delete-lead-btn i{
+   padding:2px 5px;
+  border:1px solid #DC3545;
+  border-radius: 2px;
+  color:#DC3545;
+}
+.delete-lead-btn i:hover{
+  color: white;
+  background-color:#DC3545;
+}
+
+
