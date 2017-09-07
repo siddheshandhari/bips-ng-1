@@ -19,7 +19,7 @@
 <!--<router-outlet></router-outlet>-->
 <add-lead *ngIf="add_lead_value==true"></add-lead>
 
-<div *ngIf="add_lead_value==false">
+<div *ngIf="add_lead_value==false" class="test">
 
         <lead-info></lead-info>
 
@@ -27,6 +27,10 @@
 
         <card  *ngFor="let lead of leadlist">
             <card-header [logoUrl]="'assets/imgs/photo.png'" [title]="lead.company.name" [address]="lead.company.billing_address" [industry]="lead.company.industry" [facebook]="" [twitter]="" [phone]="">
+                 <div class="action_button">
+                    <a (click)="editLead(lead)" ><i class="fa fa-pencil"></i></a><br>
+                    <a (click)="deleteLead(lead)" class="delete_trash" ><i class="fa fa-trash-o"></i></a>
+                 </div>
             </card-header>
             <!--<card-body (deleteEvent)="deleteCard(lead.id)">
                 <card-contact *ngFor="let contact of lead.company.contacts" [name]="contact.first_name" [position]="'Founder\CEO'" [phone]="contact.phone" [email]="contact.email" skype="contact.skype"></card-contact>
@@ -34,7 +38,7 @@
         </card>
 </div>
 
-<add-button (click)="openModal()" [modalOpen]="modalOpen"></add-button>
+<!--<add-button (click)="openModal()" [modalOpen]="modalOpen"></add-button>
 <modal (requestCloseModal)="closeModal()" *ngIf="modalOpen" >
   <add-lead (requestCloseModal)="closeModal()"></add-lead>
-</modal>
+</modal>-->

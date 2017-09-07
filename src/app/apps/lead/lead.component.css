@@ -57,11 +57,12 @@ card{
 
 /*navbar*/
 
-.nav_container{
+.nav_container ul{
   background-color: #3D3D3F;
 }
 
 .nav_container ul li{
+  
     margin: 5px 10px;
     display: inline-block;
 }
@@ -72,5 +73,20 @@ ul li a {
     display:block;
     border-radius: 3px;
 }
+
+/*action_button*/
+
+.fa-pencil{
+  color:#28A745;
+}
+.fa-trash-o{
+  color: #C82333;
+}
+
+.test card:nth-child(2n+1){
+  background-color: black;
+}
+
+
 
 
