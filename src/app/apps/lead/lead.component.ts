@@ -9,6 +9,11 @@ import { Component } from '@angular/core';
 
 export class LeadComponent {
   modalOpen: boolean = true;
+  add_lead_value: boolean = false;
+
+  addLead(){
+      this.add_lead_value = true;
+  }
 
   openModal(){
     this.modalOpen = true;
@@ -17,4 +22,9 @@ export class LeadComponent {
   closeModal(){
     this.modalOpen = false;
   }
+
+  goLeadlist(){
+    this.add_lead_value = false;
+  }
+
 }

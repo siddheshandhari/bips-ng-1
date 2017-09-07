@@ -21,5 +21,43 @@ card{
     float: left;
     margin: 3px 22px;
     height: auto;
+}
 
+/*navbar*/
+
+.nav_container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.nav_container ul{
+  background-color: #3D3D3F;
+}
+
+.nav_container ul li{
+
+    margin: 5px 10px;
+    display: inline-block;
+}
+
+ul li a {
+    padding: 5px 20px;
+    color: white;
+    display:block;
+    border-radius: 3px;
+}
+
+/*action_button*/
+
+.fa-pencil{
+  color:#28A745;
+}
+.fa-trash-o{
+  color: #C82333;
+}
+
+.test card:nth-child(2n+1){
+  background-color: black;
 }

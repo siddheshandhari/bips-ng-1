@@ -1,12 +1,20 @@
-<navbar>
-    <div class="lead-search-box">
-        <input type="text" placeholder="Search a lead" aria-label="Search" class="lead-input">
-        <input type="button" value="search" class="btn btn-sm btn-primary search-btn">
-    </div>
-</navbar>
+<div class="nav_container">
+    <ul>
+            <li><a (click)="goLeadlist()">Leads</a></li>
+            <li><a>Name2</a></li>
+            <li><a>name3</a></li>
+            <li><a class="btn btn-success" (click)="addLead()" > + Add</a></li>
+            <li>
+                <div class="lead-search-box">
+                    <input type="text" placeholder="Search a lead" aria-label="Search" class="lead-input">
+                    <input type="button" value="search" class="btn btn-sm btn-primary search-btn">
+                </div>
+             </li>
+    </ul>
+</div>
 <add-lead *ngIf="add_lead_value==true"></add-lead>
 
-<lead-list></lead-list>
+<lead-list *ngIf="add_lead_value==false"></lead-list>
 
 <add-button (click)="openModal()" [modalOpen]="modalOpen"></add-button>
 <modal (requestCloseModal)="closeModal()" *ngIf="modalOpen" >
