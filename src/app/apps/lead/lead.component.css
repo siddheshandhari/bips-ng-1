@@ -1,9 +1,8 @@
 :host{
-  /*display: inline-block;*/
-  position: relative;
+  display: block;
   width: 100%;
-
 }
+
 .add_lead_btn{
   position: absolute;
   top: 20px;
@@ -14,54 +13,38 @@
   margin-top: 30px;
 }
 
-table th,td {
-    text-align: center;
-}
-
-table {
-  width: 100%;
-  border-bottom: 1px solid #E0E0E0 !important;
-}
-
-th {
-  white-space: nowrap;
-  overflow: hidden;
-  border-bottom: 1px solid #E0E0E0 !important;
-  border-top: 1px solid #E0E0E0 !important;
-  border-left: 1px solid #E0E0E0;
-  border-right: 1px solid #E0E0E0;
-}
-
-td {
-  padding: 1px;
-  white-space: nowrap;
-  overflow: hidden;
-  border-left: 1px solid #E0E0E0;
-  border-right: 1px solid #E0E0E0;
-}
-
-
-
 .edit-btn{
   width: 60px;
 }
 
-
+.lead-content{
+  display: block;
+  height: 100%;
+  overflow-y: scroll;
+}
 
 card{
     float: left;
     margin: 3px 22px;
     height: auto;
-
 }
 
 /*navbar*/
 
 .nav_container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.nav_container ul{
   background-color: #3D3D3F;
 }
 
 .nav_container ul li{
+
     margin: 5px 10px;
     display: inline-block;
 }
@@ -73,4 +56,15 @@ ul li a {
     border-radius: 3px;
 }
 
+/*action_button*/
 
+.fa-pencil{
+  color:#28A745;
+}
+.fa-trash-o{
+  color: #C82333;
+}
+
+.test card:nth-child(2n+1){
+  background-color: black;
+}

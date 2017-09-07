@@ -13,13 +13,15 @@ export class LeadListComponent implements OnInit{
     leadlist : Lead[] = [];
     selectedLead : Lead;
     editlead= false;
-   
+
 constructor(public leadService:LeadService){}
 
 // get lead infomation
     getLeadlist():void{
-          this.leadService.getLeadlist()
-          .subscribe(leadlist => this.leadlist = leadlist)
+      this.leadService.getLeadlist()
+      .subscribe(res => {
+        this.leadlist = res;
+      })
     }
 
 // delete lead

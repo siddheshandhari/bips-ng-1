@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 
 export class AddCompanyFormComponent{
-  extraContacts: number = 0;
+  extraContacts: number = 2;
   shippingAddressVisible: boolean = false;
 
   showShippingAddress(){
