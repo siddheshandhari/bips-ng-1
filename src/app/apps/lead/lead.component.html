@@ -1,29 +1,12 @@
-
-
-
 <navbar>
     <div class="lead-search-box">
         <input type="text" placeholder="Search a lead" aria-label="Search" class="lead-input">
         <input type="button" value="search" class="btn btn-sm btn-primary search-btn">
     </div>
 </navbar>
-<!--<router-outlet></router-outlet>-->
 <add-lead *ngIf="add_lead_value==true"></add-lead>
 
-<div *ngIf="add_lead_value==false">
-
-        <lead-info></lead-info>
-
-        <!--<lead-list></lead-list>-->
-
-        <card  *ngFor="let lead of leadlist">
-            <card-header [logoUrl]="'assets/imgs/photo.png'" [title]="lead.company.name" [address]="lead.company.billing_address" [industry]="lead.company.industry" [facebook]="" [twitter]="" [phone]="">
-            </card-header>
-            <!--<card-body (deleteEvent)="deleteCard(lead.id)">
-                <card-contact *ngFor="let contact of lead.company.contacts" [name]="contact.first_name" [position]="'Founder\CEO'" [phone]="contact.phone" [email]="contact.email" skype="contact.skype"></card-contact>
-            </card-body>-->
-        </card>
-</div>
+<lead-list></lead-list>
 
 <add-button (click)="openModal()" [modalOpen]="modalOpen"></add-button>
 <modal (requestCloseModal)="closeModal()" *ngIf="modalOpen" >

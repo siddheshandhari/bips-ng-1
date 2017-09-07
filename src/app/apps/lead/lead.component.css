@@ -1,9 +1,8 @@
 :host{
-  /*display: inline-block;*/
-  position: relative;
+  display: block;
   width: 100%;
-
 }
+
 .add_lead_btn{
   position: absolute;
   top: 20px;
@@ -14,39 +13,9 @@
   margin-top: 30px;
 }
 
-table th,td {
-    text-align: center;
-}
-
-table {
-  width: 100%;
-  border-bottom: 1px solid #E0E0E0 !important;
-}
-
-th {
-  white-space: nowrap;
-  overflow: hidden;
-  border-bottom: 1px solid #E0E0E0 !important;
-  border-top: 1px solid #E0E0E0 !important;
-  border-left: 1px solid #E0E0E0;
-  border-right: 1px solid #E0E0E0;
-}
-
-td {
-  padding: 1px;
-  white-space: nowrap;
-  overflow: hidden;
-  border-left: 1px solid #E0E0E0;
-  border-right: 1px solid #E0E0E0;
-}
-
-
-
 .edit-btn{
   width: 60px;
 }
-
-
 
 card{
     float: left;
