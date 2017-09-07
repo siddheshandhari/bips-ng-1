@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 //Module
 import { StoreModule } from '@ngrx/store';
@@ -9,6 +10,7 @@ import { DesktopModule } from './desktop/desktop.module';
 import { LoginModule } from './login/login.module';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { SignupModule } from './signup/signup.module';
+import { LoginAuthentication } from './login/login.authentication';
 
 //components
 import { AppComponent } from './app.component';
@@ -52,6 +54,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     CommonModule,
     RouterModule.forRoot(
       appRoutes,
@@ -71,7 +74,12 @@ const appRoutes: Routes = [
       maxAge: 25
     })
   ],
-  providers: [LoginService,AuthGuard,SignupService],
+  providers: [
+    LoginService,
+    AuthGuard,
+    SignupService,
+    LoginAuthentication,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
