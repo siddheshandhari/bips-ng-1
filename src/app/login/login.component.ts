@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from './login.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LoginAuthentication } from './login.authentication';
+import { LoginValidation } from './login.validation';
 import { User } from './user';
 
 @Component({
@@ -13,6 +14,7 @@ import { User } from './user';
 export class LoginComponent implements OnInit {
   model: any = {};
   loading= false;
+  returnUrl: string;
 
   // model = new User('yali@orcasmart.com', 'yali');
   // submitted= false;
@@ -23,10 +25,12 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     // private login:LoginService,
-    private authentication: LoginAuthentication) { }
+    private authentication: LoginAuthentication,
+    private validation: LoginValidation) { }
 
   ngOnInit(){
-
+    this.authentication.logout();
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/desktop';
   }
 
   login() {
@@ -34,9 +38,10 @@ export class LoginComponent implements OnInit {
     this.authentication.login(this.model.email, this.model.password)
       .subscribe(
          data => {
-           this.router.navigate(['desktop']);
+           this.router.navigate([this.returnUrl]);
          },
          error => {
+           this.validation.error(error);
            this.loading = false;
          });
 

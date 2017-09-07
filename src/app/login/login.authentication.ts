@@ -9,7 +9,18 @@ export class LoginAuthentication {
 
     login(email: string, password: string) {
         return this.http.post('http://192.168.50.25/api/v1/authtoken', {email: email, password: password})
-            .map((response: Response) => response.json());
+            .map((response: Response) => {
+                let user = response.json();
+                if (user && user.token) {
+                    localStorage.setItem('currentUser', JSON.stringify(user));
+                }
 
+                return user;
+            });
+
+    }
+
+    logout() {
+        localStorage.removeItem('currentUser');
     }
 }

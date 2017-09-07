@@ -11,13 +11,14 @@ import { LoginModule } from './login/login.module';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { SignupModule } from './signup/signup.module';
 import { LoginAuthentication } from './login/login.authentication';
+import { LoginValidation } from './login/login.validation';
 
 //components
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DesktopComponent } from './desktop/desktop.component';
 import { LoginService } from './login/login.service';
-import { AuthGuard }  from './login/login.authguard';
+import { LoginAuthGuard }  from './login/login.authguard';
 import { WindowComponent } from './window/window.component';
 import { SignupComponent } from './signup/signup.component';
 import { SignupService } from './signup/signup.service';
@@ -76,9 +77,10 @@ const appRoutes: Routes = [
   ],
   providers: [
     LoginService,
-    AuthGuard,
+    LoginAuthGuard,
     SignupService,
     LoginAuthentication,
+    LoginValidation,
   ],
   bootstrap: [AppComponent]
 })
