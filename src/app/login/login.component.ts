@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from './login.service';
 import { Router, ActivatedRoute } from '@angular/router';
-
+import { LoginAuthentication } from './login.authentication';
+import { User } from './user';
 
 @Component({
   selector: 'login',
@@ -11,26 +12,48 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 export class LoginComponent implements OnInit {
   model: any = {};
-  constructor(private route: ActivatedRoute,
-              private router: Router,
-              private login:LoginService){ }
+  loading= false;
+
+  // model = new User('yali@orcasmart.com', 'yali');
+  // submitted= false;
+  // onSubmit() { this.submitted = true;}
+
+  //
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    // private login:LoginService,
+    private authentication: LoginAuthentication) { }
 
   ngOnInit(){
 
   }
 
-  loginUser(e){
-    e.preventDefault();
-    console.log(e);
-    var email = e.target.elements[0].value;
-    var password = e.target.elements[1].value;
-    console.log(email,password);
+  login() {
+    this.loading = true;
+    this.authentication.login(this.model.email, this.model.password)
+      .subscribe(
+         data => {
+           this.router.navigate(['desktop']);
+         },
+         error => {
+           this.loading = false;
+         });
 
-    if (email == 'admin' && password =='admin'){
-      this.login.setUserLoggedIn();
-      this.router.navigate(['desktop'])
-    }
   }
+
+  // loginUser(e){
+  //   e.preventDefault();
+  //   console.log(e);
+  //   var email = e.target.elements[0].value;
+  //   var password = e.target.elements[1].value;
+  //   console.log(email,password);
+
+  //   if (email == 'admin' && password =='admin'){
+  //     this.login.setUserLoggedIn();
+  //     this.router.navigate(['desktop'])
+  //   }
+  // }
 
 
 

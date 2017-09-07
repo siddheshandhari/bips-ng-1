@@ -5,15 +5,18 @@
     <a [routerLink]="['/login']" class="btn btn-link">Login</a>
     <a [routerLink]="['/signup']" class="btn btn-link">Sign Up</a>
   </div> -->
-  <form  #logginForm (submit)= "loginUser(logginForm.value)"> 
+  <!-- <form  #logginForm (submit)= "loginUser(logginForm.value)">  -->
+  <form  name="form" #logginForm="ngForm" (ngSubmit)= "login()"> 
     <div class="input">
       <!-- <label>Username</label> -->
-      <input type="text" class="form-control form-control-lg" name="Email" placeholder="Email" ngModel  required>
+      <input type="text" class="form-control form-control-lg" name="email" placeholder="Email" [(ngModel)]="model.email" #email="ngModel" required />
+      <!-- <div [hidden]="name.valid" class="alert alert-danger">Email is required
+      </div> -->
     </div>
 
     <div class="input">
       <!-- <label>Password</label> -->
-      <input type="password" class="form-control form-control-lg" name="password" placeholder="Password" ngModel required >
+      <input type="password" class="form-control form-control-lg" name="password" placeholder="Password" [(ngModel)]="model.password" #password="ngModel" required />
     </div>
     <br>
 
