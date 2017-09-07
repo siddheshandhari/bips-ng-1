@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LeadService } from '../lead.service';
 import { Lead } from '../lead';
 
+
 @Component({
     selector: 'lead-list',
     templateUrl:'./lead-list.component.html',
@@ -32,6 +33,7 @@ constructor(public leadService:LeadService){}
              this.leadlist = this.leadlist.filter (l => l !== lead);
              if(this.selectedLead === lead){this.selectedLead = null}
          })
+
 
    }
 
