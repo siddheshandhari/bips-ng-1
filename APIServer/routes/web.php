@@ -42,6 +42,11 @@ Route::group(['prefix' => 'api/v1'], function()
   Route::get('call', 'CallController@browse');
   Route::post('call', 'CallController@add');
 
+  //Specific Call
+  Route::get('call/{id}', 'CallController@read');
+  Route::delete('call/{id}', 'CallController@destroy');
+  Route::put('call/{id}', 'CallController@edit');
+
 });
 
 Route::get('/', function () {
