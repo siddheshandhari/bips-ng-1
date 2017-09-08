@@ -1,1 +1,7 @@
-<account-list></account-list>
+<div class="account-content">
+  <account-list></account-list>
+</div>
+<add-button (click)="openModal()" [modalOpen]="modalOpen"></add-button>
+<modal (requestCloseModal)="closeModal()" *ngIf="modalOpen" >
+  <add-account (requestCloseModal)="closeModal()"></add-account>
+</modal>

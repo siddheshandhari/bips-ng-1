@@ -1,6 +1,14 @@
-.login-form{
-  position: absolute;
-  top: 0; bottom: 0; left: 0; right: 0;
+:host {
+  margin: 0 auto;
+  position: absolute; 
+  left: 50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  
+} 
+
+* {
+  border-radius: 0 !important;
 }
 
 .ng-valid[required], .ng-valid.required  {
@@ -9,4 +17,18 @@
 
 .ng-invalid:not(form)  {
   border-left: 5px solid #a94442; /* red */
+}
+
+
+.agreement {
+  color: #939393;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #3772B7;
 }

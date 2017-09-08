@@ -16,6 +16,9 @@ Route::group(['prefix' => 'api/v1'], function()
 
   Route::get('search', 'SearchController@search');
 
+  //AuthToken
+  Route::post('authtoken', 'AuthTokenController@add');
+
   //Account Collections Routes
   Route::get('account', 'AccountController@browse');
   Route::delete('account/{id}', 'AccountController@destroy');
@@ -32,7 +35,7 @@ Route::group(['prefix' => 'api/v1'], function()
   //Company Collections Routes
   Route::get('company', 'CompanyController@browse');
   Route::post('company', 'CompanyController@add');
-  
+
   //Specific Company
   Route::get('company/{id}', 'CompanyController@read');
   Route::delete('company/{id}', 'CompanyController@destroy');

@@ -1,0 +1,33 @@
+<div *ngIf="add_potential_value==false" >
+    <h2 class="potential_header">Potential</h2>
+    <table class="table">
+        <thead>
+            <tr>
+            <th>#</th>
+            <th>Company Name</th>
+            <th>Website</th>
+            <th>employees</th>
+
+
+            <th>Edit</th>
+            <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let potential of potentiallist let i = index">
+           <td scope="row">{{i}}</td>
+            <td>{{potential.company.name}}</td>
+            <td>{{potential.company.website}}</td>
+            <td>{{potential.company.employees}}</td>
+            <td><button type="button" class="btn btn-outline-success btn-sm"  (click)="editPotential(potential)"><i class="fa fa-pencil"></i></button></td>
+            <td><button  type="button" class="btn btn-outline-danger btn-sm" (click)="deletePotential(potential)"><i class="fa fa-trash-o"></i></button></td>
+            </tr>
+        </tbody>
+        </table>
+    
+                
+  
+  
+              
+  
+      </div>

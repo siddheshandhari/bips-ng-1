@@ -1,0 +1,65 @@
+:host {
+    position: relative;
+    display: block;
+    width: 100%;
+    top: 5px;
+    bottom: 5px;
+    margin: auto;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    box-sizing: content-box;
+}
+
+.owner-photo{
+    position: relative;
+    float: left;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    border: 1px solid #E1E1E1;
+    box-sizing: content-box;
+    overflow: hidden;
+    background-color: #FFFFFF;
+  }
+
+  .owner-photo img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 30px;
+    max-height: 30px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+.owner-info {
+    position: relative;
+    float: left;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: auto;
+    margin-left: 10px;
+}
+
+.owner {
+    font-family: Helvetica;
+    font-weight: bold;
+    font-size: 15px;
+    color: #000000;
+    margin-bottom: 0;
+}
+
+.name {
+    font-family: Helvetica;
+    font-weight: bold;
+    font-size: 10px;
+    color: #939393;
+
+}

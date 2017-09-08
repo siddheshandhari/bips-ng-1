@@ -1,0 +1,58 @@
+<div class="form-section">
+  <h6>Company Info</h6>
+  <hr />
+
+  <div class="form-group">
+    <label for="company-name">Company name</label>
+    <input type="text" class="form-control" id="company-name">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="website" class="col-form-label">Website</label>
+      <input type="text" class="form-control" id="company-name">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="employees" class="col-form-label">Employees</label>
+      <input type="text" class="form-control" id="employees">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="rating" class="col-form-label">Rating</label>
+      <input type="text" class="form-control" id="company-name">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="industry" class="col-form-label">Industry</label>
+      <input type="text" class="form-control" id="industry">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="annual-revenue" class="col-form-label">Annual Revenue</label>
+      <input type="text" class="form-control" id="annual-revenue">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="tier" class="col-form-label">Tier</label>
+      <input type="text" class="form-control" id="tier">
+    </div>
+  </div>
+</div>
+
+<div class="form-section">
+  <h6>Billing Address</h6>
+  <hr />
+  <add-address-form></add-address-form>
+</div>
+
+<div class="form-section" *ngIf="shippingAddressVisible">
+  <h6>Shipping Address</h6>
+  <hr />
+  <add-address-form></add-address-form>
+</div>
+<span class="badge badge-info" *ngIf="!shippingAddressVisible" (click)="showShippingAddress()" >Show Shipping Address</span>
+<span class="badge badge-info" *ngIf="shippingAddressVisible" (click)="hideShippingAddress()" >Hide Shipping Address</span>
+
+<div class="form-section">
+  <h6>Contacts</h6>
+  <hr />
+  <add-contact-form *ngFor="let contact of contacts"></add-contact-form>
+  <span class="badge badge-secondary" (click)="addNewContact()" >Add Contact</span>
+</div>

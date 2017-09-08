@@ -1,0 +1,11 @@
+:host{
+  display: block;
+}
+
+.form-section{
+  padding-top: 30px;
+}
+
+.badge{
+  cursor: pointer;
+}

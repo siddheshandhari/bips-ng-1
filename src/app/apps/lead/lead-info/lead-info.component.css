@@ -1,0 +1,33 @@
+:host{
+    line-height: 1;
+    
+}
+
+ul {
+    margin-top:45px;
+}
+ul li {
+    float: left;
+    content:justify;
+    width: 20%;
+}
+
+.lead-info-box{
+
+    margin:30px auto;
+    border-radius: 3px;
+    height: 100px;
+    width: 170px;
+    background-color:#007BFF;
+    text-align: center;
+}
+.lead_value{
+    padding:15px;
+    color:white;
+    font-size: 40px;
+}
+
+.lead_role{
+    font-size:14px;
+    color: white;
+}

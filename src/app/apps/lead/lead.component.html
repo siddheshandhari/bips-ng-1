@@ -1,55 +1,54 @@
-        <div>
-                <span  *ngIf="add_lead_value== false" class=" btn btn-primary" (click)='add_lead()'>+</span>
-                <!--<span *ngIf="add_lead_value== true" class="  btn btn-primary" (click)='save_lead()' >Save</span>-->
-                <span *ngIf="add_lead_value== true"  class=" add_lead_btn  btn btn-primary"  (click)='cancel_lead()'>Cancel</span>
-                <button *ngIf="box_selected == true;" type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash-o"></i></button>
-        </div>
-        <add-lead *ngIf="add_lead_value== true"></add-lead>
+<div class="nav_container">
 
-        <edit-lead  [lead] = "selectedLead" ></edit-lead>
+    <ul>
+            <li><a (click)="goLeadlist()"><i class="fa fa-refresh" aria-hidden="true"></i></a></li>
+            <li><a (click)="goLeadlist()">Leads</a></li>
+            <li><a>name</a></li>
+           
+            <li>
+                
+                <div class="lead-search-box">
+                    <a class="btn btn-success add-lead-btn" (click)="addLead()"> + Add</a>
+                    <input type="text" placeholder="Search a lead" aria-label="Search" class="lead-input" #searchBox>
+                    <input type="button" value="search" class="btn btn-sm btn-primary search-btn"  (click)="searchLead(searchBox.value)">
+                </div>
+             </li>
+    </ul>
+</div>
+  
 
+
+
+<add-lead *ngIf="add_lead_value==true">
+ <a  class="cancel-lead-btn" (click)="goLeadlist()" ><i class="fa fa-times" aria-hidden="true"></i></a>
+</add-lead>
+
+
+<div *ngIf="isSearch" class="search-list">
+
+    <card  *ngFor="let lead of searchlist">
+        <card-header [logoUrl]="'assets/imgs/photo.png'" 
+            [title]="lead.name" >
+
+            
+            <a class="edit-lead-btn" (click)="editLead(lead)"><i class="fa fa-pencil" aria-hidden="true"></i></a><br>  
+            <a class="delete-lead-btn" (click)=" deleteLead(lead)"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+        </card-header>
+
+    </card>
+</div>
+
+
+<!--<add-lead *ngIf="add_lead_value==true"></add-lead>-->
+
+<div *ngIf="!isSearch">
+    <lead-list *ngIf="add_lead_value==false">
+        
+    </lead-list>
+</div>
 <!--
-            <card  *ngFor="let lead of leadlist">
-            <card-header [logoUrl]="'assets/imgs/logos/orcasmart.png'" [title]="lead.company.name" [address]="lead.company.billing_address" [industry]="lead.company.industry" [facebook]="" [twitter]="" [phone]="">
-            </card-header>
-            <card-body>
-                <card-contact *ngFor="let contact of lead.company.contacts" [name]="contact.first_name" [position]="'Founder\CEO'" [phone]="contact.phone" [email]="contact.email" skype="contact.skype"></card-contact>
-            </card-body>
-            </card>
 
--->
-
-
-
-
-    <div *ngIf="add_lead_value==false" >
-
-
-            <h2 class="lead_header">Lead</h2>
-
-            <table class="table">
-            <thead>
-                <tr>
-                <th>#</th>
-                <th>Company Name</th>
-                <th>Website</th>
-                <th>employees</th>
-
-
-                <th>Edit</th>
-                <th>Delete</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let lead of leadlist let i = index">
-               <td scope="row">{{i}}</td>
-                <td>{{lead.company.name}}</td>
-                <td>{{lead.company.website}}</td>
-                <td>{{lead.company.employees}}</td>
-                <td><button type="button" class="btn btn-outline-success btn-sm"  (click)="editLead(lead)"><i class="fa fa-pencil"></i></button></td>
-                <td><button  type="button" class="btn btn-outline-danger btn-sm" (click)="deleteLead(lead)"><i class="fa fa-trash-o"></i></button></td>
-                </tr>
-            </tbody>
-            </table>
-
-    </div>
+<add-button (click)="openModal()" [modalOpen]="modalOpen"></add-button>
+<modal (requestCloseModal)="closeModal()" *ngIf="modalOpen" >
+  <add-lead (requestCloseModal)="closeModal()"></add-lead>
+</modal>-->

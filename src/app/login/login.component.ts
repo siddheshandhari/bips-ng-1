@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from './login.service';
-import { Router } from '@angular/router';
-
-
-
-
-
-
+import { Router, ActivatedRoute } from '@angular/router';
+import { LoginAuthentication } from './login.authentication';
+import { LoginValidation } from './login.validation';
+import { User } from './user';
 
 @Component({
   selector: 'login',
@@ -16,24 +13,52 @@ import { Router } from '@angular/router';
 
 export class LoginComponent implements OnInit {
   model: any = {};
-  constructor(private router: Router,private login:LoginService){ }
+  loading= false;
+  returnUrl: string;
+
+  // model = new User('yali@orcasmart.com', 'yali');
+  // submitted= false;
+  // onSubmit() { this.submitted = true;}
+
+  //
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    // private login:LoginService,
+    private authentication: LoginAuthentication,
+    private validation: LoginValidation) { }
 
   ngOnInit(){
+    this.authentication.logout();
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/desktop';
+  }
+
+  login() {
+    this.loading = true;
+    this.authentication.login(this.model.email, this.model.password)
+      .subscribe(
+         data => {
+           this.router.navigate([this.returnUrl]);
+         },
+         error => {
+           this.validation.error(error);
+           this.loading = false;
+         });
 
   }
 
-  loginUser(e){
-    e.preventDefault();
-    console.log(e);
-    var username = e.target.elements[0].value;
-    var password = e.target.elements[1].value;
-    console.log(username,password);
+  // loginUser(e){
+  //   e.preventDefault();
+  //   console.log(e);
+  //   var email = e.target.elements[0].value;
+  //   var password = e.target.elements[1].value;
+  //   console.log(email,password);
 
-    if (username == 'admin' && password =='admin'){
-      this.login.setUserLoggedIn();
-      this.router.navigate(['desktop'])
-    }
-  }
+  //   if (email == 'admin' && password =='admin'){
+  //     this.login.setUserLoggedIn();
+  //     this.router.navigate(['desktop'])
+  //   }
+  // }
 
 
 
