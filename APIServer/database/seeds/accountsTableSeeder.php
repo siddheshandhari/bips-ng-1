@@ -19,6 +19,7 @@ class AccountsTableSeeder extends Seeder
       $list = range(1, 30);
       shuffle($list);
       $companies = $list;
+      
       foreach(range(1, 30) as $index)
       {
         DB::table('accounts')->insert([
