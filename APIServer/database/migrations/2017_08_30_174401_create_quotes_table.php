@@ -45,6 +45,6 @@ class CreateQuotesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('qoutes');
+        Schema::dropIfExists('quotes');
     }
 }

@@ -36,6 +36,6 @@ class CreateCapacitiesTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('capacities');
     }
 }
