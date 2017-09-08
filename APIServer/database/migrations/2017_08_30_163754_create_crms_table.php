@@ -13,6 +13,7 @@ class CreateCrmsTable extends Migration
      */
     public function up()
     {
+        if (!(Schema::hasTable('crms'))) {
         Schema::create('crms', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->length(10)->unsigned()->nullable();
@@ -22,6 +23,7 @@ class CreateCrmsTable extends Migration
             $table->boolean('active')->default(true);
             $table->timestamps();
         });
+    }
     }
 
     /**

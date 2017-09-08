@@ -13,6 +13,7 @@ class CreateUserloggedinhistoriesTable extends Migration
      */
     public function up()
     {
+        if (!(Schema::hasTable('userloggedinhistories'))) {
         Schema::create('userloggedinhistories', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->length(10)->unsigned()->nullable();
@@ -22,6 +23,7 @@ class CreateUserloggedinhistoriesTable extends Migration
             $table->boolean('active')->default(true);
             $table->timestamps();
         });
+    }
     }
 
     /**

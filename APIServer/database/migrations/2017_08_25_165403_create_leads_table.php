@@ -13,6 +13,7 @@ class CreateLeadsTable extends Migration
      */
     public function up()
     {
+        if (!(Schema::hasTable('leads'))) {
         Schema::create('leads', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned()->nullable();
@@ -24,6 +25,7 @@ class CreateLeadsTable extends Migration
             $table->boolean('active')->default(true);
             $table->timestamps();
         });
+    }
     }
 
     /**

@@ -13,6 +13,7 @@ class CreateQuotesTable extends Migration
      */
     public function up()
     {
+        if (!(Schema::hasTable('quotes'))) {
         Schema::create('quotes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('address_id')->length(10)->unsigned()->nullable();
@@ -34,6 +35,7 @@ class CreateQuotesTable extends Migration
             $table->boolean('active')->default(true);
             $table->timestamps();
         });
+    }
     }
 
     /**

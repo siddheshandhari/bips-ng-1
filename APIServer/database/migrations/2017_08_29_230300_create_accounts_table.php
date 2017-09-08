@@ -13,6 +13,7 @@ class CreateAccountsTable extends Migration
      */
     public function up()
     {
+        if (!(Schema::hasTable('accounts'))) {
         Schema::create('accounts', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->length(10)->unsigned()->nullable();
@@ -25,6 +26,7 @@ class CreateAccountsTable extends Migration
             $table->boolean('active')->default(true);
             $table->timestamps();
         });
+    }
     }
 
     /**

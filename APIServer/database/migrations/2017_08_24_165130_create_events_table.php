@@ -13,6 +13,7 @@ class CreateEventsTable extends Migration
      */
     public function up()
     {
+        if (!(Schema::hasTable('events'))) {
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
             $table->string('new_event')->nullable();
@@ -27,6 +28,7 @@ class CreateEventsTable extends Migration
             $table->boolean('active')->default(true);
             $table->timestamps();
         });
+    }
     }
 
     /**

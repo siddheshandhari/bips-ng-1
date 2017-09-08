@@ -13,6 +13,7 @@ class CreateColorsTable extends Migration
      */
     public function up()
     {
+        if (!(Schema::hasTable('colors'))) {
         Schema::create('colors', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('product_id')->length(10)->unsigned()->nullable();
@@ -21,6 +22,7 @@ class CreateColorsTable extends Migration
             $table->boolean('active')->default(true);
             $table->timestamps();
         });
+    }
     }
 
     /**

@@ -13,6 +13,7 @@ class CreateNeckFinishesTable extends Migration
      */
     public function up()
     {
+        if (!(Schema::hasTable('neck_finishes'))) {
         Schema::create('neck_finishes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('product_id')->length(10)->unsigned()->nullable();
@@ -24,6 +25,7 @@ class CreateNeckFinishesTable extends Migration
             $table->boolean('active')->default(true);
             $table->timestamps();
         });
+    }
     }
 
     /**

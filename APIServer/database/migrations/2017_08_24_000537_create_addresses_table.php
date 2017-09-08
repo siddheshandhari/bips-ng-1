@@ -13,6 +13,7 @@ class CreateAddressesTable extends Migration
      */
     public function up()
     {
+        if (!(Schema::hasTable('addresses'))) {
         Schema::create('addresses', function (Blueprint $table) {
             $table->increments('id');
             $table->string('country')->nullable();
@@ -23,6 +24,7 @@ class CreateAddressesTable extends Migration
             $table->boolean('active')->default(true);
             $table->timestamps();
         });
+    }
     }
 
     /**
