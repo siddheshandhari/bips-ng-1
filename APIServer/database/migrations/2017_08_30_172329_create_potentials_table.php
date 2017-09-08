@@ -13,6 +13,7 @@ class CreatePotentialsTable extends Migration
      */
     public function up()
     {
+        if (!(Schema::hasTable('potentials'))) {
         Schema::create('potentials', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('company_id')->length(10)->unsigned()->nullable();
@@ -38,6 +39,7 @@ class CreatePotentialsTable extends Migration
             $table->boolean('active')->default(true);
             $table->timestamps();
         });
+    }
     }
 
     /**

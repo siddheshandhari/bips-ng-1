@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserloggedinhistoriesTable extends Migration
+class CreateAddressesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateUserloggedinhistoriesTable extends Migration
      */
     public function up()
     {
-        if (!(Schema::hasTable('userloggedinhistories'))) {
-        Schema::create('userloggedinhistories', function (Blueprint $table) {
+        if (!(Schema::hasTable('addresses'))) {
+        Schema::create('addresses', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->length(10)->unsigned()->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->string('ip')->nullable();
-            $table->string('status')->nullable();
+            $table->string('country')->nullable();
+            $table->string('state')->nullable();
+            $table->string('city')->nullable();
+            $table->string('street')->nullable();
+            $table->string('zipcode')->nullable();
             $table->boolean('active')->default(true);
             $table->timestamps();
         });
@@ -33,6 +34,6 @@ class CreateUserloggedinhistoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('userloggedinhistories');
+        Schema::dropIfExists('addresses');
     }
 }

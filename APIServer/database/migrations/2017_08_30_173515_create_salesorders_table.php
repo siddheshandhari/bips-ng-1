@@ -13,6 +13,7 @@ class CreateSalesordersTable extends Migration
      */
     public function up()
     {
+        if (!(Schema::hasTable('salesorders'))) {
         Schema::create('salesorders', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('address_id')->length(10)->unsigned()->nullable();
@@ -36,6 +37,7 @@ class CreateSalesordersTable extends Migration
             $table->boolean('active')->default(true);
             $table->timestamps();
         });
+    }
     }
 
     /**

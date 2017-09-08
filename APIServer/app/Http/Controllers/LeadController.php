@@ -112,8 +112,10 @@ class LeadController extends ApiController
 
       //update other info
       $lead->user_id = $user = $request->input('user.id');
-      $lead->status = $request->input('status');
-      $lead->source = $request->input('source');
+      if($request->input('status')){
+      $lead->status = $request->input('status');}
+      if($request->input('source')){
+      $lead->source = $request->input('source');}
       if($lead->save())
       {
         return $this->respondUpdated('Lead successfully updated!');

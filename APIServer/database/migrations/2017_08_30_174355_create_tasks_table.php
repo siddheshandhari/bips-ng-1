@@ -13,6 +13,7 @@ class CreateTasksTable extends Migration
      */
     public function up()
     {
+        if (!(Schema::hasTable('tasks'))) {
         Schema::create('tasks', function (Blueprint $table) {
             $table->increments('id');
             $table->string('task_owner')->nullable();
@@ -29,6 +30,7 @@ class CreateTasksTable extends Migration
             $table->boolean('active')->default(true);
             $table->timestamps();
         });
+    }
     }
 
     /**
