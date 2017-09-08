@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
     private validation: LoginValidation) { }
 
   ngOnInit(){
-    this.authentication.logout();
+    // this.authentication.logout();
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/desktop';
   }
 
@@ -45,6 +45,11 @@ export class LoginComponent implements OnInit {
            this.loading = false;
          });
 
+  }
+
+  logout() {
+    localStorage.removeItem('currentUser');
+    this.router.navigate(['/login']);
   }
 
   // loginUser(e){

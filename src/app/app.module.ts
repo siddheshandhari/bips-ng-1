@@ -32,7 +32,7 @@ import 'rxjs/Rx';
 
 
 const appRoutes: Routes = [
-  { path: '', redirectTo:'/signup', pathMatch: 'full'},
+  { path: '', redirectTo:'/desktop', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
   { path: 'desktop', component: DesktopComponent},
   { path: 'signup', component: SignupComponent},
