@@ -35,6 +35,6 @@ class CreateNeckFinishesTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('neck_finishes');
     }
 }

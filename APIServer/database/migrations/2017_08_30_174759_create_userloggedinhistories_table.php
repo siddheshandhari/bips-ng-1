@@ -33,6 +33,6 @@ class CreateUserloggedinhistoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('userloggedinhistoriess');
+        Schema::dropIfExists('userloggedinhistories');
     }
 }
