@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Contact } from '../../../../models/contact';
 
 @Component({
   selector: 'add-company-form',
@@ -7,8 +8,12 @@ import { Component } from '@angular/core';
 })
 
 export class AddCompanyFormComponent{
-  extraContacts: number = 2;
+  contacts: Array<Contact> = [];
   shippingAddressVisible: boolean = false;
+
+  // constructor(public contact: Contact){
+  //   this.contacts.push(contact);
+  // }
 
   showShippingAddress(){
     this.shippingAddressVisible = true;
