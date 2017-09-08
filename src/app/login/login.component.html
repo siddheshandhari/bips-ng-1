@@ -1,23 +1,27 @@
-<div class = "container">
+<div class = "">
   <h1>OrcaSmart</h1>
   <br>
   <!-- <div class="form-group">
     <a [routerLink]="['/login']" class="btn btn-link">Login</a>
     <a [routerLink]="['/signup']" class="btn btn-link">Sign Up</a>
   </div> -->
-  <form  #logginForm (submit)= "loginUser(logginForm.value)"> 
-    <div class="input">
+  <!-- <form  #logginForm (submit)= "loginUser(logginForm.value)">  -->
+  <form  name="form" #f="ngForm" (ngSubmit)= "f.form.valid && login()" novalidate> 
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
       <!-- <label>Username</label> -->
-      <input type="text" class="form-control form-control-lg" name="Email" placeholder="Email" ngModel  required>
+      <input type="text" class="form-control form-control-lg" name="email" placeholder="Email" [(ngModel)]="model.email" #email="ngModel" required />
+      
+      <!-- <div [hidden]="name.valid" class="alert alert-danger">Email is required
+      </div> -->
     </div>
 
-    <div class="input">
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
       <!-- <label>Password</label> -->
-      <input type="password" class="form-control form-control-lg" name="password" placeholder="Password" ngModel required >
+      <input type="password" class="form-control form-control-lg" name="password" placeholder="Password" [(ngModel)]="model.password" #password="ngModel" required />
     </div>
     <br>
 
-    <div class="input">
+    <div class="form-group">
       <input type="submit" class="form-control btn btn-primary" value="login">
     </div>
     <br>

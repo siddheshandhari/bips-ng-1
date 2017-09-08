@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login.component';
 import { HttpModule } from '@angular/http';
 import { LoginService } from './login.service';
+import { CommonModule } from '@angular/common';
 // import { AuthGuard }  from './login-authguard.component';
 
 @NgModule({
@@ -12,6 +13,7 @@ import { LoginService } from './login.service';
   imports: [
     FormsModule,
     HttpModule,
+    CommonModule,
   ],
   providers: [
     LoginService

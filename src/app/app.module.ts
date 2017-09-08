@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 //Module
 import { StoreModule } from '@ngrx/store';
@@ -9,13 +10,15 @@ import { DesktopModule } from './desktop/desktop.module';
 import { LoginModule } from './login/login.module';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { SignupModule } from './signup/signup.module';
+import { LoginAuthentication } from './login/login.authentication';
+import { LoginValidation } from './login/login.validation';
 
 //components
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DesktopComponent } from './desktop/desktop.component';
 import { LoginService } from './login/login.service';
-import { AuthGuard }  from './login/login.authguard';
+import { LoginAuthGuard }  from './login/login.authguard';
 import { WindowComponent } from './window/window.component';
 import { SignupComponent } from './signup/signup.component';
 import { SignupService } from './signup/signup.service';
@@ -52,6 +55,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     CommonModule,
     RouterModule.forRoot(
       appRoutes,
@@ -71,7 +75,13 @@ const appRoutes: Routes = [
       maxAge: 25
     })
   ],
-  providers: [LoginService,AuthGuard,SignupService],
+  providers: [
+    LoginService,
+    LoginAuthGuard,
+    SignupService,
+    LoginAuthentication,
+    LoginValidation,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

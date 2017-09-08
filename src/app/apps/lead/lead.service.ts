@@ -42,6 +42,13 @@ export class LeadService {
     .map((res:Response) => res.json())
   }
 
+  searchLead(value): Observable<Lead>{
+    return this.http.get( 'http://192.168.50.25/api/v1/search/?category=company&context=name&value='+value)
+    .map((res:Response) =>res.json())
+
+  }
+   
+
 
 
 
