@@ -18,8 +18,7 @@ class CallTransformer extends Transformer {
       'call_duration' => $call['call_duration'],
       'description' => $call['description'],
       'billable' => $call['billable'],
-      'call_result' => $call['call_result'],
-      'active' => $call['active']
+      'call_result' => $call['call_result']
     ];
 
   }

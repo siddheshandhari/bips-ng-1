@@ -43,7 +43,7 @@ class CallController extends ApiController
       $error = "";
       $call = new Call;
       
-      //store other into table
+      //store call info table
       $call->subject = $request->input('subject');
       $call->call_purpose = $request->input('call_purpose');
       $call->contacts = $request->input('contacts');
@@ -56,7 +56,6 @@ class CallController extends ApiController
       $call->description = $request->input('description');
       $call->billable = $request->input('billable');
       $call->call_result = $request->input('call_result');
-      $call->active = $request->input('active');
       if($call->save())
       {
         return $this->respondCreated('Lead successfully created!');
@@ -71,15 +70,15 @@ class CallController extends ApiController
      */
     public function read($id)
     {
-      $lead = Lead::find($id);
+      $call = Call::find($id);
 
-      if(!$lead)
+      if(!$call)
       {
-        return $this->respondNotFound('Lead does not exist');
+        return $this->respondNotFound('Call does not exist');
       }
 
       return $this->respond(
-        $this->leadTransformer->transform($lead)
+        $this->callTransformer->transform($call)
       );
     }
 
@@ -93,28 +92,38 @@ class CallController extends ApiController
     public function edit(Request $request, $id)
     {
       if(!$id) {
-        return $this->setStatusCode(400)->respondWithError("Please provide the Lead id to update");
+        return $this->setStatusCode(400)->respondWithError("Please provide the Call id to update");
       }
-      $lead = Lead::find($id);
+      $call = Call::find($id);
 
-      $error = "";
-      $company_id = $lead['company_id'];
-      $companyData = $request->input('company');
-      try{
-        $company = $this->companyBuilder->update($companyData, $company_id);
-      }
-      catch(\Exception $e){
-        $error = $e->getMessage();
-        return $this->setStatusCode(500)->respondWithError($error);
-      }
-
-      //update other info
-      $lead->user_id = $user = $request->input('user.id');
-      $lead->status = $request->input('status');
-      $lead->source = $request->input('source');
-      if($lead->save())
+      //update call info
+      if($request->input('subject')){
+        $call->subject = $request->input('subject');}
+      if($request->input('call_purpose')){
+      $call->call_purpose = $request->input('call_purpose');}
+      if($request->input('contacts')){
+      $call->contacts = $request->input('contacts');}
+      if($request->input('accounts')){
+      $call->accounts = $request->input('accounts');}
+      if($request->input('current_call')){
+      $call->current_call = $request->input('current_call');}
+      if($request->input('completed_call')){
+      $call->completed_call = $request->input('completed_call');}
+      if($request->input('schedule_call')){
+      $call->schedule_call = $request->input('schedule_call');}
+      if($request->input('call_start_time')){
+      $call->call_start_time = $request->input('call_start_time');}
+      if($request->input('call_duration')){
+      $call->call_duration = $request->input('call_duration');}
+      if($request->input('description')){
+      $call->description = $request->input('description');}
+      if($request->input('billable')){
+      $call->billable = $request->input('billable');}
+      if($request->input('call_result')){
+      $call->call_result = $request->input('call_result');}
+      if($call->save())
       {
-        return $this->respondUpdated('Lead successfully updated!');
+        return $this->respondUpdated('Call successfully updated!');
       }
     }
 
@@ -127,12 +136,12 @@ class CallController extends ApiController
     public function destroy($id)
     {
       if(!$id){
-        return $this->setStatusCode(400)->respondWithError("Please provide the Lead id to delete");
+        return $this->setStatusCode(400)->respondWithError("Please provide the Call id to delete");
       }
-      $lead = Lead::find($id);
-      $lead->active = false;
-      if($lead->save()){
-        return $this->respondDeleted('Lead successfully deleted!');
+      $call = Call::find($id);
+      $call->active = false;
+      if($call->save()){
+        return $this->respondDeleted('Call successfully deleted!');
       }
     }
 }

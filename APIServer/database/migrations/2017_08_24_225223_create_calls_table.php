@@ -13,6 +13,7 @@ class CreateCallsTable extends Migration
      */
     public function up()
     {
+        if (!(Schema::hasTable('calls'))) {
         Schema::create('calls', function (Blueprint $table) {
             $table->increments('id');
             $table->string('subject')->nullable();
@@ -30,6 +31,7 @@ class CreateCallsTable extends Migration
             $table->boolean('active')->default(true);
             $table->timestamps();
         });
+    }
     }
 
     /**

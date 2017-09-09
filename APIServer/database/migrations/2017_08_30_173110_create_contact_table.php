@@ -13,6 +13,7 @@ class CreateContactTable extends Migration
      */
     public function up()
     {
+        if (!(Schema::hasTable('contacts'))) {
         Schema::create('contacts', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('company_id')->length(10)->unsigned()->nullable();
@@ -38,6 +39,7 @@ class CreateContactTable extends Migration
             $table->boolean('active')->default(true);
             $table->timestamps();
         });
+    }
     }
 
     /**

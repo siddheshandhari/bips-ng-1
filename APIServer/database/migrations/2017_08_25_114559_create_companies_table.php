@@ -13,6 +13,7 @@ class CreateCompaniesTable extends Migration
      */
     public function up()
     {
+        if (!(Schema::hasTable('companies'))) {
         Schema::create('companies', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
@@ -30,6 +31,7 @@ class CreateCompaniesTable extends Migration
             $table->boolean('active')->default(true);
             $table->timestamps();
         });
+    }
     }
 
     /**

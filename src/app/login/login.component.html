@@ -2,14 +2,15 @@
   <h1>OrcaSmart</h1>
   <br>
   <!-- <div class="form-group">
-    <a [routerLink]="['/login']" class="btn btn-link">Login</a>
-    <a [routerLink]="['/signup']" class="btn btn-link">Sign Up</a>
+    <a routerLink="/login" routerLinkActive="active" class="btn btn-link">Login</a>
+    <a routerLink="/signup" routerLinkActive="active" class="btn btn-link">Sign Up</a>
   </div> -->
   <!-- <form  #logginForm (submit)= "loginUser(logginForm.value)">  -->
-  <form  name="form" #logginForm="ngForm" (ngSubmit)= "login()"> 
+  <form  name="form"(ngSubmit)= "login()" novalidate> 
     <div class="input">
       <!-- <label>Username</label> -->
       <input type="text" class="form-control form-control-lg" name="email" placeholder="Email" [(ngModel)]="model.email" #email="ngModel" required />
+      
       <!-- <div [hidden]="name.valid" class="alert alert-danger">Email is required
       </div> -->
     </div>

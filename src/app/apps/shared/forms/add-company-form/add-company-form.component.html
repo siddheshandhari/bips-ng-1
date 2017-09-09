@@ -53,7 +53,6 @@
 <div class="form-section">
   <h6>Contacts</h6>
   <hr />
-  <add-contact-form></add-contact-form>
-  <add-contact-form *ngFor="let contact of extraContacts"></add-contact-form>
+  <add-contact-form *ngFor="let contact of contacts"></add-contact-form>
   <span class="badge badge-secondary" (click)="addNewContact()" >Add Contact</span>
 </div>
