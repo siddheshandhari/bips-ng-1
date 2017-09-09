@@ -3,9 +3,9 @@
   display: block;
   white-space: nowrap;
   width: 100%;
-  height: 110px;
+  height: 87px;
   background-color: #ffffff;
-  padding: 15px;
+  padding: 10px;
 
   overflow: hidden;
   transition: height 0.5s;
@@ -47,7 +47,7 @@ span{
 
 }
 .company_name{
-  font-size:17px;
+  font-size:14px;
   color:#0069D9;
  
 
@@ -56,7 +56,7 @@ span{
 .card-logo{
   position: relative;
   float: left;
-  top: 0;
+  top: 4px;
   bottom: 0;
   margin: auto;
   width: 60px;

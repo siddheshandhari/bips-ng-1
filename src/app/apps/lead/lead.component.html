@@ -4,22 +4,24 @@
             <li><a (click)="goLeadlist()"><i class="fa fa-refresh" aria-hidden="true"></i></a></li>
             <li><a (click)="goLeadlist()">Leads</a></li>
             <li><a>name</a></li>
-           
             <li>
                 
                 <div class="lead-search-box">
                     <a class="btn btn-success add-lead-btn" (click)="addLead()"> + Add</a>
-                    <input type="text" placeholder="Search a lead" aria-label="Search" class="lead-input" #searchBox>
-                    <input type="button" value="search" class="btn btn-sm btn-primary search-btn"  (click)="searchLead(searchBox.value)">
+                    <select class="custom-select">
+                        <option >Filter</option>
+                        <option>Company Name</option>
+                    </select>
+                    <label class="custom-file">
+                        <input type="text" placeholder="Search a lead" aria-label="Search" class="lead-input"  #searchBox>
+                        <input type="button" value="search" class="btn btn-sm btn-primary search-btn"  (click)="searchLead(searchBox.value)">
+                    </label>
                 </div>
              </li>
     </ul>
 </div>
 
 <!--<edit-lead ></edit-lead>-->
-  
-
-
 
 <add-lead *ngIf="addLeadValue==true">
  <a  class="cancel-lead-btn" (click)="goLeadlist()" ><i class="fa fa-times" aria-hidden="true"></i></a>
