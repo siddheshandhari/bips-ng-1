@@ -1,6 +1,7 @@
 export const ADD_RUNNING_APPS = 'ADDED_RUNNING_APP';
 export const REMOVE_RUNNING_APPS = 'REMOVE_RUNNING_APP';
 
+
 //Lead = 12; Account = 1; potential = 15;
 
 const initialState = [12];
