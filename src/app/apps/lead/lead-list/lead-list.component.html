@@ -4,13 +4,20 @@
 
 <card  *ngFor="let lead of leadlist">
     <card-header [logoUrl]="'assets/imgs/photo.png'" 
-    [title]="lead.company.name" [address]="lead.company.billing_address"
-     [industry]="lead.company.industry" [facebook]="" [twitter]="" [phone]="">
+    [title]="lead.company.name" [industry]="lead.company.industry" [website]="lead.company.website"
+    [expense]="" [employees]="lead.company.employees" [contact] = "" [phone]="" [isEditing]="isEditing"
+    [lead]="selectedLead">
      
-    <a class="edit-lead-btn" (click)="editLead(lead)"><i class="fa fa-pencil" aria-hidden="true"></i></a><br>  
+    <a *ngIf="!isEditing" class="edit-lead-btn" (click)="editLead(lead)" ><i class="fa fa-pencil" aria-hidden="true"></i></a>
+    <button *ngIf="isEditing" class="btn-sm btn-outline-success" (click)="save(lead)" >Save</button>
+    <button *ngIf="isEditing" class="edit-lead-btn btn-sm btn-outline-danger" (click)="save(lead)" >Cancel</button>
     <a class="delete-lead-btn" (click)=" deleteLead(lead)"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+
+    
     </card-header>
+
     <!--<card-body (deleteEvent)="deleteCard(lead.id)">
         <card-contact *ngFor="let contact of lead.company.contacts" [name]="contact.first_name" [position]="'Founder\CEO'" [phone]="contact.phone" [email]="contact.email" skype="contact.skype"></card-contact>
+        <card-content></card-content>
     </card-body>-->
 </card>

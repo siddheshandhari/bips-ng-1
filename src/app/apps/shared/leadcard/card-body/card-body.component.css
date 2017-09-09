@@ -5,7 +5,7 @@
   height: 100px;
   background-color: #FFFFFF;
   transition: height 0.5s;
-  padding: 15px;
+
 }
 
 :host.card-body-open{
