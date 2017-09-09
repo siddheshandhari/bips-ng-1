@@ -1,14 +1,14 @@
-import { Component, Input, HostBinding,NgModule } from '@angular/core';
-import { Lead } from '../../../lead/lead';
+import { Component, Input, HostBinding, NgModule } from '@angular/core';
+import { Lead } from '../../../../lead/lead';
 
 
 @Component({
-  selector: 'card-header',
-  templateUrl: 'card-header.component.html',
-  styleUrls: ['card-header.component.css']
+  selector: 'card-content',
+  templateUrl: './card-content.component.html',
+  styleUrls: ['./card-content.component.css']
 })
 
-export class CardHeaderComponent{
+export class CardContentComponent{
   @Input() logoUrl: string;
   @Input() title: string;
   @Input() lead : any;
@@ -31,13 +31,5 @@ export class CardHeaderComponent{
   @Input() contact: string;
   @Input() isEditing : Boolean;
 
-  @HostBinding('class.card-header-open') isOpen: boolean = false;
-
-  openHeader(){
-    this.isOpen = true;
-  }
-
-  closeHeader(){
-    this.isOpen = false;
-  }
+  
 };

@@ -15,11 +15,13 @@
              </li>
     </ul>
 </div>
+
+<!--<edit-lead ></edit-lead>-->
   
 
 
 
-<add-lead *ngIf="add_lead_value==true">
+<add-lead *ngIf="addLeadValue==true">
  <a  class="cancel-lead-btn" (click)="goLeadlist()" ><i class="fa fa-times" aria-hidden="true"></i></a>
 </add-lead>
 
@@ -29,8 +31,6 @@
     <card  *ngFor="let lead of searchlist">
         <card-header [logoUrl]="'assets/imgs/photo.png'" 
             [title]="lead.name" >
-
-            
             <a class="edit-lead-btn" (click)="editLead(lead)"><i class="fa fa-pencil" aria-hidden="true"></i></a><br>  
             <a class="delete-lead-btn" (click)=" deleteLead(lead)"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
         </card-header>
@@ -39,10 +39,10 @@
 </div>
 
 
-<!--<add-lead *ngIf="add_lead_value==true"></add-lead>-->
+<!--<add-lead *ngIf="addLeadValue==true"></add-lead>-->
 
 <div *ngIf="!isSearch">
-    <lead-list *ngIf="add_lead_value==false">
+    <lead-list *ngIf="addLeadValue==false">
         
     </lead-list>
 </div>
