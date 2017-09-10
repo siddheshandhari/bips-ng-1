@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component ({
     selector:'searchbar',
-    templateUrl: './searchbar.compoonent.html',
+    templateUrl: './searchbar.component.html',
     styleUrls: ['./searchbar.component.css']
 })
 
