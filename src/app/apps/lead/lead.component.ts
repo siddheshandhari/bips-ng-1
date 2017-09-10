@@ -14,7 +14,7 @@ import { Lead } from './lead';
 export class LeadComponent implements OnInit {
   private searchlist;
   modalOpen: boolean = true;
-  add_lead_value: boolean = false;
+  addLeadValue: boolean = false;
   isSearch: boolean = false;
 
   constructor(private leadService: LeadService ){}
@@ -36,7 +36,7 @@ export class LeadComponent implements OnInit {
   }
 
   addLead(){
-      this.add_lead_value = true;
+      this.addLeadValue = true;
   }
 
   openModal(){
@@ -48,7 +48,7 @@ export class LeadComponent implements OnInit {
   }
 
   goLeadlist(){
-    this.add_lead_value = false;
+    this.addLeadValue = false;
     this.isSearch = false;
   }
 

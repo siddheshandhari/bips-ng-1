@@ -4,28 +4,32 @@ import { CardComponent } from './card.component';
 import { CardHeaderComponent } from './card-header/card-header.component';
 import { CardBodyComponent } from './card-body/card-body.component';
 import { CardContactComponent } from './card-body/card-contact/card-contact.component';
-import { CardOwnerComponent } from './card-body/card-owner/card-owner.component';
+import { CardContentComponent } from './card-body/card-content/card-content.component';
 import { SubheaderComponent } from './card-header/subheader/subheader.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule
   ],
   declarations: [
     CardComponent,
     CardHeaderComponent,
     CardBodyComponent,
     CardContactComponent,
-    CardOwnerComponent,
-    SubheaderComponent
+    SubheaderComponent,
+    CardContentComponent
+   
   ],
   exports: [
     CardComponent,
     CardHeaderComponent,
     CardBodyComponent,
     CardContactComponent,
-    CardOwnerComponent,
-    SubheaderComponent
+    SubheaderComponent,
+    CardContentComponent
+   
   ]
 })
 export class CardModule { }

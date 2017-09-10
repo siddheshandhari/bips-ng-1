@@ -24,9 +24,6 @@ export class LeadInfoComponent implements OnInit {
 
     }
 
-
-
-  
 }
 
 

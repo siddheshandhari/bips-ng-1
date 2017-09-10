@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter,ElementRef } from '@angular/core';
 import { LeadService } from '../lead.service';
 import { Lead } from '../lead';
 
@@ -10,12 +10,18 @@ import { Lead } from '../lead';
 })
 
 export class LeadListComponent implements OnInit{
+    @Output() editRequest = new EventEmitter<Lead>();
+    @Output() selectedLead : Lead;
+    isEditing : Boolean = false;
 
     leadlist : Lead[] = [];
-    selectedLead : Lead;
+    // selectedLead : Lead;
     editlead= false;
 
-constructor(public leadService:LeadService){}
+     private editMode: boolean = false;
+  private actionPanelIsOpen: boolean = false;
+
+    constructor(public leadService:LeadService,private el: ElementRef){}
 
 // get lead infomation
     getLeadlist():void{
@@ -37,6 +43,13 @@ constructor(public leadService:LeadService){}
 
    }
 
+    deleteCard(id: number){
+    this.leadService.deleteLead(id);
+    this.leadlist = this.leadlist.filter(account => {
+      return account.id !== id;
+    })
+  }
+
    totallead = this.leadlist.length;
 
 //get information from database
@@ -44,24 +57,51 @@ constructor(public leadService:LeadService){}
         this.getLeadlist();
     }
 
+    save(lead:Lead): void{
+    //    event.preventDefault();
+    //    console.log(JSON.stringify(lead));
 
-    public isediting = false;
+       this.leadService.save(lead)
+       .subscribe(
+                    res =>{
+                        console.log(JSON.stringify(res));
+                        },
+                    err =>{
+                        console.log("error occored");
+                    }
+                 )
+       console.log(lead.company.name)
+     this.isEditing= false;
+    }
+
+ 
 
 // edit the lead
     editLead(lead:Lead): void{
 
             this.selectedLead = lead;
             console.log(this.selectedLead);
-            this.editlead= true;
+            this.isEditing = true;
     }
 
     saveLead(lead:Lead): void{
             console.log(this.selectedLead);
-            this.editlead= false;
+            this.isEditing= false;
+
     }
 
-    cancelLead(lead:Lead): void {
+    cancel(lead:Lead): void {
         console.log(this.selectedLead);
-            this.editlead= false;
+            this.isEditing= false;
     }
+
+    openActionPanel(){
+    this.actionPanelIsOpen = true;
+  }
+
+  closeActionPanel(){
+    if(!this.el.nativeElement.contains(event.target) && this.actionPanelIsOpen){
+      this.actionPanelIsOpen = false;
+    }
+  }
 }

@@ -86,3 +86,7 @@ ul li a {
   right:20px;
   top:2px;
 }
+
+select{
+  width:60px;
+}

@@ -1,4 +1,6 @@
-import { Component, Input, HostBinding } from '@angular/core';
+import { Component, Input, HostBinding,NgModule } from '@angular/core';
+import { Lead } from '../../../lead/lead';
+
 
 @Component({
   selector: 'card-header',
@@ -9,6 +11,9 @@ import { Component, Input, HostBinding } from '@angular/core';
 export class CardHeaderComponent{
   @Input() logoUrl: string;
   @Input() title: string;
+  @Input() lead : any;
+  @Input() selectedLead : Lead;
+
   @Input() address: {
     country: string,
     state: string,
@@ -17,9 +22,14 @@ export class CardHeaderComponent{
     street: string
   };
   @Input() industry: string;
+  @Input() website: string;
   @Input() facebook: string;
   @Input() twitter: string;
   @Input() phone: string;
+  @Input() expense: string;
+  @Input() employees: string;
+  @Input() contact: string;
+  @Input() isEditing : Boolean;
 
   @HostBinding('class.card-header-open') isOpen: boolean = false;
 
