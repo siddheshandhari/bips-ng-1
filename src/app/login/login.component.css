@@ -1,14 +1,82 @@
-:host {
+.container {
   margin: 0 auto;
   position: absolute; 
   left: 50%;
   top:50%;
   transform: translate(-50%, -50%);
+  text-align: center;
   
 } 
 
+.container form {
+  display: inline-block;
+}
+
+/* .bg-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+} */
+
+/* img {
+  padding: 1px;
+  border: 1px solid #021a40;
+} */
+
+video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  transition: 1s opacity;
+  /* background: url(loginbg.png) no-repeat; */
+  background-size: cover;
+}
+
+.movie-fade {
+  background-color: rgba(0, 0, 0, rgba(0, 0, 0, 0.7));
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.movie-cover {
+  background: url(../../assets/imgs/overlay.png) repeat 50% 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.welcome {
+  color: white;
+  font-size: 18px;
+}
+
+.logo {
+  width: 100px;
+  height: 70px;
+
+}
+
+/* @media screen and (max-width: 500px) {
+  div{width: 70%}
+} */
+
 * {
-  border-radius: 0 !important;
+  border-radius: 4px !important;
 }
 
 .ng-valid[required], .ng-valid.required  {
@@ -26,7 +94,12 @@
 }
 
 h1 {
+  font-family: sans-serif;
+  font-weight: bold;
   text-align: center;
+  color: white;
+  text-shadow: 2px 2px #545252;
+  font-size: 40px;
 }
 
 .btn:hover {

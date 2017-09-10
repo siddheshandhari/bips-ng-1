@@ -72,8 +72,6 @@ Window
   height: 800px;
   width: 960px;
   display: flex;
-  overflow-x: hidden;
-  overflow-y: scroll;
 }
 
 .window-content{
