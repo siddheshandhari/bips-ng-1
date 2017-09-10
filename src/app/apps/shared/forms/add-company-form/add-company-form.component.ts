@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Contact } from '../../../../models/contact';
 
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'add-company-form',
@@ -17,17 +17,17 @@ export class AddCompanyFormComponent{
   //   this.contacts.push(contact);
   // }
 
-  companyForm = new FormGroup({
-    companyName: new FormControl(),
-    website: new FormControl(),
-    employees: new FormControl(),
-    rating: new FormControl(),
-    industry: new FormControl(),
-    annualRevenue: new FormControl(),
-    tier: new FormControl(),
-    
+  // companyForm = new FormGroup({
+  //   companyName: new FormControl(),
+  //   website: new FormControl(),
+  //   employees: new FormControl(),
+  //   rating: new FormControl(),
+  //   industry: new FormControl(),
+  //   annualRevenue: new FormControl(),
+  //   tier: new FormControl(),
+  // });
 
-  });
+
 
   showShippingAddress(){
     this.shippingAddressVisible = true;
