@@ -1,13 +1,15 @@
 :host{
+    margin-top:60px;
     line-height: 1; 
     height: 90px;
-    display:block;
     width: 70%;
+    margin-left:1%;
+    display:block;
+    border: 1px solid yellow;
 }
 
 ul {
-    display:block;
-    margin-top:45px;
+    border:1px solid red;
     height: 90px;
 }
 ul li {
