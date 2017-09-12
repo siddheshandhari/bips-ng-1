@@ -23,6 +23,8 @@ class LeadsTableSeeder extends Seeder
           'company_id' => array_shift($companies),
           'status' => $faker->word,
           'source' => $faker->sentence($nbWords = 6, $variableNbWords = true),
+          'possibility' => $faker->randomFloat($nbMaxDecimals = 5, $min = 0, $max = 1),
+          'order_capacity' => $faker->randomNumber()
         ]);
       }
     }

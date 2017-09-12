@@ -20,6 +20,8 @@ class CreateLeadsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('company_id')->unsigned()->unique()->nullable();
             $table->foreign('company_id')->references('id')->on('companies');
+            $table->float('possibility')->nullable();
+            $table->integer('order_capacity')->unsigned()->nullable();
             $table->string('status')->nullable();
             $table->string('source')->nullable();
             $table->boolean('active')->default(true);
