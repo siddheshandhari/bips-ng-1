@@ -67,6 +67,14 @@ div{
     padding: 29px 0;
 }
 
+.progress{
+    margin-top:8px;
+    width:90%;
+}
+.progress-bar{
+    height: 0.5rem;
+}
+
 .lead-owner{
     width:8%;
     text-align: center;

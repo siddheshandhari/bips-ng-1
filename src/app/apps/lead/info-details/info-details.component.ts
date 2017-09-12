@@ -1,4 +1,4 @@
-import { Component,ElementRef, Input,Output, OnInit, EventEmitter } from '@angular/core';
+import { Component,ElementRef, Input,Output, OnInit, EventEmitter,NgModule } from '@angular/core';
 import { LeadService } from '../lead.service';
 import { Lead } from '../lead';
 
@@ -11,6 +11,7 @@ import { Lead } from '../lead';
 export class InfoDetailsComponent{
      @Input() lead:Lead;
      @Output() deleteEvent = new EventEmitter<Lead>();
+     isEditing: Boolean = false;
      leadlist : Lead[]= [];
 
     constructor(private el: ElementRef, private leadService: LeadService){}
@@ -41,5 +42,26 @@ export class InfoDetailsComponent{
         console.log("234");
     }
 
+    onEdit(lead){
+        this.isEditing = true;
+    }
 
+    onCancel(lead){
+        this.isEditing = false;
+    }
+
+    onSave(lead:Lead){
+    this.isEditing = false;
+    console.log(lead);
+    this.leadService.save(lead)
+       .subscribe(
+                    res =>{
+                        console.log(JSON.stringify(res));
+                        },
+                    err =>{
+                        console.log("error occored");
+                    }
+                 )
+    }
+  
 }
