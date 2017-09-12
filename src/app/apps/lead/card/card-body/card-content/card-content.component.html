@@ -5,7 +5,7 @@
     
 </div>
 <div class="company-name">
-    <span class="default-name"><b>Orcasmart</b></span>
+    <span class="default-name"><b>{{lead.company.name}}</b></span>
 </div>
 
 <div class="industry">
@@ -20,7 +20,7 @@
 
 <div class="lead-owner">
     <img [src]="'assets/imgs/user.png'"><br>
-    <span *ngIf = "!ownerUrl" class="default-owner">Jack</span>
+    <span *ngIf = "!ownerUrl" class="default-owner">Tom</span>
 </div>
 
 <div class="lead-balance"> 

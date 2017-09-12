@@ -14,3 +14,10 @@
     
     </card-header>
 </card>-->
+
+    <card *ngFor="let lead of leadlist">
+        <card-body>
+            <card-content [lead]= "lead"></card-content>
+        </card-body>
+    </card>
+
