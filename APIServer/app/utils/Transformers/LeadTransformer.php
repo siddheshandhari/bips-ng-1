@@ -26,7 +26,9 @@ class LeadTransformer extends Transformer {
       'company' => $company,
       'user' => $user,
       'status' => $lead['status'],
-      'source' => $lead['source']
+      'source' => $lead['source'],
+      'possibility' => $lead['possibility'],
+      'order_capacity' => $lead['order_capacity']
     ];
 
   }
