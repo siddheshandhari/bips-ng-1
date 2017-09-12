@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter,ElementRef } from '@angular/core';
+import { Component, OnInit, Output,Input, EventEmitter,ElementRef } from '@angular/core';
 import { LeadService } from '../lead.service';
 import { Lead } from '../lead';
 
@@ -11,7 +11,7 @@ import { Lead } from '../lead';
 
 export class LeadListComponent implements OnInit{
     // @Output() editRequest = new EventEmitter<Lead>();
-    // @Output() selectedLead : Lead;
+    @Output() selectedLead : Lead;
     // isEditing : Boolean = false;
 
     leadlist : Lead[] = [];
@@ -21,7 +21,12 @@ export class LeadListComponent implements OnInit{
 //      private editMode: boolean = false;
 //   private actionPanelIsOpen: boolean = false;
 
-    constructor(public leadService:LeadService,private el: ElementRef){}
+    constructor(public leadService:LeadService,private el: ElementRef){};
+
+     ngOnInit():void{
+        this.getLeadlist();
+    }
+
 
 // get lead infomation
     getLeadlist():void{
@@ -29,6 +34,25 @@ export class LeadListComponent implements OnInit{
       .subscribe(res => {
         this.leadlist = res;
       })
+    }
+
+    selectedCard(lead: Lead):void{
+        this.selectedLead = lead;
+        console.log("selected-----")
+        console.log( this.selectedLead);
+        console.log("----")
+       
+    }
+
+     deleteLead(lead:Lead):void{
+        console.log("123");
+        console.log(lead.id);
+        this.leadService.deleteLead(lead.id)
+         .subscribe(()=>{
+             this.leadlist = this.leadlist.filter (l => l !== lead);
+             if(this.selectedLead === lead){this.selectedLead = null}
+         })
+    
     }
 
 // delete lead
@@ -53,10 +77,7 @@ export class LeadListComponent implements OnInit{
 //    totallead = this.leadlist.length;
 
 //get information from database
-    ngOnInit():void{
-        this.getLeadlist();
-    }
-
+   
     // save(lead:Lead): void{
     //    event.preventDefault();
     //    console.log(JSON.stringify(lead));
