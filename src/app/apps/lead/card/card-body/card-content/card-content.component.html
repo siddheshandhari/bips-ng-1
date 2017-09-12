@@ -1,1 +1,41 @@
-<ng-content></ng-content>
+
+<div class="company-logo">
+    <img [src]="'assets/imgs/company.png'">
+    <!--<span *ngIf="!logoUrl" class="default-logo"></span>-->
+    
+</div>
+<div class="company-name">
+    <span class="default-name"><b>Orcasmart</b></span>
+</div>
+
+<div class="industry">
+    <i class="fa fa-desktop" aria-hidden="true"></i><br>
+    <span class="industry-type">Technology</span>
+</div>
+
+<div class="possibility">
+    <span class="prossibility-value">60%</span><br>
+    <span>progress bar</span>
+</div>
+
+<div class="lead-owner">
+    <img [src]="'assets/imgs/user.png'"><br>
+    <span *ngIf = "!ownerUrl" class="default-owner">Jack</span>
+</div>
+
+<div class="lead-balance"> 
+   <span class="due-pay"> <i class="fa fa-usd" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;500,000</span><br>
+   <span class="due-pay"> <i class="fa fa-usd" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;5,000,000</span><br>
+   <span class="due-pay"> <i class="fa fa-usd" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;500,000</span>
+
+</div>
+
+<div class="lead-function">
+    <i class="fa fa-comment" aria-hidden="true"></i>
+    <i class="fa fa-phone-square" aria-hidden="true"></i><br>
+    <i class="fa fa-book" aria-hidden="true"></i>
+    <i class="fa fa-envelope" aria-hidden="true"></i>
+
+</div>
+
+
