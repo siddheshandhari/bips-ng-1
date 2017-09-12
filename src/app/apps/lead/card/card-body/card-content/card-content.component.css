@@ -37,6 +37,15 @@ div{
     font-size:14px;
 }
 
+.default-name{
+    display:block;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+
 .industry{
     width:13%;
     text-align: center;
