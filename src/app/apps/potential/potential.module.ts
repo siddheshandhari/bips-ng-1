@@ -9,8 +9,6 @@ import { CommonModule } from '@angular/common';
 import { PotentialComponent } from './potential.component';
 import { AddPotentialComponent } from './add-potential/add-potential.component';
 import { PotentialService } from './potential.service';
-import { CardModule } from '../shared/cardL/card.module';
-import { InfoBoxModule } from '../shared/info-box/info-box.module';
 
 @NgModule({
   declarations: [
@@ -23,8 +21,6 @@ import { InfoBoxModule } from '../shared/info-box/info-box.module';
     BrowserModule,
     HttpModule,
     CommonModule,
-    CardModule,
-    InfoBoxModule
   ],
   exports: [
     PotentialComponent,
