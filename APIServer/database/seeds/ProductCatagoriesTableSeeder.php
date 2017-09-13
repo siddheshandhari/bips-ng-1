@@ -11,9 +11,21 @@ class ProductCatagoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('product_catagories')->insert([
-            'id' => '1',
-            'catagory' => 'bottles',
-        ]);
+        $faker = Faker\Factory::create();
+    
+        foreach(range(1, 30) as $index)
+        {
+          DB::table('product_catagories')->insert([
+            
+            'catagory' => $faker->word,
+            
+          ]);
+        }
+
+
+        // DB::table('product_catagories')->insert([
+        //     'id' => '1',
+        //     'catagory' => 'bottles',
+        // ]);
     }
 }
