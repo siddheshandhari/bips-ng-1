@@ -53,10 +53,26 @@ div{
 
 }
 
+.industry-type{
+    display:block;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .possibility{
     width:15%;
     text-align: center;
     padding: 29px 0;
+}
+
+.progress{
+    margin-top:8px;
+    width:90%;
+}
+.progress-bar{
+    height: 0.5rem;
 }
 
 .lead-owner{

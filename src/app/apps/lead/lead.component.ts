@@ -1,4 +1,4 @@
-import { Component , OnInit } from '@angular/core';
+import { Component , OnInit, Input } from '@angular/core';
 import { LeadService } from './lead.service';
 import { Lead } from './lead';
 
@@ -13,7 +13,7 @@ import { Lead } from './lead';
 
 export class LeadComponent implements OnInit {
   private searchlist;
-  modalOpen: boolean = true;
+  modalOpen: boolean =false;
   addLeadValue: boolean = false;
   isSearch: boolean = false;
 

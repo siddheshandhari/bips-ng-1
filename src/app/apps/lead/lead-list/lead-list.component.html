@@ -15,9 +15,10 @@
     </card-header>
 </card>-->
 
-    <card *ngFor="let lead of leadlist">
-        <card-body>
+    <card  *ngFor="let lead of leadlist">
+        <card-body (click)="selectedCard(lead)" >
             <card-content [lead]= "lead"></card-content>
         </card-body>
     </card>
 
+ <info-details [lead]="selectedLead" (deleteEvent)="deleteLead($event)"></info-details>

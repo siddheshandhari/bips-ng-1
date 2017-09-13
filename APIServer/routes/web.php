@@ -50,7 +50,19 @@ Route::group(['prefix' => 'api/v1'], function()
   Route::delete('call/{id}', 'CallController@destroy');
   Route::put('call/{id}', 'CallController@edit');
 
+  //Product Collections Routes
+  Route::get('product', 'ProductController@index');
+  // Route::post('product', 'ProductController@add');
+
+  //Specific Product
+  // Route::get('product/{id}', 'ProductController@read');
+  // Route::delete('product/{id}', 'ProductController@destroy');
+  // Route::put('product/{id}', 'ProductController@edit');
+
+    //Price Collections Routes
+    Route::get('price', 'PriceController@index');
 });
+
 
 Route::get('/', function () {
     return view('welcome');

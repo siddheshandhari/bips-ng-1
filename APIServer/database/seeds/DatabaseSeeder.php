@@ -23,7 +23,12 @@ class DatabaseSeeder extends Seeder
       'salesorders',
       'tasks',
       'userloggedinhistories',
-      'users'
+      'users',
+      'products',
+      'colors',
+      'prices',
+      'capacities',
+      'neck_finishes'
     ];
 
     /**
@@ -49,6 +54,11 @@ class DatabaseSeeder extends Seeder
       $this->call(SalesordersTableSeeder::class);
       $this->call(TasksTableSeeder::class);
       $this->call(UserloggedinhistoriesTableSeeder::class);
+      $this->call(ProductsTableSeeder::class);
+      $this->call(PricesTableSeeder::class);
+      $this->call(ColorsTableSeeder::class);
+      $this->call(CapacitiesTableSeeder::class);
+      $this->call(Nech_FinishesTableSeeder::class);
     }
 
     private function cleanDatabase()
