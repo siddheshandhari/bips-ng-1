@@ -16,7 +16,6 @@ import { ModalComponent } from '../shared/modal/modal.component';
 // import { CardModule } from '../shared/leadcard/card.module';
 import { LeadComponent } from './lead.component';
 import { AddLeadComponent } from './add-lead/add-lead.component';
-import { EditLeadComponent } from './edit-lead/edit-lead.component';
 import { LeadService } from './lead.service';
 import { CardComponent } from './card/card.component';
 import { CardBodyComponent } from './card/card-body/card-body.component';
@@ -34,7 +33,6 @@ import { AddButtonModule } from '../shared/add-button/add-button.module';
   declarations: [
    LeadComponent,
    AddLeadComponent,
-   EditLeadComponent,
    LeadInfoComponent,
    LeadListComponent,
    NavbarComponent,

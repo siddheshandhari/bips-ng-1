@@ -3,7 +3,12 @@
         <button class="btn btn-sm btn-outline-danger" (click)="onDelete(lead)">Delete</button>
         <button *ngIf="!isEditing" class="btn btn-sm btn-outline-success" (click)="onEdit(lead)">Edit</button>
         <button *ngIf="isEditing" class="btn btn-sm btn-outline-primary" (click)="onCancel(lead)">Cancel</button>
-        <button *ngIf="isEditing" class="btn btn-sm btn-outline-success" (click)="onSave(lead)">Save</button>
+        <button *ngIf="isEditing" class="btn btn-sm btn-outline-success" (click)="onSave(lead)">Save</button><br>
+
+        <span class="info-title">Name </span>
+        <span class="name-content" *ngIf="!isEditing">{{lead.company.name}}</span>
+        <input type="text" *ngIf="isEditing" [(ngModel)]="lead.company.name">
+
     </div>
 </div>
 
@@ -12,10 +17,12 @@
     <div *ngIf="lead">
 
         
-       <span>Name :</span> 
+       <span>Notice :</span> 
        <span class="name-content" *ngIf="!isEditing">{{lead.company.name}}</span>
        <input type="text" *ngIf="isEditing" [(ngModel)]="lead.company.name">
     </div>
+
+
 
 
 
