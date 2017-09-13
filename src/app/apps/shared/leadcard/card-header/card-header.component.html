@@ -89,21 +89,21 @@
     <div class="col-md-3">
               <div>
                 <i class="fa fa-building-o" aria-hidden="true"></i>
-                <input class="company_name" type="text" >
-                <span class="company_name"><b>{{title}}</b></span>
+                <input  *ngIf="isEditing" class="company_name" type="text"  [(ngModel)]="lead.company.name"  >
+                <span *ngIf="!isEditing" class="company_name"><b>{{title}}</b></span>
               </div>
 
               <div>
                   <i class="fa fa-money" aria-hidden="true"></i>
-                  <span>Expense: 20000</span>
+                  <span>Expense: 60</span>
               </div>
 
                <div>
                 <i class="fa fa-users" aria-hidden="true"></i>
-                <span>Employees: 60</span>
+                <span>Employees:{{employees}}</span>
               </div>
 
-              <ng-content></ng-content>
+     
       </div>
 
   
@@ -111,19 +111,19 @@
       <div class="col-md-4">
               <div>
                 <i class="fa fa-briefcase"> </i>
-                <span>Company Type: Packing</span>
+                <span>Company Type: {{industry}}</span>
               </div>
 
               <div>
                   <i class="fa fa-internet-explorer" aria-hidden="true"></i>
-                  <span>www.orcasmart.com</span>
+                  <span contenteditable="true">{{website}}</span>
               </div>
 
                <div>
                   <i class="fa fa-briefcase" aria-hidden="true"></i>
                   <span>Bussiness size: 2000</span>
               </div>
-              <ng-content></ng-content>
+              
       </div>
 
 
@@ -144,18 +144,16 @@
               </div>
 
 
-              <ng-content></ng-content>
+            
       </div>
 
       <div class="col-md-1">
-        <ng-content></ng-content>
+          <ng-content></ng-content>
       </div>
 
 
 
 </div>
-
-
 
 <div class="expand-handler">
   <i class="fa fa-angle-up" *ngIf="isOpen"  (click)="closeHeader()"></i>

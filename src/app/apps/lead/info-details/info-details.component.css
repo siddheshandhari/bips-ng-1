@@ -1,0 +1,25 @@
+:host {
+    position: absolute;
+    right: 1%;
+    top: 60px;
+    display: block;
+    width: 27%;
+
+
+}
+
+.details-header{
+    background-color:#ffffff;
+    height:91px;
+    border-radius: 2px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0), 0 10px 35px rgba(0,0,0,0.22);
+}
+
+.details-body{
+    margin-top:20px;
+    background-color:#ffffff;
+    height:600px;
+    border-radius: 2px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0), 0 10px 35px rgba(0,0,0,0.22);
+
+}

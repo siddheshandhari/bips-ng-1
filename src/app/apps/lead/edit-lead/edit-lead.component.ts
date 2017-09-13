@@ -15,7 +15,7 @@ import { LeadService } from './../lead.service';
 })
 
 export class EditLeadComponent implements OnInit{
-     @Input() lead:Lead;
+    @Input() lead:Lead;
     public isediting = false;
     
 
@@ -27,9 +27,7 @@ export class EditLeadComponent implements OnInit{
         ){}
 
     ngOnInit(): void{
-        // this.route.paramMap
-        // .switchMap((params: ParamMap) => this.leadService.getLead(+ params.get('id')))
-        // .subscribe(lead =>this.lead = lead);
+        
     }
 
     save(lead:Lead): void{

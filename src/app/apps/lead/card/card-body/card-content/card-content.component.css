@@ -1,0 +1,126 @@
+:host{
+    position:relative;
+    margin:0;
+    padding:0px;
+    font-size:13px;
+    font:-apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color:gray;
+}
+
+div{
+    float:left;
+    margin-right:2.5%;
+}
+.company-logo .company-name{
+    display:inline;
+
+}
+
+.company-logo{
+    margin:15px;
+    width:10%;
+    height:70px;
+}
+
+ .company-logo img{
+    position: relative;
+    width:70px;
+    height:70px;
+    background-color:#eeeeee;
+    border-radius:50px;
+}
+
+.company-name{
+    position:relative;
+    width:13%;
+    line-height: 100px;
+    font-size:14px;
+}
+
+.default-name{
+    display:block;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+
+.industry{
+    width:13%;
+    text-align: center;
+    padding: 29px 0;
+
+}
+
+.industry-type{
+    display:block;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.possibility{
+    width:15%;
+    text-align: center;
+    padding: 29px 0;
+}
+
+.progress{
+    margin-top:8px;
+    width:90%;
+}
+.progress-bar{
+    height: 0.5rem;
+}
+
+.lead-owner{
+    width:8%;
+    text-align: center;
+    padding: 24px 0;
+
+}
+
+.lead-owner img{
+    width:30px;
+    height:30px;
+    background-color:#eeeeee;
+    border-radius: 50px;
+}
+
+.lead-balance{
+     width:15%;
+     padding: 18px 0;
+    
+}
+
+.lead-balance span{
+    display:inline-block;
+    width:90%;
+    border: 1px solid #eee; 
+}
+
+.lead-function{
+    padding: 30px 0;
+}
+
+.fa-usd{
+    color:orange;
+}
+
+.fa-comment{
+    color:#007BFF;
+}
+
+.fa-phone-square{
+    color:#28A745;
+}
+
+.fa-book{
+    color:saddlebrown;
+}
+
+.fa-envelope{
+    color:orange;
+}

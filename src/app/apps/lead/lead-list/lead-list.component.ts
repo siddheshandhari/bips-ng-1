@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,Input, EventEmitter,ElementRef } from '@angular/core';
 import { LeadService } from '../lead.service';
 import { Lead } from '../lead';
 
@@ -10,12 +10,23 @@ import { Lead } from '../lead';
 })
 
 export class LeadListComponent implements OnInit{
+    // @Output() editRequest = new EventEmitter<Lead>();
+    @Output() selectedLead : Lead;
+    // isEditing : Boolean = false;
 
     leadlist : Lead[] = [];
-    selectedLead : Lead;
-    editlead= false;
+    // selectedLead : Lead;
+    // editlead= false;
 
-constructor(public leadService:LeadService){}
+//      private editMode: boolean = false;
+//   private actionPanelIsOpen: boolean = false;
+
+    constructor(public leadService:LeadService,private el: ElementRef){};
+
+     ngOnInit():void{
+        this.getLeadlist();
+    }
+
 
 // get lead infomation
     getLeadlist():void{
@@ -25,43 +36,93 @@ constructor(public leadService:LeadService){}
       })
     }
 
-// delete lead
-    deleteLead(lead:Lead): void{
+    selectedCard(lead: Lead):void{
+        this.selectedLead = lead;
+        console.log("selected-----")
+        console.log( this.selectedLead);
+        console.log("----")
+       
+    }
 
+     deleteLead(lead:Lead):void{
+        console.log("123");
+        console.log(lead.id);
         this.leadService.deleteLead(lead.id)
          .subscribe(()=>{
              this.leadlist = this.leadlist.filter (l => l !== lead);
              if(this.selectedLead === lead){this.selectedLead = null}
          })
+    
+    }
+
+// delete lead
+//     deleteLead(lead:Lead): void{
+
+//         this.leadService.deleteLead(lead.id)
+//          .subscribe(()=>{
+//              this.leadlist = this.leadlist.filter (l => l !== lead);
+//              if(this.selectedLead === lead){this.selectedLead = null}
+//          })
 
 
-   }
+//    }
 
-   totallead = this.leadlist.length;
+//     deleteCard(id: number){
+//     this.leadService.deleteLead(id);
+//     this.leadlist = this.leadlist.filter(account => {
+//       return account.id !== id;
+//     })
+//   }
+
+//    totallead = this.leadlist.length;
 
 //get information from database
-    ngOnInit():void{
-        this.getLeadlist();
-    }
+   
+    // save(lead:Lead): void{
+    //    event.preventDefault();
+    //    console.log(JSON.stringify(lead));
 
+    //    this.leadService.save(lead)
+    //    .subscribe(
+    //                 res =>{
+    //                     console.log(JSON.stringify(res));
+    //                     },
+    //                 err =>{
+    //                     console.log("error occored");
+    //                 }
+    //              )
+    //    console.log(lead.company.name)
+    //  this.isEditing= false;
+    // }
 
-    public isediting = false;
+ 
 
 // edit the lead
-    editLead(lead:Lead): void{
+    // editLead(lead:Lead): void{
 
-            this.selectedLead = lead;
-            console.log(this.selectedLead);
-            this.editlead= true;
-    }
+    //         this.selectedLead = lead;
+    //         console.log(this.selectedLead);
+    //         this.isEditing = true;
+    // }
 
-    saveLead(lead:Lead): void{
-            console.log(this.selectedLead);
-            this.editlead= false;
-    }
+    // saveLead(lead:Lead): void{
+    //         console.log(this.selectedLead);
+    //         this.isEditing= false;
 
-    cancelLead(lead:Lead): void {
-        console.log(this.selectedLead);
-            this.editlead= false;
-    }
+    // }
+
+//     cancel(lead:Lead): void {
+//         console.log(this.selectedLead);
+//             this.isEditing= false;
+//     }
+
+//     openActionPanel(){
+//     this.actionPanelIsOpen = true;
+//   }
+
+//   closeActionPanel(){
+//     if(!this.el.nativeElement.contains(event.target) && this.actionPanelIsOpen){
+//       this.actionPanelIsOpen = false;
+//     }
+//   }
 }

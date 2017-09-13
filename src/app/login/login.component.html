@@ -1,37 +1,51 @@
-<div class = "">
-  <h1>OrcaSmart</h1>
+<div class="bg-container">
+  
+      <video id="bg" playinline autoplay muted loop poster="../../assets/imgs/firstpage.png">
+          <source src="../../assets/videos/loginbg.mp4" type="video/mp4">
+      </video>
+      <div class="movie-fade"></div>
+      <div class="movie-cover"></div>
+      
+</div>
+
+<div class = "container">
+  <img src="../../assets/imgs/logos/orcasmart.png" class="logo">
   <br>
+  <h1>OrcaSmart</h1>
+ 
+  <p class="welcome">Welcome to OrcaSmart <br> Business Intelligent Platfrom</p>
+
   <!-- <div class="form-group">
-    <a [routerLink]="['/login']" class="btn btn-link">Login</a>
-    <a [routerLink]="['/signup']" class="btn btn-link">Sign Up</a>
+    <a routerLink="/login" routerLinkActive="active" class="btn btn-link">Login</a>
+    <a routerLink="/signup" routerLinkActive="active" class="btn btn-link">Sign Up</a>
   </div> -->
   <!-- <form  #logginForm (submit)= "loginUser(logginForm.value)">  -->
-  <form  name="form" #f="ngForm" (ngSubmit)= "f.form.valid && login()" novalidate> 
-    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
+  <form  name="form"(ngSubmit)= "login()" novalidate> 
+    <div class="input">
       <!-- <label>Username</label> -->
-      <input type="text" class="form-control form-control-lg" name="email" placeholder="Email" [(ngModel)]="model.email" #email="ngModel" required />
+      <input type="text" class="form-control" name="email" placeholder="Email" [(ngModel)]="model.email" #email="ngModel" required />
       
       <!-- <div [hidden]="name.valid" class="alert alert-danger">Email is required
       </div> -->
     </div>
 
-    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+    <div class="input">
       <!-- <label>Password</label> -->
-      <input type="password" class="form-control form-control-lg" name="password" placeholder="Password" [(ngModel)]="model.password" #password="ngModel" required />
+      <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="model.password" #password="ngModel" required />
     </div>
     <br>
 
-    <div class="form-group">
+    <div class="input">
       <input type="submit" class="form-control btn btn-primary" value="login">
     </div>
     <br>
     <div class="agreement">
-      <p> By clicking login, you agree</p>
+      <p> By clicking Log In you agree to our <br> <a href="#">Terms of Use</a> and <a href="#">Privacy Statement</a>.</p>
     </div>
 
   </form>
 </div>
-
+  
 <!-- col-md-4 col-md-offset-4 -->
 <!-- col-14 -->
 

@@ -5,8 +5,6 @@ import { HttpClient } from "@angular/common/http";
 import { Lead } from '../lead';
 import { LeadService } from '../lead.service';
 
-
-
 @Component({
     selector: 'add-lead',
     templateUrl: './add-lead.component.html',
@@ -25,7 +23,6 @@ export class AddLeadComponent implements OnInit{
         private _formBuilder: FormBuilder,
         private leadService: LeadService,
       ){}
-
 
     ngOnInit(){
         this.getLeadlist();
@@ -47,15 +44,11 @@ export class AddLeadComponent implements OnInit{
                     contacts: this._formBuilder.array([
                                 this.initContact(),
                             ])
-                            
-
                  }),
                    
             // contacts: this._formBuilder.array([
             //     this.initContact(),
             // ])
-
-
         });
 
      }
@@ -106,9 +99,6 @@ export class AddLeadComponent implements OnInit{
        this.leadService.createLead(value)
         // const req = this.http.post('http://192.168.50.25/api/v1/lead',value)
         .subscribe(
-                       
-         
-
                     res =>{
                         this.leadlist.push(res);
                         console.log(JSON.stringify(res));
@@ -121,7 +111,6 @@ export class AddLeadComponent implements OnInit{
          this.myForm.reset();
     
           }
-          
 
 }
 

@@ -1,4 +1,4 @@
-:host{
+/*:host{
 
 }
 .edit-lead-btn i{
@@ -24,4 +24,8 @@
   background-color:#DC3545;
 }
 
+i{
+  vertical-align: super;
+}
+*/
 

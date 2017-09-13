@@ -1,25 +1,59 @@
-<div class="nav_container">
+
+
+<navbar><searchbar></searchbar></navbar>
+
+<div>try</div>
+    <lead-info></lead-info>
+    <lead-list></lead-list>
+
+   
+
+
+
+
+
+<add-button (click)="openModal()" [modalOpen]="modalOpen"></add-button>
+<modal (requestCloseModal)="closeModal()" *ngIf="modalOpen" >
+  <add-lead (requestCloseModal)="closeModal()"></add-lead>
+</modal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="nav_container">
 
     <ul>
             <li><a (click)="goLeadlist()"><i class="fa fa-refresh" aria-hidden="true"></i></a></li>
             <li><a (click)="goLeadlist()">Leads</a></li>
             <li><a>name</a></li>
-           
             <li>
                 
                 <div class="lead-search-box">
                     <a class="btn btn-success add-lead-btn" (click)="addLead()"> + Add</a>
-                    <input type="text" placeholder="Search a lead" aria-label="Search" class="lead-input" #searchBox>
-                    <input type="button" value="search" class="btn btn-sm btn-primary search-btn"  (click)="searchLead(searchBox.value)">
+                    <select class="custom-select">
+                        <option >Filter</option>
+                        <option>Company Name</option>
+                    </select>
+                    <label class="custom-file">
+                        <input type="text" placeholder="Search a lead" aria-label="Search" class="lead-input"  #searchBox>
+                        <input type="button" value="search" class="btn btn-sm btn-primary search-btn"  (click)="searchLead(searchBox.value)">
+                    </label>
                 </div>
              </li>
     </ul>
-</div>
-  
+</div>-->
 
 
-
-<add-lead *ngIf="add_lead_value==true">
+<!--<add-lead *ngIf="addLeadValue==true">
  <a  class="cancel-lead-btn" (click)="goLeadlist()" ><i class="fa fa-times" aria-hidden="true"></i></a>
 </add-lead>
 
@@ -29,23 +63,21 @@
     <card  *ngFor="let lead of searchlist">
         <card-header [logoUrl]="'assets/imgs/photo.png'" 
             [title]="lead.name" >
-
-            
             <a class="edit-lead-btn" (click)="editLead(lead)"><i class="fa fa-pencil" aria-hidden="true"></i></a><br>  
             <a class="delete-lead-btn" (click)=" deleteLead(lead)"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
         </card-header>
 
     </card>
-</div>
+</div>-->
 
 
-<!--<add-lead *ngIf="add_lead_value==true"></add-lead>-->
-
+<!--<add-lead *ngIf="addLeadValue==true"></add-lead>-->
+<!--
 <div *ngIf="!isSearch">
-    <lead-list *ngIf="add_lead_value==false">
+    <lead-list *ngIf="addLeadValue==false">
         
     </lead-list>
-</div>
+</div>-->
 <!--
 
 <add-button (click)="openModal()" [modalOpen]="modalOpen"></add-button>

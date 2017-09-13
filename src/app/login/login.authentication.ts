@@ -20,7 +20,8 @@ export class LoginAuthentication {
 
     }
 
-    logout() {
-        localStorage.removeItem('currentUser');
-    }
+    // logout() {
+    //     localStorage.removeItem('currentUser');
+    //     this.router.navigate(['/login']);
+    // }
 }

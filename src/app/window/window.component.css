@@ -70,10 +70,8 @@ Window
   min-width: 400px;
   min-height: 400px;
   height: 800px;
-  width: 1140px;
+  width: 960px;
   display: flex;
-  overflow-x: hidden;
-  overflow-y: scroll;
 }
 
 .window-content{

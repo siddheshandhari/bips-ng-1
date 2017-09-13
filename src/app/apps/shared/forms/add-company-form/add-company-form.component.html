@@ -47,12 +47,12 @@
   <hr />
   <add-address-form></add-address-form>
 </div>
-<span class="badge badge-info" *ngIf="!shippingAddressVisible" (click)="showShippingAddress()" >Show Shipping Address</span>
-<span class="badge badge-info" *ngIf="shippingAddressVisible" (click)="hideShippingAddress()" >Hide Shipping Address</span>
+<button class="btn btn-link" *ngIf="!shippingAddressVisible" (click)="showShippingAddress()" >show shipping address</button>
+<button class="btn btn-link" *ngIf="shippingAddressVisible" (click)="hideShippingAddress()" >hide shipping address</button>
 
 <div class="form-section">
   <h6>Contacts</h6>
   <hr />
   <add-contact-form *ngFor="let contact of contacts"></add-contact-form>
-  <span class="badge badge-secondary" (click)="addNewContact()" >Add Contact</span>
+  <button class="btn btn-link" (click)="addNewContact()" >add another contact</button>
 </div>

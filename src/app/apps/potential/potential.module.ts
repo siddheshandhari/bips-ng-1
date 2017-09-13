@@ -20,7 +20,7 @@ import { PotentialService } from './potential.service';
     ReactiveFormsModule ,
     BrowserModule,
     HttpModule,
-    CommonModule
+    CommonModule,
   ],
   exports: [
     PotentialComponent,

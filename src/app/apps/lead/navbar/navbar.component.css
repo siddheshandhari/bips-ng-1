@@ -4,11 +4,11 @@
     right:0px;
     width:100%;
     z-index: 10;
-    
+    display:block;
 }
 
-.nav_container{
-     background-color: #3D3D3F;
+ul{
+    background-color:#272E38;
 }
 
 ul li{
@@ -23,15 +23,6 @@ ul li a {
     border-radius: 3px;
 }
 
-ul .lead-add{
-    margin-left: 360px;
-}
-
 li > a:hover{
     background-color: #0069D9;
-}
-
-ul .lead-add > a:hover{
-   background-color:#218838;
-
 }
