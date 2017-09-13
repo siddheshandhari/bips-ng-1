@@ -2,17 +2,20 @@
 
 <navbar><searchbar></searchbar></navbar>
 
-
+<div>try</div>
     <lead-info></lead-info>
     <lead-list></lead-list>
 
-    <info-details></info-details>
+   
 
 
 
 
 
-
+<add-button (click)="openModal()" [modalOpen]="modalOpen"></add-button>
+<modal (requestCloseModal)="closeModal()" *ngIf="modalOpen" >
+  <add-lead (requestCloseModal)="closeModal()"></add-lead>
+</modal>
 
 
 
