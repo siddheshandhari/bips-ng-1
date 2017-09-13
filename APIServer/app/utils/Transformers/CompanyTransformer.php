@@ -2,6 +2,7 @@
 
 use App\utils\Transformers\AddressTransformer;
 use App\utils\Transformers\ContactTransformer;
+use App\Company;
 
 class CompanyTransformer extends Transformer {
 

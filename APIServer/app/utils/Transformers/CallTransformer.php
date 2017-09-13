@@ -20,7 +20,6 @@ class CallTransformer extends Transformer {
       'billable' => $call['billable'],
       'call_result' => $call['call_result']
     ];
-
   }
 
 }
