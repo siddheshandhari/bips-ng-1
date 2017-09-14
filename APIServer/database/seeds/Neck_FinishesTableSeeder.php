@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class Nech_FinishesTableSeeder extends Seeder
+class Neck_FinishesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
