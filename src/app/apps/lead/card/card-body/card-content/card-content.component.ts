@@ -12,6 +12,7 @@ import { Lead } from "../../../lead";
 
 export class CardContentComponent implements OnInit{
     @Input() lead = [];
+    @Input() selectedLead= []
 
     constructor(){}
     ngOnInit(){}

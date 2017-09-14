@@ -3,7 +3,7 @@
     margin-top:19px;
     line-height: 1; 
     height: 90px;
-    width: 567px;
+    width: 55%;
     margin-left:1%;
     display:block;
     z-index:2;
@@ -16,8 +16,8 @@ ul {
 ul li {
     float: left;
     content:justify;
-    width: 20%;
-    margin-right:37px;
+    width: 23%;
+    margin-right:2.65%;
 }
 
 ul li:nth-child(4){
