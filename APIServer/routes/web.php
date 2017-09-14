@@ -61,6 +61,12 @@ Route::group(['prefix' => 'api/v1'], function()
 
     //Price Collections Routes
     Route::get('price', 'PriceController@index');
+
+    //Color Collections Routes
+    Route::get('color', 'ColorController@index');
+
+    //Product_catagories Collections Routes
+    Route::get('product_catagory', 'product_catagoryController@index');
 });
 
 
