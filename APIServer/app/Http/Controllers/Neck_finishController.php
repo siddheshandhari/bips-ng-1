@@ -3,17 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Neck_finish;
+use App\utils\Transformers\Neck_finishTransformer;
 
-class Neck_finishController extends Controller
+class Neck_finishController extends ApiController
 {
+    protected $neck_finishTransformer;
+    function __construct(Neck_finishTransformer $neck_finishTransformer){
+        $this->neck_finishTransformer = $neck_finishTransformer;
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
-        //
+        $neck_finishes = neck_finish::all();
+        return $this->respond(
+            $this->neck_finishTransformer->transformCollection($neck_finishes)
+        );
     }
 
     /**

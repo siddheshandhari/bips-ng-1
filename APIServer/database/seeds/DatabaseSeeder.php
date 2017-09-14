@@ -59,8 +59,8 @@ class DatabaseSeeder extends Seeder
       $this->call(PricesTableSeeder::class);
       $this->call(ColorsTableSeeder::class);
       $this->call(CapacitiesTableSeeder::class);
-      $this->call(Nech_FinishesTableSeeder::class);
-      $this->call(ProductCatagoriesTableSeeder::class);
+      $this->call(Neck_FinishesTableSeeder::class);
+      $this->call(Product_CatagoriesTableSeeder::class);
     }
 
     private function cleanDatabase()
