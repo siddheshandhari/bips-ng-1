@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 
 class LeadController extends ApiController
 {
-
     protected $leadTransformer;
     protected $companyBuilder;
     function __construct(LeadTransformer $leadTransformer, CompanyBuilder $companyBuilder)
