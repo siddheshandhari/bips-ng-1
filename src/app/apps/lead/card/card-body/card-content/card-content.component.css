@@ -335,7 +335,7 @@ a{
    transform: translate3d(-35.86291px, 22.62064px, 0);
 }
 
-.menu-open:checked ~ .menu-item:nth-child(8) {
+.menu-open:checked~ .menu-item:nth-child(8) {
    transition-duration: 680ms;
    -webkit-transition-duration: 680ms;
    -webkit-transform: translate3d(-91.03006px, -52.33095px, 0);
@@ -349,7 +349,7 @@ a{
    transform: translate3d(-0.25084px, -104.9997px, 0);
 }
 
-.blue {
+.selected.blue {
    background-color: #669AE1;
   
 }

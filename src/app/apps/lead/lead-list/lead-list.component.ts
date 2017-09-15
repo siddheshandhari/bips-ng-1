@@ -13,7 +13,7 @@ export class LeadListComponent implements OnInit{
     // @Output() editRequest = new EventEmitter<Lead>();
     @Output() selectedLead : Lead;
     // isEditing : Boolean = false;
-
+    @Output() contacts :any[] =[];
     leadlist : Lead[] = [];
     // selectedLead : Lead;
     // editlead= false;
@@ -38,8 +38,10 @@ export class LeadListComponent implements OnInit{
 
     selectedCard(lead: Lead):void{
         this.selectedLead = lead;
+        this.contacts = lead.company.contacts;
+        
         console.log("selected-----")
-        console.log( this.selectedLead);
+        console.log( this.contacts);
         console.log("----")
        
     }

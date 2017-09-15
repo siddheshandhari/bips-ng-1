@@ -1,0 +1,17 @@
+
+<div class="note-header">
+        <label>Subject: Call him</label>
+        <span >
+            <a class="note-edit" (click)="onEdit(lead)"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+            <a classs="note-delete" (click)="onDelete(lead)"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+        </span>
+</div>
+
+<div class="note-body">
+    <label>Note:</label>
+</div>
+
+<div class="expand-handler">
+  <i class="fa fa-angle-up" *ngIf="isOpen"  (click)="closeHeader()"></i>
+  <i class="fa fa-angle-down" *ngIf="!isOpen" (click)="openHeader()"></i>
+</div>

@@ -6,6 +6,7 @@
     
 </div>
 <div class="company-name">
+
     <span class="default-name"><b>{{lead.company.name}}</b></span>
 </div>
 
@@ -21,10 +22,11 @@
     </span>
 </div>
 
-<div  class="lead-owner">
-    <!--<img [src]="'assets/imgs/user.png'"><br>-->
-     <span class="menu">
+<div  class="lead-owner" [class.selected]="lead === selectedLead">
+    <img [src]="'assets/imgs/user.png'"><br>
+     <!--<span class="menu">
         <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+        
         <label class="menu-open-button" for="menu-open">
             <img [src]="'assets/imgs/user.png'"><br>
 
@@ -36,7 +38,7 @@
         <a  class="menu-item purple"> <i class="fa fa-microphone"></i> </a>
         <a  class="menu-item orange"> <i class="fa fa-star"></i> </a>
         <a  class="menu-item lightblue"> <i class="fa fa-diamond"></i> </a>
-    </span>
+    </span>-->
   
     <span *ngIf = "!ownerUrl" class="default-owner">Sam</span>
 </div>

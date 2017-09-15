@@ -14,7 +14,7 @@
 Route::group(['prefix' => 'api/v1'], function()
 {
 
-  Route::get('search', 'SearchController@search');
+  Route::get('search/{category}', 'SearchController@search');
 
   //AuthToken
   Route::post('authtoken', 'AuthTokenController@add');
@@ -68,10 +68,14 @@ Route::group(['prefix' => 'api/v1'], function()
     //Product_catagories Collections Routes
     Route::get('product_catagory', 'product_catagoryController@index');
 
+<<<<<<< HEAD
     //Capacities Collections Routes
     Route::get('capacity', 'CapacityController@index');
 
     //Nech_finishes Collections Routes
+=======
+    //Neck_finishes Collections Routes
+>>>>>>> 0a413045946233913e078387c2626531b68e4114
     Route::get('neck_finish', 'Neck_finishController@index');
 });
 

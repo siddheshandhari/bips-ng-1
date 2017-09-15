@@ -1,0 +1,59 @@
+:host{
+    margin-left:2%;
+    border:1px solid gray;
+    display:block;
+    height: 45px;
+    width:96%;
+    background-color:white;
+    color:gray;
+    border-radius: 4px;
+    position:relative;
+    transition: height 0.5s;
+
+}
+:host.note-open{
+  height: 100px;
+}
+
+.note-header{
+    width:100%;
+    height:21px;
+}
+label{
+    font-size:14px;
+}
+
+span{
+    float:right;
+}
+
+.fa-pencil{
+    text-align: center;
+    padding-top:1px;
+    color:green;
+    width:22px;
+    height:18px;
+}
+
+.fa-trash-o{
+     text-align: center;
+    padding-top:1px;
+    color:red;
+    width:22px;
+    height:18px;
+}
+
+.expand-handler{
+  position: absolute;
+  display: inline;
+  line-height: 0;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+
+.fa-angle-down,.fa-angle-up{
+  cursor: pointer;
+}
+

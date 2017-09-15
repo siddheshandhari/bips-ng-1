@@ -21,6 +21,7 @@ import { CardComponent } from './card/card.component';
 import { CardBodyComponent } from './card/card-body/card-body.component';
 import { CardContentComponent } from './card/card-body/card-content/card-content.component';
 import { InfoDetailsComponent } from './info-details/info-details.component';
+import { NoteComponent } from './info-details/note/note.component';
 
 import { LeadInfoComponent } from './lead-info/lead-info.component';
 import { LeadListComponent } from './lead-list/lead-list.component';
@@ -40,7 +41,8 @@ import { AddButtonModule } from '../shared/add-button/add-button.module';
    CardComponent,
    CardBodyComponent,
    CardContentComponent,
-   InfoDetailsComponent 
+   InfoDetailsComponent,
+   NoteComponent
 
   ],
   imports: [
