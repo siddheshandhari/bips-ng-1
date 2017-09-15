@@ -22,8 +22,8 @@
     </span>
 </div>
 
-<div  class="lead-owner" [class.selected]="lead === selectedLead">
-    <img [src]="'assets/imgs/user.png'"><br>
+<div  class="lead-owner" >
+    <img [src]="'assets/imgs/head1.ico'" (click)="openCall()" ><br>
      <!--<span class="menu">
         <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
         
@@ -44,7 +44,7 @@
 </div>
 
 <div class="lead-owner">
-    <img [src]="'assets/imgs/user.png'"><br>
+    <img [src]="'assets/imgs/head2.ico'"><br>
     <span *ngIf = "!ownerUrl" class="default-owner">Tom</span>
 </div>
 

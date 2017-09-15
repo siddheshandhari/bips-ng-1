@@ -39,9 +39,9 @@ export class LeadListComponent implements OnInit{
     selectedCard(lead: Lead):void{
         this.selectedLead = lead;
         this.contacts = lead.company.contacts;
-        
+
         console.log("selected-----")
-        console.log( this.contacts);
+        console.log( this.selectedLead);
         console.log("----")
        
     }
