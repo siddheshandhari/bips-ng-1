@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Neck_finish;
 
-class Neck_finishController extends Controller
+class Neck_finishController extends ApiController
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,10 @@ class Neck_finishController extends Controller
      */
     public function index()
     {
-        //
+        $neck_finishes = Neck_finish::all();
+        return $this->respond(
+            $neck_finishes
+        );
     }
 
     /**

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Capacity;
+// use app\utils\Transformers\CapacityTransformer;
 
-class CapacityController extends Controller
+class CapacityController extends ApiController
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,10 @@ class CapacityController extends Controller
      */
     public function index()
     {
-        //
+        $capacities = capacity::all();
+        return $this->respond(
+            $capacities
+        );
     }
 
     /**

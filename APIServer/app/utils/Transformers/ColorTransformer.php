@@ -1,17 +1,16 @@
 <?php 
 namespace App\utils\Transformers;
-use App\utils\Transformers\PriceTransformer;
-use App\Price;
+use App\utils\Transformers\ColorTransformer;
+use App\Color;
 
 
-class PriceTransformer extends Transformer {
+class ColorTransformer extends Transformer {
 
-  public function transform($price)
+  public function transform($color)
   {
     return [
-      'id' => $price['id'],
-      'color' => $price['color'],
-      'price' => $price['price']
+      'id' => $color['id'],
+      'color' => $color['color']
     ];
   }
 

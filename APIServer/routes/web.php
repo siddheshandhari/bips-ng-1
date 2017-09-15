@@ -67,6 +67,12 @@ Route::group(['prefix' => 'api/v1'], function()
 
     //Product_catagories Collections Routes
     Route::get('product_catagory', 'product_catagoryController@index');
+
+    //Capacities Collections Routes
+    Route::get('capacity', 'CapacityController@index');
+
+    //Nech_finishes Collections Routes
+    Route::get('neck_finish', 'Neck_finishController@index');
 });
 
 
