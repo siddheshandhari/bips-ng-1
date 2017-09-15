@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,HostBinding } from '@angular/core';
 
 @Component ({
     selector: 'note',
@@ -8,4 +8,13 @@ import { Component } from '@angular/core';
 
 export class NoteComponent {
     constructor(){}
+      @HostBinding('class.note-open') isOpen: boolean = false;
+
+     openHeader(){
+    this.isOpen = true;
+  }
+
+  closeHeader(){
+    this.isOpen = false;
+  }
 }

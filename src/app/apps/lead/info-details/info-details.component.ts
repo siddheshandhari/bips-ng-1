@@ -1,6 +1,7 @@
 import { Component,ElementRef, Input,Output, OnInit, EventEmitter,NgModule } from '@angular/core';
 import { LeadService } from '../lead.service';
 import { Lead } from '../lead';
+import { Contact } from '../../../models/Contact';
 
 @Component({
     selector: 'info-details',
@@ -13,6 +14,7 @@ export class InfoDetailsComponent{
      @Output() deleteEvent = new EventEmitter<Lead>();
      isEditing: Boolean = false;
      leadlist : Lead[]= [];
+     @Input() contacts: Contact[] =[]
 
     constructor(private el: ElementRef, private leadService: LeadService){}
 
@@ -28,12 +30,18 @@ export class InfoDetailsComponent{
     //      })
 
     // }
+    // orgnize(){
+    //     console.log("1111");
+    //     this.contacts  = this.lead.company.contacts;
+    //     console.log(this.contacts);
+    // }
 
 
 
     detailClick(lead:Lead){
         console.log(lead);
         console.log('ss');
+        console.log(this.contacts)
     }
 
     onDelete(lead){
