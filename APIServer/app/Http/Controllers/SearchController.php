@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Company;
 use App\Lead;
+use App\Company;
 
 use App\utils\Transformers\CompanyTransformer;
+use App\utils\Transformers\LeadTransformer;
 use Illuminate\Http\Request;
 
 class SearchController extends ApiController
@@ -16,13 +17,15 @@ class SearchController extends ApiController
   private $company_filters = ["name", "website", "industry"];
   private $contact_filters = ["first_name", "last_name", "email", "title", "position", "phone", "department", "home_phone", "other_phone", "fax", "mobile", "birthday", "assistant", "asst_phone", "reports_to", "skype", "customer_type", "twitter"];
   private $lead_filters = ["source", "status", "active"];
-  private $address_filters = ["country", ""];
+  private $address_filters = ["country", "state", "city", "street", "zipcode"];
 
   protected $companyTransformer;
+  protected $leadTransformer;
 
-  function __construct(CompanyTransformer $companyTransformer)
+  function __construct(CompanyTransformer $companyTransformer, LeadTransformer $leadTransformer)
   {
     $this->companyTransformer = $companyTransformer;
+    $this->leadTransformer = $leadTransformer;
   }
   // http:// localhost/api/v1/search/{category}?f=&q=
   //q is required.
@@ -80,18 +83,71 @@ class SearchController extends ApiController
     };
 
     if($this->with == "contact"){
-      return Company::with(['contacts' => function($q){
+      if(!in_array($this->filter, $this->contact_filters)){
+        return $this->setStatusCode(400)->respondWithError("Company search with contact does not support this filter: ". $this->filter);
+      };
+      $companies = Company::whereHas('contacts', function($q){
         $q->where($this->filter, 'like', '%'.$this->query.'%');
-      }])->get();
-    } else if($with == "address"){
-
-    } else {
-      return $this->setStatusCode(400)->respondWithError("Does not support search company with ".$this->with);
+      })->get();
+      return $this->setStatusCode(200)->respond(
+        $this->companyTransformer->transformCollection($companies)
+      );
     }
-
+    else if($this->with == "billing_address"){
+      if(!in_array($this->filter, $this->address_filters)){
+        return $this->setStatusCode(400)->respondWithError("Company search with address does not support this filter: ". $this->filter);
+      };
+      $companies = Company::whereHas('billingAddress', function($q){
+        $q->where($this->filter, 'like', '%'.$this->query.'%');
+      })->get();
+      return $this->setStatusCode(200)->respond(
+        $this->companyTransformer->transformCollection($companies)
+      );
+    }
+    else if($this->with == "shipping_address"){
+      if(!in_array($this->filter, $this->address_filters)){
+        return $this->setStatusCode(400)->respondWithError("Company search with address does not support this filter: ". $this->filter);
+      };
+      $companies = Company::whereHas('shippingAddress', function($q){
+        $q->where($this->filter, 'like', '%'.$this->query.'%');
+      })->get();
+      return $this->setStatusCode(200)->respond(
+        $this->companyTransformer->transformCollection($companies)
+      );
+    }
+    else {
+      return $this->setStatusCode(400)->respondWithError("Does not support search company with ".$this->with." or wrong filter name");
+    }
   }
 
-  private function searchLead($filter, $query){
+  private function searchLead(){
+    //if filter not set, search company name as default
+    if(!$this->filter){
+      $this->with = "company";
+      $this->filter = "name";
+    };
+
+    if(!$this->with){
+      //if filter does not available, throw the error
+      if(!in_array($this->filter, $this->lead_filters)){
+        return $this->setStatusCode(400)->respondWithError("Lead search does not support this filter: ".$this->filter);
+      };
+      $leads = Lead::where($this->filter, 'like', '%'.$this->query.'%')->get();
+      return $this->setStatusCode(200)->respond(
+        $this->leadTransformer->transformCollection($leads)
+      );
+    }
+    else if($this->with == "company"){
+      if(!in_array($this->filter, $this->company_filters)){
+        return $this->setStatusCode(400)->respondWithError("Lead search with company does not support this filter: ". $this->filter);
+      };
+      $leads = Lead::whereHas('company', function($q){
+        $q->where($this->filter, 'like', '%'.$this->query.'%');
+      })->get();
+      return $this->setStatusCode(200)->respond(
+        $this->leadTransformer->transformCollection($leads)
+      );
+    }
 
   }
 
