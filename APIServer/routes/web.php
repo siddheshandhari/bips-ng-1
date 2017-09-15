@@ -14,7 +14,7 @@
 Route::group(['prefix' => 'api/v1'], function()
 {
 
-  Route::get('search', 'SearchController@search');
+  Route::get('search/{category}', 'SearchController@search');
 
   //AuthToken
   Route::post('authtoken', 'AuthTokenController@add');
