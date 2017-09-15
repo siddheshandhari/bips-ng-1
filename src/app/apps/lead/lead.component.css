@@ -2,7 +2,6 @@
   display: block;
   width: 100%;
   height: 100%;
-  overflow-y:scroll;
 }
 
 
@@ -83,4 +82,8 @@ ul li a {
 
 select{
   width:60px;
+}
+
+lead-list{
+  margin-top:100px;
 }

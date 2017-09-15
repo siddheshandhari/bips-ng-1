@@ -14,11 +14,20 @@
     
     </card-header>
 </card>-->
+    <div class="listtitle" >
+        <span class="company-name">Company Name</span><span class="industry">Industry</span><span class="possibility">Possibility</span><span class="owner">Owner</span><span class="contact">Contact</span><span class="usage">Usage</span>
+    </div>
 
-    <card  *ngFor="let lead of leadlist">
-        <card-body (click)="selectedCard(lead)" >
-            <card-content [lead]= "lead"></card-content>
-        </card-body>
-    </card>
+    <div class="card-list">
+        
+            <card  *ngFor="let lead of leadlist" [class.selected]="lead === selectedLead" (click)="selectedCard(lead)">
+                <card-body >
+                    <card-content [lead]= "lead" ></card-content>
+                </card-body>
+            </card>
+       
+    </div>
 
- <info-details [lead]="selectedLead" (deleteEvent)="deleteLead($event)"></info-details>
+ <info-details [lead]="selectedLead" (deleteEvent)="deleteLead($event)">
+    <note></note>
+ </info-details>

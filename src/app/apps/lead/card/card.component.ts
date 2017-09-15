@@ -9,17 +9,7 @@ import { Lead } from '../lead';
 })
 
 export class CardComponent {
-    leadlist : Lead[] = [];
-
-    constructor( private leadService: LeadService){}
-    ngOnInit(){}
-
-    getLeadlist():void{
-      this.leadService.getLeadlist()
-      .subscribe(res => {
-        this.leadlist = res;
-      })
-    }
+   
     
 }
 

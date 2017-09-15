@@ -1,6 +1,7 @@
 
 <div class="company-logo">
     <img [src]="'assets/imgs/company.png'">
+    
     <!--<span *ngIf="!logoUrl" class="default-logo"></span>-->
     
 </div>
@@ -14,10 +15,31 @@
 </div>
 
 <div class="possibility">
-    <span class="prossibility-value">60%</span><br>
+    <span class="prossibility-value">{{lead.possibility | percent}}</span><br>
     <span class="progress">
-        <span class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 60%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></span>
+        <span class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width:65%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></span>
     </span>
+</div>
+
+<div  class="lead-owner" [class.selected]="lead === selectedLead">
+    <!--<img [src]="'assets/imgs/user.png'"><br>-->
+     <span class="menu">
+        <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+        
+        <label class="menu-open-button" for="menu-open">
+            <img [src]="'assets/imgs/user.png'"><br>
+
+        </label>
+
+        <a  class="menu-item blue"> <i class="fa fa-anchor"></i> </a>
+        <a  class="menu-item green"> <i class="fa fa-coffee"></i> </a>
+        <a  class="menu-item red"> <i class="fa fa-heart"></i> </a>
+        <a  class="menu-item purple"> <i class="fa fa-microphone"></i> </a>
+        <a  class="menu-item orange"> <i class="fa fa-star"></i> </a>
+        <a  class="menu-item lightblue"> <i class="fa fa-diamond"></i> </a>
+    </span>
+  
+    <span *ngIf = "!ownerUrl" class="default-owner">Sam</span>
 </div>
 
 <div class="lead-owner">
@@ -26,17 +48,8 @@
 </div>
 
 <div class="lead-balance"> 
-   <span class="due-pay"> <i class="fa fa-usd" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;500,000</span><br>
-   <span class="due-pay"> <i class="fa fa-usd" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;5,000,000</span><br>
-   <span class="due-pay"> <i class="fa fa-usd" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;500,000</span>
+   <span class="lead-usage">50,000,000</span><br>
 
-</div>
-
-<div class="lead-function">
-    <i class="fa fa-comment" aria-hidden="true"></i>
-    <i class="fa fa-phone-square" aria-hidden="true"></i><br>
-    <i class="fa fa-book" aria-hidden="true"></i>
-    <i class="fa fa-envelope" aria-hidden="true"></i>
 
 </div>
 

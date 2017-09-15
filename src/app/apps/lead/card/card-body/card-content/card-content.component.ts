@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input,  } from '@angular/core';
+import { DecimalPipe } from '@angular/common';
 import { Lead } from "../../../lead";
 
 
@@ -11,6 +12,7 @@ import { Lead } from "../../../lead";
 
 export class CardContentComponent implements OnInit{
     @Input() lead = [];
+    @Input() selectedLead= []
 
     constructor(){}
     ngOnInit(){}
