@@ -6,8 +6,7 @@ import { IconModule } from '../icon/icon.module';
 
 //Component
 import { SidebarComponent } from './sidebar.component';
-import { SidebarListComponent } from './sidebar-list/sidebar-list.component';
-import { SidebarItemComponent } from './sidebar-list/sidebar-item/sidebar-item.component';
+import { ToolsComponent } from './tools/tools.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
 import { SnackbarItemComponent } from './snackbar/snackbar-item/snackbar-item.component';
 import { UserComponent } from './user/user.component';
@@ -20,8 +19,7 @@ import { UserComponent } from './user/user.component';
   declarations: [
     SidebarComponent,
     SnackbarComponent,
-    SidebarListComponent,
-    SidebarItemComponent,
+    ToolsComponent,
     SnackbarItemComponent,
     UserComponent
   ],

@@ -3,6 +3,6 @@
   <span id="close-sidebar" class="sidebar-toggle" (click)= "sidebarClose()"> <i class="fa fa-arrow-left"></i> </span>
   <span id ="open-sidebar" class="sidebar-toggle" (click)="sidebarOpen()"> <i class="fa fa-arrow-right"></i> </span>
   <user *ngIf="isSidebarOpen"></user>
-  <sidebar-list [apps]="apps"></sidebar-list>
+  <tools [apps]="apps"></tools>
   <snackbar *ngIf="isSidebarOpen" ></snackbar>
 </div>
