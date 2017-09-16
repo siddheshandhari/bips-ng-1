@@ -1,4 +1,4 @@
-const preInstalledApps = [22, 9, 11, 12, 1, 15,17];
+const preInstalledApps = [22, 9, 11, 12, 1, 15, 17, 14];
 
 export const ADD_INSTALLED_APPS = 'ADD_INSTALLED_APPS';
 export const REMOVE_INSTALLED_APPS = 'REMOVE_INSTALLED_APPS';
