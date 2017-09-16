@@ -17,4 +17,8 @@ export class CardContentComponent implements OnInit{
     constructor(){}
     ngOnInit(){}
 
+    openCall(){
+        
+    }
+
 }

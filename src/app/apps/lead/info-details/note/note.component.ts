@@ -7,10 +7,10 @@ import { Component,HostBinding } from '@angular/core';
 })
 
 export class NoteComponent {
-    constructor(){}
-      @HostBinding('class.note-open') isOpen: boolean = false;
+  constructor(){}
+  @HostBinding('class.note-open') isOpen: boolean = false;
 
-     openHeader(){
+  openHeader(){
     this.isOpen = true;
   }
 
