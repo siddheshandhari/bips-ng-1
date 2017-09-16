@@ -15,7 +15,6 @@ export class AppsService {
   hideApps: Array<number>;
 
   appsDict = [
-
     { id: 1, name: 'account', path: './account', iconUrl: '../../assets/imgs/app-icons/account.png' },
     { id: 2, name: 'business', path: './business', iconUrl: '../../assets/imgs/app-icons/business.png' },
     { id: 3, name: 'contacts', path: './contacts', iconUrl: '../../assets/imgs/app-icons/contacts.png' },
@@ -41,6 +40,7 @@ export class AppsService {
     { id: 23, name: 'security', path: './security', iconUrl: '../../assets/imgs/app-icons/security.png' },
     { id: 24, name: 'tasks', path: './tasks', iconUrl: '../../assets/imgs/app-icons/tasks.png' },
     { id: 25, name: 'trucking', path: './trucking', iconUrl: '../../assets/imgs/app-icons/trucking.png' },
+
 
   ]
 

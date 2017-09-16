@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 //customized module
 import { SidebarModule } from '../sidebar/sidebar.module';
+import { StatusbarModule } from '../statusbar/statusbar.module';
 import { MenubarModule } from '../menubar/menubar.module';
 import { CrmModule } from '../apps/crm/crm.module';
 import { LeadModule } from '../apps/lead/lead.module';
@@ -12,7 +13,7 @@ import { InventoryModule } from '../apps/inventory/inventory.module';
 import { WindowModule } from '../window/window.module';
 import { PotentialModule } from '../apps/potential/potential.module';
 import { ShowcaseModule } from '../apps/showcase/showcase.module';
-import { StatusbarModule } from '../statusbar/statusbar.module';
+import { NotesModule } from '../apps/notes/notes.module';
 
 import { DesktopComponent } from './desktop.component';
 
@@ -22,6 +23,7 @@ import { DesktopComponent } from './desktop.component';
   ],
   imports: [
     CommonModule,
+    StatusbarModule,
     SidebarModule,
     MenubarModule,
     CrmModule,
@@ -32,7 +34,7 @@ import { DesktopComponent } from './desktop.component';
     WindowModule,
     PotentialModule,
     ShowcaseModule,
-    StatusbarModule
+    NotesModule
   ],
 })
 export class DesktopModule { }
