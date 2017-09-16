@@ -1,5 +1,11 @@
-<span id="close-sidebar" class="sidebar-toggle" (click)= "sidebarClose()"> < </span>
-<span id ="open-sidebar" class="sidebar-toggle" (click)="sidebarOpen()"> > </span>
-<currentuserinfo *ngIf="isSidebarOpen"></currentuserinfo>
-<sidebar-list [apps]="apps"></sidebar-list>
-<snackbar *ngIf="isSidebarOpen" ></snackbar>
+<div class="statusbar-placeholder"></div>
+<div class="sidebar-body">
+  <span id="close-sidebar" class="sidebar-toggle" (click)= "sidebarClose()"> <i class="fa fa-arrow-left"></i> </span>
+  <span id ="open-sidebar" class="sidebar-toggle" (click)="sidebarOpen()"> <i class="fa fa-arrow-right"></i> </span>
+  <user *ngIf="isSidebarOpen"></user>
+  <tools [apps]="apps"></tools>
+  <dashboard *ngIf="isSidebarOpen"></dashboard>
+  <alert *ngIf="isSidebarOpen"></alert>
+  <news *ngIf="isSidebarOpen"></news>
+  <snackbar *ngIf="isSidebarOpen" ></snackbar>
+</div>

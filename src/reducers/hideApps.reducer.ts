@@ -1,7 +1,7 @@
 export const ADD_HIDE_APPS = 'ADD_HIDE_APPS';
 export const REMOVE_HIDE_APPS = 'REMOVE_HIDE_APPS';
 
-export function hideAppsReducer(state = [], action){
+export function HideAppsReducer(state = [], action){
   switch (action.type) {
     default:
       return state;

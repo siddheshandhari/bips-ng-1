@@ -6,11 +6,14 @@ import { IconModule } from '../icon/icon.module';
 
 //Component
 import { SidebarComponent } from './sidebar.component';
-import { SidebarListComponent } from './sidebar-list/sidebar-list.component';
-import { SidebarItemComponent } from './sidebar-list/sidebar-item/sidebar-item.component';
+import { ToolsComponent } from './tools/tools.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AlertComponent } from './alert/alert.component';
+import { NewsComponent } from './news/news.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
 import { SnackbarItemComponent } from './snackbar/snackbar-item/snackbar-item.component';
-import { CurrentUserInfo } from './sidebar-list/current-user/current-user.component';
+import { UserComponent } from './user/user.component';
+import { SectionHeaderComponent } from './section-header/section-header.component';
 
 @NgModule({
   imports: [
@@ -20,10 +23,13 @@ import { CurrentUserInfo } from './sidebar-list/current-user/current-user.compon
   declarations: [
     SidebarComponent,
     SnackbarComponent,
-    SidebarListComponent,
-    SidebarItemComponent,
+    ToolsComponent,
     SnackbarItemComponent,
-    CurrentUserInfo
+    UserComponent,
+    SectionHeaderComponent,
+    DashboardComponent,
+    AlertComponent,
+    NewsComponent
   ],
   exports: [
     SidebarComponent

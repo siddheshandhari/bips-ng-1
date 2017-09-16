@@ -12,18 +12,13 @@ import { InventoryModule } from '../apps/inventory/inventory.module';
 import { WindowModule } from '../window/window.module';
 import { PotentialModule } from '../apps/potential/potential.module';
 import { ShowcaseModule } from '../apps/showcase/showcase.module';
+import { StatusbarModule } from '../statusbar/statusbar.module';
 
 import { DesktopComponent } from './desktop.component';
-import { MenubarComponent } from '../menubar/menubar.component';
-import { SidebarComponent } from '../sidebar/sidebar.component';
-
-//Directive
-import { ToggleFullScreenDirective } from './toggleFullScreen.directive';
 
 @NgModule({
   declarations: [
     DesktopComponent,
-    ToggleFullScreenDirective,
   ],
   imports: [
     CommonModule,
@@ -37,6 +32,7 @@ import { ToggleFullScreenDirective } from './toggleFullScreen.directive';
     WindowModule,
     PotentialModule,
     ShowcaseModule,
+    StatusbarModule
   ],
 })
 export class DesktopModule { }

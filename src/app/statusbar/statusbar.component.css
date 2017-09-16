@@ -1,0 +1,57 @@
+:host{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 100%;
+  background-color: rgba(37, 37, 37, 0.8);
+  padding: 0 20px;
+}
+
+.left-section{
+  display: flex;
+  align-items: center;
+}
+
+.company-logo{
+  padding-right: 20px;
+}
+
+.company-name{
+  color: #FFFFFF;
+}
+
+.right-section{
+  display: flex;
+  align-items: center;
+}
+
+.fa-search{
+  padding: 0 10px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.fullscreen-btn svg{
+  fill: #FFFFFF;
+  cursor: pointer;
+}
+
+#fullscreen-enter{
+  display: block;
+}
+
+#fullscreen-exit{
+  display: none;
+}
+
+.fullscreen-btn.isFullScreen #fullscreen-enter{
+  display: none;
+}
+
+.fullscreen-btn.isFullScreen #fullscreen-exit{
+  display: block;
+}
