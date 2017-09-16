@@ -11,6 +11,24 @@
   padding: 0 20px;
 }
 
+.left-section{
+  display: flex;
+  align-items: center;
+}
+
+.company-info{
+  display: flex;
+  align-items: center;
+}
+
+.company-logo{
+  padding-right: 20px;
+}
+
+.company-name{
+  color: #FFFFFF;
+}
+
 .right-section{
   display: flex;
   align-items: center;
