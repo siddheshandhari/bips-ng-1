@@ -1,0 +1,10 @@
+.alert{
+  color: #FFFFFF;
+  border: none;
+  background-color: rgba(219, 147, 147, 0.5);
+}
+
+.close{
+  color: #5C3838;
+  text-shadow: none;
+}
