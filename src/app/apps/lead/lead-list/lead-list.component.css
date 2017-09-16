@@ -43,7 +43,7 @@ card:hover{
   height:32px;
   position: absolute;
   background-color:#ffffff;
-  top:126px;
+  top:117px;
   width: 55.5%;
   border-radius: 2px;
   margin-left:0.5%;
@@ -60,7 +60,7 @@ card:hover{
   height:848px;
   overflow:scroll;
   overflow-x:hidden;
-  margin-top: 141px;
+  margin-top: 153px;
  
 
 }

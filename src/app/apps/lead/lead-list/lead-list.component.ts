@@ -12,13 +12,16 @@ import { Lead } from '../lead';
 export class LeadListComponent implements OnInit{
     // @Output() editRequest = new EventEmitter<Lead>();
     @Output() selectedLead : Lead;
+   
+    @Input() searchlist:Lead[]= [];
+    @Input() isSearching:Boolean;
     // isEditing : Boolean = false;
     @Output() contacts :any[] =[];
     leadlist : Lead[] = [];
     // selectedLead : Lead;
     // editlead= false;
 
-//      private editMode: boolean = false;
+//   private editMode: boolean = false;
 //   private actionPanelIsOpen: boolean = false;
 
     constructor(public leadService:LeadService,private el: ElementRef){};
