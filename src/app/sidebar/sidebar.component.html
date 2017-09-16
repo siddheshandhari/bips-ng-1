@@ -4,5 +4,8 @@
   <span id ="open-sidebar" class="sidebar-toggle" (click)="sidebarOpen()"> <i class="fa fa-arrow-right"></i> </span>
   <user *ngIf="isSidebarOpen"></user>
   <tools [apps]="apps"></tools>
+  <dashboard *ngIf="isSidebarOpen"></dashboard>
+  <alert *ngIf="isSidebarOpen"></alert>
+  <news *ngIf="isSidebarOpen"></news>
   <snackbar *ngIf="isSidebarOpen" ></snackbar>
 </div>
