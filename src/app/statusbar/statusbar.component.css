@@ -16,11 +16,6 @@
   align-items: center;
 }
 
-.company-info{
-  display: flex;
-  align-items: center;
-}
-
 .company-logo{
   padding-right: 20px;
 }

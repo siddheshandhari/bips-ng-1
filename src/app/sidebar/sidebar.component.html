@@ -1,8 +1,8 @@
 <div class="statusbar-placeholder"></div>
 <div class="sidebar-body">
-  <span id="close-sidebar" class="sidebar-toggle" (click)= "sidebarClose()"> < </span>
-  <span id ="open-sidebar" class="sidebar-toggle" (click)="sidebarOpen()"> > </span>
-  <currentuserinfo *ngIf="isSidebarOpen"></currentuserinfo>
+  <span id="close-sidebar" class="sidebar-toggle" (click)= "sidebarClose()"> <i class="fa fa-arrow-left"></i> </span>
+  <span id ="open-sidebar" class="sidebar-toggle" (click)="sidebarOpen()"> <i class="fa fa-arrow-right"></i> </span>
+  <user *ngIf="isSidebarOpen"></user>
   <sidebar-list [apps]="apps"></sidebar-list>
   <snackbar *ngIf="isSidebarOpen" ></snackbar>
 </div>

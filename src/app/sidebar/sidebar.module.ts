@@ -10,7 +10,7 @@ import { SidebarListComponent } from './sidebar-list/sidebar-list.component';
 import { SidebarItemComponent } from './sidebar-list/sidebar-item/sidebar-item.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
 import { SnackbarItemComponent } from './snackbar/snackbar-item/snackbar-item.component';
-import { CurrentUserInfo } from './sidebar-list/current-user/current-user.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   imports: [
@@ -23,7 +23,7 @@ import { CurrentUserInfo } from './sidebar-list/current-user/current-user.compon
     SidebarListComponent,
     SidebarItemComponent,
     SnackbarItemComponent,
-    CurrentUserInfo
+    UserComponent
   ],
   exports: [
     SidebarComponent

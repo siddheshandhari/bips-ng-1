@@ -4,11 +4,19 @@ import { Observable } from 'rxjs/Rx'
 @Component({
   selector: 'clock',
   template: `
-    {{date | async | date:'short'}}
+    {{time | async | date:'short'}}
   `,
   styleUrls: ['clock.component.css']
 })
 
-export class ClockComponent {
-  date = Observable.interval(1000).map(() => new Date());
+export class ClockComponent implements OnInit, OnDestroy {
+  ngOnInit(): void{
+
+  };
+
+  ngOnDestroy(): void{
+
+  };
+
+  time = Observable.interval(1000).map(() => new Date());
 };
