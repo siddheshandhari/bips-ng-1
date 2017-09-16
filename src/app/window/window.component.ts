@@ -8,8 +8,9 @@ import { ADD_HIDE_APPS } from '../../reducers/hideApps.reducer';
 //Service
 import { AppsService } from '../apps/apps.service';
 
-interface TopWindowState {
-  topWindow: object;
+interface StoreState {
+  sidebar: object
+  topWindow: object
 }
 
 @Component({
@@ -27,6 +28,7 @@ interface TopWindowState {
 export class WindowComponent implements OnInit {
   @Input() private appId: number;
   @ViewChild('windowBody') private windowBody: ElementRef;
+  private isSidebarOpen: boolean;
   private isMax: boolean;
   private isMin: boolean;
   private topWindow: any;
@@ -42,11 +44,11 @@ export class WindowComponent implements OnInit {
   private topTop: number;
   private topZindex: number;
 
-  constructor(private store: Store<TopWindowState>, private el: ElementRef, private renderer: Renderer2, private appsService: AppsService){
+  constructor(private store: Store<StoreState>, private el: ElementRef, private renderer: Renderer2, private appsService: AppsService){
     store.select('topWindow').subscribe(state => {
       this.topWindow = state;
-
     });
+    store.select('sidebar').subscribe((state: any) => this.isSidebarOpen = state.isOpen);
   }
 
   ngOnInit(){
@@ -97,9 +99,15 @@ export class WindowComponent implements OnInit {
         t = 40 - this.oldTop;
       };
 
-      if(this.oldLeft + l < 230){
-        l = 230 - this.oldLeft;
-      };
+      if(this.isSidebarOpen){
+        if(this.oldLeft + l < 230){
+          l = 230 - this.oldLeft;
+        };
+      } else {
+        if(this.oldLeft + l < 90){
+          l = 90 - this.oldLeft;
+        };
+      }
 
       this.renderer.setStyle(this.el.nativeElement, 'left', this.oldLeft + l + 'px');
       this.renderer.setStyle(this.el.nativeElement, 'top', this.oldTop + t + 'px');
