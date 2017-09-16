@@ -11,6 +11,34 @@
   padding: 0 20px;
 }
 
+.right-section{
+  display: flex;
+  align-items: center;
+}
+
 .fa-search{
+  padding: 0 10px;
   color: #FFFFFF;
+  cursor: pointer;
+}
+
+.fullscreen-btn svg{
+  fill: #FFFFFF;
+  cursor: pointer;
+}
+
+#fullscreen-enter{
+  display: block;
+}
+
+#fullscreen-exit{
+  display: none;
+}
+
+.fullscreen-btn.isFullScreen #fullscreen-enter{
+  display: none;
+}
+
+.fullscreen-btn.isFullScreen #fullscreen-exit{
+  display: block;
 }

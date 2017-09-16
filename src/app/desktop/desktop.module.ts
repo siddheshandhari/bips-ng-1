@@ -16,13 +16,9 @@ import { StatusbarModule } from '../statusbar/statusbar.module';
 
 import { DesktopComponent } from './desktop.component';
 
-//Directive
-import { ToggleFullScreenDirective } from './toggleFullScreen.directive';
-
 @NgModule({
   declarations: [
     DesktopComponent,
-    ToggleFullScreenDirective,
   ],
   imports: [
     CommonModule,

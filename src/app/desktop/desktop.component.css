@@ -12,26 +12,3 @@
   background-size: cover;
   overflow: hidden;
 }
-
-.fullscreen-btn{
-  position: absolute;
-  top: 50px;
-  right: 10px;
-  cursor: pointer;
-}
-
-#fullscreen-enter{
-  display: block;
-}
-
-#fullscreen-exit{
-  display: none;
-}
-
-.fullscreen-btn.isFullScreen #fullscreen-enter{
-  display: none;
-}
-
-.fullscreen-btn.isFullScreen #fullscreen-exit{
-  display: block;
-}
