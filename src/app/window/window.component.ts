@@ -57,15 +57,15 @@ export class WindowComponent implements OnInit {
     this.topLeft = this.topWindow.left;
     this.topTop = this.topWindow.top;
     this.renderer.setStyle(this.el.nativeElement, 'z-index', this.topZindex + 1);
-    this.renderer.setStyle(this.el.nativeElement, 'left', this.topLeft + 20 + 'px');
-    this.renderer.setStyle(this.el.nativeElement, 'top', this.topTop + 20 + 'px');
+    this.renderer.setStyle(this.el.nativeElement, 'left', this.topLeft + 50 + 'px');
+    this.renderer.setStyle(this.el.nativeElement, 'top', this.topTop + 50 + 'px');
     this.store.dispatch({
       type: SET_TOP_WINDOW,
       window: {
         appId: this.appId,
         zIndex: this.topZindex + 1,
-        left: this.topLeft + 20,
-        top: this.topTop + 20
+        left: this.topLeft + 50,
+        top: this.topTop + 50
       }
     })
   }
@@ -92,9 +92,15 @@ export class WindowComponent implements OnInit {
     if (this.moving) {
       let l = event.clientX - this.oldX
       let t = event.clientY - this.oldY
-      if(event.clientY < 0) {
-        t = 0;
-      }
+
+      if(this.oldTop + t < 40){
+        t = 40 - this.oldTop;
+      };
+
+      if(this.oldLeft + l < 230){
+        l = 230 - this.oldLeft;
+      };
+
       this.renderer.setStyle(this.el.nativeElement, 'left', this.oldLeft + l + 'px');
       this.renderer.setStyle(this.el.nativeElement, 'top', this.oldTop + t + 'px');
       this.store.dispatch({
