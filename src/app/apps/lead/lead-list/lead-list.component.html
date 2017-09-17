@@ -21,7 +21,7 @@
     <div class="card-list" *ngIf="!isSearching">
         
             <card *ngFor="let lead of leadlist" [class.selected]="lead === selectedLead" (click)="selectedCard(lead)">
-                <card-body >
+                <card-body>
                     <card-content [lead]= "lead"></card-content>
                 </card-body>
             </card>

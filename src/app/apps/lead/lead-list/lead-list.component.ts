@@ -1,4 +1,4 @@
-import { Component, OnInit, Output,Input, EventEmitter,ElementRef } from '@angular/core';
+import { Component, OnInit, Output,Input, EventEmitter,ElementRef,HostBinding  } from '@angular/core';
 import { LeadService } from '../lead.service';
 import { Lead } from '../lead';
 
@@ -13,6 +13,7 @@ export class LeadListComponent implements OnInit{
     // @Output() editRequest = new EventEmitter<Lead>();
     @Output() selectedLead : Lead;
    
+
     @Input() searchlist:Lead[]= [];
     @Input() isSearching:Boolean;
     // isEditing : Boolean = false;

@@ -14,6 +14,7 @@ import { Lead } from './lead';
 export class LeadComponent implements OnInit {
   @Input() searchlist:Lead[]=[];
   @Input() isSearching:Boolean;
+  
   modalOpen: boolean =false;
   addLeadValue: boolean = false;
   // isSearch: boolean = false;
