@@ -6,4 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['notes.component.css']
 })
 
-export class NotesComponent { }
+export class NotesComponent {
+  modalOpen: boolean = false;
+  openModal(){
+    this.modalOpen = true;
+  }
+  closeModal(){
+    this.modalOpen = false;
+  }
+}

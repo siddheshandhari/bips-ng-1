@@ -1,4 +1,4 @@
 <add-button (click)="openModal()" [modalOpen]="modalOpen"></add-button>
 <modal (requestCloseModal)="closeModal()" *ngIf="modalOpen" >
-  <!-- <add-account (requestCloseModal)="closeModal()"></add-account> -->
+  <add-note (requestCloseModal)="closeModal()"></add-note>
 </modal>

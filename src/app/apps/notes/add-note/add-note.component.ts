@@ -1,0 +1,11 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'add-note',
+  templateUrl: 'add-note.component.html',
+  styleUrls: ['add-note.component.css']
+})
+
+export class AddNoteComponent{
+  
+}
