@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CardModule } from '../shared/card/card.module';
+import { CardModule } from '../shared/card2/card.module';
 
 import { FinancialComponent } from './financial.component';
 

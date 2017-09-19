@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 
 @Component({
@@ -8,5 +8,11 @@ import { Component } from '@angular/core';
 })
 
 export class CardComponent{
-
+  @HostBinding('class.card-open') isOpen: boolean = false;
+  openCard(){
+    this.isOpen = true;
+  }
+  closeCard(){
+    this.isOpen = false;
+  }
 }
