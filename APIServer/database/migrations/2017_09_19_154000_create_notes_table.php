@@ -15,14 +15,16 @@ class CreateNotesTable extends Migration
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title')->nullable();
-            $table->string('body')->nullable();
-            $table->integer('author_id')->length(10)->unsigned()->nullable();
-            $table->foreign('author_id')->references('id')->on('users');
+            $table->string('subject')->nullable();
+            $table->text('body')->nullable();
+            $table->integer('create_author_id')->length(10)->unsigned()->nullable();
+            $table->foreign('create_author_id')->references('id')->on('users');
+            $table->integer('update_author_id')->length(10)->unsigned()->nullable();
+            $table->foreign('update_author_id')->references('id')->on('users');
             $table->integer('company_id')->length(10)->unsigned()->nullable();
             $table->foreign('company_id')->references('id')->on('companies');
-            $table->integer('order_id')->length(10)->unsigned()->nullable();
-            $table->foreign('order_id')->references('id')->on('orders');
+            $table->string('context')->default('order');
+            $table->integer('context_id')->length(10)->unsigned()->nullable();
             $table->boolean('active')->default(true);
             $table->timestamps();
         });
