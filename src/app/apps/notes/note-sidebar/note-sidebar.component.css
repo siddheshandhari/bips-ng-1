@@ -2,6 +2,62 @@
   display: block;
   height: 100%;
   width: 45%;
+  padding: 5px;
   float: right;
-  background-color: #FFFFFF;
+}
+
+.note-sidebar{
+  width: 100%;
+  height: 100%;
+}
+
+.note-actions{
+  height: auto;
+  width: 100%;
+  margin-bottom: 5px;
+  padding: 0 15px;
+}
+
+.subject{
+  display: block;
+  float: left;
+  padding: 10px 0;
+}
+
+.subject-title{
+  margin: 0;
+  font-family: "Helvetica", sans-serif;
+  color: #B7B7B7;
+}
+
+.actions-list{
+  display: block;
+  float: right;
+  padding: 10px 0;
+}
+
+.action-item{
+  display: inline-block;
+}
+
+.fa{
+  padding: 0 3px;
+  cursor: pointer;
+}
+
+.fa-star-o{
+  color: #FF9800;
+}
+
+.fa-trash-o{
+  color: #B71C1C;
+}
+
+.fa-share-square-o{
+  color: #3F51B5;
+}
+
+.note-body{
+  height: 400px;
+  width: 100%;
 }

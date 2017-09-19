@@ -7,7 +7,8 @@ Main
 ==============================*/
 html {
     color: #222;
-    font-size: 1em;
+    font-family: "Helvetica", sans-serif;
+    font-size: 13px;
     height: 100%;
     width: 100%;
     max-height: 100%;
