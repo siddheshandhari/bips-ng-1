@@ -18,16 +18,16 @@
         <span class="company-name">Company Name</span><span class="industry">Industry</span><span class="possibility">Possibility</span><span class="owner">Owner</span><span class="contact">Contact</span><span class="usage">Usage</span>
     </div>
 
-    <div class="card-list">
+    <div class="card-list" *ngIf="!isSearching">
         
-            <card  *ngFor="let lead of leadlist" [class.selected]="lead === selectedLead" (click)="selectedCard(lead)">
-                <card-body >
-                    <card-content [lead]= "lead" ></card-content>
+            <card *ngFor="let lead of leadlist" [class.selected]="lead === selectedLead" (click)="selectedCard(lead)">
+                <card-body>
+                    <card-content [lead]= "lead"></card-content>
                 </card-body>
             </card>
        
     </div>
 
- <info-details [lead]="selectedLead" (deleteEvent)="deleteLead($event)">
+ <info-details [lead]="selectedLead" [contacts]="contacts" (deleteEvent)="deleteLead($event)">
     <note></note>
  </info-details>

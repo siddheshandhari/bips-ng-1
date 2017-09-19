@@ -7,7 +7,7 @@ const initialState: object = {
   top: 0
 }
 
-export function topWindowReducer(state = initialState, action){
+export function TopWindowReducer(state = initialState, action){
   switch (action.type) {
     default:
       return state;

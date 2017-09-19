@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Neck_finish;
+
 use App\utils\Transformers\Neck_finishTransformer;
+
 
 class Neck_finishController extends ApiController
 {
@@ -21,9 +23,15 @@ class Neck_finishController extends ApiController
     
     public function index()
     {
-        $neck_finishes = neck_finish::all();
+
+        $neck_finishes = Neck_finish::all();
         return $this->respond(
-            $this->neck_finishTransformer->transformCollection($neck_finishes)
+            $neck_finishes
+
+        // $neck_finishes = neck_finish::all();
+        // return $this->respond(
+        //     $this->neck_finishTransformer->transformCollection($neck_finishes)
+
         );
     }
 

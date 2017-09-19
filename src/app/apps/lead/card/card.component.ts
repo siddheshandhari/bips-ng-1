@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component ,HostBinding} from '@angular/core';
 import { LeadService } from '../lead.service';
 import { Lead } from '../lead';
 
@@ -9,7 +9,15 @@ import { Lead } from '../lead';
 })
 
 export class CardComponent {
-   
+    @HostBinding('class.lead-open') leadIsOpen: boolean = false;
+
+    toggleLead(){
+        if(this.leadIsOpen == false){
+            this.leadIsOpen = true;
+        }else{
+            this.leadIsOpen = false;
+        }
+    }
     
 }
 

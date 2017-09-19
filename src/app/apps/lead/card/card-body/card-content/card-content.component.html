@@ -1,55 +1,69 @@
+<div class="lead-header">
+        <div class="company-logo">
+            <img [src]="'assets/imgs/company.png'">
+            
+            <!--<span *ngIf="!logoUrl" class="default-logo"></span>-->
+            
+        </div>
+        <div class="company-name">
 
-<div class="company-logo">
-    <img [src]="'assets/imgs/company.png'">
-    
-    <!--<span *ngIf="!logoUrl" class="default-logo"></span>-->
-    
-</div>
-<div class="company-name">
-    <span class="default-name"><b>{{lead.company.name}}</b></span>
-</div>
+            <span class="default-name"><b>{{lead.company.name}}</b></span>
+        </div>
 
-<div class="industry">
-    <i class="fa fa-desktop" aria-hidden="true"></i><br>
-    <span class="industry-type">{{lead.company.industry}}</span>
-</div>
+        <div class="industry">
+            <i class="fa fa-desktop" aria-hidden="true"></i><br>
+            <span class="industry-type">{{lead.company.industry}}</span>
+        </div>
 
-<div class="possibility">
-    <span class="prossibility-value">{{lead.possibility | percent}}</span><br>
-    <span class="progress">
-        <span class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width:65%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></span>
-    </span>
-</div>
+        <div class="possibility">
+            <span class="prossibility-value">{{lead.possibility | percent}}</span><br>
+            <span class="progress">
+                <span class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width:65%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></span>
+            </span>
+        </div>
 
-<div  class="lead-owner" [class.selected]="lead === selectedLead">
-    <!--<img [src]="'assets/imgs/user.png'"><br>-->
-     <span class="menu">
-        <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+        <div  class="lead-owner" >
+            <img [src]="'assets/imgs/head1.ico'" (click)="openCall()" ><br>
+            <!--<span class="menu">
+                <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+                
+                <label class="menu-open-button" for="menu-open">
+                    <img [src]="'assets/imgs/user.png'"><br>
+
+                </label>
+
+                <a  class="menu-item blue"> <i class="fa fa-anchor"></i> </a>
+                <a  class="menu-item green"> <i class="fa fa-coffee"></i> </a>
+                <a  class="menu-item red"> <i class="fa fa-heart"></i> </a>
+                <a  class="menu-item purple"> <i class="fa fa-microphone"></i> </a>
+                <a  class="menu-item orange"> <i class="fa fa-star"></i> </a>
+                <a  class="menu-item lightblue"> <i class="fa fa-diamond"></i> </a>
+            </span>-->
         
-        <label class="menu-open-button" for="menu-open">
-            <img [src]="'assets/imgs/user.png'"><br>
+            <span *ngIf = "!ownerUrl" class="default-owner">Sam</span>
+        </div>
 
-        </label>
+        <div class="lead-owner">
+            <img [src]="'assets/imgs/head2.ico'"><br>
+            <span *ngIf = "!ownerUrl" class="default-owner">Tom</span>
+        </div>
 
-        <a  class="menu-item blue"> <i class="fa fa-anchor"></i> </a>
-        <a  class="menu-item green"> <i class="fa fa-coffee"></i> </a>
-        <a  class="menu-item red"> <i class="fa fa-heart"></i> </a>
-        <a  class="menu-item purple"> <i class="fa fa-microphone"></i> </a>
-        <a  class="menu-item orange"> <i class="fa fa-star"></i> </a>
-        <a  class="menu-item lightblue"> <i class="fa fa-diamond"></i> </a>
-    </span>
-  
-    <span *ngIf = "!ownerUrl" class="default-owner">Sam</span>
+        <div class="lead-balance"> 
+        <span class="lead-usage">50,000,000</span><br>
+
+
+        </div>
 </div>
 
-<div class="lead-owner">
-    <img [src]="'assets/imgs/user.png'"><br>
-    <span *ngIf = "!ownerUrl" class="default-owner">Tom</span>
-</div>
+<div class="lead-body">
+           <label class="info-title">Company Name </label>
+            <span class="name-content" *ngIf="!isEditing">{{lead.company.name}}</span>
+            <input class="edit-input" type="text" *ngIf="isEditing" [(ngModel)]="lead.company.name">
 
-<div class="lead-balance"> 
-   <span class="lead-usage">50,000,000</span><br>
-
+            <label class="info-title">Website </label>
+            <span class="name-content" *ngIf="!isEditing">{{lead.company.website}}</span>
+            <input class="edit-input" type="text" *ngIf="isEditing" [(ngModel)]="lead.company.website"><br>
+      
 
 </div>
 

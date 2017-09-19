@@ -29,7 +29,9 @@ class DatabaseSeeder extends Seeder
       'prices',
       'capacities',
       'neck_finishes',
-      'product_catagories'
+      'product_catagories',
+      'orders',
+      'notes',
     ];
 
     /**
@@ -61,6 +63,8 @@ class DatabaseSeeder extends Seeder
       $this->call(CapacitiesTableSeeder::class);
       $this->call(Neck_FinishesTableSeeder::class);
       $this->call(Product_CatagoriesTableSeeder::class);
+      $this->call(OrdersTableSeeder::class);
+      $this->call(NotesTableSeeder::class);
     }
 
     private function cleanDatabase()

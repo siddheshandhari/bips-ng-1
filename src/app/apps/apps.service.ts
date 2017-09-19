@@ -31,7 +31,7 @@ export class AppsService {
     { id: 14, name: 'notes', path: './notes', iconUrl: '../../assets/imgs/app-icons/notes.png' },
     { id: 15, name: 'potential', path: './potential', iconUrl: '../../assets/imgs/app-icons/potential.png' },
     { id: 16, name: 'presentation', path: './presentation', iconUrl: '../../assets/imgs/app-icons/presentation.png' },
-    { id: 17, name: 'product', path: './product', iconUrl: '../../assets/imgs/app-icons/product.png' },
+    { id: 17, name: 'showcase', path: './showcase', iconUrl: '../../assets/imgs/app-icons/product.png' },
     { id: 18, name: 'projects', path: './projects', iconUrl: '../../assets/imgs/app-icons/projects.png' },
     { id: 19, name: 'purchasing', path: './purchasing', iconUrl: '../../assets/imgs/app-icons/purchasing.png' },
     { id: 20, name: 'qa', path: './qa', iconUrl: '../../assets/imgs/app-icons/qa.png' },
@@ -40,6 +40,8 @@ export class AppsService {
     { id: 23, name: 'security', path: './security', iconUrl: '../../assets/imgs/app-icons/security.png' },
     { id: 24, name: 'tasks', path: './tasks', iconUrl: '../../assets/imgs/app-icons/tasks.png' },
     { id: 25, name: 'trucking', path: './trucking', iconUrl: '../../assets/imgs/app-icons/trucking.png' },
+
+
   ]
 
   constructor(private store: Store<storeState>){

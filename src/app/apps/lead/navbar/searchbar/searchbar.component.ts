@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
+import { SearchbarService } from './searchbar.service';
+import { Lead } from '../../lead';
 
 @Component ({
     selector:'searchbar',
@@ -7,5 +9,21 @@ import { Component } from '@angular/core';
 })
 
 export class SearchbarComponent {
+    @Output() searchlist: Lead[] = [];
+    @Output() isSearching :Boolean=false;
+
+    constructor(private searchbarService:SearchbarService){}
+
+    searchLead(value){
+        console.log(value);
+        this.searchbarService.searchLead(value)
+      .subscribe(res => {
+        this.searchlist = res;
+      })
+
+      console.log(this.searchlist);
+      this.isSearching = true;
+      console.log(this.isSearching);
+    }
     
 }

@@ -1,0 +1,16 @@
+:host{
+  display: block;
+  margin-top: 15px;
+}
+
+.divider{
+  width: 100%;
+  height: 1px;
+  background-color: #636363;
+}
+
+.title{
+  font-size: 13px;
+  color: #FFFFFF;
+  margin-top: 5px;
+}

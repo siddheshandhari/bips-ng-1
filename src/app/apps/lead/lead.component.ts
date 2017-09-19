@@ -12,28 +12,30 @@ import { Lead } from './lead';
 })
 
 export class LeadComponent implements OnInit {
-  private searchlist;
+  @Input() searchlist:Lead[]=[];
+  @Input() isSearching:Boolean;
+  
   modalOpen: boolean =false;
   addLeadValue: boolean = false;
-  isSearch: boolean = false;
+  // isSearch: boolean = false;
 
   constructor(private leadService: LeadService ){}
   ngOnInit (){}
 
-  searchLead(value:string):void{
+  // searchLead(value:string):void{
 
-    this.leadService.searchLead(value)
-      .subscribe(
-        searchlist => {
-        this.searchlist = searchlist;
-        console.log(searchlist);
-      })
+  //   this.leadService.searchLead(value)
+  //     .subscribe(
+  //       searchlist => {
+  //       this.searchlist = searchlist;
+  //       console.log(searchlist);
+  //     })
        
 
-    this.isSearch = true;
-    console.log(value);
+  //   this.isSearch = true;
+  //   console.log(value);
 
-  }
+  // }
 
   addLead(){
       this.addLeadValue = true;
@@ -47,9 +49,9 @@ export class LeadComponent implements OnInit {
     this.modalOpen = false;
   }
 
-  goLeadlist(){
-    this.addLeadValue = false;
-    this.isSearch = false;
-  }
+  // goLeadlist(){
+  //   this.addLeadValue = false;
+  //   this.isSearch = false;
+  // }
 
 }

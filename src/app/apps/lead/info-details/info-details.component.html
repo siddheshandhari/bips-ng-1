@@ -1,36 +1,77 @@
 <div  class="details-header">
     <div *ngIf="lead">
+
         
         <button *ngIf="!isEditing" class="btn btn-sm btn-outline-success" (click)="onEdit(lead)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-        <button *ngIf="isEditing" class="btn btn-sm btn-outline-primary" (click)="onCancel(lead)">Cancel</button>
-        <button *ngIf="isEditing" class="btn btn-sm btn-outline-success" (click)="onSave(lead)">Save</button>
+        <button *ngIf="isEditing" class="btn btn-sm btn-outline-primary" (click)="onCancel(lead)"><i class="fa fa-times" aria-hidden="true"></i></button>
+        <button *ngIf="isEditing" class="btn btn-sm btn-outline-success" (click)="onSave(lead)"><i class="fa fa-check" aria-hidden="true"></i></button>
         <button class="btn btn-sm btn-outline-danger" (click)="onDelete(lead)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
         <hr>
 
-        <span class="info-title">Company Name </span>
-        <span class="name-content" *ngIf="!isEditing">{{lead.company.name}}</span>
-        <input type="text" *ngIf="isEditing" [(ngModel)]="lead.company.name"><br>
         
-        <span class="info-title">Website </span>
-        <span class="name-content" *ngIf="!isEditing">{{lead.company.website}}</span>
-        <input type="text" *ngIf="isEditing" [(ngModel)]="lead.company.website"><br>
+        <div class=" company-name">
+           <label class="info-title">Company Name </label>
+            <span class="name-content" *ngIf="!isEditing">{{lead.company.name}}</span>
+            <input class="edit-input" type="text" *ngIf="isEditing" [(ngModel)]="lead.company.name">
 
-        <span class="info-title">Industry </span>
-        <span class="name-content" *ngIf="!isEditing">{{lead.company.industry}}</span>
-        <input type="text" *ngIf="isEditing" [(ngModel)]="lead.company.industry"><br>
+            <label class="info-title">Website </label>
+            <span class="name-content" *ngIf="!isEditing">{{lead.company.website}}</span>
+            <input class="edit-input" type="text" *ngIf="isEditing" [(ngModel)]="lead.company.website"><br>
+        </div>
+<!--
+        <div class="company-website">
+            <label class="info-title">Website </label>
+            <span class="name-content" *ngIf="!isEditing">{{lead.company.website}}</span>
+            <input class="edit-input" type="text" *ngIf="isEditing" [(ngModel)]="lead.company.website"><br>
+        </div>-->
 
-         <span class="info-title">Employees </span>
-        <span class="name-content" *ngIf="!isEditing">{{lead.company.employees}}</span>
-        <input type="text" *ngIf="isEditing" [(ngModel)]="lead.company.employees"><br>
+        <div class="company-industry">
+            <label class="info-title">Industry </label>
+            <span class="name-content" *ngIf="!isEditing">{{lead.company.industry}}</span>
+            <input class="edit-input" type="text" *ngIf="isEditing" [(ngModel)]="lead.company.industry">
 
-         <span class="info-title">Status </span>
-        <span class="name-content" *ngIf="!isEditing">{{lead.status}}</span>
-        <input type="text" *ngIf="isEditing" [(ngModel)]="lead.status"><br>
+            <label class="info-title">Employees </label>
+            <span class="name-content" *ngIf="!isEditing">{{lead.company.employees}}</span>
+            <input class="edit-input" type="text" *ngIf="isEditing" [(ngModel)]="lead.company.employees"><br>
+        </div>
 
-         <span class="info-title">Annual Revenue </span>
-        <span class="name-content" *ngIf="!isEditing">{{lead.company.annual_revenue}}</span>
-        <input type="text" *ngIf="isEditing" [(ngModel)]="lead.company.annual_revenue">
+        <!--<div class="company-employees">
+            <label class="info-title">Employees </label>
+            <span class="name-content" *ngIf="!isEditing">{{lead.company.employees}}</span>
+            <input class="edit-input" type="text" *ngIf="isEditing" [(ngModel)]="lead.company.employees"><br>
+        </div>-->
 
+        <div class="company-status">
+            <label class="info-title">Status </label>
+            <span class="name-content" *ngIf="!isEditing">{{lead.status}}</span>
+            <input class="edit-input" type="text" *ngIf="isEditing" [(ngModel)]="lead.status">
+
+            <label class="info-title">Annual Revenue </label>
+            <span class="name-content" *ngIf="!isEditing">{{lead.company.annual_revenue}}</span>
+            <input class="edit-input" type="text" *ngIf="isEditing" [(ngModel)]="lead.company.annual_revenue">
+        </div>
+
+        <div *ngFor ="let contact of contacts">
+            
+           <div class="lead-contact">
+               
+            <label class="info-title">Contact Name </label>
+            <span class="name-content" *ngIf="!isEditing">{{contact.first_name}}</span>
+            <input class="edit-input" type="text" *ngIf="isEditing" [(ngModel)]="contact.first_name">
+
+            <label class="info-title">Contact Number </label>
+            <span class="name-content" *ngIf="!isEditing">{{contact.phone}}</span>
+            <input class="edit-input" type="text" *ngIf="isEditing" [(ngModel)]="contact.phone">
+           </div>
+
+        </div>
+    
+
+        <!--<div class="company-annual">
+            <label class="info-title">Annual Revenue </label>
+            <span class="name-content" *ngIf="!isEditing">{{lead.company.annual_revenue}}</span>
+            <input class="edit-input" type="text" *ngIf="isEditing" [(ngModel)]="lead.company.annual_revenue">
+        </div>-->
     </div>
 </div>
 

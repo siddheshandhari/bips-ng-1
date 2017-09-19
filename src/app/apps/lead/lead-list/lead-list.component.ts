@@ -1,4 +1,4 @@
-import { Component, OnInit, Output,Input, EventEmitter,ElementRef } from '@angular/core';
+import { Component, OnInit, Output,Input, EventEmitter,ElementRef,HostBinding  } from '@angular/core';
 import { LeadService } from '../lead.service';
 import { Lead } from '../lead';
 
@@ -12,13 +12,17 @@ import { Lead } from '../lead';
 export class LeadListComponent implements OnInit{
     // @Output() editRequest = new EventEmitter<Lead>();
     @Output() selectedLead : Lead;
-    // isEditing : Boolean = false;
+   
 
+    @Input() searchlist:Lead[]= [];
+    @Input() isSearching:Boolean;
+    // isEditing : Boolean = false;
+    @Output() contacts :any[] =[];
     leadlist : Lead[] = [];
     // selectedLead : Lead;
     // editlead= false;
 
-//      private editMode: boolean = false;
+//   private editMode: boolean = false;
 //   private actionPanelIsOpen: boolean = false;
 
     constructor(public leadService:LeadService,private el: ElementRef){};
@@ -38,6 +42,8 @@ export class LeadListComponent implements OnInit{
 
     selectedCard(lead: Lead):void{
         this.selectedLead = lead;
+        this.contacts = lead.company.contacts;
+
         console.log("selected-----")
         console.log( this.selectedLead);
         console.log("----")

@@ -23,6 +23,10 @@ ul li a {
     border-radius: 3px;
 }
 
+ul li:nth-child(1) a{
+    background-color:#0069D9;
+}
+
 li > a:hover{
-    background-color: #0069D9;
+    background-color: #007BFF;
 }
