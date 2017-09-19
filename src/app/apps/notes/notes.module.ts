@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { NoteListComponent } from './note-list/note-list.component';
 import { NoteSidebarComponent } from './note-sidebar/note-sidebar.component';
 
+import { MomentModule } from 'angular2-moment';
 import { CardModule } from '../shared/card/card.module';
 import { AddButtonModule } from '../shared/add-button/add-button.module';
 import { ModalModule } from '../shared/modal/modal.module';
@@ -11,6 +12,7 @@ import { WindowNavModule } from '../shared/window-nav/window-nav.module';
 import { AddNoteModule } from './add-note/add-note.module';
 import { NotesComponent } from './notes.component';
 
+import { NotesService } from './notes.service';
 import { NoteListService } from './note-list/note-list.service';
 
 @NgModule({
@@ -20,7 +22,8 @@ import { NoteListService } from './note-list/note-list.service';
     ModalModule,
     AddNoteModule,
     WindowNavModule,
-    CardModule
+    CardModule,
+    MomentModule
   ],
   declarations: [
     NotesComponent,
@@ -31,6 +34,7 @@ import { NoteListService } from './note-list/note-list.service';
     NotesComponent
   ],
   providers: [
+    NotesService,
     NoteListService
   ]
 })

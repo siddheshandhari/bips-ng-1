@@ -7,8 +7,25 @@
   float: left;
 }
 
+.note-subject{
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.note-subject:hover{
+  opacity: 0.6;
+}
+
 .note-card{
   height: 60px;
   width: 100%;
   margin: 2px 0;
+}
+
+.timestamp,.subtitle{
+  color: #9B9B9B;
+}
+
+.subtitle{
+  margin-left: 10px;
 }

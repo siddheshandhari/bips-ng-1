@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NoteListService } from './note-list.service';
+import { NotesService } from '../notes.service';
 import { Note } from '../../../models/note';
 
 @Component({
@@ -11,12 +12,12 @@ import { Note } from '../../../models/note';
 export class NoteListComponent implements OnInit {
 
   public noteList: Array<Note>;
-  constructor(public noteListService: NoteListService){}
+  constructor(private noteListService: NoteListService, private notesService: NotesService){}
   ngOnInit(){
     this.noteListService.getNoteList().subscribe(
       res => {
-        console.log(res);
         this.noteList = res;
+        this.notesService.setSelectedNote(this.noteList[0]);
       }
     )
   }
