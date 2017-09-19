@@ -20,7 +20,7 @@ class NotesTableSeeder extends Seeder
           'create_author_id' => $faker->numberBetween($min = 1, $max = 30),
           'update_author_id' => $faker->numberBetween($min = 1, $max = 30),
           'company_id' => $faker->numberBetween($min = 1, $max = 30),
-          'context' => $faker->randomElement($array = array('order', 'quote', 'invoice', 'project')),
+          'category' => $faker->randomElement($array = array('order', 'quote', 'invoice', 'project')),
           'context_id' => $faker->numberBetween($min = 1, $max = 30),
           'created_at' => Carbon\Carbon::now(),
           'updated_at' => Carbon\Carbon::now()

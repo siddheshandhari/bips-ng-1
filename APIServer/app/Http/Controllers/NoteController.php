@@ -8,10 +8,19 @@ use Illuminate\Http\Request;
 
 class NoteController extends ApiController
 {
-  
+  protected $noteTransformer;
+
+  function __construct(NoteTransformer $noteTransformer)
+  {
+    $this->noteTransformer = $noteTransformer;
+  }
+
   public function browse()
   {
-
+    $notes = Note::all();
+    return $this->respond(
+      $this->noteTransformer->transformCollection($notes)
+    );
   }
 
   public function read()

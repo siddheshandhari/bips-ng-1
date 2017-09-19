@@ -16,8 +16,17 @@ class Note extends Model
     return $this->belongsTo('App\Order');
   }
 
-  public function author()
+  public function update_author()
   {
-    return $this->belongsTo('App\User');
+    return $this->belongsTo('App\User', 'update_author_id');
   }
+
+  public function create_author()
+  {
+    return $this->belongsTo('App\User', 'create_author_id');
+  }
+
+  protected $hidden = [
+    'active'
+  ];
 }
