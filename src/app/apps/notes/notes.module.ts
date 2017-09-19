@@ -11,6 +11,8 @@ import { WindowNavModule } from '../shared/window-nav/window-nav.module';
 import { AddNoteModule } from './add-note/add-note.module';
 import { NotesComponent } from './notes.component';
 
+import { NoteListService } from './note-list/note-list.service';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -27,6 +29,9 @@ import { NotesComponent } from './notes.component';
   ],
   exports: [
     NotesComponent
+  ],
+  providers: [
+    NoteListService
   ]
 })
 
