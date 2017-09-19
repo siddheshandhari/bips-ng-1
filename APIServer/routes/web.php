@@ -50,6 +50,15 @@ Route::group(['prefix' => 'api/v1'], function()
   Route::delete('call/{id}', 'CallController@destroy');
   Route::put('call/{id}', 'CallController@edit');
 
+  //Notes
+  Route::get('note', 'NoteController@browse');
+  Route::post('note', 'NoteController@add');
+
+  //Specific Note
+  Route::get('note/{id}', 'NoteController@read');
+  Route::put('note/{id}', 'NoteController@edit');
+  Route::delete('note/{id}', 'NoteController@destroy');
+
   //Product Collections Routes
   Route::get('product', 'ProductController@index');
   // Route::post('product', 'ProductController@add');
@@ -59,21 +68,20 @@ Route::group(['prefix' => 'api/v1'], function()
   // Route::delete('product/{id}', 'ProductController@destroy');
   // Route::put('product/{id}', 'ProductController@edit');
 
-    //Price Collections Routes
-    Route::get('price', 'PriceController@index');
+  //Price Collections Routes
+  Route::get('price', 'PriceController@index');
 
-    //Color Collections Routes
-    Route::get('color', 'ColorController@index');
+  //Color Collections Routes
+  Route::get('color', 'ColorController@index');
 
-    //Product_catagories Collections Routes
-    Route::get('product_catagory', 'product_catagoryController@index');
+  //Product_catagories Collections Routes
+  Route::get('product_catagory', 'product_catagoryController@index');
 
+  //Capacities Collections Routes
+  Route::get('capacity', 'CapacityController@index');
 
-    //Capacities Collections Routes
-    Route::get('capacity', 'CapacityController@index');
-    
-    //Neck_finishes Collections Routes
-    Route::get('neck_finish', 'Neck_finishController@index');
+  //Neck_finishes Collections Routes
+  Route::get('neck_finish', 'Neck_finishController@index');
 });
 
 

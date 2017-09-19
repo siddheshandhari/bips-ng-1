@@ -22,4 +22,8 @@ class Company extends Model
     {
       return $this->belongsTo('App\Address', 'shipping_address_id');
     }
+    
+    protected $hidden = [
+      'active'
+    ];
 }
