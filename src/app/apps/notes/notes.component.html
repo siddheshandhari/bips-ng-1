@@ -1,3 +1,4 @@
+<window-nav></window-nav>
 <add-button (click)="openModal()" [modalOpen]="modalOpen"></add-button>
 <modal (requestCloseModal)="closeModal()" *ngIf="modalOpen" >
   <add-note (requestCloseModal)="closeModal()"></add-note>
