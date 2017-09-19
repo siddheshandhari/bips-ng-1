@@ -1,35 +1,70 @@
-import { Component, OnInit, Output,Input, EventEmitter,ElementRef,HostBinding  } from '@angular/core';
+import { Component, OnInit, Output,Input, EventEmitter,ElementRef,HostBinding,Pipe, PipeTransform  } from '@angular/core';
 import { LeadService } from '../lead.service';
 import { Lead } from '../lead';
+import { LeadSearchService } from './leadsearch.service';
 
 
 @Component({
     selector: 'lead-list',
     templateUrl:'./lead-list.component.html',
     styleUrls: ['./lead-list.component.css'],
+    
 })
+
+// @Pipe({
+//   name: 'sortBy'
+// })
+// export class SortByPipe implements PipeTransform {
+//   transform(arr: Array<any>, prop: any, reverse: boolean = false): any {
+//     if (arr === undefined) return
+//     const m = reverse ? -1 : 1
+//     return arr.sort((a: any, b: any): number => {
+//       const x = a[prop]
+//       const y = b[prop]
+//       return (x === y) ? 0 : (x < y) ? -1*m : 1*m
+//     })
+//   }
+// }
+
 
 export class LeadListComponent implements OnInit{
     // @Output() editRequest = new EventEmitter<Lead>();
     @Output() selectedLead : Lead;
-   
-
-    @Input() searchlist:Lead[]= [];
-    @Input() isSearching:Boolean;
     // isEditing : Boolean = false;
     @Output() contacts :any[] =[];
+    isSearching :Boolean=false;
     leadlist : Lead[] = [];
+    searchlist:Lead[]= [];
     // selectedLead : Lead;
     // editlead= false;
 
 //   private editMode: boolean = false;
 //   private actionPanelIsOpen: boolean = false;
 
-    constructor(public leadService:LeadService,private el: ElementRef){};
+    constructor(public leadService:LeadService,
+                private el: ElementRef,
+                private leadSearchService: LeadSearchService){};
 
-     ngOnInit():void{
+    ngOnInit():void{
         this.getLeadlist();
     }
+
+    searchLead(value){
+        console.log(value);
+        this.leadSearchService.searchLead(value)
+      .subscribe(res => {
+        this.searchlist = res;
+      })
+
+      console.log(this.searchlist);
+      this.isSearching = true;
+      console.log(this.isSearching);
+  }
+
+     allLeadList(){
+       this.isSearching = false;
+       this.getLeadlist();
+  }
 
 
 // get lead infomation

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input,  } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
 import { Lead } from "../../../lead";
+import { Contact } from '../../../../../models/Contact';
 
 
 
@@ -12,7 +13,8 @@ import { Lead } from "../../../lead";
 
 export class CardContentComponent implements OnInit{
     @Input() lead = [];
-    @Input() selectedLead= []
+    @Input() selectedLead= [];
+    @Input() contacts: Contact[] =[];
 
     constructor(){}
     ngOnInit(){}
