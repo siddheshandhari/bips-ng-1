@@ -12,21 +12,6 @@
   display: inline-block;
 }
 
-/* .bg-container {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-  z-index: -100;
-} */
-
-/* img {
-  padding: 1px;
-  border: 1px solid #021a40;
-} */
-
 video {
   position: absolute;
   top: 50%;
@@ -70,10 +55,6 @@ video {
   height: 70px;
 
 }
-
-/* @media screen and (max-width: 500px) {
-  div{width: 70%}
-} */
 
 * {
   border-radius: 4px !important;
