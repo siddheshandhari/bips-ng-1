@@ -1,0 +1,22 @@
+<div class="card-logo">
+  <img *ngIf="logoUrl" [src]="logoUrl"/>
+  <span *ngIf="!logoUrl" class="default-logo">{{title[0]}}</span>
+</div>
+<div class="header-info">
+  <h5 class="header-title">{{title}}</h5>
+  <div class="header-body">
+    <subheader>
+      <i class="fa fa-map-marker"></i>
+      <span>{{address.city + ", " +address.state}}</span>
+    </subheader>
+    <subheader>
+      <i class="fa fa-briefcase"></i>
+      <span>{{industry}}</span>
+    </subheader>
+    <ng-content></ng-content>
+  </div>
+</div>
+<div class="expand-handler">
+  <i class="fa fa-angle-up" *ngIf="isOpen"  (click)="closeHeader()"></i>
+  <i class="fa fa-angle-down" *ngIf="!isOpen" (click)="openHeader()"></i>
+</div>

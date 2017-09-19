@@ -1,4 +1,9 @@
 <window-nav></window-nav>
+<div class="container">
+  <note-list></note-list>
+  <note-sidebar></note-sidebar>
+</div>
+
 <add-button (click)="openModal()" [modalOpen]="modalOpen"></add-button>
 <modal (requestCloseModal)="closeModal()" *ngIf="modalOpen" >
   <add-note (requestCloseModal)="closeModal()"></add-note>
