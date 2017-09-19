@@ -29,6 +29,7 @@ import { hideAppsReducer } from '../reducers/hideApps.reducer';
 import { topWindowReducer } from '../reducers/topWindow.reducer';
 import { currentUserReducer } from '../reducers/currentUser.reducer';
 import 'rxjs/Rx';
+import { ClockComponent } from './clock/clock.component';
 
 
 const appRoutes: Routes = [
@@ -52,6 +53,7 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     SignupComponent,
+    ClockComponent,
   ],
   imports: [
     BrowserModule,

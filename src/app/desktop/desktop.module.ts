@@ -15,6 +15,7 @@ import { PotentialModule } from '../apps/potential/potential.module';
 import { DesktopComponent } from './desktop.component';
 import { MenubarComponent } from '../menubar/menubar.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
+// import { ClockComponent } from '../clock/clock.component';
 
 //Directive
 import { ToggleFullScreenDirective } from './toggleFullScreen.directive';

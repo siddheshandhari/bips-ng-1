@@ -66,7 +66,7 @@ Route::group(['prefix' => 'api/v1'], function()
     Route::get('color', 'ColorController@index');
 
     //Product_catagories Collections Routes
-    Route::get('product_catagory', 'product_catagoryController@index');
+    Route::get('product_catagory', 'Product_catagoryController@index');
 
     //Neck_finishes Collections Routes
     Route::get('neck_finish', 'Neck_finishController@index');
