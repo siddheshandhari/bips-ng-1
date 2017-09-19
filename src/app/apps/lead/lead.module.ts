@@ -23,12 +23,13 @@ import { CardContentComponent } from './card/card-body/card-content/card-content
 import { InfoDetailsComponent } from './info-details/info-details.component';
 import { NoteComponent } from './info-details/note/note.component';
 import { SearchbarService } from './navbar/searchbar/searchbar.service';
+import { LeadSearchService } from './lead-list/leadsearch.service';
 
 import { LeadInfoComponent } from './lead-info/lead-info.component';
 import { LeadListComponent } from './lead-list/lead-list.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { SearchbarComponent } from './navbar/searchbar/searchbar.component';
 import { AddButtonModule } from '../shared/add-button/add-button.module';
+
 
 
 @NgModule({
@@ -37,13 +38,12 @@ import { AddButtonModule } from '../shared/add-button/add-button.module';
    AddLeadComponent,
    LeadInfoComponent,
    LeadListComponent,
-   NavbarComponent,
    SearchbarComponent,
    CardComponent,
    CardBodyComponent,
    CardContentComponent,
    InfoDetailsComponent,
-   NoteComponent
+   NoteComponent,
 
   ],
   imports: [
@@ -63,7 +63,9 @@ import { AddButtonModule } from '../shared/add-button/add-button.module';
   providers: [
 
     LeadService,
-    SearchbarService
+    SearchbarService,
+    LeadSearchService,
+
 
   ]
 
