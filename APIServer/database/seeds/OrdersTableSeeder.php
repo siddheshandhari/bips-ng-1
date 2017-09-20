@@ -15,6 +15,9 @@ class OrdersTableSeeder extends Seeder
       foreach(range(1, 30) as $index)
       {
         DB::table('orders')->insert([
+          'name' => $faker->company,
+          'date' => $faker->date,
+          'quantity' => $faker->randomNumber(),
           'active' => $faker->boolean
         ]);
       };
