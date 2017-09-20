@@ -24,9 +24,20 @@
 
         <div  class="lead-owner" >
         
-            <img [src]="'assets/imgs/head1.ico'" (click)="openCall()" class="menu" ><br>
+            <!--<img [src]="'assets/imgs/head1.ico'" (click)="openCall()" class="menu" ><br>-->
            
-          
+        <div class="menu ownerlogo" [ngClass]="{active : isActive}"  (click)="isActive = !isActive" >
+            <img [src]="'assets/imgs/head1.ico'">
+            <!--<a class="option blue " [ngClass]="{active : isActive}"> <i class="fa fa-anchor"></i></a>
+            <a class="option green" [ngClass]="{active : isActive}"> <i class="fa fa-coffee"></i> </a>-->
+            <a class="option red" [ngClass]="{active : isActive}"> <i class="fa fa-heart"></i> </a>
+            <a class="option purple" [ngClass]="{active : isActive}"><i class="fa fa-microphone"></i> </a>
+            <a class="option orange" [ngClass]="{active : isActive}"> <i class="fa fa-star"></i>  </a>
+            <!--<a class="option lightblue" [ngClass]="{active : isActive}"> <i class="fa fa-diamond"></i> </a>-->
+
+        </div>
+
+
 
             <!--<span class="menu">
                 <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
@@ -60,6 +71,11 @@
 </div>
 
 <div class="lead-body">
+
+            <div class="lead-body-bar">
+                    <button>edit</button>
+
+            </div>
 
             <div class="billing-address">
                 <span>Billing Address</span><br>

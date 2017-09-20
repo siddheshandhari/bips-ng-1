@@ -4,12 +4,15 @@
    <div class="option"></div>
 </div>-->
 
-<div class="menu" [ngClass]="{active : isActive}" >
-    <img [src]="'assets/imgs/head1.ico'" (click)="isActive = !isActive">
-    <a class="option" [ngClass]="{active : isActive}"></a>
-    <a class="option" [ngClass]="{active : isActive}"></a>
-    <a class="option" ></a>
-    <a class="option" [ngClass]="{active : isActive}"></a>
+<div class="menu ownerlogo" [ngClass]="{active : isActive}"  (click)="isActive = !isActive" >
+    <img [src]="'assets/imgs/head1.ico'">
+    <a class="option blue " [ngClass]="{active : isActive}"> <i class="fa fa-anchor"></i></a>
+    <a class="option green" [ngClass]="{active : isActive}"> <i class="fa fa-coffee"></i> </a>
+    <a class="option red" [ngClass]="{active : isActive}"> <i class="fa fa-heart"></i> </a>
+    <a class="option purple" [ngClass]="{active : isActive}"><i class="fa fa-microphone"></i> </a>
+    <a class="option orange" [ngClass]="{active : isActive}"> <i class="fa fa-star"></i>  </a>
+    <a class="option lightblue" [ngClass]="{active : isActive}"> <i class="fa fa-diamond"></i> </a>
+
 </div>
 
 
