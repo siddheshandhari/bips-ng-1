@@ -8,5 +8,5 @@
   <span class="subtitle">
     {{note.company.name}} • {{note.category}}
   </span>
-  <card-close-btn></card-close-btn>
+  <card-close-btn (click)="deleteNote(note)"></card-close-btn>
 </card>

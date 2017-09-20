@@ -32,8 +32,17 @@ export class NotesComponent implements OnInit {
     this.modalOpen = false;
   }
 
-  setSelectedNote(note){
+  selectNote(note){
     this.selectedNote = note;
+  }
+
+  deleteNote(note){
+    this.notesService.deleteNote(note.id).subscribe(
+      res => {
+        this.noteList.splice(this.noteList.indexOf(note), 1);
+        this.selectedNote = this.noteList[0];
+      }
+    );
   }
 
 

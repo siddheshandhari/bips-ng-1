@@ -1,6 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Note } from '../../../models/note';
-import { NotesService } from '../notes.service';
 
 @Component({
   selector: 'note-sidebar',
@@ -10,12 +9,10 @@ import { NotesService } from '../notes.service';
 
 export class NoteSidebarComponent{
   @Input() selectedNote: Note;
-  constructor(private notesService: NotesService){
+  @Output() onNoteDeleted: EventEmitter<Note> = new EventEmitter<Note>();
 
-  }
-
-  deleteNote(note){
-    this.notesService.deleteNote(note.id).subscribe();
+  deleteNote(note: Note): void{
+    this.onNoteDeleted.emit(note);
   }
 
 }
