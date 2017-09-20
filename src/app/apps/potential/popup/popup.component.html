@@ -1,0 +1,17 @@
+
+<!--<div class="menu" (click)="optionPopup()" >
+ <div class="option" ></div>
+   <div class="option"></div>
+</div>-->
+
+<div class="menu" [ngClass]="{active : isActive}" >
+    <img [src]="'assets/imgs/head1.ico'" (click)="isActive = !isActive">
+    <a class="option" [ngClass]="{active : isActive}"></a>
+    <a class="option" [ngClass]="{active : isActive}"></a>
+    <a class="option" ></a>
+    <a class="option" [ngClass]="{active : isActive}"></a>
+</div>
+
+
+
+

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Note } from '../../../models/note';
 import { NotesService } from '../notes.service';
 
@@ -8,7 +8,7 @@ import { NotesService } from '../notes.service';
   styleUrls: ['note-sidebar.component.css']
 })
 
-export class NoteSidebarComponent implements OnInit{
+export class NoteSidebarComponent{
   private selectedNote: Note;
   constructor(private notesService: NotesService){
     this.notesService.selectedNote$.subscribe(
@@ -17,8 +17,8 @@ export class NoteSidebarComponent implements OnInit{
       });
   }
 
-  ngOnInit(){
-
+  deleteNote(note){
+    this.notesService.deleteNote(note.id).subscribe();
   }
 
 }
