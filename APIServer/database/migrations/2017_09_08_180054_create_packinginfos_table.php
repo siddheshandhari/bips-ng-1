@@ -22,7 +22,7 @@ class CreatePackinginfosTable extends Migration
                 $table->float('pallet_height')->nullable();
                 $table->float('pallet_width')->nullable();
                 $table->float('pallet_length')->nullable();
-                $table->float('pallet-weight')->nullable();
+                $table->float('pallet_weight')->nullable();
                 $table->boolean('active')->default(true);
                 $table->timestamps();
 
