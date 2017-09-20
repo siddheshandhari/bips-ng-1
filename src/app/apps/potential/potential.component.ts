@@ -15,6 +15,7 @@ export class PotentialComponent implements OnInit {
   constructor(public potentialService:PotentialService) { }
 
 
+
 // get potential infomation
 getPotentiallist():void{
   this.potentialService.getPotentiallist()
