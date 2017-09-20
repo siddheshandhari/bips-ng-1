@@ -18,8 +18,8 @@ class CreatePricesTable extends Migration
             $table->increments('id');
             $table->integer('product_id')->length(10)->unsigned()->nullable();
             $table->foreign('product_id')->references('id')->on('products');
-            $table->string('quantity')->nullable();
-            $table->integer('price')->nullable();
+            $table->integer('quantity')->length(10)->unsigned()->nullable();
+            $table->float('price')->nullable();
             $table->boolean('active')->default(true);
             $table->timestamps();
         });
