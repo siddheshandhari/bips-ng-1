@@ -38,9 +38,13 @@ class NoteController extends ApiController
 
   }
 
-  public function destroy()
+  public function destroy($id)
   {
-
+    $note = Note::find($id);
+    $note->active = false;
+    if($note->save()){
+      return $this->respondDeleted('Note successfully deleted!');
+    }
   }
 
 }

@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 
 export class NotesComponent {
   modalOpen: boolean = false;
+
   openModal(){
     this.modalOpen = true;
   }

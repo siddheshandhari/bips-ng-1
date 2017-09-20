@@ -16,13 +16,11 @@ class CreateCapacitiesTable extends Migration
         if (!(Schema::hasTable('capacities'))) {
         Schema::create('capacities', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('product_id')->length(10)->unsigned()->nullable();
-            $table->foreign('product_id')->references('id')->on('products');
-            $table->integer('capacity')->nullable();
-            $table->integer('weight')->nullable();
-            $table->integer('height')->nullable();
-            $table->integer('diameter')->nullable();
-            $table->integer('punt')->nullable();
+            $table->integer('capacity')->length(10)->unsigned()->nullable();
+            $table->float('weight')->nullable();
+            $table->float('height')->nullable();
+            $table->float('diameter')->nullable();
+            $table->float('punt')->nullable();
             $table->boolean('active')->default(true);
             $table->timestamps();
         });
