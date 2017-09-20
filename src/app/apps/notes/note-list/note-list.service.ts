@@ -6,7 +6,7 @@ import { Note } from '../../../models/note';
 
 @Injectable()
 export class NoteListService {
-  constructor(public http:Http) {}
+  constructor(public http: Http) {}
   public getNoteList(): Observable<Note[]>{
     return this.http.get('http://127.0.0.1:8000/api/v1/note')
     .map((res:Response) => {
