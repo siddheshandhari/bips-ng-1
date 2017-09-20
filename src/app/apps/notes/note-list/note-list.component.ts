@@ -13,6 +13,7 @@ export class NoteListComponent implements OnInit {
 
   public noteList: Array<Note>;
   constructor(private noteListService: NoteListService, private notesService: NotesService){}
+
   ngOnInit(){
     this.noteListService.getNoteList().subscribe(
       res => {
@@ -20,5 +21,9 @@ export class NoteListComponent implements OnInit {
         this.notesService.setSelectedNote(this.noteList[0]);
       }
     )
+  }
+
+  selectNote(note){
+    this.notesService.setSelectedNote(note);
   }
 }

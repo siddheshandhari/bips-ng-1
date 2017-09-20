@@ -1,4 +1,4 @@
-<card class="note-card" *ngFor="let note of noteList">
+<card class="note-card" *ngFor="let note of noteList" (click)="selectNote(note)">
   <h5 class="note-subject">
     {{note.subject}}
   </h5>
