@@ -13,18 +13,14 @@ class CapacitiesTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
         $count = 30;
-        $list = range(1, $count);
-        shuffle($list);
-        $products = $list;
         foreach(range(1, 30) as $index)
         {
           DB::table('capacities')->insert([
-            'product_id' => array_shift($products),
-            'capacity' => "2",
-            'weight' => "1",
-            'height' => "1",
-            'diameter' => "1",
-            'punt' => "1",
+            'capacity' => $faker->randomNumber(),
+            'weight' => $faker->randomFloat($nbMaxDecimals = 5, $min = 0, $max = 5),
+            'height' => $faker->randomFloat($nbMaxDecimals = 5, $min = 0, $max = 5),
+            'diameter' => $faker->randomFloat($nbMaxDecimals = 5, $min = 0, $max = 1),
+            'punt' => $faker->randomFloat($nbMaxDecimals = 5, $min = 0, $max = 1)
           ]);
         }
     }
