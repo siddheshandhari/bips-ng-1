@@ -24,12 +24,12 @@ class DatabaseSeeder extends Seeder
       'tasks',
       'userloggedinhistories',
       'users',
-      'products',
-      'colors',
-      'prices',
-      'capacities',
-      'neck_finishes',
-      'product_catagories',
+      // 'products',
+      // 'colors',
+      // 'prices',
+      // 'capacities',
+      // 'neck_finishes',
+      // 'product_catagories',
       'orders',
       'notes',
     ];
@@ -57,12 +57,12 @@ class DatabaseSeeder extends Seeder
       $this->call(SalesordersTableSeeder::class);
       $this->call(TasksTableSeeder::class);
       $this->call(UserloggedinhistoriesTableSeeder::class);
-      $this->call(ProductsTableSeeder::class);
-      $this->call(PricesTableSeeder::class);
-      $this->call(ColorsTableSeeder::class);
-      $this->call(CapacitiesTableSeeder::class);
-      $this->call(Neck_FinishesTableSeeder::class);
-      $this->call(Product_CatagoriesTableSeeder::class);
+      // $this->call(ProductsTableSeeder::class);
+      // $this->call(PricesTableSeeder::class);
+      // $this->call(ColorsTableSeeder::class);
+      // $this->call(CapacitiesTableSeeder::class);
+      // $this->call(Neck_FinishesTableSeeder::class);
+      // $this->call(Product_CatagoriesTableSeeder::class);
       $this->call(OrdersTableSeeder::class);
       $this->call(NotesTableSeeder::class);
     }
