@@ -15,11 +15,15 @@ class NotesTableSeeder extends Seeder
       foreach(range(1, 30) as $index)
       {
         DB::table('notes')->insert([
-          'title' => $faker->sentence($nbWords = 6, $variableNbWords = true),
-          'body' => $faker->sentence($nbWords = 6, $variableNbWords = true),
-          'author_id' => $faker->numberBetween($min = 1, $max = 30),
+          'subject' => $faker->sentence($nbWords = 6, $variableNbWords = true),
+          'body' => $faker->text($maxNbChars = 200),
+          'create_author_id' => $faker->numberBetween($min = 1, $max = 30),
+          'update_author_id' => $faker->numberBetween($min = 1, $max = 30),
           'company_id' => $faker->numberBetween($min = 1, $max = 30),
-          'order_id' => $faker->numberBetween($min = 1, $max = 30)
+          'category' => $faker->randomElement($array = array('order', 'quote', 'invoice', 'project')),
+          'context_id' => $faker->numberBetween($min = 1, $max = 30),
+          'created_at' => Carbon\Carbon::now(),
+          'updated_at' => Carbon\Carbon::now()
         ]);
       };
     }

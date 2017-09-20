@@ -3,8 +3,8 @@ import { NgClass } from '@angular/common';
 
 //Rxjs Store
 import { Store } from '@ngrx/store';
-import { CLOSE_SIDEBAR, OPEN_SIDEBAR } from '../../reducers/sidebar.reducer';
-import { ADD_INSTALLED_APPS, REMOVE_INSTALLED_APPS } from '../../reducers/installedApps.reducer';
+import { CLOSE_SIDEBAR, OPEN_SIDEBAR } from './../reducers/sidebar.reducer';
+import { ADD_INSTALLED_APPS, REMOVE_INSTALLED_APPS } from './../reducers/installedApps.reducer';
 
 //Service
 import { AppsService } from '../apps/apps.service';

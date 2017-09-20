@@ -23,12 +23,12 @@ import { WindowComponent } from './window/window.component';
 import { SignupComponent } from './signup/signup.component';
 import { SignupService } from './signup/signup.service';
 //reducers
-import { InstalledAppsReducer } from '../reducers/installedApps.reducer';
-import { RunningAppsReducer } from '../reducers/runningApps.reducer';
-import { HideAppsReducer } from '../reducers/hideApps.reducer';
-import { TopWindowReducer } from '../reducers/topWindow.reducer';
-import { CurrentUserReducer } from '../reducers/currentUser.reducer';
-import { SidebarReducer } from '../reducers/sidebar.reducer';
+import { InstalledAppsReducer } from './reducers/installedApps.reducer';
+import { RunningAppsReducer } from './reducers/runningApps.reducer';
+import { HideAppsReducer } from './reducers/hideApps.reducer';
+import { TopWindowReducer } from './reducers/topWindow.reducer';
+import { CurrentUserReducer } from './reducers/currentUser.reducer';
+import { SidebarReducer } from './reducers/sidebar.reducer';
 import 'rxjs/Rx';
 import { ClockComponent } from './clock/clock.component';
 

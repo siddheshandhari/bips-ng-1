@@ -1,3 +1,11 @@
-<card>
-  
+<card class="note-card" *ngFor="let note of noteList">
+  <h5 class="note-subject">
+    {{note.subject}}
+  </h5>
+  <span class="timestamp">
+    {{note.created_at.date | amLocal | amDateFormat: 'YYYY-MM-DD HH:mm'}}
+  </span>
+  <span class="subtitle">
+    {{note.company.name}} • {{note.category}}
+  </span>
 </card>
