@@ -41,11 +41,11 @@ export class LeadService {
     .map((res:Response) => res.json())
   }
 
-  searchLead(value): Observable<Lead>{
-    return this.http.get( 'http://127.0.0.1:8000/api/v1/search/?category=company&context=name&value='+value)
-    .map((res:Response) =>res.json())
+  // searchLead(value): Observable<Lead>{
+  //   return this.http.get( 'http://127.0.0.1/api/v1/search/lead/?q='+value)
+  //   .map((res:Response) =>res.json())
 
-  }
+  // }
    
 
 

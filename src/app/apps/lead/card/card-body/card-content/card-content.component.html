@@ -70,12 +70,17 @@
         </div>
 </div>
 
+
+ <div class="lead-body-bar">
+        <button *ngIf="!isEditing" class="btn btn-sm btn-outline-success" (click)="onEdit(lead)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+        <button *ngIf="isEditing" class="btn btn-sm btn-outline-primary" (click)="onCancel(lead)"><i class="fa fa-times" aria-hidden="true"></i></button>
+        <button *ngIf="isEditing" class="btn btn-sm btn-outline-success" (click)="onSave(lead)"><i class="fa fa-check" aria-hidden="true"></i></button>
+        <button class="btn btn-sm btn-outline-danger" (click)="onDelete(lead)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+
+</div>
+
 <div class="lead-body">
 
-            <div class="lead-body-bar">
-                    <button>edit</button>
-
-            </div>
 
             <div class="billing-address">
                 <span>Billing Address</span><br>
