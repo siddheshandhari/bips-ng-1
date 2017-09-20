@@ -25,6 +25,7 @@
 }
 
 .subject-title{
+  display: inline-block;
   margin: 0;
   font-family: "Helvetica", sans-serif;
   color: #B7B7B7;

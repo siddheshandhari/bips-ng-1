@@ -3,7 +3,7 @@
     {{note.subject}}
   </h5>
   <span class="timestamp">
-    {{note.created_at.date | amLocal | amDateFormat: 'YYYY-MM-DD HH:mm'}}
+    {{note.created_at.date | amTimeAgo}}
   </span>
   <span class="subtitle">
     {{note.company.name}} • {{note.category}}

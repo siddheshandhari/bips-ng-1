@@ -1,9 +1,10 @@
 <card class="note-actions">
   <div class="subject">
     <h5 class="subject-title">
-      Subject: 
+      Subject:
     </h5>
     <span class="subject-text">
+      {{selectedNote?.subject}}
     </span>
   </div>
   <ul class="actions-list">
@@ -18,4 +19,6 @@
     </li>
   </ul>
 </card>
-<card class="note-body"></card>
+<card class="note-body">
+  {{selectedNote?.body}}
+</card>
