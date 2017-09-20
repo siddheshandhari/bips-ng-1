@@ -10,11 +10,15 @@ import { NotesService } from '../notes.service';
 
 export class NoteSidebarComponent implements OnInit{
   private selectedNote: Note;
-  constructor(private notesService: NotesService){}
+  constructor(private notesService: NotesService){
+    this.notesService.selectedNote$.subscribe(
+      note => {
+        this.selectedNote = note;
+      });
+  }
 
   ngOnInit(){
-    this.selectedNote = this.notesService.selectedNote;
-    console.log(this.selectedNote);
+
   }
 
 }

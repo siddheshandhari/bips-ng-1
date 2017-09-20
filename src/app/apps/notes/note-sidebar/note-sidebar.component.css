@@ -22,13 +22,22 @@
   display: block;
   float: left;
   padding: 10px 0;
+  max-width: 250px;
+  overflow: hidden;
+    white-space: nowrap;
 }
 
 .subject-title{
+  display: inline-block;
   margin: 0;
   font-family: "Helvetica", sans-serif;
   color: #B7B7B7;
 }
+
+.subject-text{
+
+}
+
 
 .actions-list{
   display: block;
@@ -60,4 +69,15 @@
 .note-body{
   height: 400px;
   width: 100%;
+}
+
+.note-timestamp{
+  display: block;
+  position: absolute;
+  bottom: 15px;
+}
+
+.note-timestamp p{
+  color: #C4C4C4;
+  margin: 0;
 }

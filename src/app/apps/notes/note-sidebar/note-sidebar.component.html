@@ -1,9 +1,10 @@
 <card class="note-actions">
   <div class="subject">
     <h5 class="subject-title">
-      Subject: 
+      Subject:
     </h5>
     <span class="subject-text">
+      {{selectedNote?.subject}}
     </span>
   </div>
   <ul class="actions-list">
@@ -18,4 +19,16 @@
     </li>
   </ul>
 </card>
-<card class="note-body"></card>
+<card class="note-body">
+  <div class="body-content">
+    {{selectedNote?.body}}
+  </div>
+  <div class="note-timestamp">
+    <p>
+      Create: {{selectedNote?.created_at.date | amLocal | amDateFormat: 'YYYY-MM-DD HH:mm'}} by {{selectedNote?.create_author.first_name}}{{selectedNote?.create_author.last_name}}
+    </p>
+    <p>
+      Last update: {{selectedNote?.updated_at.date | amLocal | amDateFormat: 'YYYY-MM-DD HH:mm'}} by {{selectedNote?.update_author.first_name}}{{selectedNote?.update_author.last_name}}
+    </p>
+  </div>
+</card>
