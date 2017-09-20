@@ -13,7 +13,6 @@ import { AddNoteModule } from './add-note/add-note.module';
 import { NotesComponent } from './notes.component';
 
 import { NotesService } from './notes.service';
-import { NoteListService } from './note-list/note-list.service';
 
 @NgModule({
   imports: [
@@ -35,7 +34,6 @@ import { NoteListService } from './note-list/note-list.service';
   ],
   providers: [
     NotesService,
-    NoteListService
   ]
 })
 

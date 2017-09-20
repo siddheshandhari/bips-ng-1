@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { NoteListService } from './note-list.service';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { NotesService } from '../notes.service';
 import { Note } from '../../../models/note';
 
@@ -9,21 +8,13 @@ import { Note } from '../../../models/note';
   styleUrls: ['note-list.component.css']
 })
 
-export class NoteListComponent implements OnInit {
+export class NoteListComponent{
 
-  public noteList: Array<Note>;
-  constructor(private noteListService: NoteListService, private notesService: NotesService){}
+  @Input() noteList: Array<Note>;
+  @Output() onNoteSelected: EventEmitter<Note> = new EventEmitter<Note>();
+  constructor(private notesService: NotesService){}
 
-  ngOnInit(){
-    this.noteListService.getNoteList().subscribe(
-      res => {
-        this.noteList = res;
-        this.notesService.setSelectedNote(this.noteList[0]);
-      }
-    )
-  }
-
-  selectNote(note){
-    this.notesService.setSelectedNote(note);
+  selectNote(note): void{
+    this.onNoteSelected.emit(note);
   }
 }

@@ -6,10 +6,15 @@ import { Note } from '../../models/note';
 
 @Injectable()
 export class NotesService{
-  private selectedNote = new Subject<Note>();
-  selectedNote$ = this.selectedNote.asObservable();
-
   constructor(public http: Http) {}
+
+  getNoteList(): Observable<Note[]>{
+    return this.http.get('http://127.0.0.1:8000/api/v1/note')
+    .map((res:Response) => {
+      return res.json();
+    })
+    .catch((error: any) => Observable.throw(error || 'Server error'));
+  }
 
   deleteNote(id){
     return this.http.delete('http://127.0.0.1:8000/api/v1/note/' + id)
@@ -17,10 +22,5 @@ export class NotesService{
       return res.json();
     })
   }
-
-  setSelectedNote(note: Note){
-    this.selectedNote.next(note)
-  }
-
 
 }

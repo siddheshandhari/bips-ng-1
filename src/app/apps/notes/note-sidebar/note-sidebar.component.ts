@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Note } from '../../../models/note';
 import { NotesService } from '../notes.service';
 
@@ -9,12 +9,9 @@ import { NotesService } from '../notes.service';
 })
 
 export class NoteSidebarComponent{
-  private selectedNote: Note;
+  @Input() selectedNote: Note;
   constructor(private notesService: NotesService){
-    this.notesService.selectedNote$.subscribe(
-      note => {
-        this.selectedNote = note;
-      });
+
   }
 
   deleteNote(note){
