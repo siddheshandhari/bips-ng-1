@@ -1,7 +1,5 @@
 <div  class="details-header">
-    <div *ngIf="lead">
-
-        
+    <!--<div *ngIf="lead">
         <button *ngIf="!isEditing" class="btn btn-sm btn-outline-success" (click)="onEdit(lead)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
         <button *ngIf="isEditing" class="btn btn-sm btn-outline-primary" (click)="onCancel(lead)"><i class="fa fa-times" aria-hidden="true"></i></button>
         <button *ngIf="isEditing" class="btn btn-sm btn-outline-success" (click)="onSave(lead)"><i class="fa fa-check" aria-hidden="true"></i></button>
@@ -18,13 +16,6 @@
             <span class="name-content" *ngIf="!isEditing">{{lead.company.website}}</span>
             <input class="edit-input" type="text" *ngIf="isEditing" [(ngModel)]="lead.company.website"><br>
         </div>
-<!--
-        <div class="company-website">
-            <label class="info-title">Website </label>
-            <span class="name-content" *ngIf="!isEditing">{{lead.company.website}}</span>
-            <input class="edit-input" type="text" *ngIf="isEditing" [(ngModel)]="lead.company.website"><br>
-        </div>-->
-
         <div class="company-industry">
             <label class="info-title">Industry </label>
             <span class="name-content" *ngIf="!isEditing">{{lead.company.industry}}</span>
@@ -34,13 +25,6 @@
             <span class="name-content" *ngIf="!isEditing">{{lead.company.employees}}</span>
             <input class="edit-input" type="text" *ngIf="isEditing" [(ngModel)]="lead.company.employees"><br>
         </div>
-
-        <!--<div class="company-employees">
-            <label class="info-title">Employees </label>
-            <span class="name-content" *ngIf="!isEditing">{{lead.company.employees}}</span>
-            <input class="edit-input" type="text" *ngIf="isEditing" [(ngModel)]="lead.company.employees"><br>
-        </div>-->
-
         <div class="company-status">
             <label class="info-title">Status </label>
             <span class="name-content" *ngIf="!isEditing">{{lead.status}}</span>
@@ -50,7 +34,6 @@
             <span class="name-content" *ngIf="!isEditing">{{lead.company.annual_revenue}}</span>
             <input class="edit-input" type="text" *ngIf="isEditing" [(ngModel)]="lead.company.annual_revenue">
         </div>
-
         <div *ngFor ="let contact of contacts">
             
            <div class="lead-contact">
@@ -66,19 +49,22 @@
 
         </div>
     
-
-        <!--<div class="company-annual">
-            <label class="info-title">Annual Revenue </label>
-            <span class="name-content" *ngIf="!isEditing">{{lead.company.annual_revenue}}</span>
-            <input class="edit-input" type="text" *ngIf="isEditing" [(ngModel)]="lead.company.annual_revenue">
-        </div>-->
+    </div>-->
+    <div class="details-header-bar">
+        <div class="details-header-bar-title"><b>Note</b></div>
+            <button>sd</button>
     </div>
+
+    <div *ngIf="lead">
+        <ng-content></ng-content>
+    </div>
+
 </div>
 
 <div  class="details-body" (click)="detailClick(lead)">
   
     <div *ngIf="lead">
-        <ng-content></ng-content>
+        
     </div>
 
 </div>

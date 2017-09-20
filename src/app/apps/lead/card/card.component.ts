@@ -14,7 +14,8 @@ export class CardComponent {
     toggleLead(){
         if(this.leadIsOpen == false){
             this.leadIsOpen = true;
-        }else{
+        }
+        else{
             this.leadIsOpen = false;
         }
     }

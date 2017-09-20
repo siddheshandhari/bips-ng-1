@@ -45,7 +45,7 @@
         
             <card *ngFor="let lead of leadlist" [class.selected]="lead === selectedLead" (click)="selectedCard(lead)">
                 <card-body>
-                    <card-content [lead]= "lead" [contacts]="contacts" ></card-content>
+                    <card-content [lead]= "lead" [contacts]="contacts" (deleteEvent)="deleteLead($event)" ></card-content>
                 </card-body>
             </card>
        
@@ -55,7 +55,7 @@
         
             <card *ngFor="let lead of searchlist" [class.selected]="lead === selectedLead" (click)="selectedCard(lead)">
                 <card-body>
-                    <card-content [lead]= "lead" [contacts]="contacts" ></card-content>
+                    <card-content [lead]= "lead" [contacts]="contacts" (deleteEvent)="deleteLead($event)"></card-content>
                 </card-body>
             </card>
        
