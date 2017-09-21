@@ -52,18 +52,51 @@
     </div>-->
     <div class="details-header-bar">
         <div class="details-header-bar-title"><b>Note</b></div>
-            <button>sd</button>
+        <div class="details-header-bar-icon">
+            <ul class="details-header-actions">
+                <li><i class="fa fa-camera" aria-hidden="true"></i></li>
+                <li><i class="fa fa-microphone" aria-hidden="true"></i></li>
+                <li><i class="fa fa-envelope-o" aria-hidden="true"></i></li>
+                <li><i class="fa fa-address-book-o" aria-hidden="true"></i></li>
+            </ul>
+
+            <span class="add-note"><i class="fa fa-plus-circle" aria-hidden="true"></i></span>
+        </div>
     </div>
 
+    <ng-content></ng-content>
+
     <div *ngIf="lead">
-        <ng-content></ng-content>
+        
     </div>
 
 </div>
 
 <div  class="details-body" (click)="detailClick(lead)">
+
+    <div class="lead-showcase-title">
+           <b> Products</b>
+           <span class="add-showcase-bottle"><i class="fa fa-plus-circle" aria-hidden="true"></i></span>
+    </div>
+
+    <div class="lead-showcase-body">
+
+        <span class="left-arrow"><</span>
+        <ul class="lead-showcase-itemlist">
+            <li><img [src]="'assets/imgs/bottle1.png'"></li>
+            <li><img [src]="'assets/imgs/bottle2.png'"></li>
+            <li><img [src]="'assets/imgs/bottle1.png'"></li>
+            <li><img [src]="'assets/imgs/bottle2.png'"></li>
+            <li><img [src]="'assets/imgs/bottle1.png'"></li>
+ 
+        </ul>
+        <span class="right-arrow">></span>
+
+        
+    </div>
   
     <div *ngIf="lead">
+
         
     </div>
 
