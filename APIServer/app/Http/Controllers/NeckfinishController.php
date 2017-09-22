@@ -23,9 +23,9 @@ class NeckfinishController extends ApiController
     
     public function browse()
     {
-        $neckfinishes = Neckfinish::all();
-        return $this->setStatusCode(200)->respond(
-            $this->neckfinishTransformer->transformCollection($neckfinishes->all())
+        $neckfinishes = neckfinish::all();
+        return $this->respond(
+            $this->neckfinishTransformer->transformCollection($neckfinishes)
           );
     }
 

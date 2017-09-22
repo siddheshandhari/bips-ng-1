@@ -4,8 +4,6 @@ use App\utils\Transformers\ColorTransformer;
 use App\utils\Transformers\CapacityTransformer;
 use App\utils\Transformers\NeckfinishTransformer;
 use App\utils\Transformers\PackinginfoTransformer;
-// use App\Product;
-
 
 class ProductTransformer extends Transformer {
   protected $colorTransformer;
