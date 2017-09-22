@@ -1,23 +1,28 @@
 <?php 
 namespace App\utils\Transformers;
+use App\utils\Transformers\ProductTransformer;
 
 // use League\Fractal\Resource\Collection;
 
 class PriceTransformer extends Transformer {
 
-  // protected $priceTransformer;
+  // protected $productTransformer;
   
-  //   function __construct(PriceTransformer $priceTransformer)
+  //   function __construct(ProductTransformer $productTransformer)
   //   {
-  //     $this->priceTransformer = $priceTransformer;
+  //     $this->productTransformer = $productTransformer;
   //   }
 
   public function transform($price)
   {
+    // $product = $price->product;
+    // $product = $this->productTransformer->transform($product);
+
     return [
       'id' => $price['id'],
       'quantity' => $price['quantity'],
-      'price' => $price['price']
+      'price' => $price['price'],
+      // 'product' => $product
     ];
   }
 }
