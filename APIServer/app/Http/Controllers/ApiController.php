@@ -40,7 +40,7 @@ class ApiController extends Controller {
   {
     return $this->setStatusCode(201)->respond([
       'success' => true,
-      'messgae' => $message
+      'message' => $message
     ]);
   }
 
@@ -48,7 +48,7 @@ class ApiController extends Controller {
   {
     return $this->setStatusCode(200)->respond([
       'success' => true,
-      'messgae' => $message
+      'message' => $message
     ]);
   }
 
@@ -56,7 +56,7 @@ class ApiController extends Controller {
   {
     return $this->setStatusCode(200)->respond([
       'success' => true,
-      'messgae' => $message
+      'message' => $message
     ]);
   }
 
@@ -64,7 +64,7 @@ class ApiController extends Controller {
   {
     return $this->setStatusCode(409)->respond([
       'success' => false,
-      'messgae' => $message
+      'message' => $message
     ]);
   }
 

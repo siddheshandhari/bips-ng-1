@@ -1,7 +1,7 @@
 import { Component,ElementRef, Input,Output, OnInit, EventEmitter,NgModule } from '@angular/core';
 import { LeadService } from '../lead.service';
 import { Lead } from '../lead';
-import { Contact } from '../../../models/Contact';
+import { Contact } from '../../../models/contact';
 
 @Component({
     selector: 'info-details',
