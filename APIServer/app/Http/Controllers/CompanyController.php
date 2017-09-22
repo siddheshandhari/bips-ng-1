@@ -24,8 +24,8 @@ class CompanyController extends ApiController
     public function browse()
     {
         $companies = Company::all();
-        return $this->setStatusCode(200)->respond(
-          $this->companyTransformer->transformCollection($companies->all())
+        return $this->respond(
+          $this->companyTransformer->transformCollection($companies)
         );
     }
 

@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CompanyService } from '../../../core/services/company.service';
+import { Company } from '../../../core/models/index';
 
 @Component({
   selector: 'add-note',
@@ -7,13 +9,20 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['add-note.component.css']
 })
 
-export class AddNoteComponent{
+export class AddNoteComponent implements OnInit{
 
+  companies: Array<Company>;
   noteForm: FormGroup;
   categories: Array<string> = ['Sales Order', 'Quotes', 'Invoice', 'Projects'];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private companyService: CompanyService, private fb: FormBuilder) {
     this.createForm();
+  }
+
+  ngOnInit(){
+    this.companyService.getCompanies().subscribe(
+      res => this.companies = res
+    )
   }
 
   createForm(){
