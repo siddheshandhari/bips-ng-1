@@ -69,7 +69,7 @@ Route::group(['prefix' => 'api/v1'], function()
   // Route::put('product/{id}', 'ProductController@edit');
 
   //Price Collections Routes
-  Route::get('price', 'PriceController@index');
+  Route::get('price', 'PriceController@browse');
 
   //Color Collections Routes
   Route::get('color', 'ColorController@browse');

@@ -1,8 +1,5 @@
 <?php 
 namespace App\utils\Transformers;
-use App\utils\Transformers\NeckfinishTransformer;
-use App\Neckfinish;
-
 
 class NeckfinishTransformer extends Transformer {
   // protected $neckfinishTransformer;

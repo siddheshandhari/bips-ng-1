@@ -1,8 +1,5 @@
 <?php 
 namespace App\utils\Transformers;
-use App\utils\Transformers\CapacityTransformer;
-use App\Capacity;
-
 
 class CapacityTransformer extends Transformer {
 

@@ -1,8 +1,5 @@
 <?php 
 namespace App\utils\Transformers;
-use App\utils\Transformers\PackinginfoTransformer;
-use App\Packinginfo;
-
 
 class PackinginfoTransformer extends Transformer {
 
