@@ -20,7 +20,7 @@
   </div>
 
   <div class="form-group" *ngIf="contextVisiable">
-    <label class="center-block">Context:
+    <label class="center-block">{{contextLabel}}:
       <select class="form-control" formControlName="context">
         <option [value]="null">None</option>
         <option *ngFor="let context of contexts" [value]="context">{{context}}</option>
@@ -44,6 +44,3 @@
     <button class="btn btn-primary" type="submit">Save</button>
   </div>
 </form>
-<p>
-  Form value: {{ noteForm.value | json }}
-</p>
