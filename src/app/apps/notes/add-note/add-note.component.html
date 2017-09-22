@@ -22,6 +22,7 @@
   <div class="form-group" *ngIf="contextVisiable">
     <label class="center-block">Context:
       <select class="form-control" formControlName="context">
+        <option [value]="null">None</option>
         <option *ngFor="let context of contexts" [value]="context">{{context}}</option>
       </select>
     </label>

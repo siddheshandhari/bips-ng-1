@@ -12,7 +12,7 @@ import { Company } from '../../../core/models/index';
 export class AddNoteComponent implements OnInit{
 
   companies: Array<Company>;
-  contexts: Array<any>;
+  contexts: Array<any> =  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
   contextVisiable: boolean = false;
   noteForm: FormGroup;
   categories: Array<string> = ['Sales Order', 'Quotes', 'Invoice', 'Projects'];
@@ -34,30 +34,50 @@ export class AddNoteComponent implements OnInit{
 
     //when company selection is changed
     companyControl.valueChanges.subscribe(
-      selectedCompanyId => {
-        this.changeContextVisiable();
+      company => {
+        if(this.bothSelected()){
+          this.contextVisiable = true;
+          this.getContext();
+        } else {
+          this.contextVisiable = false;
+        }
       }
     )
     //when category selection is changed
     categoryControl.valueChanges.subscribe(
-      selectedCategory => {
-        this.changeContextVisiable();
+      category => {
+        if(this.bothSelected()){
+          this.contextVisiable = true;
+          this.getContext();
+        } else {
+          this.contextVisiable = false;
+        }
       }
     )
   }
 
   getContext(){
-
+    const category = this.noteForm.get('category').value;
+    const companyId = this.noteForm.get('company').value;
+    if(category == "projects"){
+        // TODO: search api for project
+    } else if(category == "Quotes"){
+        // TODO: search api for quotes
+    } else if(category == "Invoice"){
+        // TODO: search api for invoice
+    } else {
+      //category == sales order
+      console.log('hi');
+    }
   }
 
-  changeContextVisiable(){
+  bothSelected(){
     const companyControl = this.noteForm.get('company');
     const categoryControl = this.noteForm.get('category');
     if(companyControl.value && categoryControl.value && companyControl.value != "null" && categoryControl.value != 'null'){
-      this.contextVisiable = true;
-    } else {
-      this.contextVisiable = false;
+      return true;
     }
+    return false
   }
 
   createForm(){
