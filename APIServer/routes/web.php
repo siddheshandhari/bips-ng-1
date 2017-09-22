@@ -80,8 +80,8 @@ Route::group(['prefix' => 'api/v1'], function()
   //Capacities Collections Routes
   Route::get('capacity', 'CapacityController@index');
 
-  //Neck_finishes Collections Routes
-  Route::get('neck_finish', 'Neck_finishController@index');
+  //Neckfinishes Collections Routes
+  Route::get('neckfinish', 'NeckfinishController@browse');
 });
 
 
