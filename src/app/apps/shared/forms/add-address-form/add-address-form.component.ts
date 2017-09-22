@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Address } from '../../../../models/address';
+import { Address } from '../../../../core/models/index';
 
 @Component({
   selector: 'add-address-form',

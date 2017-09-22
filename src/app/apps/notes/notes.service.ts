@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { Subject } from 'rxjs/Subject';
-import { Note } from '../../models/note';
+import { Note } from '../../core/models/index';
 
 @Injectable()
 export class NotesService{

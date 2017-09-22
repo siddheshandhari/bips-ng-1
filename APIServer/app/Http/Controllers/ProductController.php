@@ -18,9 +18,9 @@ class ProductController extends ApiController
      {
        $this->productTransformer = $productTransformer;
      }
-    public function index()
+    public function browse()
     {
-        $products = product::all();
+        $products = Product::all();
         // echo $products;
         return $this->respond(
           $this->productTransformer->transformCollection($products)

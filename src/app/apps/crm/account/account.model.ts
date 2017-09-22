@@ -1,4 +1,4 @@
-import { Company, Contact } from '../../../models/index';
+import { Company, Contact } from '../../../core/models/index';
 
 export class Account {
   id: number;
