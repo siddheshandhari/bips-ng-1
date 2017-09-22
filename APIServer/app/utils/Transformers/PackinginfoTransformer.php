@@ -1,16 +1,23 @@
 <?php 
 namespace App\utils\Transformers;
-use App\utils\Transformers\ColorTransformer;
-use App\Color;
+use App\utils\Transformers\PackinginfoTransformer;
+use App\Packinginfo;
 
 
-class ColorTransformer extends Transformer {
+class PackinginfoTransformer extends Transformer {
 
-  public function transform($color)
+  public function transform($packinginfo)
   {
     return [
-      'id' => $color['id'],
-      'color' => $color['color']
+      'id' => $packinginfo['id'],
+      'case_package' => $packinginfo['case_package'],
+      'cases_pallet' => $packinginfo['cases_pallet'],
+      'quantity_pallet' => $packinginfo['quantity_pallet'],
+      'pallet_height' => $packinginfo['pallet_height'],
+      'pallet_width' => $packinginfo['pallet_width'],
+      'pallet_length' => $packinginfo['pallet_length'],
+      'pallet_weight' => $packinginfo['pallet_weight'],
+      
     ];
   }
 

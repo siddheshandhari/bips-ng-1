@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Capacity;
-// use app\utils\Transformers\CapacityTransformer;
+use App\utils\Transformers\CapacityTransformer;
 
 class CapacityController extends ApiController
 {
@@ -13,11 +13,17 @@ class CapacityController extends ApiController
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    protected $capacityTransformer;
+    function __construct(CapacityTransformer $capacityTransformer)
+    {
+        $this->capacityTransformer = $capacityTransformer;
+    }
+    public function browse()
     {
         $capacities = capacity::all();
         return $this->respond(
-            $capacities
+            $this->capacityTransformer->transformCollection($capacities)
         );
     }
 
