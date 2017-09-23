@@ -83,6 +83,11 @@ Route::group(['prefix' => 'api/v1'], function()
   //Packinginfos Collections Routes
   Route::get('packinginfo', 'PackinginfoController@browse');
 
+  //Orders Collections Routes
+  Route::get('order', 'OrderController@browse');
+
+  //Warehouses Collections Routes
+  Route::get('warehouse', 'WarehouseController@browse');
 });
 
 
