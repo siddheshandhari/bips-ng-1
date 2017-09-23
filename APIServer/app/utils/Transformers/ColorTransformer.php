@@ -1,8 +1,5 @@
 <?php 
 namespace App\utils\Transformers;
-use App\utils\Transformers\ColorTransformer;
-use App\Color;
-
 
 class ColorTransformer extends Transformer {
 

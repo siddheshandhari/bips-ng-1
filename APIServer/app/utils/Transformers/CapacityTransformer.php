@@ -1,16 +1,17 @@
 <?php 
 namespace App\utils\Transformers;
-use App\utils\Transformers\ColorTransformer;
-use App\Color;
 
+class CapacityTransformer extends Transformer {
 
-class ColorTransformer extends Transformer {
-
-  public function transform($color)
+  public function transform($capacity)
   {
     return [
-      'id' => $color['id'],
-      'color' => $color['color']
+      'id' => $capacity['id'],
+      'capacity' => $capacity['capacity'],
+      'weight' => $capacity['weight'],
+      'height' => $capacity['height'],
+      'diameter' => $capacity['diameter'],
+      'punt' => $capacity['punt']
     ];
   }
 

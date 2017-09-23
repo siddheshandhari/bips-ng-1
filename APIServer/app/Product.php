@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $table = "products";
-    // protected $fillable = ['product_id', 'name', 'image', 'sector', 'shape', 'model', 'details', 'technical_detail_link', 'description', 'active'];
 
     public function color()
     {
@@ -29,9 +28,13 @@ class Product extends Model
         return $this->belongsTo('App\Packinginfo');
     }
 
-    // public function prices()
-    // {
-    //     return $this->hasMany('App\Price');
-    // }
+    public function prices()
+    {
+        return $this->hasMany('App\Price');
+    }
+
+    protected $hidden = [
+        'active'
+    ];
 
 }

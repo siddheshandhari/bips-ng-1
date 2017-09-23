@@ -1,40 +1,44 @@
 <h2>Add New Note</h2>
 
 <form [formGroup]="noteForm" novalidate (ngSubmit)="onSave()">
-  <div class="form-group">
-    <label class="center-block">Company:
-      <select class="form-control" formControlName="company">
-        <option *ngFor="let company of companies" [value]="company">{{company}}</option>
+  <div class="row">
+    <div class="form-group col-sm-4">
+      <label class="center-block">Company:</label>
+      <select class="form-control col-sm-10" formControlName="company">
+        <option [value]="null">None</option>
+        <option *ngFor="let company of companies" [value]="company.id">{{company.name}}</option>
       </select>
-    </label>
-  </div>
+    </div>
 
-  <div class="form-group">
-    <label class="center-block">Category:
+    <div class="form-group col-sm-4">
+      <label class="center-block">Category:</label>
       <select class="form-control" formControlName="category">
+        <option [value]="null">None</option>
         <option *ngFor="let category of categories" [value]="category">{{category}}</option>
       </select>
-    </label>
-  </div>
+    </div>
 
-  <div class="form-group">
-    <label class="center-block">Context:
+    <div class="form-group col-sm-4" *ngIf="contextVisiable">
+      <label class="center-block">{{contextLabel}}:</label>
       <select class="form-control" formControlName="context">
+        <option [value]="null">None</option>
         <option *ngFor="let context of contexts" [value]="context">{{context}}</option>
       </select>
-    </label>
+    </div>
   </div>
 
-  <div class="form-group">
-    <label class="center-block">Subject:
+  <div class="form-group row">
+    <div class="col-sm-12">
+      <label class="center-block">Subject:</label>
       <input class="form-control" formControlName="subject"/>
-    </label>
+    </div>
   </div>
 
-  <div class="form-group">
-    <label class="center-block">Body:
-      <textarea class="form-control" formControlName="body"></textarea>
-    </label>
+  <div class="form-group row">
+    <div class="col-sm-12">
+      <label class="center-block">Body:</label>
+      <textarea class="form-control" rows="10" formControlName="body"></textarea>
+    </div>
   </div>
 
   <div>

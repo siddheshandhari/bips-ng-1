@@ -28,9 +28,22 @@ class NoteController extends ApiController
 
   }
 
-  public function add()
+  public function add(Request $request)
   {
-
+    $note = new Note;
+    $note->subject = $request->input('subject');
+    $note->body = $request->input('body');
+    $note->create_author_id = 1;
+    $note->update_author_id = 1;
+    $note->company_id = $request->input('company');
+    $note->category = $request->input('category');
+    $note->context_id = $request->input('context');
+    $note->created_at = \Carbon\Carbon::now();
+    $note->updated_at = \Carbon\Carbon::now();
+    if($note->save())
+    {
+      return $this->respondCreated('Note successfully created!');
+    }
   }
 
   public function edit()
