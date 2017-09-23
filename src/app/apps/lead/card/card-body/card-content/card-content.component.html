@@ -114,25 +114,25 @@
                                 <div class="lead-company-info-item">
                                     <label class="lead-body-title">Name: </label>
                                     <span class="lead-body-content" *ngIf="!isEditing">{{contact.first_name}}</span>
-                                    <input class="lead-edit-input" type="text" *ngIf="isEditing" [(ngModel)]="lead.company.website">
+                                    <input class="lead-edit-input" type="text" *ngIf="isEditing" [(ngModel)]="contact.first_name">
                                 </div>
 
                                 <div class="lead-company-info-item">
                                     <label class="lead-body-title">Phone:</label>
                                     <span class="lead-body-content" *ngIf="!isEditing">{{contact.phone}}</span>
-                                    <input class="lead-edit-input" type="text" *ngIf="isEditing" [(ngModel)]="lead.company.name">
+                                    <input class="lead-edit-input" type="text" *ngIf="isEditing" [(ngModel)]="contact.phone">
                                  </div>
 
                                  <div class="lead-company-info-item">
                                     <label class="lead-body-title">Email: </label>
                                     <span class="lead-body-content" *ngIf="!isEditing">{{contact.email}}</span>
-                                    <input class="lead-edit-input" type="text" *ngIf="isEditing" [(ngModel)]="lead.company.website">
+                                    <input class="lead-edit-input" type="text" *ngIf="isEditing" [(ngModel)]="contact.email">
                                 </div>
 
                                 <div class="lead-company-info-item">
                                     <label class="lead-body-title">Fax:</label>
                                     <span class="lead-body-content" *ngIf="!isEditing">{{contact.fax}}</span>
-                                    <input class="lead-edit-input" type="text" *ngIf="isEditing" [(ngModel)]="lead.company.name">
+                                    <input class="lead-edit-input" type="text" *ngIf="isEditing" [(ngModel)]="contact.fax">
                                  </div>
                       
                     </div>
