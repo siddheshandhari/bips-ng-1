@@ -60,7 +60,7 @@ Route::group(['prefix' => 'api/v1'], function()
   Route::delete('note/{id}', 'NoteController@destroy');
 
   //Product Collections Routes
-  Route::get('product', 'ProductController@index');
+  Route::get('product', 'ProductController@browse');
   // Route::post('product', 'ProductController@add');
 
   //Specific Product
@@ -69,19 +69,20 @@ Route::group(['prefix' => 'api/v1'], function()
   // Route::put('product/{id}', 'ProductController@edit');
 
   //Price Collections Routes
-  Route::get('price', 'PriceController@index');
+  Route::get('price', 'PriceController@browse');
 
   //Color Collections Routes
-  Route::get('color', 'ColorController@index');
-
-  //Product_catagories Collections Routes
-  Route::get('product_catagory', 'product_catagoryController@index');
+  Route::get('color', 'ColorController@browse');
 
   //Capacities Collections Routes
-  Route::get('capacity', 'CapacityController@index');
+  Route::get('capacity', 'CapacityController@browse');
 
-  //Neck_finishes Collections Routes
-  Route::get('neck_finish', 'Neck_finishController@index');
+  //Neckfinishes Collections Routes
+  Route::get('neckfinish', 'NeckfinishController@browse');
+
+  //Packinginfos Collections Routes
+  Route::get('packinginfo', 'PackinginfoController@browse');
+
 });
 
 

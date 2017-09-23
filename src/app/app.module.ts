@@ -22,6 +22,7 @@ import { LoginAuthGuard }  from './login/login.authguard';
 import { WindowComponent } from './window/window.component';
 import { SignupComponent } from './signup/signup.component';
 import { SignupService } from './signup/signup.service';
+
 //reducers
 import { InstalledAppsReducer } from './reducers/installedApps.reducer';
 import { RunningAppsReducer } from './reducers/runningApps.reducer';

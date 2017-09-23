@@ -3,16 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Neck_finish;
+use App\Neckfinish;
 
-use App\utils\Transformers\Neck_finishTransformer;
+use App\utils\Transformers\NeckfinishTransformer;
 
 
-class Neck_finishController extends ApiController
+class NeckfinishController extends ApiController
 {
-    protected $neck_finishTransformer;
-    function __construct(Neck_finishTransformer $neck_finishTransformer){
-        $this->neck_finishTransformer = $neck_finishTransformer;
+    protected $neckfinishTransformer;
+    function __construct(NeckfinishTransformer $neckfinishTransformer){
+        $this->neckfinishTransformer = $neckfinishTransformer;
     }
 
     /**
@@ -21,18 +21,12 @@ class Neck_finishController extends ApiController
      * @return \Illuminate\Http\Response
      */
     
-    public function index()
+    public function browse()
     {
-
-        $neck_finishes = Neck_finish::all();
+        $neckfinishes = neckfinish::all();
         return $this->respond(
-            $neck_finishes
-
-        // $neck_finishes = neck_finish::all();
-        // return $this->respond(
-        //     $this->neck_finishTransformer->transformCollection($neck_finishes)
-
-        );
+            $this->neckfinishTransformer->transformCollection($neckfinishes)
+          );
     }
 
     /**

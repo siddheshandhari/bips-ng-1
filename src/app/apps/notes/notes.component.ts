@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NotesService } from './notes.service';
-import { Note } from '../../models/note';
+import { Note } from '../../core/models/note';
 
 @Component({
   selector: 'notes',
@@ -9,7 +9,7 @@ import { Note } from '../../models/note';
 })
 
 export class NotesComponent implements OnInit {
-  modalOpen: boolean = false;
+  modalOpen: boolean = true;
   noteList: Array<Note>;
   selectedNote: Note;
 

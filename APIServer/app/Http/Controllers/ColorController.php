@@ -19,7 +19,7 @@ class ColorController extends ApiController
     {
         $this->colorTransformer = $colorTransformer;
     }
-    public function index()
+    public function browse()
     {
         $colors = color::all();
         return $this->respond(
