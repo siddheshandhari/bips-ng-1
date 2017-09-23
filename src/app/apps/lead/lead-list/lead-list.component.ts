@@ -47,6 +47,12 @@ export class LeadListComponent implements OnInit{
 
     ngOnInit():void{
         this.getLeadlist();
+        this.leadService.getLeadlist().subscribe(
+                res => {
+                    this.leadlist = res;
+                    this.selectedLead = this.leadlist[0];
+                }
+            );
     }
 
     searchLead(value){
@@ -91,8 +97,16 @@ export class LeadListComponent implements OnInit{
         this.leadService.deleteLead(lead.id)
          .subscribe(()=>{
              this.leadlist = this.leadlist.filter (l => l !== lead);
+             if(this.selectedLead === lead){this.selectedLead = null};
+                this.selectedLead = this.leadlist[0];
+         });
+         this.leadService.deleteLead(lead.id)
+         .subscribe(()=>{
+             this.searchlist = this.searchlist.filter (l => l !== lead);
              if(this.selectedLead === lead){this.selectedLead = null}
          })
+
+       
     
     }
 

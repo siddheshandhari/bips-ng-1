@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,HostBinding } from '@angular/core';
 
 
 @Component({
@@ -8,6 +8,13 @@ import { Component } from '@angular/core';
 })
 export class CardBodyComponent{
 
-   
+    @HostBinding('class.open-lead') leadIsOpen: boolean = false;
+    closeHeader(){
+        this.leadIsOpen = false;
+        console.log(this.leadIsOpen);
+    }
     
+    openHeader(){
+        this.leadIsOpen = true;
+    }
 }

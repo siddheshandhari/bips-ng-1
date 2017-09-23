@@ -30,7 +30,7 @@
             <img [src]="'assets/imgs/head1.ico'">
             <!--<a class="option blue " [ngClass]="{active : isActive}"> <i class="fa fa-anchor"></i></a>
             <a class="option green" [ngClass]="{active : isActive}"> <i class="fa fa-coffee"></i> </a>-->
-            <a class="option red" [ngClass]="{active : isActive}"> <i class="fa fa-heart"></i> </a>
+            <a class="option red" [ngClass]="{active : isActive}" (click)="callOwner()"> <i class="fa fa-phone" aria-hidden="true"></i> </a>
             <a class="option purple" [ngClass]="{active : isActive}"><i class="fa fa-microphone"></i> </a>
             <a class="option orange" [ngClass]="{active : isActive}"> <i class="fa fa-star"></i>  </a>
             <!--<a class="option lightblue" [ngClass]="{active : isActive}"> <i class="fa fa-diamond"></i> </a>-->
@@ -39,21 +39,6 @@
 
 
 
-            <!--<span class="menu">
-                <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
-                
-                <label class="menu-open-button" for="menu-open">
-                    <img [src]="'assets/imgs/head1.ico'"><br>
-
-                </label>
-
-                <a  class="menu-item blue"> <i class="fa fa-anchor"></i> </a>
-                <a  class="menu-item green"> <i class="fa fa-coffee"></i> </a>
-                <a  class="menu-item red"> <i class="fa fa-heart"></i> </a>
-                <a  class="menu-item purple"> <i class="fa fa-microphone"></i> </a>
-                <a  class="menu-item orange"> <i class="fa fa-star"></i> </a>
-                <a  class="menu-item lightblue"> <i class="fa fa-diamond"></i> </a>
-            </span>-->
         
             <span *ngIf = "!ownerUrl" class="default-owner">Sam</span>
         </div>
@@ -114,25 +99,25 @@
                                 <div class="lead-company-info-item">
                                     <label class="lead-body-title">Name: </label>
                                     <span class="lead-body-content" *ngIf="!isEditing">{{contact.first_name}}</span>
-                                    <input class="lead-edit-input" type="text" *ngIf="isEditing" [(ngModel)]="lead.company.website">
+                                    <input class="lead-edit-input" type="text" *ngIf="isEditing" [(ngModel)]="contact.first_name">
                                 </div>
 
                                 <div class="lead-company-info-item">
                                     <label class="lead-body-title">Phone:</label>
                                     <span class="lead-body-content" *ngIf="!isEditing">{{contact.phone}}</span>
-                                    <input class="lead-edit-input" type="text" *ngIf="isEditing" [(ngModel)]="lead.company.name">
+                                    <input class="lead-edit-input" type="text" *ngIf="isEditing" [(ngModel)]="contact.phone">
                                  </div>
 
                                  <div class="lead-company-info-item">
                                     <label class="lead-body-title">Email: </label>
                                     <span class="lead-body-content" *ngIf="!isEditing">{{contact.email}}</span>
-                                    <input class="lead-edit-input" type="text" *ngIf="isEditing" [(ngModel)]="lead.company.website">
+                                    <input class="lead-edit-input" type="text" *ngIf="isEditing" [(ngModel)]="contact.email">
                                 </div>
 
                                 <div class="lead-company-info-item">
                                     <label class="lead-body-title">Fax:</label>
                                     <span class="lead-body-content" *ngIf="!isEditing">{{contact.fax}}</span>
-                                    <input class="lead-edit-input" type="text" *ngIf="isEditing" [(ngModel)]="lead.company.name">
+                                    <input class="lead-edit-input" type="text" *ngIf="isEditing" [(ngModel)]="contact.fax">
                                  </div>
                       
                     </div>

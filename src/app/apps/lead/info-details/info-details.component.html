@@ -64,10 +64,11 @@
         </div>
     </div>
 
-    <ng-content></ng-content>
+   
 
     <div *ngIf="lead">
-        
+        {{lead.company.name}}
+         <ng-content></ng-content>
     </div>
 
 </div>
