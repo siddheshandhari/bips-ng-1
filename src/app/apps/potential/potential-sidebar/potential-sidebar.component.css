@@ -1,0 +1,31 @@
+:host{
+    float:right;
+    width: 53%;
+    height: 100%;
+    border: 1px solid red;
+    display:block;
+    margin-top:5px;
+    margin-right:0.5%;
+}
+
+.sidebar-header{
+    width: 100%;
+    height: 30px;
+    background-color:#272E38;
+
+}
+
+ul li {
+    color:#ffffff;
+    line-height: 30px;
+    float:left;
+}
+
+ul li a{
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+ul li a:hover{
+    background-color:#0069D9;
+}

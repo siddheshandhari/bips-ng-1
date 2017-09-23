@@ -6,8 +6,9 @@ import { BrowserModule }  from "@angular/platform-browser";
 import { RouterModule, Routes} from "@angular/router";
 import { CommonModule } from '@angular/common';
 
-
-import { PopupComponent } from './popup/popup.component';
+import { PotentialHeaderComponent } from  './potential-header/potential-header.component';
+import { PotentialListComponent } from './potential-list/potential-list.component';
+import { PotentialSidebarComponent } from './potential-sidebar/potential-sidebar.component';
 import { PotentialComponent } from './potential.component';
 import { AddPotentialComponent } from './add-potential/add-potential.component';
 import { PotentialService } from './potential.service';
@@ -16,7 +17,9 @@ import { PotentialService } from './potential.service';
   declarations: [
     PotentialComponent,
     AddPotentialComponent,
-    PopupComponent,
+    PotentialHeaderComponent,
+    PotentialListComponent,
+    PotentialSidebarComponent
   ],
   imports: [
     FormsModule,
