@@ -5,6 +5,8 @@ use App\utils\Transformers\CapacityTransformer;
 use App\utils\Transformers\NeckfinishTransformer;
 use App\utils\Transformers\PackinginfoTransformer;
 use App\utils\Transformers\PriceTransformer;
+use App\utils\Transformers\OrderTransformer;
+use App\utils\Transformers\WarehouseTransformer;
 
 class ProductTransformer extends Transformer {
   protected $colorTransformer;
@@ -12,14 +14,18 @@ class ProductTransformer extends Transformer {
   protected $neckfinishTransformer;
   protected $packinginfoTransformer;
   protected $priceTransformer;
+  protected $orderTransformer;
+  protected $warehouseTransformer;
 
-  function __construct(ColorTransformer $colorTransformer, CapacityTransformer $capacityTransformer, NeckfinishTransformer $neckfinishTransformer, PackinginfoTransformer $packinginfoTransformer, PriceTransformer $priceTransformer)
+  function __construct(ColorTransformer $colorTransformer, CapacityTransformer $capacityTransformer, NeckfinishTransformer $neckfinishTransformer, PackinginfoTransformer $packinginfoTransformer, PriceTransformer $priceTransformer, OrderTransformer $orderTransformer, WarehouseTransformer $warehouseTransformer)
   {
     $this->colorTransformer = $colorTransformer;
     $this->capacityTransformer = $capacityTransformer;
     $this->neckfinishTransformer = $neckfinishTransformer;
     $this->packinginfoTransformer = $packinginfoTransformer;
     $this->priceTransformer = $priceTransformer;
+    $this->orderTransformer = $orderTransformer;
+    $this->warehouseTransformer = $warehouseTransformer;
   }
 
   public function transform($product)
@@ -34,6 +40,10 @@ class ProductTransformer extends Transformer {
     $packinginfo = $this->packinginfoTransformer->transform($packinginfo);
     $prices = $product->prices;
     $prices = $this->priceTransformer->transformCollection($prices);
+    $orders = $product->orders;
+    $orders = $this->orderTransformer->transformCollection($orders);
+    $warehouses = $product->warehouses;
+    $warehouses = $this->warehouseTransformer->transformCollection($warehouses);
 
     return [
       'id' => $product['id'],
@@ -43,6 +53,8 @@ class ProductTransformer extends Transformer {
       'neckfinish' => $neckfinish,
       'packinginfo' => $packinginfo,
       'prices' => $prices,
+      'orders' => $orders,
+      'warehouses' => $warehouses,
       'showcase_id' => $product['showcase_id'],
       'name' => $product['name'],
       'image' => $product['image'],

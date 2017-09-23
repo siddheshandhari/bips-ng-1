@@ -33,6 +33,16 @@ class Product extends Model
         return $this->hasMany('App\Price');
     }
 
+    public function orders()
+    {
+        return $this->belongsToMany('App\Order', 'productsorders');
+    }
+
+    public function warehouses()
+    {
+        return $this->belongsToMany('App\Warehouse', 'productswarehouses');
+    }
+
     protected $hidden = [
         'active'
     ];
