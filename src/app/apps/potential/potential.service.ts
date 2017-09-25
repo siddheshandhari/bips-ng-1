@@ -11,7 +11,7 @@ export class PotentialService {
 
 
   getPotentiallist(): Observable<Potential[]>{
-    return this.http.get('http://192.168.50.25/api/v1/potential')
+    return this.http.get('http://127.0.0.0:8000/api/v1/potential')
       .map((res:Response) => res.json())
     }
 

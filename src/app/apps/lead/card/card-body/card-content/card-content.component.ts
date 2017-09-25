@@ -54,4 +54,9 @@ export class CardContentComponent implements OnInit{
                  )
     }
 
+    callOwner(){
+        console.log("callowner");
+        alert("calling, pleasing waiting!")
+    }
+
 }

@@ -1,6 +1,5 @@
 import { Component ,HostBinding} from '@angular/core';
-import { LeadService } from '../lead.service';
-import { Lead } from '../lead';
+
 
 @Component({
     selector: 'card',

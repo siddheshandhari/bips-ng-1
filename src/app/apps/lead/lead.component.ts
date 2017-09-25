@@ -17,36 +17,10 @@ export class LeadComponent implements OnInit {
 
   modalOpen: boolean =false;
   addLeadValue: boolean = false;
-  // isSearch: boolean = false;
 
   constructor( ){}
   ngOnInit (){}
 
-  // searchLead(value){
-  //       console.log(value);
-  //       this.leadSearchService.searchLead(value)
-  //     .subscribe(res => {
-  //       this.searchlist = res;
-  //     })
-
-  //     console.log(this.searchlist);
-  //     this.isSearching = true;
-  //     console.log(this.isSearching);
-  // }
-  // searchLead(value:string):void{
-
-  //   this.leadService.searchLead(value)
-  //     .subscribe(
-  //       searchlist => {
-  //       this.searchlist = searchlist;
-  //       console.log(searchlist);
-  //     })
-       
-
-  //   this.isSearch = true;
-  //   console.log(value);
-
-  // }
 
   addLead(){
       this.addLeadValue = true;
@@ -59,10 +33,5 @@ export class LeadComponent implements OnInit {
   closeModal(){
     this.modalOpen = false;
   }
-
-  // goLeadlist(){
-  //   this.addLeadValue = false;
-  //   this.isSearch = false;
-  // }
 
 }
