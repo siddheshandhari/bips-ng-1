@@ -33,8 +33,8 @@ class NoteController extends ApiController
     $note = new Note;
     $note->subject = $request->input('subject');
     $note->body = $request->input('body');
-    $note->create_author_id = 1;
-    $note->update_author_id = 1;
+    $note->create_author_id = 2;
+    $note->update_author_id = 2;
     $note->company_id = $request->input('company');
     $note->category = $request->input('category');
     $note->context_id = $request->input('context');
