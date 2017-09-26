@@ -6,7 +6,7 @@
     {{note.created_at.date | amTimeAgo}}
   </span>
   <span class="subtitle">
-    {{note.company.name}} • {{note.category}}
+    {{note.company?.name}} • {{note.category}}
   </span>
   <card-close-btn (click)="deleteNote(note)"></card-close-btn>
 </card>

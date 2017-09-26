@@ -31,11 +31,12 @@ class NoteController extends ApiController
   public function add(Request $request)
   {
     $note = new Note;
-    if(!$request->input('personal_note')){
+    if(!$request->input('isPersonal')){
       $note->company_id = $request->input('company');
       $note->category = $request->input('category');
       $note->context_id = $request->input('context');
     }
+    $note->is_personal = $request->input('isPersonal');
     $note->subject = $request->input('subject');
     $note->body = $request->input('body');
     $note->create_author_id = 2;
@@ -44,7 +45,8 @@ class NoteController extends ApiController
     $note->updated_at = \Carbon\Carbon::now();
     if($note->save())
     {
-      return $this->respondCreated('Note successfully created!');
+      $note = $this->noteTransformer->transform($note);
+      return $this->respondCreated($note);
     }
   }
 

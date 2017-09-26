@@ -36,6 +36,15 @@ export class NotesComponent implements OnInit {
     this.selectedNote = note;
   }
 
+  addNote(note){
+    this.notesService.addNote(note).subscribe(
+      res => {
+        this.noteList.push(res.body);
+        this.modalOpen = false;
+      }
+    )
+  }
+
   deleteNote(note){
     this.notesService.deleteNote(note.id).subscribe(
       res => {
