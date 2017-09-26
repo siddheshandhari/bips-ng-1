@@ -1,15 +1,69 @@
-<div class="sidebar-header">
-    <ul class="sidebar-header-list">
-        <li><a>Note</a></li>
-        <li><a>Invoice</a></li>
-        <li><a>Todo</a></li>
-        <li><a>Warehouse</a></li>
-        <li><a>Expense</a></li>
-        <li><a>...</a></li>
-    </ul>
+<div class="up-sidebar">
+        <div class="sidebar-header">
+            <ul class="sidebar-header-list">
+                <li><a (click)="showNote()">Note</a></li>
+                <li><a (click)="showInvoice()">Invoice</a></li>
+                <li><a (click)="showTodo()">Todo</a></li>
+                <li><a (click)="showWarehouse()">Warehouse</a></li>
+                <li><a (click)="showExpense()">Expense</a></li>
+                <li><a (click)="showOthers()">...</a></li>
+            </ul>
+
+        </div>
+
+        <div *ngIf="note">
+                <div class="note-header">
+                    <span class="note-header-item">Status</span>
+                    <span class="note-header-item">Sales Order#</span>
+                    <span class="note-header-item">Date</span>
+                    <span class="note-header-item">Reg Date</span>
+                    <span class="note-header-item">Amount</span>
+                    
+                </div>
+
+                <div class="pickup">
+                    <note></note>
+                    <note></note>
+                    <note></note>
+                </div>
+
+        </div>
+
+        <div *ngIf="invoice">
+
+            <div class="show-content"> this is invoice</div>
+        </div>
+
+        <div *ngIf="todo">
+            <div class="show-content"> this is todolist</div>
+        </div>
+
+        <div *ngIf="warehouse">
+
+            <div class="show-content"> this is warehouse</div>
+        </div>
+
+        <div *ngIf="expense">
+
+            <div class="show-content"> this is expense</div>
+        </div>
+
+        <div *ngIf="others">
+
+            <div class="show-content"> ...</div>
+        </div>
 
 </div>
 
-<div>
-this is potential sidebar
+<div class="down-sidebar">
+        <div class="potential-showcase">
+            <ul>
+                <li><img [src]="'assets/imgs/bottle1.png'"></li>
+                <li><img [src]="'assets/imgs/bottle2.png'"></li>
+                <li><img [src]="'assets/imgs/bottle1.png'"></li>
+                <li><img [src]="'assets/imgs/bottle2.png'"></li>
+                <li><img [src]="'assets/imgs/bottle1.png'"></li>
+                <li><img [src]="'assets/imgs/bottle2.png'"></li>
+            </ul>
+        </div>
 </div>
