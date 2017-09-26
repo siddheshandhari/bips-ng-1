@@ -8,12 +8,8 @@ import { RouterModule, Routes} from "@angular/router";
 import { CommonModule } from '@angular/common';
 import { ModalModule } from '../shared/modal/modal.module';
 
-//
-
-
-// import { CardModule } from '../shared/card/card.module';
 import { ModalComponent } from '../shared/modal/modal.component';
-// import { CardModule } from '../shared/leadcard/card.module';
+
 import { LeadComponent } from './lead.component';
 import { AddLeadComponent } from './add-lead/add-lead.component';
 import { LeadService } from './lead.service';
@@ -51,7 +47,7 @@ import { AddButtonModule } from '../shared/add-button/add-button.module';
     ReactiveFormsModule ,
     BrowserModule,
     HttpModule,
-    // CardModule,
+
     CommonModule,
     AddButtonModule,
     ModalModule

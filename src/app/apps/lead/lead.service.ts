@@ -3,14 +3,11 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/toPromise';
 import { Lead } from './lead';
-// import { LEADLIST } from './mock-leads';
 
 @Injectable()
 export class LeadService {
 
   constructor(private http: Http) {}
-
-
 
   getLeadlist(): Observable<Lead[]>{
     return this.http.get('http://127.0.0.1:8000/api/v1/lead')
@@ -40,18 +37,5 @@ export class LeadService {
     return this.http.post('http://127.0.0.1:8000/api/v1/lead',value)
     .map((res:Response) => res.json())
   }
-
-  // searchLead(value): Observable<Lead>{
-  //   return this.http.get( 'http://127.0.0.1/api/v1/search/lead/?q='+value)
-  //   .map((res:Response) =>res.json())
-
-  // }
-   
-
-
-
-
-
-
 
   }
