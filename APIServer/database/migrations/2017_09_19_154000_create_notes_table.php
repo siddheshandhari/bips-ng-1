@@ -25,6 +25,7 @@ class CreateNotesTable extends Migration
             $table->foreign('company_id')->references('id')->on('companies');
             $table->string('category')->default('order');
             $table->integer('context_id')->length(10)->unsigned()->nullable();
+            $table->boolean('is_personal')->default(true);
             $table->boolean('active')->default(true);
             $table->timestamps();
         });
