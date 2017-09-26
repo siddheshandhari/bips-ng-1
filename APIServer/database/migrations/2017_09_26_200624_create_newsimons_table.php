@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSimonsTable extends Migration
+class CreateNewsimonsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateSimonsTable extends Migration
      */
     public function up()
     {
-        if (!(Schema::hasTable('simons'))) {
-        Schema::create('simons', function (Blueprint $table) {
+         if (!(Schema::hasTable('newsimons'))) {
+        Schema::create('newsimons', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('color')->nullable();
+            $table->string('first_name')->nullable();
             $table->boolean('active')->default(true);
             $table->timestamps();
         });
@@ -29,6 +31,6 @@ class CreateSimonsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('newsimons');
     }
 }

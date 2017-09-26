@@ -36,6 +36,7 @@ ul li a:hover{
     padding:2px 4px;
     line-height: 24px;
     background-color:#9b9393;
+    color:#ffffff;
 }
 
 .note-header-item{
@@ -46,7 +47,6 @@ ul li a:hover{
 
 .show-content{
     text-align: center;
-    border:1px solid orange;
      height:425px;
      background-color:#666666;
      color:#ffffff;
@@ -57,7 +57,7 @@ ul li a:hover{
 
 .up-sidebar{
     height:82%;
-    border:1px solid blue;
+    background-color: #54504F;
 }
 
 .down-sidebar{
