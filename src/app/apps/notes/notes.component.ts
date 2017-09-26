@@ -9,7 +9,7 @@ import { Note } from '../../core/models/note';
 })
 
 export class NotesComponent implements OnInit {
-  modalOpen: boolean = true;
+  modalOpen: boolean = false;
   noteList: Array<Note>;
   selectedNote: Note;
 
@@ -39,7 +39,7 @@ export class NotesComponent implements OnInit {
   addNote(note){
     this.notesService.addNote(note).subscribe(
       res => {
-        this.noteList.push(res.body);
+        this.noteList = [res.body].concat(this.noteList);
         this.modalOpen = false;
       }
     )

@@ -87,7 +87,7 @@ export class AddNoteComponent implements OnInit{
 
   createForm(){
     this.noteForm = this.fb.group({
-      isPersonal: [this.isPersonal],
+      is_personal: [this.isPersonal],
       company: [''],
       category: [''],
       context: [''],

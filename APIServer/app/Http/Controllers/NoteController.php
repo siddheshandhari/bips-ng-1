@@ -31,12 +31,12 @@ class NoteController extends ApiController
   public function add(Request $request)
   {
     $note = new Note;
-    if(!$request->input('isPersonal')){
+    if(!$request->input('is_personal')){
       $note->company_id = $request->input('company');
       $note->category = $request->input('category');
       $note->context_id = $request->input('context');
     }
-    $note->is_personal = $request->input('isPersonal');
+    $note->is_personal = $request->input('is_personal');
     $note->subject = $request->input('subject');
     $note->body = $request->input('body');
     $note->create_author_id = 2;
