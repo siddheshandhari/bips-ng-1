@@ -53,9 +53,18 @@ class ProductController extends ApiController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function read($id)
     {
-        //
+        $product = Product::find($id);
+
+        if (!$product)
+        {
+            return $this->respondNotFound('Product does not exist');
+        }
+
+        return $this->respond(
+            $this->productTransformer->transform($product)
+        );
     }
 
     /**
@@ -89,6 +98,15 @@ class ProductController extends ApiController
      */
     public function destroy($id)
     {
-        //
+        if(!$id)
+        {
+            return $this->setStatusCode(400)->responseWithError('Please provide the Product id to delete');
+        }
+        $product = Product::find($id);
+        $product->active = false;
+        if($product->save())
+        {
+            return $this->respondDeleted('Product successfully deleted!');
+        }
     }
 }
