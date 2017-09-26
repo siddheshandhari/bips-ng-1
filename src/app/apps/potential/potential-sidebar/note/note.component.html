@@ -1,0 +1,75 @@
+
+<!--<div class="note-header">
+        <span class="subject-title">Subject:</span>
+        <span class="subject-content">Interset doing Business</span>
+        <span class="note-itme-actions">
+            <a class="note-edit" (click)="editNote(lead)"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+            <a classs="note-delete" (click)="deleteNote(lead)"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+        </span>
+</div>
+
+<div class="note-body">
+   <span class="note-title"> Phone Call</span>
+   <span class="note-content"> Rounded Wine Bottle</span>
+</div>-->
+
+    <div>
+        <div class="note-header">
+          <span class="note-header-item">Pick up</span>
+          <span class="note-header-item">123456789</span>
+          <span class="note-header-item">26/09/2017</span>
+          <span class="note-header-item">30/09/2017</span>
+          <span class="note-header-item">$50,000</span>
+        
+        </div>
+
+        <div>
+
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Item#</th>
+                    <th>Discription</th>
+                    <th>Lot#</th>
+                    <th>QTY</th>
+                    <th>U/P</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <th scope="row">Item1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>QTY</td>
+                    <td>U/P</td>
+                    <td>Total</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Item2</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>QTY</td>
+                    <td>U/P</td>
+                    <td>Total</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Item3</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>QTY</td>
+                    <td>U/P</td>
+                    <td>Total</td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+
+    <div class="expand-handler">
+      <i class="fa fa-angle-up" *ngIf="isOpen"  (click)="closeHeader()"></i>
+      <i class="fa fa-angle-down" *ngIf="!isOpen" (click)="openHeader()"></i>
+    </div>

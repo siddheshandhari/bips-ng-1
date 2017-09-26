@@ -4,7 +4,7 @@ export const REMOVE_RUNNING_APPS = 'REMOVE_RUNNING_APP';
 
 //Lead = 12; Account = 1; Note = 14; Potential = 15;
 
-const initialState = [15];
+const initialState = [14];
 
 
 export function RunningAppsReducer(state = initialState, action){

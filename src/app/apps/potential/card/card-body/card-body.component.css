@@ -12,6 +12,10 @@
     overflow: scroll;
 }
 
+:host.open-lead::-webkit-scrollbar { 
+    display: none; 
+}
+
 .expand-handler{
   position: absolute;
   display: inline;

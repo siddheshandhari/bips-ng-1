@@ -1,24 +1,26 @@
 <h2>Add New Note</h2>
 
 <form [formGroup]="noteForm" novalidate (ngSubmit)="onSave()">
-  <div class="row">
-    <div class="form-group col-sm-4">
+  <div class="form-group">
+    <input type="checkbox" class="form-check-input" (change)="isPersonal=!isPersonal" formControlName="is_personal"/>
+    This is personal Note
+  </div>
+  <div class="company-info" *ngIf="!isPersonal">
+    <div class="form-group row">
       <label class="center-block">Company:</label>
-      <select class="form-control col-sm-10" formControlName="company">
+      <select class="form-control" formControlName="company">
         <option [value]="null">None</option>
         <option *ngFor="let company of companies" [value]="company.id">{{company.name}}</option>
       </select>
     </div>
-
-    <div class="form-group col-sm-4">
+    <div class="form-group row">
       <label class="center-block">Category:</label>
       <select class="form-control" formControlName="category">
         <option [value]="null">None</option>
         <option *ngFor="let category of categories" [value]="category">{{category}}</option>
       </select>
     </div>
-
-    <div class="form-group col-sm-4" *ngIf="contextVisiable">
+    <div class="form-group row">
       <label class="center-block">{{contextLabel}}:</label>
       <select class="form-control" formControlName="context">
         <option [value]="null">None</option>
@@ -26,22 +28,15 @@
       </select>
     </div>
   </div>
-
   <div class="form-group row">
-    <div class="col-sm-12">
-      <label class="center-block">Subject:</label>
-      <input class="form-control" formControlName="subject"/>
-    </div>
+    <label class="center-block">Subject:</label>
+    <input class="form-control" formControlName="subject"/>
   </div>
-
   <div class="form-group row">
-    <div class="col-sm-12">
-      <label class="center-block">Body:</label>
-      <textarea class="form-control" rows="10" formControlName="body"></textarea>
-    </div>
+    <label class="center-block">Body:</label>
+    <textarea class="form-control" rows="10" formControlName="body"></textarea>
   </div>
-
-  <div>
+  <div class="form-group row">
     <button class="btn btn-primary" type="submit">Save</button>
   </div>
 </form>

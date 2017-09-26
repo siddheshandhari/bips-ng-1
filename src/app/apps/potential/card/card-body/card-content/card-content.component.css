@@ -14,7 +14,7 @@
 
 div{
     float:left;
-    margin-right:2.5%;
+    margin-right:2%;
 }
 .company-logo .company-name{
     display:inline;
@@ -22,7 +22,7 @@ div{
 }
 
 .company-logo{
-    padding:9px;
+    padding:9px 0 9px 5px;
     width:8%;
     height:60px;
 }
@@ -37,7 +37,8 @@ div{
 
 .company-name{
     position:relative;
-    width:18%;
+    text-align:center;
+    width:17%;
     line-height: 60px;
     font-size:12px;
 }
@@ -68,9 +69,10 @@ div{
 }
 
 .possibility{
-    width:10%;
+    width:17%;
     text-align: center;
     padding: 7px 0;
+    font-size:11px;
 }
 
 .progress{
@@ -96,22 +98,32 @@ div{
 }
 
 .lead-balance{
-     width:15%;
+     width:18%;
      padding: 3px 0;
     
 }
-
-.lead-balance span{
-    display:inline-block;
-    width:90%;
-    border: 1px solid #eee; 
+.balance-title{
+    background-color:#006DD5;
+    color: white;
 }
-
-.lead-usage{
-    padding-right:4px;
-    margin: 15px 0;
-    font-size:12px;
-    text-align: right;
+.balance-value{
+    border:0.5px solid lightgray;
+}
+.past-due-title{
+    background-color:red;
+    color:#ffffff;
+    margin-top:2.5px;
+}
+.past-due-value{
+    color: red !important;
+    border:0.5px solid lightgray;
+}
+.lead-balance-item{
+    text-align: center;
+    width:100%;
+    height:13px;
+    line-height: 12px;
+     border-radius: 2px;
 }
 
 .lead-function{
@@ -227,6 +239,8 @@ img:hover{
     border-radius: 3px;
     border:1px solid #8F9FB7;
 }
+
+
 
 
 /*//////*/
