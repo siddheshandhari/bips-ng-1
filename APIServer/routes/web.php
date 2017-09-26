@@ -88,6 +88,9 @@ Route::group(['prefix' => 'api/v1'], function()
 
   //Warehouses Collections Routes
   Route::get('warehouse', 'WarehouseController@browse');
+
+  //test 
+  Route::get('ytest', 'YtestController@browse');
 });
 
 

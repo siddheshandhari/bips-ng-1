@@ -100,6 +100,7 @@ div{
 .lead-balance{
      width:18%;
      padding: 3px 0;
+     font-size:11px;
     
 }
 .balance-title{
@@ -110,7 +111,7 @@ div{
     border:0.5px solid lightgray;
 }
 .past-due-title{
-    background-color:red;
+    background-color:#C41833;
     color:#ffffff;
     margin-top:2.5px;
 }

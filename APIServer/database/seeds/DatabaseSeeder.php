@@ -35,6 +35,7 @@ class DatabaseSeeder extends Seeder
       'orders',
       'notes',
       'productsorders',
+      'ytests'
     ];
 
     /**
@@ -71,6 +72,7 @@ class DatabaseSeeder extends Seeder
       $this->call(OrdersTableSeeder::class);
       $this->call(NotesTableSeeder::class);
       $this->call(ProductsordersTableSeeder::class);
+      $this->call(YtestsTableSeeder::class);
     }
 
     private function cleanDatabase()
