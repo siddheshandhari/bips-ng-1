@@ -23,7 +23,7 @@ class CreateNotesTable extends Migration
             $table->foreign('update_author_id')->references('id')->on('users');
             $table->integer('company_id')->length(10)->unsigned()->nullable();
             $table->foreign('company_id')->references('id')->on('companies');
-            $table->string('category')->default('order');
+            $table->string('category')->default('order')->nullable();
             $table->integer('context_id')->length(10)->unsigned()->nullable();
             $table->boolean('is_personal')->default(true);
             $table->boolean('active')->default(true);
