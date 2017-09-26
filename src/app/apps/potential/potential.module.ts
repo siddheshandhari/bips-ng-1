@@ -11,6 +11,16 @@ import { PotentialListComponent } from './potential-list/potential-list.componen
 import { PotentialSidebarComponent } from './potential-sidebar/potential-sidebar.component';
 import { PotentialComponent } from './potential.component';
 import { AddPotentialComponent } from './add-potential/add-potential.component';
+
+//carcomponent
+import { CardComponent } from './card/card.component';
+import { CardBodyComponent } from './card/card-body/card-body.component';
+import { CardContentComponent } from './card/card-body/card-content/card-content.component';
+
+//note
+import { NoteComponent } from './potential-sidebar/note/note.component';
+
+//service
 import { PotentialService } from './potential.service';
 
 @NgModule({
@@ -19,7 +29,12 @@ import { PotentialService } from './potential.service';
     AddPotentialComponent,
     PotentialHeaderComponent,
     PotentialListComponent,
-    PotentialSidebarComponent
+    PotentialSidebarComponent,
+    CardComponent,
+    CardBodyComponent,
+    CardContentComponent,
+    NoteComponent
+
   ],
   imports: [
     FormsModule,

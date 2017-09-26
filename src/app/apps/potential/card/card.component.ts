@@ -1,4 +1,4 @@
-import { Component ,HostBinding} from '@angular/core';
+import { Component } from '@angular/core';
 
 
 @Component({
@@ -8,16 +8,16 @@ import { Component ,HostBinding} from '@angular/core';
 })
 
 export class CardComponent {
-    @HostBinding('class.lead-open') leadIsOpen: boolean = false;
+    // @HostBinding('class.potential-open') potentialIsOpen: boolean = false;
 
-    toggleLead(){
-        if(this.leadIsOpen == false){
-            this.leadIsOpen = true;
-        }
-        else{
-            this.leadIsOpen = false;
-        }
-    }
+    // togglepotential(){
+    //     if(this.potentialIsOpen == false){
+    //         this.potentialIsOpen = true;
+    //     }
+    //     else{
+    //         this.potentialIsOpen = false;
+    //     }
+    // }
 
 }
 

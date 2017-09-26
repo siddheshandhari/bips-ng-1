@@ -6,20 +6,24 @@
             
         </div>
         <div class="company-name">
-
-            <span class="default-name"><b>{{lead.company.name}}</b></span>
+             <span class="default-name"><b>OrcaSmart</b></span>
+            <!--<span class="default-name"><b>{{potential.company.name}}</b></span>-->
         </div>
 
         <div class="industry">
             <i class="fa fa-desktop" aria-hidden="true"></i><br>
-            <span class="industry-type">{{lead.company.industry}}</span>
+            <span class="industry-type">Tech</span>
+            <!--<span class="industry-type">{{potential.company.industry}}</span>-->
         </div>
 
         <div class="possibility">
-            <span class="prossibility-value">{{lead.possibility | percent}}</span><br>
-            <span class="progress">
+            <span class="prossibility-value">Kenneth Wang</span><br>
+            <span>purchasing Manager</span>
+            
+            <!--<span class="prossibility-value">{{potential.possibility | percent}}</span><br>-->
+            <!--<span class="progress">
                 <span class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width:65%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></span>
-            </span>
+            </span>-->
         </div>
 
         <div  class="lead-owner" >
@@ -49,7 +53,15 @@
         </div>
 
         <div class="lead-balance"> 
-        <span class="lead-usage">50,000,000</span><br>
+            <div class="lead-balance-item balance-title">Balance</div>
+            <div class="lead-balance-item balance-value">50,000,000</div>
+            <div class="lead-balance-item past-due-title">Past Due</div>
+            <div class="lead-balance-item past-due-value">50,000,000</div>
+            
+            <!--<span class="lead-usage-title">Balance</span><br>
+            <span class="lead-usage-content">50,000,000</span><br>
+            <span class="lead-usage-title">Past Due</span><br>
+            <span class="lead-usage-content">50,000,000</span>-->
 
 
         </div>
@@ -57,10 +69,10 @@
 
 
  <div class="lead-body-bar">
-        <button *ngIf="!isEditing" class="btn btn-sm btn-outline-success" (click)="onEdit(lead)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-        <button *ngIf="isEditing" class="btn btn-sm btn-outline-primary" (click)="onCancel(lead)"><i class="fa fa-times" aria-hidden="true"></i></button>
-        <button *ngIf="isEditing" class="btn btn-sm btn-outline-success" (click)="onSave(lead)"><i class="fa fa-check" aria-hidden="true"></i></button>
-        <button class="btn btn-sm btn-outline-danger" (click)="onDelete(lead)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+        <button *ngIf="!isEditing" class="btn btn-sm btn-outline-success" (click)="onEdit(potential)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+        <button *ngIf="isEditing" class="btn btn-sm btn-outline-primary" (click)="onCancel(potential)"><i class="fa fa-times" aria-hidden="true"></i></button>
+        <button *ngIf="isEditing" class="btn btn-sm btn-outline-success" (click)="onSave(potential)"><i class="fa fa-check" aria-hidden="true"></i></button>
+        <button class="btn btn-sm btn-outline-danger" (click)="onDelete(potential)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
 
 </div>
 
@@ -69,14 +81,20 @@
 
             <div class="billing-address">
                 <span>Billing Address</span><br>
-                <span>{{lead.company.billing_address.street}}</span><br>
-                {{lead.company.billing_address.city +',' + ' ' + lead.company.billing_address.state +',' + ' ' +lead.company.billing_address.zipcode}}
+
+                    <span>35 Engel Street</span><br>
+                        Hicksville, NY, 11801
+
+                <!--<span>{{potential.company.billing_address.street}}</span><br>
+                {{potential.company.billing_address.city +',' + ' ' + potential.company.billing_address.state +',' + ' ' +potential.company.billing_address.zipcode}}-->
             </div>
 
             <div class="shipping-address">
                  <span>Shipping Address</span><br>
-                <span>{{lead.company.shipping_address.street}}</span><br>
-               <span> {{lead.company.shipping_address.city +',' + ' ' + lead.company.shipping_address.state +',' + ' ' +lead.company.shipping_address.zipcode}}</span>
+                 <span>35 Engel Street</span><br>
+                        Hicksville, NY, 11801
+                <!--<span>{{potential.company.shipping_address.street}}</span><br>
+               <span> {{potential.company.shipping_address.city +',' + ' ' + potential.company.shipping_address.state +',' + ' ' +potential.company.shipping_address.zipcode}}</span>-->
 
             </div>
 
@@ -84,13 +102,15 @@
 
                     <div class="lead-company-info-item">
                         <label class="lead-body-title">Website: </label>
-                        <span class="lead-body-content" *ngIf="!isEditing">{{lead.company.website}}</span>
+                         <span class="lead-body-content" *ngIf="!isEditing">www.orcasmart.com</span>
+                        <!--<span class="lead-body-content" *ngIf="!isEditing">{{potential.company.website}}</span>-->
                         <input class="lead-edit-input" type="text" *ngIf="isEditing" [(ngModel)]="lead.company.website">
                     </div>
 
                     <div class="lead-company-info-item">
                         <label class="lead-body-title">sdfs: </label>
-                        <span class="lead-body-content" *ngIf="!isEditing">{{lead.company.name}}</span>
+                         <span class="lead-body-content" *ngIf="!isEditing">Glopak</span>
+                        <!--<span class="lead-body-content" *ngIf="!isEditing">{{potential.company.name}}</span>-->
                         <input class="lead-edit-input" type="text" *ngIf="isEditing" [(ngModel)]="lead.company.name">
                     </div>
 
