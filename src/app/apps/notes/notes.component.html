@@ -6,5 +6,5 @@
 
 <add-button (click)="openModal()" [modalOpen]="modalOpen"></add-button>
 <modal (requestCloseModal)="closeModal()" *ngIf="modalOpen" >
-  <add-note (requestCloseModal)="closeModal()"></add-note>
+  <add-note (onNoteAdded)="addNote($event)"></add-note>
 </modal>

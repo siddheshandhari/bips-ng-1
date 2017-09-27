@@ -25,7 +25,10 @@ export class NotesService{
   }
 
   addNote(note): Observable<any> {
-    return this.http.post(this.config.apiEndPoint + 'note', JSON.stringify(note));
+    return this.http.post(this.config.apiEndPoint + 'note', note)
+    .map((res:Response) => {
+      return res.json();
+    })
   }
 
 }

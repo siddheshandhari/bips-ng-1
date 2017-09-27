@@ -15,6 +15,7 @@ class NotesTableSeeder extends Seeder
       foreach(range(1, 30) as $index)
       {
         DB::table('notes')->insert([
+          'is_personal' => false,
           'subject' => $faker->sentence($nbWords = 6, $variableNbWords = true),
           'body' => $faker->text($maxNbChars = 200),
           'create_author_id' => $faker->numberBetween($min = 1, $max = 30),

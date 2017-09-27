@@ -2,7 +2,7 @@
 
 <form [formGroup]="noteForm" novalidate (ngSubmit)="onSave()">
   <div class="form-group">
-    <input type="checkbox" class="form-check-input" (change)="isPersonal=!isPersonal" formControlName="isPersonal"/>
+    <input type="checkbox" class="form-check-input" (change)="isPersonal=!isPersonal" formControlName="is_personal"/>
     This is personal Note
   </div>
   <div class="company-info" *ngIf="!isPersonal">

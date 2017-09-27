@@ -66,7 +66,7 @@ Route::group(['prefix' => 'api/v1'], function()
   //Specific Product
   Route::get('product/{id}', 'ProductController@read');
   Route::delete('product/{id}', 'ProductController@destroy');
-  // Route::put('product/{id}', 'ProductController@edit');
+  Route::put('product/{id}', 'ProductController@edit');
 
   //Price Collections Routes
   Route::get('price', 'PriceController@browse');

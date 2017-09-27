@@ -18,8 +18,7 @@ export class AddNoteComponent implements OnInit{
   contextVisiable: boolean = false;
   noteForm: FormGroup;
   categories: Array<string> = ['Sales Order', 'Quotes', 'Invoice', 'Projects'];
-  @Output() requestCloseModal = new EventEmitter();
-
+  @Output() onNoteAdded = new EventEmitter();
   constructor(private companyService: CompanyService, private notesService: NotesService, private fb: FormBuilder) {
     this.createForm();
   }
@@ -88,23 +87,17 @@ export class AddNoteComponent implements OnInit{
 
   createForm(){
     this.noteForm = this.fb.group({
-      isPersonal: [this.isPersonal],
+      is_personal: [this.isPersonal],
       company: [''],
-      category: ['Sales Order'],
+      category: [''],
       context: [''],
       subject: ['', Validators.required],
       body: ['', Validators.required]
     });
   }
 
-
   onSave(){
-    const note = this.noteForm.value;
-    this.notesService.addNote(note).subscribe(
-      res => {
-        this.requestCloseModal.emit();
-      }
-    );
+    this.onNoteAdded.emit(this.noteForm.value);
   }
 
 
