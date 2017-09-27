@@ -3,7 +3,9 @@
 
 <potential-header></potential-header>
 
-<potential-sidebar></potential-sidebar>
+<potential-sidebar [selectedPotential]="selectedPotential"></potential-sidebar>
 
-<potential-list></potential-list>
+<potential-list [selectedPotential]="selectedPotential" [potentiallist]="potentiallist" (onPotentialSelected)="selectPotential($event)"></potential-list>
+
+
 

@@ -89,8 +89,11 @@ Route::group(['prefix' => 'api/v1'], function()
   //Warehouses Collections Routes
   Route::get('warehouse', 'WarehouseController@browse');
 
-  //test 
-  Route::get('ytest', 'YtestController@browse');
+  //Potential Collections Routes
+  Route::get('potential', 'PotentialController@browse');
+  Route::delete('potential/{id}', 'PotentialController@destroy');
+
+
 });
 
 
