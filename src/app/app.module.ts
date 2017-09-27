@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ModalModule } from 'ngx-modialog';
+import { BootstrapModalModule } from 'ngx-modialog/plugins/bootstrap';
 
 //Module
 import { StoreModule } from '@ngrx/store';
@@ -78,7 +80,9 @@ const appRoutes: Routes = [
     }),
     StoreDevtoolsModule.instrument({
       maxAge: 25
-    })
+    }),
+    ModalModule.forRoot(),
+    BootstrapModalModule
   ],
   providers: [
     LoginService,

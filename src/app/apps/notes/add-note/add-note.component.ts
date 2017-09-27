@@ -89,7 +89,6 @@ export class AddNoteComponent implements OnInit{
 
   createForm(){
     this.noteForm = this.fb.group({
-      is_personal: [this.isPersonal],
       company: [''],
       category: [''],
       context: [''],
@@ -99,7 +98,8 @@ export class AddNoteComponent implements OnInit{
   }
 
   onSave(){
-    this.onNoteAdded.emit(this.noteForm.value);
+    const note = Object.assign({ is_personal: this.isPersonal }, this.noteForm.value)
+    this.onNoteAdded.emit(note);
   }
 
 

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NotesService } from './notes.service';
 import { Note } from '../../core/models/note';
+import { Overlay } from 'ngx-modialog';
+import { Modal } from 'ngx-modialog/plugins/bootstrap';
 
 @Component({
   selector: 'notes',
@@ -13,7 +15,7 @@ export class NotesComponent implements OnInit {
   noteList: Array<Note>;
   selectedNote: Note;
 
-  constructor(private notesService: NotesService){}
+  constructor(private notesService: NotesService, public modal: Modal){}
 
   ngOnInit(){
     this.notesService.getNoteList().subscribe(
