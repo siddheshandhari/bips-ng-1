@@ -125,7 +125,6 @@ class SearchController extends ApiController
     if(!$this->filter){
       $this->with = "company";
       $this->filter = "name";
-      $this->query="j";
     };
 
     if(!$this->with){

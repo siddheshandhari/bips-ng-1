@@ -1,29 +1,9 @@
-
-<!--
-<card  *ngFor="let lead of leadlist">
-    <card-header [logoUrl]="'assets/imgs/photo.png'" 
-    [title]="lead.company.name" [industry]="lead.company.industry" [website]="lead.company.website"
-    [expense]="" [employees]="lead.company.employees" [contact] = "" [phone]="" [isEditing]="isEditing"
-    [lead]="selectedLead">
-     
-    <a *ngIf="!isEditing" class="edit-lead-btn" (click)="editLead(lead)" ><i class="fa fa-pencil" aria-hidden="true"></i></a>
-    <button *ngIf="isEditing" class="btn-sm btn-outline-success" (click)="save(lead)" >Save</button>
-    <button *ngIf="isEditing" class="edit-lead-btn btn-sm btn-outline-danger" (click)="save(lead)" >Cancel</button>
-    <a class="delete-lead-btn" (click)=" deleteLead(lead)"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-
-    
-    </card-header>
-</card>-->
-
-
-
     <ul class="lead-navbar">
             <li ><a (click)="allLeadList()">Leads</a></li>
             <li><a>Name1</a></li>
             <li><a>name2</a></li>
             <li class="lead-searchbar">
                 <select class="select-box">
-
                     <option>Company Name</option>
                     <option>Contact Name</option>
                     <option>Phone Number</option>
@@ -35,7 +15,6 @@
             </li>
     </ul>
   
-
 
     <div class="listtitle" >
         <span class="company-name">Company Name</span><span class="industry">Industry</span><span class="possibility">Possibility</span><span class="owner">Owner</span><span class="contact">Contact</span><span class="usage">Usage</span>
@@ -61,6 +40,7 @@
        
     </div>
 
+<<<<<<< HEAD
  <info-details [lead]="selectedLead" [contacts]="contacts" (deleteEvent)="deleteLead($event)">
     <note></note>
     <note></note>
@@ -71,5 +51,13 @@
 =======
 >>>>>>> c62cc05510c72d2e0e94ed23e04fca786053eebd
  </info-details>
+=======
+    <info-details [lead]="selectedLead" [contacts]="contacts" (deleteEvent)="deleteLead($event)">
+        <note></note>
+        <note></note>
+        <note></note>
+        <note></note>
+    </info-details>
+>>>>>>> 2c23d7972a7e34e54e6fa87d20a604bd474d4ea7
 
 

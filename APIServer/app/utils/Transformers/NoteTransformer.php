@@ -10,6 +10,7 @@ class NoteTransformer extends Transformer {
     $update_author = $note->update_author;
     return [
       'id' => $note['id'],
+      'is_personal' => $note['is_personal'],
       'subject' => $note['subject'],
       'body' => $note['body'],
       'company' => [

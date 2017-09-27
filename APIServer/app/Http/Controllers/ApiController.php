@@ -36,11 +36,11 @@ class ApiController extends Controller {
     ]);
   }
 
-  public function respondCreated($message)
+  public function respondCreated($created_body)
   {
     return $this->setStatusCode(201)->respond([
       'success' => true,
-      'message' => $message
+      'body' => $created_body
     ]);
   }
 

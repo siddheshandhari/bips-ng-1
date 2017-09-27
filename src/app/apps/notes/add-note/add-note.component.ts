@@ -11,15 +11,14 @@ import { Company } from '../../../core/models/index';
 })
 
 export class AddNoteComponent implements OnInit{
-
+  isPersonal: boolean = true;
   companies: Array<Company>;
   contextLabel: string;
   contexts: Array<any> =  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
   contextVisiable: boolean = false;
   noteForm: FormGroup;
   categories: Array<string> = ['Sales Order', 'Quotes', 'Invoice', 'Projects'];
-  @Output() requestCloseModal = new EventEmitter();
-
+  @Output() onNoteAdded = new EventEmitter();
   constructor(private companyService: CompanyService, private notesService: NotesService, private fb: FormBuilder) {
     this.createForm();
   }
@@ -88,22 +87,17 @@ export class AddNoteComponent implements OnInit{
 
   createForm(){
     this.noteForm = this.fb.group({
+      is_personal: [this.isPersonal],
+      company: [''],
+      category: [''],
+      context: [''],
       subject: ['', Validators.required],
-      company: '',
-      category: 'Sales Order',
-      context: '',
       body: ['', Validators.required]
     });
   }
 
-
   onSave(){
-    const note = this.noteForm.value;
-    this.notesService.addNote(note).subscribe(
-      res => {
-        this.requestCloseModal.emit();
-      }
-    );
+    this.onNoteAdded.emit(this.noteForm.value);
   }
 
 

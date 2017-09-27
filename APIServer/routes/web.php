@@ -64,9 +64,9 @@ Route::group(['prefix' => 'api/v1'], function()
   // Route::post('product', 'ProductController@add');
 
   //Specific Product
-  // Route::get('product/{id}', 'ProductController@read');
-  // Route::delete('product/{id}', 'ProductController@destroy');
-  // Route::put('product/{id}', 'ProductController@edit');
+  Route::get('product/{id}', 'ProductController@read');
+  Route::delete('product/{id}', 'ProductController@destroy');
+  Route::put('product/{id}', 'ProductController@edit');
 
   //Price Collections Routes
   Route::get('price', 'PriceController@browse');
@@ -83,6 +83,11 @@ Route::group(['prefix' => 'api/v1'], function()
   //Packinginfos Collections Routes
   Route::get('packinginfo', 'PackinginfoController@browse');
 
+  //Orders Collections Routes
+  Route::get('order', 'OrderController@browse');
+
+  //Warehouses Collections Routes
+  Route::get('warehouse', 'WarehouseController@browse');
 });
 
 
