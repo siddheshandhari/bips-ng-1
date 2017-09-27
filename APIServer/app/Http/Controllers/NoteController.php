@@ -17,7 +17,7 @@ class NoteController extends ApiController
 
   public function browse()
   {
-    $notes = Note::all();
+    $notes = Note::orderBy('updated_at', 'desc')->get();
     return $this->respond(
       $this->noteTransformer->transformCollection($notes)
     );

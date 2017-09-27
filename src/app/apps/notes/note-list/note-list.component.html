@@ -1,4 +1,5 @@
-<card class="note-card" *ngFor="let note of noteList" (click)="selectNote(note)">
+<card class="note-card" *ngFor="let note of noteList" (click)="selectNote(note)" [ngClass]="{'selected': selectedNote == note}">
+  <div class="hover-indicator"></div>
   <h5 class="note-subject">
     {{note.subject}}
   </h5>
@@ -8,5 +9,5 @@
   <span class="subtitle">
     {{note.is_personal ? 'Personal Note' : note.company?.name + ' • ' + note.category}}
   </span>
-  <card-close-btn (click)="deleteNote(note)"></card-close-btn>
+  <card-close-btn (click)="deleteNote(note)" class="close-btn"></card-close-btn>
 </card>

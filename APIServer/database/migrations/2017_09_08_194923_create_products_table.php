@@ -41,7 +41,7 @@ class CreateProductsTable extends Migration
             $table->integer('unit_measure')->length(10)->unsigned()->nullable();
             $table->float('msrp')->nullable();
             $table->string('drawing')->nullable();
-            $table->string('heavy_mental')->nullable();
+            $table->string('heavy_metal')->nullable();
             $table->string('fda_report')->nullable();
             $table->string('msds')->nullable();
             $table->string('certificate')->nullable();

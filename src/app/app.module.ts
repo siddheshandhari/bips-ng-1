@@ -78,7 +78,7 @@ const appRoutes: Routes = [
     }),
     StoreDevtoolsModule.instrument({
       maxAge: 25
-    })
+    }),
   ],
   providers: [
     LoginService,

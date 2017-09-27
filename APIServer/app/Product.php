@@ -13,7 +13,7 @@ class Product extends Model
         return $this->belongsTo('App\Color');
     }
 
-    public function capatity()
+    public function capacity()
     {
         return $this->belongsTo('App\Capacity');
     }
