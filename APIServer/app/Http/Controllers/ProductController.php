@@ -9,6 +9,7 @@ use App\utils\Builder\ColorBuilder;
 use App\utils\Builder\CapacityBuilder;
 use App\utils\Builder\NeckfinishBuilder;
 use App\utils\Builder\PackinginfoBuilder;
+use App\utils\Builder\WarehouseBuilder;
 
 class ProductController extends ApiController
 {
@@ -22,13 +23,15 @@ class ProductController extends ApiController
      protected $capacityBuilder;
      protected $neckfinishBuilder;
      protected $packinginfoBuilder;
-     function __construct(ProductTransformer $productTransformer, ColorBuilder $colorBuilder, CapacityBuilder $capacityBuilder, NeckfinishBuilder $neckfinishBuilder, PackinginfoBuilder $packinginfoBuilder)
+     protected $warehouseBuilder;
+     function __construct(ProductTransformer $productTransformer, ColorBuilder $colorBuilder, CapacityBuilder $capacityBuilder, NeckfinishBuilder $neckfinishBuilder, PackinginfoBuilder $packinginfoBuilder, WarehouseBuilder $warehouseBuilder)
      {
        $this->productTransformer = $productTransformer;
        $this->colorBuilder = $colorBuilder;
        $this->capacityBuilder = $capacityBuilder;
        $this->neckfinishBuilder = $neckfinishBuilder;
        $this->packinginfoBuilder = $packinginfoBuilder;
+       $this->warehouseBuilder = $warehouseBuilder;
      }
     public function browse()
     {
@@ -54,9 +57,64 @@ class ProductController extends ApiController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function add(Request $request)
     {
-        //
+        $error = "error";
+        $color;
+        $capacity;
+        $neckfinish;
+        $packinginfo;
+        $product = new Product;
+        $colorData = $request->input('color');
+        $capacityData = $request->input('capacity');
+        $neckfinishData = $request->input('neckfinish');
+        $packinginfoData = $request->input('packinginfo');
+        try
+        {
+            $color = $this->colorBuilder->build($colorData);
+            $capacity = $this->capacityBuilder->build($capacityData);
+            $neckfinish = $this->neckfinishBuilder->build($neckfinishData);
+            $packinginfo = $this->packinginfoBuilder->build($packinginfoData);
+        }
+        catch(\Exception $e)
+        {
+            $error = $e->getMessage();
+            return $this->setStatusCode(500)->respondWithError($error);
+        }
+
+        $product->color_id = $color['id'];
+        $product->capacity_id = $capacity['id'];
+        $product->neckfinish_id = $neckfinish['id'];
+        $product->packinginfo_id = $packinginfo['id'];
+
+        $product->serial_number = $request->input('serial_number');
+        $product->showcase_id = $request->input('showcase_id');
+        $product->name = $request->input('name');
+        $product->image = $request->input('image');
+        $product->catagory = $request->input('catagory');
+        $product->type = $request->input('type');
+        $product->style = $request->input('style');
+        $product->model = $request->input('model');
+        $product->description = $request->input('description');
+        $product->shape = $request->input('shape');
+        $product->material = $request->input('material');
+        $product->details = $request->input('details');
+        $product->technical_detail_link = $request->input('technical_detail_link');
+        $product->batch_number = $request->input('batch_number');
+        $product->unit_measure = $request->input('unit_measure');
+        $product->msrp = $request->input('msrp');
+        $product->drawing = $request->input('drawing');
+        $product->heavy_metal = $request->input('heavy_metal');
+        $product->fda_report = $request->input('fda_report');
+        $product->msds = $request->input('msds');
+        $product->certificate = $request->input('certificate');
+        $product->qc_report = $request->input('qc_report');
+        $product->status = $request->input('status');
+
+        if($product->save())
+        {
+          return $this->respondCreated('Product successfully created!');
+        }
     }
 
     /**
@@ -102,12 +160,15 @@ class ProductController extends ApiController
         $neckfinishData = $request->input('neckfinish');
         $packinginfo_id = $product['packinginfo_id'];
         $packinginfoData = $request->input('packinginfo');
+        // $warehouse_id = $product['warehouse_id'];
+        // $warehouseData = $request->input('warehouse');
         try 
         {
             $color = $this->colorBuilder->update($colorData, $color_id);
             $capacity = $this->capacityBuilder->update($capacityData, $capacity_id);
             $neckfinish = $this->neckfinishBuilder->update($neckfinishData, $neckfinish_id);
             $packinginfo = $this->packinginfoBuilder->update($packinginfoData, $packinginfo_id);
+            // $warehouse = $this->warehouseBuilder->update($warehouseData, $warehouse_id);
         }
         catch(\Exception $e)
         {

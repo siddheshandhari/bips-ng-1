@@ -61,7 +61,7 @@ Route::group(['prefix' => 'api/v1'], function()
 
   //Product Collections Routes
   Route::get('product', 'ProductController@browse');
-  // Route::post('product', 'ProductController@add');
+  Route::post('product', 'ProductController@add');
 
   //Specific Product
   Route::get('product/{id}', 'ProductController@read');
