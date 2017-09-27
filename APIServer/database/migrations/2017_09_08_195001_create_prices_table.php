@@ -17,7 +17,7 @@ class CreatePricesTable extends Migration
         Schema::create('prices', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('product_id')->length(10)->unsigned()->nullable();
-            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->integer('quantity')->length(10)->unsigned()->nullable();
             $table->float('price')->nullable();
             $table->boolean('active')->default(true);
