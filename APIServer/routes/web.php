@@ -61,7 +61,7 @@ Route::group(['prefix' => 'api/v1'], function()
 
   //Product Collections Routes
   Route::get('product', 'ProductController@browse');
-  // Route::post('product', 'ProductController@add');
+  Route::post('product', 'ProductController@add');
 
   //Specific Product
   Route::get('product/{id}', 'ProductController@read');
@@ -88,6 +88,12 @@ Route::group(['prefix' => 'api/v1'], function()
 
   //Warehouses Collections Routes
   Route::get('warehouse', 'WarehouseController@browse');
+
+  //Potential Collections Routes
+  Route::get('potential', 'PotentialController@browse');
+  Route::delete('potential/{id}', 'PotentialController@destroy');
+
+
 });
 
 

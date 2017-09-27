@@ -19,7 +19,7 @@ class WarehouseTransformer extends Transformer {
       'sold' => $warehouse['sold'],
       'comitted' => $warehouse['comitted'],
       'lot_number' => $warehouse['lot_number'],
-      'eta' => $warehouse['eta'],
+      'estimated_time_arrival' => $warehouse['estimated_time_arrival'],
       'ready_in_china' => $warehouse['ready_in_china'],
       'date_ready' => $warehouse['date_ready'],
       'production_eta' => $warehouse['production_eta']

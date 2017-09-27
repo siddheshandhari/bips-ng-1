@@ -1,4 +1,5 @@
-import { Component, OnInit }  from '@angular/core';
+import { Component, OnInit, Input }  from '@angular/core';
+import { Potential } from '../potential';
 
 @Component({
     selector:'potential-sidebar',
@@ -8,6 +9,8 @@ import { Component, OnInit }  from '@angular/core';
 
 export class PotentialSidebarComponent implements OnInit{
 
+    @Input() selectedPotential: Potential;
+    
     note: Boolean= true;
     invoice: Boolean= false;
     todo: Boolean = false;
