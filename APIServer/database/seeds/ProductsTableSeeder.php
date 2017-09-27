@@ -43,7 +43,7 @@ class ProductsTableSeeder extends Seeder
             'unit_measure' => $faker->randomNumber(),
             'msrp' => $faker->randomFloat($nbMaxDecimal = 5, $min = 0, $max = 5),
             'drawing' => $faker->url,
-            'heavy_mental' => $faker->url,
+            'heavy_metal' => $faker->url,
             'fda_report' => $faker->url,
             'msds' => $faker->url,
             'certificate' => $faker->url,
