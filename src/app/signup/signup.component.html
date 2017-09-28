@@ -1,29 +1,16 @@
-<div class = "container">
-  <h1>OrcaSmart</h1>
+<h1>OrcaSmart</h1>
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <input type="email" class="form-control" [ngClass]="isValid('email') ? 'is-valid' : 'is-invalid'" name="Email" placeholder="Email" formControlName="email">
+  </div>
+  <div class="form-group">
+    <input type="password" class="form-control" [ngClass]="isValid('password') ? 'is-valid' : 'is-invalid'" placeholder="Password" formControlName="password">
+  </div>
+  <div class="form-group">
+    <input type="password" class="form-control" [ngClass]="isValid('passwordConfirm') ? 'is-valid' : 'is-invalid'" placeholder="Confirm Password" formControlName="passwordConfirm">
+  </div>
   <br>
-  <form  #signupForm (submit)= "signupUser(signupForm.value)"> 
-    <div class="input">
-      <!-- <label>Username</label> -->
-      <input type="text" class="form-control form-control-lg" name="Username" placeholder="Username" ngModel  required>
-    </div>
-
-    <!-- <div class="input">
-      <input type="text" class="form-control form-control-lg" name="Email" placeholder="Email" ngModel  required>
-    </div> -->
-
-    <div class="input">
-      <!-- <label>Password</label> -->
-      <input type="password" class="form-control form-control-lg" name="password" placeholder="Password" ngModel required >
-    </div>
-    <br>
-
-    <div class="input">
-      <input type="submit" class="form-control btn btn-primary" value="signup">
-    </div>
-    <br>
-    <div class="agreement">
-      <p> By clicking signup, you agree</p>
-    </div>
-
-  </form>
-</div>
+  <div class="form-group">
+    <input type="submit" class="btn btn-primary" value="Sign Up">
+  </div>
+</form>
