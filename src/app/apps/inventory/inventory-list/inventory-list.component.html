@@ -1,0 +1,21 @@
+<ul class="inventory-navbar">
+    <li ><a (click)="allLeadList()">Inventories</a></li>
+    <li><a>Name1</a></li>
+    <li><a>name2</a></li>
+    <li class="inventory-searchbar">
+        <select class="select-box">
+            <option>Product Name</option>
+            <option>Product Type</option>
+            <option>Serial Number</option>
+        </select>
+
+
+        <input class="search-box" type="text" placeholder="search" #searchBox>
+        <button class="search-btn btn-sm btn-primary" (click)="searchLead(searchBox.value)"><i class="fa fa-search" aria-hidden="true"></i></button>
+    </li>
+</ul>
+
+
+<div class="listtitle" >
+  <span class="product-photo">Product Photo</span><span class="serial-number">Serial Number</span><span class="description">Description</span><span class="available">Available</span>
+</div>

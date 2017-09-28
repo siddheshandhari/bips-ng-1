@@ -27,6 +27,10 @@
                     <note></note>
                 </div>
 
+                <div class="selectedpotential-name" *ngIf="selectedPotential">
+                        {{selectedPotential.company.name}}
+                </div>
+
         </div>
 
         <div *ngIf="invoice">

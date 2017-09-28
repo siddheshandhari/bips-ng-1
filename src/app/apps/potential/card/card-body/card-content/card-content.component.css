@@ -71,7 +71,7 @@ div{
 .possibility{
     width:17%;
     text-align: center;
-    padding: 7px 0;
+    padding: 15px 0;
     font-size:11px;
 }
 
@@ -100,6 +100,7 @@ div{
 .lead-balance{
      width:18%;
      padding: 3px 0;
+     font-size:11px;
     
 }
 .balance-title{
@@ -110,7 +111,7 @@ div{
     border:0.5px solid lightgray;
 }
 .past-due-title{
-    background-color:red;
+    background-color:#C41833;
     color:#ffffff;
     margin-top:2.5px;
 }
@@ -219,7 +220,7 @@ img:hover{
 
 .lead-body-content{
     display:inline-block;
-    width:76%;
+    width:74%;
     background-color:#ffffff;
     padding:0 2%;
     border-radius: 3px;

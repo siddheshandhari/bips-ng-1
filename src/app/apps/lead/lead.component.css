@@ -4,7 +4,7 @@
   height: 100%;
 }
 
-
+/* 
 .lead_header{
   text-align: center;
   margin-top: 30px;
@@ -18,12 +18,12 @@
   display: block;
   height: 100%;
   overflow-y: scroll;
-}
+} */
 
 
 /*navbar*/
 
-.nav_container{
+/* .nav_container{
   position: absolute;
   top: 0;
   left: 0;
@@ -46,11 +46,11 @@ ul li a {
     color: white;
     display:block;
     border-radius: 3px;
-}
+} */
 
 /*action_button*/
 
-.fa-pencil{
+/* .fa-pencil{
   color:#28A745;
 }
 .fa-trash-o{
@@ -86,4 +86,4 @@ select{
 
 lead-list{
   margin-top:100px;
-}
+} */

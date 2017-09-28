@@ -10,20 +10,32 @@ import { Potential } from './potential';
 export class PotentialComponent implements OnInit {
 
   potentiallist : Potential[] = [];
-  selectedPotential : Potential;
+  selectedPotential: Potential;
 
   constructor(public potentialService:PotentialService) { }
 
 // get potential infomation
-getPotentiallist():void{
-  this.potentialService.getPotentiallist()
-  .subscribe(potentiallist => this.potentiallist = potentiallist)
-}
+  getPotentiallist():void{
+
+      this.potentialService.getPotentiallist()
+      .subscribe(
+        res => {
+            this.potentiallist = res;
+            // this.selectedPotential = this.potentiallist[0];
+        });
+
+  }
 
 // delete potential
+  ngOnInit():void{
+      this.getPotentiallist();
 
-ngOnInit():void{
-this.getPotentiallist();
-}
+
+  }
+
+  selectPotential(potential){
+      this.selectedPotential = potential;
+      console.log(this.selectedPotential)
+  }
 
 }

@@ -4,7 +4,11 @@ export const REMOVE_RUNNING_APPS = 'REMOVE_RUNNING_APP';
 
 //Lead = 12; Account = 1; Note = 14; Potential = 15;
 
-const initialState = [14];
+<<<<<<< HEAD:src/reducers/runningApps.reducer.ts
+const initialState = [17];
+=======
+const initialState = [15];
+>>>>>>> 68095719ae54d0f4db1db45b88344ee3bff00eb8:src/app/reducers/runningApps.reducer.ts
 
 
 export function RunningAppsReducer(state = initialState, action){

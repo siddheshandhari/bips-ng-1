@@ -1,6 +1,9 @@
 import { Component, OnInit, Input,Output, EventEmitter } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
-import { Contact } from '../../../../../core/models/Contact';
+
+import { Contact } from '../../../../../core/models/contact';
+import { Potential } from '../../../potential';
+
 
 @Component({
     selector: 'card-content',
@@ -9,37 +12,21 @@ import { Contact } from '../../../../../core/models/Contact';
 })
 
 export class CardContentComponent implements OnInit{
-  
+    @Input() potential:Potential;
+    @Output() onPotentialDelete: EventEmitter<Potential> = new EventEmitter<Potential>();
 
     constructor(){}
     ngOnInit(){}
 
-    openCall(){
-        
-    }
-    onDelete(){
-      
-        console.log();
-        console.log("234");
+    showPotential(){
+        console.log(this.potential)
     }
 
-     onEdit(){
-       
+    deletePotential(potential:Potential){
+            console.log('card-delete');
+            this.onPotentialDelete.emit(potential);
+            console.log(this.potential.id)
     }
 
-    onCancel(){
-       
-    }
-
-    onSave(){
-  
-    console.log();
-  
-    }
-
-    callOwner(){
-        console.log("callowner");
-        alert("calling, pleasing waiting!")
-    }
 
 }

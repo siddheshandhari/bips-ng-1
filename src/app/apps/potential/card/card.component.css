@@ -11,6 +11,11 @@
 
 }
 
+:host:hover{
+   background-color:#8f9fb7;
+   color:white;
+}
+
 
 /*:host.lead-open{
   height: 300px;
