@@ -1,34 +1,23 @@
 :host {
-  margin: 0 auto;
-  position: absolute; 
+  position: absolute;
   left: 50%;
   top:50%;
   transform: translate(-50%, -50%);
-  
-} 
-  
-  * {
-    border-radius: 0 !important;
-  }
-  
-  .ng-valid[required], .ng-valid.required  {
-    border-left: 5px solid #42A948; /* green */
-  }
-  
-  .ng-invalid:not(form)  {
-    border-left: 5px solid #a94442; /* red */
-  }
-  
-  
-  .agreement {
-    color: #939393;
-    text-align: center;
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  .btn:hover {
-    background-color: #3772B7;
-  }
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+form {
+  width: 300px;
+}
+
+.form-control {
+  font-size: 16px;
+}
+
+.btn{
+  margin-top: 30px;
+}

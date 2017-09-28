@@ -1,0 +1,26 @@
+:host {
+    /* position:absolute; */
+    background-color:#272E38;
+    width: 100%; 
+    display: block;
+    color: white;
+    z-index: 10;
+}
+
+ul li{
+    text-align: center;
+    margin: 0px 10px;
+    display: inline-block;
+}
+
+li {
+    display:block;
+    background-color: Transparent;
+    border-radius: 3px;
+}
+
+li:hover{
+    background-color: #0069D9;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}

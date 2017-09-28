@@ -57,13 +57,35 @@ card:hover{
 }
 .card-list{
   /*padding-top: 30px;*/
+  position: relative;
   width:56%;
-  height:848px;
+  height:87%;
   overflow:scroll;
   overflow-x:hidden;
   margin-top: 45px;
  
 
+}
+.nothing-match{
+    width:400px;
+    height:300px;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    top: 47%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.nothing-match img{
+    width:200px;
+    height:150px;
+    
+}
+
+.not-found{
+    font-size: 25px;
+    color:lightslategrey;
 }
 ::-webkit-scrollbar {
     width: 0px;
