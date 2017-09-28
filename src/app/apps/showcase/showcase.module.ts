@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { ShowcaseComponent } from './showcase.component';
-import { ShowcaseListComponent } from './showcaselist/showcaselist.component';
+import { ShowcaseListComponent } from './ShowcaseList/showcaselist.component';
 import { ShowcaseHeaderComponent } from './header/header.component';
 @NgModule({
   declarations: [
