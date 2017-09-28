@@ -29,6 +29,28 @@ class PotentialController extends ApiController
         $this->potentialTransformer->transformCollection($potentials)
       );
     }
+
+    
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function read($id)
+    {
+      $potential = Potential::find($id);
+
+      if(!$potential)
+      {
+        return $this->respondNotFound('Potential does not exist');
+      }
+
+      return $this->respond(
+        $this->potentialTransformer->transform($potential)
+      );
+    }
+
     
 
         /**
@@ -48,6 +70,78 @@ class PotentialController extends ApiController
         return $this->respondDeleted('Potential successfully deleted!');
       }
     }
+
+     /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function add(Request $request)
+    {
+      $error = "";
+      $company;
+      $potential = new Potential;
+      //first create company
+      $companyData = $request->input('company');
+      try{
+        $company = $this->companyBuilder->build($companyData);
+      }
+      catch(\Exception $e){
+        $error = $e->getMessage();
+        return $this->setStatusCode(500)->respondWithError($error);
+      }
+
+      //store other into table
+      $potential->company_id = $company['id'];
+      $potential->user_id = $user = $request->input('user.id');
+      $potential->status = $request->input('status');
+      $potential->source = $request->input('source');
+      if($potential->save())
+      {
+        return $this->respondCreated('Potential successfully created!');
+      }
+
+
+    }
+
+        /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Request $request, $id)
+    {
+      if(!$id) {
+        return $this->setStatusCode(400)->respondWithError("Please provide the Potential id to update");
+      }
+      $potential = Potential::find($id);
+
+      $error = "";
+      $company_id = $potential['company_id'];
+      $companyData = $request->input('company');
+      try{
+        $company = $this->companyBuilder->update($companyData, $company_id);
+      }
+      catch(\Exception $e){
+        $error = $e->getMessage();
+        return $this->setStatusCode(500)->respondWithError($error);
+      }
+
+      //update other info
+      $potential->user_id = $user = $request->input('user.id');
+      if($request->input('status')){
+      $potential->status = $request->input('status');}
+      if($request->input('source')){
+      $potential->source = $request->input('source');}
+      if($potential->save())
+      {
+        return $this->respondUpdated('Potential successfully updated!');
+      }
+    }
+
 
 
 }
