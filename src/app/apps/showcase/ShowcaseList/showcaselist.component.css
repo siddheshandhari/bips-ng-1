@@ -1,0 +1,12 @@
+:host {
+    width: 47%;
+    position: relative;
+    height: 100%;
+    /* bottom: 0px; */
+    color: red;
+    background-color: white;
+    display: block;
+    /* overflow:scroll; */
+    /* overflow-x:hidden; */
+    border:1px solid red;
+}

@@ -40,8 +40,6 @@ export class AppsService {
     { id: 23, name: 'security', path: './security', iconUrl: 'assets/imgs/app-icons/security.png' },
     { id: 24, name: 'tasks', path: './tasks', iconUrl: 'assets/imgs/app-icons/tasks.png' },
     { id: 25, name: 'trucking', path: './trucking', iconUrl: 'assets/imgs/app-icons/trucking.png' },
-
-
   ]
 
   constructor(private store: Store<storeState>){

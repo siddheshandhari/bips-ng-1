@@ -1,7 +1,9 @@
 import { Component, OnInit, Input,Output, EventEmitter } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
-import { Contact } from '../../../../../core/models/Contact';
+
+import { Contact } from '../../../../../core/models/contact';
 import { Potential } from '../../../potential';
+
 
 @Component({
     selector: 'card-content',
