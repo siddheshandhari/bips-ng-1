@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardModule } from '../shared/card/card.module';
+
 import { FormsModule }   from '@angular/forms';
 import { AddButtonModule } from '../shared/add-button/add-button.module';
 import { ModalModule } from '../shared/modal/modal.module';
@@ -20,7 +20,6 @@ import { AccountService } from './account.service';
     AddAccountComponent,
   ],
   imports: [
-    CardModule,
     CommonModule,
     AddButtonModule,
     FormsModule,

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
+import { SearchbarService } from './searchbar.service';
+import { Lead } from '../../lead';
 
 @Component ({
     selector:'searchbar',
@@ -7,5 +9,8 @@ import { Component } from '@angular/core';
 })
 
 export class SearchbarComponent {
-    
+    @Output() searchlist: Lead[] = [];
+
+    constructor(private searchbarService:SearchbarService){}
+
 }

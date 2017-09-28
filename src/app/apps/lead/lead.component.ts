@@ -1,5 +1,6 @@
 import { Component , OnInit, Input } from '@angular/core';
 import { LeadService } from './lead.service';
+
 import { Lead } from './lead';
 
 
@@ -12,28 +13,14 @@ import { Lead } from './lead';
 })
 
 export class LeadComponent implements OnInit {
-  private searchlist;
+  searchlist:Lead[]=[];
+
   modalOpen: boolean =false;
   addLeadValue: boolean = false;
-  isSearch: boolean = false;
 
-  constructor(private leadService: LeadService ){}
+  constructor( ){}
   ngOnInit (){}
 
-  searchLead(value:string):void{
-
-    this.leadService.searchLead(value)
-      .subscribe(
-        searchlist => {
-        this.searchlist = searchlist;
-        console.log(searchlist);
-      })
-       
-
-    this.isSearch = true;
-    console.log(value);
-
-  }
 
   addLead(){
       this.addLeadValue = true;
@@ -45,11 +32,6 @@ export class LeadComponent implements OnInit {
 
   closeModal(){
     this.modalOpen = false;
-  }
-
-  goLeadlist(){
-    this.addLeadValue = false;
-    this.isSearch = false;
   }
 
 }

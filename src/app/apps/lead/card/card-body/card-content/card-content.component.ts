@@ -1,6 +1,8 @@
-import { Component, OnInit, Input,  } from '@angular/core';
+import { Component, OnInit, Input,Output, EventEmitter } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
 import { Lead } from "../../../lead";
+import { Contact } from '../../../../../core/models/contact';
+import { LeadService } from './../../../lead.service';
 
 
 
@@ -11,10 +13,50 @@ import { Lead } from "../../../lead";
 })
 
 export class CardContentComponent implements OnInit{
+    @Output() deleteEvent = new EventEmitter<Lead>();
     @Input() lead = [];
-    @Input() selectedLead= []
+    @Input() selectedLead= [];
+    @Input() contacts: Contact[] =[];
 
-    constructor(){}
+    isEditing :Boolean = false;
+
+    constructor(private leadService:LeadService){}
     ngOnInit(){}
+
+    openCall(){
+        
+    }
+    onDelete(lead){
+        this.deleteEvent.emit(lead);
+        console.log(lead);
+        console.log("234");
+    }
+
+     onEdit(lead){
+        this.isEditing = true;
+    }
+
+    onCancel(lead){
+        this.isEditing = false;
+    }
+
+    onSave(lead:Lead){
+    this.isEditing = false;
+    console.log(lead);
+    this.leadService.save(lead)
+       .subscribe(
+                    res =>{
+                        console.log(JSON.stringify(res));
+                        },
+                    err =>{
+                        console.log("error occored");
+                    }
+                 )
+    }
+
+    callOwner(){
+        console.log("callowner");
+        alert("calling, pleasing waiting!")
+    }
 
 }

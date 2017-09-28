@@ -55,7 +55,7 @@
   
   } */
 
-  .menu {
+.menu {
   border-radius: 25px;
   background: #00a0ea;
   height: 50px;
@@ -73,14 +73,14 @@
   transition: all 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   opacity: 0;
 }
-.pop-out {
+.option-open {
   opacity: 1;
 }
-.option:first-child.pop-out {
+.option:first-child.option-open {
   left: 60px;
   top: 20px;
 }
-.option:last-child.pop-out {
+.option:last-child.option-open {
   top: 60px;
   left: 20px;
 }

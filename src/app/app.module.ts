@@ -22,13 +22,16 @@ import { LoginAuthGuard }  from './login/login.authguard';
 import { WindowComponent } from './window/window.component';
 import { SignupComponent } from './signup/signup.component';
 import { SignupService } from './signup/signup.service';
+
 //reducers
-import { installedAppsReducer } from '../reducers/installedApps.reducer';
-import { runningAppsReducer } from '../reducers/runningApps.reducer';
-import { hideAppsReducer } from '../reducers/hideApps.reducer';
-import { topWindowReducer } from '../reducers/topWindow.reducer';
-import { currentUserReducer } from '../reducers/currentUser.reducer';
+import { InstalledAppsReducer } from './reducers/installedApps.reducer';
+import { RunningAppsReducer } from './reducers/runningApps.reducer';
+import { HideAppsReducer } from './reducers/hideApps.reducer';
+import { TopWindowReducer } from './reducers/topWindow.reducer';
+import { CurrentUserReducer } from './reducers/currentUser.reducer';
+import { SidebarReducer } from './reducers/sidebar.reducer';
 import 'rxjs/Rx';
+import { ClockComponent } from './clock/clock.component';
 
 
 const appRoutes: Routes = [
@@ -52,6 +55,7 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     SignupComponent,
+    ClockComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,17 +67,18 @@ const appRoutes: Routes = [
     ),
     DesktopModule,
     LoginModule,
-    
+
     StoreModule.forRoot({
-      installedApps: installedAppsReducer,
-      runningApps: runningAppsReducer,
-      hideApps: hideAppsReducer,
-      topWindow: topWindowReducer,
-      currentUser: currentUserReducer
+      installedApps: InstalledAppsReducer,
+      runningApps: RunningAppsReducer,
+      hideApps: HideAppsReducer,
+      topWindow: TopWindowReducer,
+      currentUser: CurrentUserReducer,
+      sidebar: SidebarReducer
     }),
     StoreDevtoolsModule.instrument({
       maxAge: 25
-    })
+    }),
   ],
   providers: [
     LoginService,

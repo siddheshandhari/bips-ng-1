@@ -1,7 +1,7 @@
 :host {
     position: absolute;
     right: 1%;
-    top: 60px;
+    top: 48px;
     display: block;
     width: 42%;
     font-size:13px;
@@ -11,16 +11,15 @@
 
 .details-header{
     background-color:#54504f;
-    height:46%;
+    height:80%;
     border-radius: 2px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 .details-body{
-    padding-top:8px;
     background-color:#54504f;
     margin-top:10px;
-    height:51%;
+    height:18%;
     border-radius: 2px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
@@ -63,4 +62,116 @@ hr{
     margin:3px;
 }
 
+.details-header-bar{
+    background-color:#ffffff;
+    width:100%;
+    height:44px;
+    color:#666666;
+}
+
+.details-header-bar-title{
+    text-align: center;
+    height:20px;
+
+
+}
+
+.details-header-actions li{
+    /*display:inline-block;*/
+    float:left;
+}
+.details-header-bar-icon{
+    height:24px;
+    width:100%;
+}
+
+
+.details-header-bar-icon i{
+    margin:0 4px;
+    padding:2px;
+}
+
+.fa{
+  padding: 0 3px;
+  cursor: pointer;
+}
+
+.fa-camera{
+    color:black;
+}
+
+.fa-microphone{
+    color:#a6a6a6;
+}
+
+.fa-envelope-o{
+    color:#885418;
+}
+
+.fa-address-book-o{
+    color:#88AEE8;
+}
+
+.add-note{
+    float: right;
+    margin-right:4px;
+    color:dodgerblue;
+}
+
+.lead-showcase-title{
+    width:100%;
+    height:20px;
+    background-color:white;
+    color:#666666;
+    text-align:center;
+}
+
+.lead-showcase-body{
+    padding:0 5px;
+    width:100%;
+    line-height:75px;
+    vertical-align: middle;
+    text-align: center;
+    position:relative;
+
+} 
+
+.lead-showcase-body img{
+
+    width:55px;
+    height:55px;
+    background-color:#ffffff;
+    border-radius: 4px;
+}
+.ead-showcase-itemlist{
+    overflow:hidden;
+    display:inline-block;
+}
+
+.lead-showcase-itemlist li{
+     display:inline;
+     margin:0 3px;
+}
+
+.left-arrow{
+    position:absolute;
+    top:0px;
+    left:2px;
+    padding:0 4px;
+    
+}
+
+.right-arrow{
+    position:absolute;
+    top:0px;
+    right:2px;
+    padding:0 4px;
+    
+}
+
+.add-showcase-bottle {
+    padding:0 4px;
+    float: right;
+    color:dodgerblue;
+}
 /*///////*/

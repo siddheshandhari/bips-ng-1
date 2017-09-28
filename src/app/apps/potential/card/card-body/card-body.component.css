@@ -1,0 +1,31 @@
+:host {
+    height: 60px;
+    width: 100%;
+    z-index:3;
+    display:block;
+    overflow: hidden;
+    transition: height 0.4s;
+}
+
+:host.open-lead{
+    height:300px;
+    overflow: scroll;
+}
+
+:host.open-lead::-webkit-scrollbar { 
+    display: none; 
+}
+
+.expand-handler{
+  position: absolute;
+  display: inline;
+  line-height: 0;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+
+.fa-angle-down,.fa-angle-up{
+  cursor: pointer;
+}

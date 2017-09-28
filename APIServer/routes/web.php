@@ -50,30 +50,50 @@ Route::group(['prefix' => 'api/v1'], function()
   Route::delete('call/{id}', 'CallController@destroy');
   Route::put('call/{id}', 'CallController@edit');
 
+  //Notes
+  Route::get('note', 'NoteController@browse');
+  Route::post('note', 'NoteController@add');
+
+  //Specific Note
+  Route::get('note/{id}', 'NoteController@read');
+  Route::put('note/{id}', 'NoteController@edit');
+  Route::delete('note/{id}', 'NoteController@destroy');
+
   //Product Collections Routes
-  Route::get('product', 'ProductController@index');
-  // Route::post('product', 'ProductController@add');
+  Route::get('product', 'ProductController@browse');
+  Route::post('product', 'ProductController@add');
 
   //Specific Product
-  // Route::get('product/{id}', 'ProductController@read');
-  // Route::delete('product/{id}', 'ProductController@destroy');
-  // Route::put('product/{id}', 'ProductController@edit');
+  Route::get('product/{id}', 'ProductController@read');
+  Route::delete('product/{id}', 'ProductController@destroy');
+  Route::put('product/{id}', 'ProductController@edit');
 
-    //Price Collections Routes
-    Route::get('price', 'PriceController@index');
+  //Price Collections Routes
+  Route::get('price', 'PriceController@browse');
 
-    //Color Collections Routes
-    Route::get('color', 'ColorController@index');
+  //Color Collections Routes
+  Route::get('color', 'ColorController@browse');
 
-    //Product_catagories Collections Routes
-    Route::get('product_catagory', 'product_catagoryController@index');
+  //Capacities Collections Routes
+  Route::get('capacity', 'CapacityController@browse');
+
+  //Neckfinishes Collections Routes
+  Route::get('neckfinish', 'NeckfinishController@browse');
+
+  //Packinginfos Collections Routes
+  Route::get('packinginfo', 'PackinginfoController@browse');
+
+  //Orders Collections Routes
+  Route::get('order', 'OrderController@browse');
+
+  //Warehouses Collections Routes
+  Route::get('warehouse', 'WarehouseController@browse');
+
+  //Potential Collections Routes
+  Route::get('potential', 'PotentialController@browse');
+  Route::delete('potential/{id}', 'PotentialController@destroy');
 
 
-    //Capacities Collections Routes
-    Route::get('capacity', 'CapacityController@index');
-    
-    //Neck_finishes Collections Routes
-    Route::get('neck_finish', 'Neck_finishController@index');
 });
 
 

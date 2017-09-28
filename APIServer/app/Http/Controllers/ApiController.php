@@ -36,11 +36,11 @@ class ApiController extends Controller {
     ]);
   }
 
-  public function respondCreated($message)
+  public function respondCreated($created_body)
   {
     return $this->setStatusCode(201)->respond([
       'success' => true,
-      'messgae' => $message
+      'body' => $created_body
     ]);
   }
 
@@ -48,7 +48,7 @@ class ApiController extends Controller {
   {
     return $this->setStatusCode(200)->respond([
       'success' => true,
-      'messgae' => $message
+      'message' => $message
     ]);
   }
 
@@ -56,7 +56,7 @@ class ApiController extends Controller {
   {
     return $this->setStatusCode(200)->respond([
       'success' => true,
-      'messgae' => $message
+      'message' => $message
     ]);
   }
 
@@ -64,7 +64,7 @@ class ApiController extends Controller {
   {
     return $this->setStatusCode(409)->respond([
       'success' => false,
-      'messgae' => $message
+      'message' => $message
     ]);
   }
 

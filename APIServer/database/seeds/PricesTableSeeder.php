@@ -20,8 +20,8 @@ class PricesTableSeeder extends Seeder
         {
           DB::table('prices')->insert([
             'product_id' => array_shift($products),
-            'quantity' => $faker->name,
-            'price' => "1",
+            'quantity' => $faker->randomNumber(),
+            'price' => $faker->randomFloat($nbMaxDecimals = 5, $min = 0, $max = 5),
           ]);
         }
     }

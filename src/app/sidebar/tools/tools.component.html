@@ -1,0 +1,9 @@
+<section-header>
+  <i class="fa fa-wrench"></i>
+  TOOLS
+</section-header>
+<ul class="tools-list">
+  <li *ngFor="let app of apps" class="tools-item">
+    <icon [app]="app"></icon>
+  </li>
+</ul>

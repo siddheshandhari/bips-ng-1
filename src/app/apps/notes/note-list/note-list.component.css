@@ -1,0 +1,62 @@
+:host{
+  display: block;
+  height: calc(100% - 40);
+  width: 55%;
+  height: 100%;
+  padding: 5px;
+  float: left;
+  overflow: scroll;
+}
+
+.note-subject{
+  display: block;
+  max-width: 400px;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.note-card{
+  height: 60px;
+  width: 100%;
+  margin: 2px 0;
+}
+
+.hover-indicator{
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 100%;
+  background-color: #90CAF9;
+}
+
+.selected{
+  background-color: #E6F1FE;
+}
+
+.selected .hover-indicator{
+  display: block;
+}
+
+.note-card:hover .hover-indicator{
+  display: block;
+}
+
+.close-btn{
+  display: none;
+}
+
+.note-card:hover .close-btn{
+  display: block;
+}
+
+.timestamp,.subtitle{
+  color: #9B9B9B;
+}
+
+.subtitle{
+  margin-left: 10px;
+}

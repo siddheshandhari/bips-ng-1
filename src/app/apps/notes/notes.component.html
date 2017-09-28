@@ -1,0 +1,10 @@
+<window-nav></window-nav>
+<div class="container">
+  <note-list [noteList]="noteList" (onNoteSelected)="selectNote($event)" (onNoteDeleted)="deleteNote($event)"></note-list>
+  <note-sidebar [selectedNote]="selectedNote" (onNoteDeleted)="deleteNote($event)"></note-sidebar>
+</div>
+
+<add-button (click)="openModal()" [modalOpen]="modalOpen"></add-button>
+<modal (requestCloseModal)="closeModal()" *ngIf="modalOpen" >
+  <add-note (onNoteAdded)="addNote($event)"></add-note>
+</modal>

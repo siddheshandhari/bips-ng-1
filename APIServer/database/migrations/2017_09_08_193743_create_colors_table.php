@@ -16,8 +16,6 @@ class CreateColorsTable extends Migration
         if (!(Schema::hasTable('colors'))) {
         Schema::create('colors', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('product_id')->length(10)->unsigned()->nullable();
-            $table->foreign('product_id')->references('id')->on('products');
             $table->string('color')->nullable();
             $table->boolean('active')->default(true);
             $table->timestamps();

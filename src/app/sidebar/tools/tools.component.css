@@ -1,0 +1,10 @@
+:host{
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+
+.tools-item{
+  display: inline-block;
+}

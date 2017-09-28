@@ -10,57 +10,32 @@ import { Potential } from './potential';
 export class PotentialComponent implements OnInit {
 
   potentiallist : Potential[] = [];
-  selectedPotential : Potential;
+  selectedPotential: Potential;
 
   constructor(public potentialService:PotentialService) { }
 
-
 // get potential infomation
-getPotentiallist():void{
-  this.potentialService.getPotentiallist()
-  .subscribe(potentiallist => this.potentiallist = potentiallist)
-}
+  getPotentiallist():void{
+
+      this.potentialService.getPotentiallist()
+      .subscribe(
+        res => {
+            this.potentiallist = res;
+            // this.selectedPotential = this.potentiallist[0];
+        });
+
+  }
 
 // delete potential
-deletePotential(potential:Potential): void{
+  ngOnInit():void{
+      this.getPotentiallist();
 
-this.potentialService.deletePotential(potential.id)
- .subscribe(()=>{
-     this.potentiallist = this.potentiallist.filter (l => l !== potential);
-     if(this.selectedPotential === potential){this.selectedPotential = null}
- })
 
-}
+  }
 
-ngOnInit():void{
-this.getPotentiallist();
-}
-
-public masonry = false;
-public add_potential_value = false;
-public potential_list_value = true;
-public isediting = false;
-
-editPotential(potential:Potential): void{
-
-    this.selectedPotential = potential;
-    console.log(this.selectedPotential);
-    this.isediting = true;
-}
-
-// jump to add potential page
-add_potential(){
-this.add_potential_value = true;
-}
-// go back to potential page
-cancel_potential(){
-this.add_potential_value = false;
-this.getPotentiallist()
-}
-// submit form
-save_potential(){
-this.add_potential_value = false;
- this.getPotentiallist()
-}
+  selectPotential(potential){
+      this.selectedPotential = potential;
+      console.log(this.selectedPotential)
+  }
 
 }

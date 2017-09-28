@@ -5,9 +5,22 @@
   height: 100%;
   min-width: 90px;
   overflow: hidden;
-  background-color: rgba(37,37,37,0.8);
   border-radius: 0 5px 5px 0;
   transition: width 0.1s;
+}
+
+.statusbar-placeholder{
+  display: block;
+  position: relative;
+  height: 40px;
+}
+
+.sidebar-body{
+  display: block;
+  padding: 10px 10px;
+  position: relative;
+  height: calc(100% - 40px);
+  background-color: rgba(37,37,37,0.8);
 }
 
 .sidebar-toggle{
@@ -39,18 +52,18 @@
   width: 230px;
 }
 
-:host > #close-sidebar{
+:host #close-sidebar{
   display: none;
 }
 
-:host > #open-sidebar{
+:host #open-sidebar{
   display: block;
 }
 
-:host.isSidebarOpen > #open-sidebar{
+:host.isSidebarOpen #open-sidebar{
   display: none;
 }
 
-:host.isSidebarOpen > #close-sidebar{
+:host.isSidebarOpen #close-sidebar{
   display: block;
 }

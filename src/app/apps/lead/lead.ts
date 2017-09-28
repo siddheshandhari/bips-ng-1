@@ -1,5 +1,5 @@
-import { Company } from '../../models/company';
-import { User } from '../../models/user';
+import { Company } from '../../core/models/company';
+import { User } from '../../core/models/user';
 
 export class Lead {
     id : number;

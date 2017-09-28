@@ -1,0 +1,150 @@
+<div class="lead-header">
+        <div class="company-logo">
+            <img [src]="'assets/imgs/company.png'">
+            
+            <!--<span *ngIf="!logoUrl" class="default-logo"></span>-->
+            
+        </div>
+        <div class="company-name">
+             <span class="default-name"><b>{{potential.company.name}}</b></span>
+            <!--<span class="default-name"><b>{{potential.company.name}}</b></span>-->
+        </div>
+
+        <div class="industry">
+            <i class="fa fa-desktop" aria-hidden="true"></i><br>
+            <span class="industry-type">{{potential.company.industry}}</span>
+            <!--<span class="industry-type">{{potential.company.industry}}</span>-->
+        </div>
+
+        <div class="possibility">
+            <span class="prossibility-value">Kenneth Wang</span><br>
+            <span>PM</span>
+            
+            <!--<span class="prossibility-value">{{potential.possibility | percent}}</span><br>-->
+            <!--<span class="progress">
+                <span class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width:65%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></span>
+            </span>-->
+        </div>
+
+        <div  class="lead-owner" >
+        
+            <!--<img [src]="'assets/imgs/head1.ico'" (click)="openCall()" class="menu" ><br>-->
+           
+        <div class="menu ownerlogo" [ngClass]="{active : isActive}"  (click)="isActive = !isActive" >
+            <img [src]="'assets/imgs/head1.ico'">
+            <!--<a class="option blue " [ngClass]="{active : isActive}"> <i class="fa fa-anchor"></i></a>
+            <a class="option green" [ngClass]="{active : isActive}"> <i class="fa fa-coffee"></i> </a>-->
+            <a class="option red" [ngClass]="{active : isActive}" (click)="callOwner()"> <i class="fa fa-phone" aria-hidden="true"></i> </a>
+            <a class="option purple" [ngClass]="{active : isActive}"><i class="fa fa-microphone"></i> </a>
+            <a class="option orange" [ngClass]="{active : isActive}"> <i class="fa fa-star"></i>  </a>
+            <!--<a class="option lightblue" [ngClass]="{active : isActive}"> <i class="fa fa-diamond"></i> </a>-->
+
+        </div>
+
+
+
+        
+            <span *ngIf = "!ownerUrl" class="default-owner">Sam</span>
+        </div>
+
+        <div class="lead-owner">
+            <img [src]="'assets/imgs/head2.ico'"><br>
+            <span *ngIf = "!ownerUrl" class="default-owner">Tom</span>
+        </div>
+
+        <div class="lead-balance"> 
+            <div class="lead-balance-item balance-title">Balance</div>
+            <div class="lead-balance-item balance-value">500,000</div>
+            <div class="lead-balance-item past-due-title">Past Due</div>
+            <div class="lead-balance-item past-due-value">500,000</div>
+            
+            <!--<span class="lead-usage-title">Balance</span><br>
+            <span class="lead-usage-content">50,000,000</span><br>
+            <span class="lead-usage-title">Past Due</span><br>
+            <span class="lead-usage-content">50,000,000</span>-->
+
+
+        </div>
+</div>
+
+
+ <div class="lead-body-bar">
+        <button *ngIf="!isEditing" class="btn btn-sm btn-outline-success" (click)="onEdit(potential)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+        <button *ngIf="isEditing" class="btn btn-sm btn-outline-primary" (click)="onCancel(potential)"><i class="fa fa-times" aria-hidden="true"></i></button>
+        <button *ngIf="isEditing" class="btn btn-sm btn-outline-success" (click)="onSave(potential)"><i class="fa fa-check" aria-hidden="true"></i></button>
+        <button class="btn btn-sm btn-outline-danger" (click)="deletePotential(potential)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+
+</div>
+
+<div class="lead-body">
+
+
+            <div class="billing-address">
+                <span>Billing Address</span><br>
+
+                    <span>35 Engel Street</span><br>
+                        Hicksville, NY, 11801
+
+                <!--<span>{{potential.company.billing_address.street}}</span><br>
+                {{potential.company.billing_address.city +',' + ' ' + potential.company.billing_address.state +',' + ' ' +potential.company.billing_address.zipcode}}-->
+            </div>
+
+            <div class="shipping-address">
+                 <span>Shipping Address</span><br>
+                 <span>35 Engel Street</span><br>
+                        Hicksville, NY, 11801
+                <!--<span>{{potential.company.shipping_address.street}}</span><br>
+               <span> {{potential.company.shipping_address.city +',' + ' ' + potential.company.shipping_address.state +',' + ' ' +potential.company.shipping_address.zipcode}}</span>-->
+
+            </div>
+
+            <div class="lead-company-info">
+
+                    <div class="lead-company-info-item">
+                        <label class="lead-body-title">Website: </label>
+                         <span class="lead-body-content" *ngIf="!isEditing">www.orcasmart.com</span>
+                        <!--<span class="lead-body-content" *ngIf="!isEditing">{{potential.company.website}}</span>-->
+                        <input class="lead-edit-input" type="text" *ngIf="isEditing" [(ngModel)]="lead.company.website">
+                    </div>
+
+                    <div class="lead-company-info-item">
+                        <label class="lead-body-title">sdfs: </label>
+                         <span class="lead-body-content" *ngIf="!isEditing">Glopak</span>
+                        <!--<span class="lead-body-content" *ngIf="!isEditing">{{potential.company.name}}</span>-->
+                        <input class="lead-edit-input" type="text" *ngIf="isEditing" [(ngModel)]="lead.company.name">
+                    </div>
+
+                    <div *ngFor="let contact of contacts" class="lead-company-contacts">
+                        
+                                <div class="lead-company-info-item">
+                                    <label class="lead-body-title">Name: </label>
+                                    <span class="lead-body-content" *ngIf="!isEditing">{{contact.first_name}}</span>
+                                    <input class="lead-edit-input" type="text" *ngIf="isEditing" [(ngModel)]="contact.first_name">
+                                </div>
+
+                                <div class="lead-company-info-item">
+                                    <label class="lead-body-title">Phone:</label>
+                                    <span class="lead-body-content" *ngIf="!isEditing">{{contact.phone}}</span>
+                                    <input class="lead-edit-input" type="text" *ngIf="isEditing" [(ngModel)]="contact.phone">
+                                 </div>
+
+                                 <div class="lead-company-info-item">
+                                    <label class="lead-body-title">Email: </label>
+                                    <span class="lead-body-content" *ngIf="!isEditing">{{contact.email}}</span>
+                                    <input class="lead-edit-input" type="text" *ngIf="isEditing" [(ngModel)]="contact.email">
+                                </div>
+
+                                <div class="lead-company-info-item">
+                                    <label class="lead-body-title">Fax:</label>
+                                    <span class="lead-body-content" *ngIf="!isEditing">{{contact.fax}}</span>
+                                    <input class="lead-edit-input" type="text" *ngIf="isEditing" [(ngModel)]="contact.fax">
+                                 </div>
+                      
+                    </div>
+
+                    
+            </div>
+
+</div>
+
+

@@ -1,0 +1,38 @@
+<form [formGroup]="noteForm" novalidate (ngSubmit)="onSave()">
+  <div class="form-group row">
+    <button type="button" class="btn btn-link" (click)="isPersonal = !isPersonal">{{isPersonal ? 'Show Advanced Options' : 'Hide Advanced Options'}}</button>
+  </div>
+  <div class="company-info" *ngIf="!isPersonal">
+    <div class="form-group row">
+      <label class="center-block">Company:</label>
+      <select class="form-control" formControlName="company">
+        <option *ngFor="let company of companies" [value]="company.id">{{company.name}}</option>
+      </select>
+    </div>
+    <div class="form-group row" *ngIf="categoryVisiable">
+      <label class="center-block">Category:</label>
+      <select class="form-control" formControlName="category">
+        <option [value]="null">None</option>
+        <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+      </select>
+    </div>
+    <div class="form-group row" *ngIf="contextVisiable">
+      <label class="center-block">{{contextLabel}}:</label>
+      <select class="form-control" formControlName="context">
+        <option [value]="null">None</option>
+        <option *ngFor="let context of contexts" [value]="context">{{context}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="center-block">Subject:</label>
+    <input class="form-control" formControlName="subject"/>
+  </div>
+  <div class="form-group row">
+    <label class="center-block">Body:</label>
+    <textarea class="form-control" rows="10" formControlName="body"></textarea>
+  </div>
+  <div class="form-group row">
+    <button class="btn btn-primary" type="submit">Save</button>
+  </div>
+</form>

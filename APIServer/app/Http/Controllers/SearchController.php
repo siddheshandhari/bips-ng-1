@@ -132,7 +132,11 @@ class SearchController extends ApiController
       if(!in_array($this->filter, $this->lead_filters)){
         return $this->setStatusCode(400)->respondWithError("Lead search does not support this filter: ".$this->filter);
       };
-      $leads = Lead::where($this->filter, 'like', '%'.$this->query.'%')->get();
+
+
+        $leads = Lead::where($this->filter, 'like', '%'.$this->query.'%')->get();
+      
+
       return $this->setStatusCode(200)->respond(
         $this->leadTransformer->transformCollection($leads)
       );

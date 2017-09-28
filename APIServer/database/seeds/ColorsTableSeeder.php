@@ -13,14 +13,11 @@ class ColorsTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
         $count = 30;
-        $list = range(1, $count);
-        shuffle($list);
-        $products = $list;
         foreach(range(1, 30) as $index)
         {
           DB::table('colors')->insert([
-            'product_id' => array_shift($products),
-            'color' => $faker->firstName,
+            'color' => $faker->colorName
+
           ]);
         }
     }
