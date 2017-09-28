@@ -9,7 +9,7 @@ import { Note } from '../../core/models/note';
 })
 
 export class NotesComponent implements OnInit {
-  modalOpen: boolean = true;
+  modalOpen: boolean = false;
   noteList: Array<Note>;
   selectedNote: Note;
 
