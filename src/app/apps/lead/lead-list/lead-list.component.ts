@@ -17,6 +17,7 @@ export class LeadListComponent implements OnInit{
     
     @Output() selectedLead : Lead;
     @Output() contacts :any[] =[];
+    public value='';
     isSearching :Boolean=false;
     leadlist : Lead[] = [];
     searchlist:Lead[]= [];
@@ -36,22 +37,53 @@ export class LeadListComponent implements OnInit{
             );
     }
 
-    searchLead(value){
-        console.log(value);
-        this.leadSearchService.searchLead(value)
-      .subscribe(res => {
-        this.searchlist = res;
-      })
 
-      console.log(this.searchlist);
-      this.isSearching = true;
-      console.log(this.isSearching);
+
+    searchLead(value){
+        if(!value){
+            alert("Should not be Empty!")
+            return;
+            // this.getLeadlist();
+            // this.isSearching = false;
+            // console.log("2");
+            // alert("Should not be Empty!")
+        }else{
+            
+            this.leadSearchService.searchLead(value).subscribe(res => {
+            this.searchlist = res;
+            this.isSearching = true;
+        })
+
+            // if(this.searchlist.length>0){
+               
+                
+
+            // }else{
+            //     alert("No Match Information!");
+            //     this.isSearching = false;
+            // }
+        
+        
+        }
+
   }
+
+//     searchLead(value){
+//         console.log(value);
+//         this.leadSearchService.searchLead(value)
+//       .subscribe(res => {
+//         this.searchlist = res;
+//       })
+
+//       console.log(this.searchlist);
+//       this.isSearching = true;
+//       console.log(this.isSearching);
+//   }
 
      allLeadList(){
        this.isSearching = false;
        this.getLeadlist();
-  }
+      }
 
 
 // get lead infomation

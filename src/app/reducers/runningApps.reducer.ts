@@ -1,9 +1,12 @@
 export const ADD_RUNNING_APPS = 'ADDED_RUNNING_APP';
 export const REMOVE_RUNNING_APPS = 'REMOVE_RUNNING_APP';
 
-//Lead = 12; Account = 1; Note = 14; Potential = 15; Inventory = 11; Showcase = 17;
 
-const initialState = [11];
+
+//Lead = 12; Account = 1; Note = 14; Potential = 15;
+
+const initialState = [12];
+
 
 export function RunningAppsReducer(state = initialState, action){
   switch (action.type) {

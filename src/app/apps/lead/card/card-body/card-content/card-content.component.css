@@ -113,6 +113,11 @@ div{
     font-size:12px;
     text-align: right;
 }
+.lead-inportant{
+    width:3%;
+    padding:18px 0;
+    color:orange;
+}
 
 .lead-function{
     padding: 30px 0;

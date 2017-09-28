@@ -1,6 +1,6 @@
 :host{
     float:right;
-    width: 53%;
+    width: 42%;
     height: 92%;
     display:block;
     margin-top:5px;
@@ -41,7 +41,7 @@ ul li a:hover{
 
 .note-header-item{
     text-align: center;
-    width: 18.8%;
+    width: 17.8%;
     display:inline-block;
 }
 
