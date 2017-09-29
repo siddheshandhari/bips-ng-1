@@ -1,16 +1,33 @@
 <h1>OrcaSmart</h1>
 <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <input type="email" class="form-control" [ngClass]="isValid('email') ? 'is-valid' : 'is-invalid'" name="Email" placeholder="Email" formControlName="email">
+  <div class="group-inputs">
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" class="form-control" [ngClass]="{'is-invalid': email.invalid && (email.dirty || email.touched)}" name="Email" placeholder="Email" formControlName="email">
+      <div class="invalid-feedback" *ngIf="email.errors">
+        <p>{{email.errors.message || 'Please enter a valid email'}}</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input required type="password" class="form-control" [ngClass]="{'is-invalid': password.invalid && (password.dirty || password.touched)}" placeholder="Password" formControlName="password">
+      <div class="invalid-feedback" *ngIf="password.errors">
+        <p>{{password.errors.message || 'Password must be at least 6 characters'}}</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Confirm Password</label>
+      <input required type="password" class="form-control" [ngClass]="{'is-invalid': passwordConfirm.invalid && (passwordConfirm.dirty || passwordConfirm.touched)}" placeholder="Confirm Password" formControlName="passwordConfirm">
+      <div class="invalid-feedback" *ngIf="passwordConfirm.errors || signupForm.hasError('mismatchedPassword')">
+        <p>{{passwordConfirm.errors.message || 'Password must match'}}</p>
+      </div>
+    </div>
+
   </div>
+
   <div class="form-group">
-    <input type="password" class="form-control" [ngClass]="isValid('password') ? 'is-valid' : 'is-invalid'" placeholder="Password" formControlName="password">
-  </div>
-  <div class="form-group">
-    <input type="password" class="form-control" [ngClass]="isValid('passwordConfirm') ? 'is-valid' : 'is-invalid'" placeholder="Confirm Password" formControlName="passwordConfirm">
-  </div>
-  <br>
-  <div class="form-group">
-    <input type="submit" class="btn btn-primary" value="Sign Up">
+    <input required type="submit" class="btn btn-primary btn-lg btn-block" value="Sign Up">
   </div>
 </form>

@@ -1,6 +1,6 @@
-
-<ng-content></ng-content>
-
+<div class="123" [class.scrolling]="isScrolling" #panel >
+  <ng-content></ng-content>
+</div>
 <div class="expand-handler">
   <i class="fa fa-angle-up" *ngIf="leadIsOpen"  (click)="closeHeader()"></i>
   <i class="fa fa-angle-down" *ngIf="!leadIsOpen" (click)="openHeader()"></i>

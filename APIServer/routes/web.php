@@ -91,7 +91,10 @@ Route::group(['prefix' => 'api/v1'], function()
 
   //Potential Collections Routes
   Route::get('potential', 'PotentialController@browse');
+  Route::get('potential/{id}', 'PotentialController@read');
   Route::delete('potential/{id}', 'PotentialController@destroy');
+  Route::post('potential', 'PotentialController@add');
+  Route::put('potential/{id}', 'PotentialController@edit');
 
 
 });

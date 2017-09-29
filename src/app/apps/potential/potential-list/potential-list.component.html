@@ -1,18 +1,19 @@
 <div class="potentiallist-header">
         <ul class="potentiallist-headerlist">
-            <li>Company Name</li>
-            <li>Industry</li>
-            <li>Contact</li>
-            <li>Account Manager</li>
-            <li>Customer Service</li>
+            <li class="company-name">Company Name</li>
+            <li class="industry">Industry</li>
+            <li class="contact">Contact</li>
+            <li class="account-manager">Account Manager</li>
+            <li class="customer-service">Customer Service</li>
+            <li class="balance">Balance</li>
             
         </ul>
 </div>
 
 
 <div class="potentiallist-body">
-    <card *ngFor="let potential of potentiallist" [class.selected]="potential=== selectedPotential" (click)="selectPotential(potential)">
-        <card-body>
+    <card *ngFor="let potential of potentiallist" [class.selected]="potential=== selectedPotential" (click)="selectPotential(potential)" >
+        <card-body >
             <card-content [potential]="potential" (onPotentialDelete)="deletePotential($event)"></card-content>
         </card-body>
     </card>
