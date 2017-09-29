@@ -12,6 +12,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { SignupModule } from './signup/signup.module';
 import { LoginAuthentication } from './login/login.authentication';
 import { LoginValidation } from './login/login.validation';
+import { HttpModule }    from '@angular/http';
 
 //components
 import { AppComponent } from './app.component';
@@ -61,6 +62,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpModule,
     CommonModule,
     RouterModule.forRoot(
       appRoutes,
