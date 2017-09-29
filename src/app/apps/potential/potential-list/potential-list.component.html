@@ -12,8 +12,8 @@
 
 
 <div class="potentiallist-body">
-    <card *ngFor="let potential of potentiallist" [class.selected]="potential=== selectedPotential" (click)="selectPotential(potential)">
-        <card-body>
+    <card *ngFor="let potential of potentiallist" [class.selected]="potential=== selectedPotential" (click)="selectPotential(potential)" >
+        <card-body >
             <card-content [potential]="potential" (onPotentialDelete)="deletePotential($event)"></card-content>
         </card-body>
     </card>

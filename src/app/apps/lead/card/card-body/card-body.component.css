@@ -12,10 +12,16 @@
     overflow: scroll;
 }
 
+.scrolling{
+  overflow-y: scroll;
+  height:300px;
+
+}
+
 .expand-handler{
   position: absolute;
   display: inline;
-  line-height: 0;
+  line-height:0;
   width: 100%;
   bottom: 0;
   left: 0;
@@ -25,3 +31,4 @@
 .fa-angle-down,.fa-angle-up{
   cursor: pointer;
 }
+
