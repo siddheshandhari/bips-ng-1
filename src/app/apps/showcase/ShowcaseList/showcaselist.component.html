@@ -2,8 +2,8 @@
     hiahdvhvbdfklvbgf
      <ul class="heroes">
          <button (click)="getHeroes()">sdfgs</button>
-      <li >
-     
-      </li>
+         <li *ngFor="let hero of heroes">
+         <span class="badge">{{hero.id}}</span> 
+       </li>
     </ul>
 </div>
