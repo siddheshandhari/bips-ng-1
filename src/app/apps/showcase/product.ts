@@ -3,8 +3,8 @@ import { User } from '../../core/models/user';
 
 export class Product {
     id : number;
-    serial_number : number;
-    name: string;
-    status: string;
-    source : string;
+    // serial_number : number;
+    // name: string;
+    // status: string;
+    // source : string;
 }

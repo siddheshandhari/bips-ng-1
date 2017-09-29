@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/map';
 import { Product } from './product';
 
 @Injectable()
 export class ShowcaseService {
-    private heroesUrl = 'http://127.0.0.1:8000/api/v1/product';  // URL to web api
+    private heroesUrl = 'http://127.0.0.1:8000/api/v1/lead';  // URL to web api
     
   constructor(private http: Http) {}
   getHeroes(): Promise<Product[]> {
