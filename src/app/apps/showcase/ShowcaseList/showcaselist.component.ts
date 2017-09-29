@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ShowcaseComponent } from '../showcase.component';
 import { HttpModule } from '@angular/http';
+import { ShowcaseService } from '../showcase.service'
 @Component({
     selector: 'showcaselist',
     templateUrl: 'showcaselist.component.html',
