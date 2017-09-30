@@ -29,7 +29,7 @@ class ProductsTableSeeder extends Seeder
             'packinginfo_id' => array_shift($packinginfos),
             'showcase_id' => $faker->randomNumber(),
             'name' => $faker->name,
-            'image' => $faker->url,
+            'image' => "http://localhost:4200/assets/imgs/bottle1.png",
             'catagory' => $faker->word,
             'type' => $faker->word,
             'style' => $faker->word,
