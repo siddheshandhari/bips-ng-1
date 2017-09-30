@@ -13,28 +13,14 @@ import {Product } from '../product';
 export class ShowcaseListComponent implements OnInit{
     constructor(private showcaseService: ShowcaseService) { }
     // heroes: Product[]=[];
-    heroes: Product[];
-    getHeroes(): void {
-        this.showcaseService.getLeadlist().subscribe(res => {
-            this.heroes = res;
+    showcases: Product[];
+    getShowcases(): void {
+        this.showcaseService.getShowcaselist().subscribe(res => {
+            this.showcases = res;
           })
-        console.log("lead");
-        console.log(this.heroes);
       }
       ngOnInit(): void {
-        this.getHeroes();
+        this.getShowcases();
       }
-    //   results: string[];
-     
-    //   // Inject HttpClient into your component or service.
-    //   constructor(private http: HttpClient) {}
-     
-    //   ngOnInit(): void {
-    //     // Make the HTTP request:
-    //     this.http.get('/api/items').subscribe(data => {
-    //       // Read the result field from the JSON response.
-    //       this.results = data['results'];
-    //     });
-    //   }
     
 }

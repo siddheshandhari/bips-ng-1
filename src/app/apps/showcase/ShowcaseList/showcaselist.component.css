@@ -3,10 +3,24 @@
     position: relative;
     height: 100%;
     /* bottom: 0px; */
-    color: red;
+    color: black;
     background-color: white;
-    display: block;
-    /* overflow:scroll; */
-    /* overflow-x:hidden; */
+    display: inline-block;
+    overflow:auto;
+    overflow-x:hidden;
     border:1px solid red;
+}
+
+.card {
+    /* height: 50px; */
+    width: 130px;
+    height: 130px;
+    float: left;
+    margin-left: 10px;
+
+}
+.image {
+    height: 100px;
+    width: 100px;
+    /* display: none; */
 }
