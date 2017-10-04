@@ -1,9 +1,16 @@
-<div *ngFor="let showcase of showcases">
-    <div class = "card">
-        <img src="{{showcase.image}}" class="image">
-        {{showcase.name}}
+
+<div class="showcaselist">
+    <div *ngFor="let showcase of showcases">
+    <div class = "card"
+    [class.selected]="showcase === selectedShowcase"
+    (click)="onSelect(showcase)">
+        <img src="{{showcase.image}}" class="image" onclick="">
+        <h6>{{showcase.name}}</h6>
     </div>
 </div>
+</div>
+<showcase-detail [selectedShowcase]="selectedShowcase"></showcase-detail>
+
 
 <!-- <div>
     <ul>

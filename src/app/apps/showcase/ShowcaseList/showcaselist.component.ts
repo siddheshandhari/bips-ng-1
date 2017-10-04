@@ -12,8 +12,10 @@ import {Product } from '../product';
 })
 export class ShowcaseListComponent implements OnInit{
     constructor(private showcaseService: ShowcaseService) { }
-    // heroes: Product[]=[];
     showcases: Product[];
+    selectedShowcase: Product;
+    // showcase: Product;
+    
     getShowcases(): void {
         this.showcaseService.getShowcaselist().subscribe(res => {
             this.showcases = res;
@@ -22,5 +24,11 @@ export class ShowcaseListComponent implements OnInit{
       ngOnInit(): void {
         this.getShowcases();
       }
-    
+      onSelect(showcase : Product): void {
+        console.log(showcase);
+        console.log("in onselect from service");
+        this.selectedShowcase= showcase;
+        // console.log(this.selectedShowcase);
+  }
+   
 }

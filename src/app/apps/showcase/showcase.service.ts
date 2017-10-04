@@ -7,6 +7,7 @@ import { Product } from './product';
 
 @Injectable()
 export class ShowcaseService {
+  // selectedShowcase: Product;
     private heroesUrl = 'http://127.0.0.1:8000/api/v1/product';  // URL to web api
     
   constructor(private http: Http) {}
@@ -16,7 +17,7 @@ export class ShowcaseService {
     // return this.http.get('https://jsonplaceholder.typicode.com/comments?postId=1')
       .map((res:Response) => res.json())
     }
-
+ 
   // getLead(id: number): Observable<Product>{
   //     return this.http.get('http://127.0.0.1:8000/api/v1/lead/'+id)
   //     .map((res:Response) =>res.json())
